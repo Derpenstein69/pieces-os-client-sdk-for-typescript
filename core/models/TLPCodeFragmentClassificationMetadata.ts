@@ -27,25 +27,25 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface TLPCodeFragmentClassificationMetadata
  */
 export interface TLPCodeFragmentClassificationMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeFragmentClassificationMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Classification}
      * @memberof TLPCodeFragmentClassificationMetadata
      */
     context?: Classification;
     /**
-     * 
+     *
      * @type {Classification}
      * @memberof TLPCodeFragmentClassificationMetadata
      */
@@ -61,22 +61,47 @@ export function instanceOfTLPCodeFragmentClassificationMetadata(value: object): 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeFragmentClassificationMetadata}
+ */
 export function TLPCodeFragmentClassificationMetadataFromJSON(json: any): TLPCodeFragmentClassificationMetadata {
     return TLPCodeFragmentClassificationMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeFragmentClassificationMetadata}
+ */
 export function TLPCodeFragmentClassificationMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeFragmentClassificationMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'context': !exists(json, 'context') ? undefined : ClassificationFromJSON(json['context']),
         'prior': !exists(json, 'prior') ? undefined : ClassificationFromJSON(json['prior']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TLPCodeFragmentClassificationMetadata | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeFragmentClassificationMetadataToJSON(value?: TLPCodeFragmentClassificationMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -85,7 +110,7 @@ export function TLPCodeFragmentClassificationMetadataToJSON(value?: TLPCodeFragm
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'context': ClassificationToJSON(value.context),
         'prior': ClassificationToJSON(value.prior),

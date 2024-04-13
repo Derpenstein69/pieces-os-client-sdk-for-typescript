@@ -28,34 +28,34 @@ import {
 
 /**
  * if you want a range between you can use from && to.
- * 
+ *
  * if you want anything before, use to and NO from.
- * 
+ *
  * if you want anything after, use from and NO to.
  * @export
  * @interface AssetFilterTimestamp
  */
 export interface AssetFilterTimestamp {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AssetFilterTimestamp
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof AssetFilterTimestamp
      */
     from?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof AssetFilterTimestamp
      */
     to?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof AssetFilterTimestamp
      */
@@ -71,16 +71,33 @@ export function instanceOfAssetFilterTimestamp(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AssetFilterTimestamp}
+ */
 export function AssetFilterTimestampFromJSON(json: any): AssetFilterTimestamp {
     return AssetFilterTimestampFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AssetFilterTimestamp}
+ */
 export function AssetFilterTimestampFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssetFilterTimestamp {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'from': !exists(json, 'from') ? undefined : GroupedTimestampFromJSON(json['from']),
         'to': !exists(json, 'to') ? undefined : GroupedTimestampFromJSON(json['to']),
@@ -88,6 +105,14 @@ export function AssetFilterTimestampFromJSONTyped(json: any, ignoreDiscriminator
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(AssetFilterTimestamp | null)} [value]
+ * @returns {*}
+ */
 export function AssetFilterTimestampToJSON(value?: AssetFilterTimestamp | null): any {
     if (value === undefined) {
         return undefined;
@@ -96,7 +121,7 @@ export function AssetFilterTimestampToJSON(value?: AssetFilterTimestamp | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'from': GroupedTimestampToJSON(value.from),
         'to': GroupedTimestampToJSON(value.to),

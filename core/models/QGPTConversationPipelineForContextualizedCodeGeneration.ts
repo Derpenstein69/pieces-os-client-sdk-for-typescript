@@ -22,14 +22,14 @@ import {
 
 /**
  * This type of conversation is reccomended to be provided when a user want generate code w/ context provided.
- * 
+ *
  * This is a class so that we can add optional properties in the future.
  * @export
  * @interface QGPTConversationPipelineForContextualizedCodeGeneration
  */
 export interface QGPTConversationPipelineForContextualizedCodeGeneration {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTConversationPipelineForContextualizedCodeGeneration
      */
@@ -45,20 +45,45 @@ export function instanceOfQGPTConversationPipelineForContextualizedCodeGeneratio
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTConversationPipelineForContextualizedCodeGeneration}
+ */
 export function QGPTConversationPipelineForContextualizedCodeGenerationFromJSON(json: any): QGPTConversationPipelineForContextualizedCodeGeneration {
     return QGPTConversationPipelineForContextualizedCodeGenerationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTConversationPipelineForContextualizedCodeGeneration}
+ */
 export function QGPTConversationPipelineForContextualizedCodeGenerationFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTConversationPipelineForContextualizedCodeGeneration {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTConversationPipelineForContextualizedCodeGeneration | null)} [value]
+ * @returns {*}
+ */
 export function QGPTConversationPipelineForContextualizedCodeGenerationToJSON(value?: QGPTConversationPipelineForContextualizedCodeGeneration | null): any {
     if (value === undefined) {
         return undefined;
@@ -67,7 +92,7 @@ export function QGPTConversationPipelineForContextualizedCodeGenerationToJSON(va
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
     };
 }

@@ -25,21 +25,69 @@ import {
     SeededScoreIncrementToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface HintScoresIncrementRequest
+ * @typedef {HintScoresIncrementRequest}
+ */
 export interface HintScoresIncrementRequest {
-    hint: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface HintSpecificHintSnapshotRequest {
-    hint: string;
-}
-
-export interface HintUpdateRequest {
-    hint?: Hint;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+hint: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface HintSpecificHintSnapshotRequest
+ * @typedef {HintSpecificHintSnapshotRequest}
+ */
+export interface HintSpecificHintSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+hint: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface HintUpdateRequest
+ * @typedef {HintUpdateRequest}
+ */
+export interface HintUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?Hint}
+ */
+hint?: Hint;
+}
+
+/**
+ *
  */
 export class HintApi extends runtime.BaseAPI {
 

@@ -33,7 +33,7 @@ import {
  */
 export interface FileMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FileMetadata
      */
@@ -45,7 +45,7 @@ export interface FileMetadata {
      */
     name?: string;
     /**
-     * 
+     *
      * @type {ClassificationSpecificEnum}
      * @memberof FileMetadata
      */
@@ -67,16 +67,33 @@ export function instanceOfFileMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FileMetadata}
+ */
 export function FileMetadataFromJSON(json: any): FileMetadata {
     return FileMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FileMetadata}
+ */
 export function FileMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): FileMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'name': !exists(json, 'name') ? undefined : json['name'],
         'ext': !exists(json, 'ext') ? undefined : ClassificationSpecificEnumFromJSON(json['ext']),
@@ -84,6 +101,14 @@ export function FileMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(FileMetadata | null)} [value]
+ * @returns {*}
+ */
 export function FileMetadataToJSON(value?: FileMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -92,7 +117,7 @@ export function FileMetadataToJSON(value?: FileMetadata | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'name': value.name,
         'ext': ClassificationSpecificEnumToJSON(value.ext),

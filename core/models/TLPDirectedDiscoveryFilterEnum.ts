@@ -29,17 +29,49 @@ export const TLPDirectedDiscoveryFilterEnum = {
     Loop: 'LOOP',
     Return: 'RETURN'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TLPDirectedDiscoveryFilterEnum}
+ */
 export type TLPDirectedDiscoveryFilterEnum = typeof TLPDirectedDiscoveryFilterEnum[keyof typeof TLPDirectedDiscoveryFilterEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPDirectedDiscoveryFilterEnum}
+ */
 export function TLPDirectedDiscoveryFilterEnumFromJSON(json: any): TLPDirectedDiscoveryFilterEnum {
     return TLPDirectedDiscoveryFilterEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPDirectedDiscoveryFilterEnum}
+ */
 export function TLPDirectedDiscoveryFilterEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPDirectedDiscoveryFilterEnum {
     return json as TLPDirectedDiscoveryFilterEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TLPDirectedDiscoveryFilterEnum | null)} [value]
+ * @returns {*}
+ */
 export function TLPDirectedDiscoveryFilterEnumToJSON(value?: TLPDirectedDiscoveryFilterEnum | null): any {
     return value as any;
 }

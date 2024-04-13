@@ -39,19 +39,19 @@ import {
  */
 export interface AssetReclassification {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AssetReclassification
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ClassificationSpecificEnum}
      * @memberof AssetReclassification
      */
     ext: ClassificationSpecificEnum;
     /**
-     * 
+     *
      * @type {Asset}
      * @memberof AssetReclassification
      */
@@ -69,22 +69,47 @@ export function instanceOfAssetReclassification(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AssetReclassification}
+ */
 export function AssetReclassificationFromJSON(json: any): AssetReclassification {
     return AssetReclassificationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AssetReclassification}
+ */
 export function AssetReclassificationFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssetReclassification {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'ext': ClassificationSpecificEnumFromJSON(json['ext']),
         'asset': AssetFromJSON(json['asset']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(AssetReclassification | null)} [value]
+ * @returns {*}
+ */
 export function AssetReclassificationToJSON(value?: AssetReclassification | null): any {
     if (value === undefined) {
         return undefined;
@@ -93,7 +118,7 @@ export function AssetReclassificationToJSON(value?: AssetReclassification | null
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'ext': ClassificationSpecificEnumToJSON(value.ext),
         'asset': AssetToJSON(value.asset),

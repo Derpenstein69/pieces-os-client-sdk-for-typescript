@@ -22,7 +22,7 @@ import {
 
 /**
  * This is use as the score for an asset.
- * 
+ *
  * Manual: will be the raw sum of the asset activity events ranks with mechanismEnum == manual
  * Automatic: will be the raw sum of the asset activity events ranks with mechanismEnum == automatic
  * @export
@@ -30,7 +30,7 @@ import {
  */
 export interface Score {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Score
      */
@@ -48,25 +48,25 @@ export interface Score {
      */
     automatic: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof Score
      */
     priority?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof Score
      */
     reuse?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof Score
      */
     update?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof Score
      */
@@ -84,16 +84,33 @@ export function instanceOfScore(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Score}
+ */
 export function ScoreFromJSON(json: any): Score {
     return ScoreFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Score}
+ */
 export function ScoreFromJSONTyped(json: any, ignoreDiscriminator: boolean): Score {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'manual': json['manual'],
         'automatic': json['automatic'],
@@ -104,6 +121,14 @@ export function ScoreFromJSONTyped(json: any, ignoreDiscriminator: boolean): Sco
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(Score | null)} [value]
+ * @returns {*}
+ */
 export function ScoreToJSON(value?: Score | null): any {
     if (value === undefined) {
         return undefined;
@@ -112,7 +137,7 @@ export function ScoreToJSON(value?: Score | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'manual': value.manual,
         'automatic': value.automatic,

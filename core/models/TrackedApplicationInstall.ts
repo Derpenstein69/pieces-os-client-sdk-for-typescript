@@ -39,19 +39,19 @@ import {
  */
 export interface TrackedApplicationInstall {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedApplicationInstall
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TrackedApplication}
      * @memberof TrackedApplicationInstall
      */
     application: TrackedApplication;
     /**
-     * 
+     *
      * @type {TrackedUserProfile}
      * @memberof TrackedApplicationInstall
      */
@@ -68,22 +68,47 @@ export function instanceOfTrackedApplicationInstall(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedApplicationInstall}
+ */
 export function TrackedApplicationInstallFromJSON(json: any): TrackedApplicationInstall {
     return TrackedApplicationInstallFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedApplicationInstall}
+ */
 export function TrackedApplicationInstallFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedApplicationInstall {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'application': TrackedApplicationFromJSON(json['application']),
         'user': !exists(json, 'user') ? undefined : TrackedUserProfileFromJSON(json['user']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TrackedApplicationInstall | null)} [value]
+ * @returns {*}
+ */
 export function TrackedApplicationInstallToJSON(value?: TrackedApplicationInstall | null): any {
     if (value === undefined) {
         return undefined;
@@ -92,7 +117,7 @@ export function TrackedApplicationInstallToJSON(value?: TrackedApplicationInstal
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'application': TrackedApplicationToJSON(value.application),
         'user': TrackedUserProfileToJSON(value.user),

@@ -27,13 +27,13 @@ import {
 } from './QGPTPromptPipeline';
 
 /**
- * 
+ *
  * @export
  * @interface QGPTRelevanceInputOptions
  */
 export interface QGPTRelevanceInputOptions {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTRelevanceInputOptions
      */
@@ -51,7 +51,7 @@ export interface QGPTRelevanceInputOptions {
      */
     question?: boolean;
     /**
-     * 
+     *
      * @type {QGPTPromptPipeline}
      * @memberof QGPTRelevanceInputOptions
      */
@@ -67,16 +67,33 @@ export function instanceOfQGPTRelevanceInputOptions(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTRelevanceInputOptions}
+ */
 export function QGPTRelevanceInputOptionsFromJSON(json: any): QGPTRelevanceInputOptions {
     return QGPTRelevanceInputOptionsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTRelevanceInputOptions}
+ */
 export function QGPTRelevanceInputOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTRelevanceInputOptions {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'database': !exists(json, 'database') ? undefined : json['database'],
         'question': !exists(json, 'question') ? undefined : json['question'],
@@ -84,6 +101,14 @@ export function QGPTRelevanceInputOptionsFromJSONTyped(json: any, ignoreDiscrimi
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTRelevanceInputOptions | null)} [value]
+ * @returns {*}
+ */
 export function QGPTRelevanceInputOptionsToJSON(value?: QGPTRelevanceInputOptions | null): any {
     if (value === undefined) {
         return undefined;
@@ -92,7 +117,7 @@ export function QGPTRelevanceInputOptionsToJSON(value?: QGPTRelevanceInputOption
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'database': value.database,
         'question': value.question,

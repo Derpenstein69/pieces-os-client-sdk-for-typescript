@@ -25,93 +25,433 @@ import {
     WorkstreamSummaryToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummariesSpecificWorkstreamSummarySnapshotRequest
+ * @typedef {WorkstreamSummariesSpecificWorkstreamSummarySnapshotRequest}
+ */
 export interface WorkstreamSummariesSpecificWorkstreamSummarySnapshotRequest {
-    workstreamSummary: string;
-    transferables?: boolean;
-}
-
-export interface WorkstreamSummaryAssociateAnchorRequest {
-    workstreamSummary: string;
-    anchor: string;
-}
-
-export interface WorkstreamSummaryAssociateAssetRequest {
-    workstreamSummary: string;
-    asset: string;
-}
-
-export interface WorkstreamSummaryAssociateConversationRequest {
-    workstreamSummary: string;
-    conversation: string;
-}
-
-export interface WorkstreamSummaryAssociatePersonRequest {
-    workstreamSummary: string;
-    person: string;
-}
-
-export interface WorkstreamSummaryAssociateRangeRequest {
-    workstreamSummary: string;
-    range: string;
-}
-
-export interface WorkstreamSummaryAssociateWebsiteRequest {
-    workstreamSummary: string;
-    website: string;
-}
-
-export interface WorkstreamSummaryAssociateWorkstreamEventRequest {
-    workstreamSummary: string;
-    workstreamEvent: string;
-}
-
-export interface WorkstreamSummaryDisassociateAnchorRequest {
-    workstreamSummary: string;
-    anchor: string;
-}
-
-export interface WorkstreamSummaryDisassociateAssetRequest {
-    workstreamSummary: string;
-    asset: string;
-}
-
-export interface WorkstreamSummaryDisassociateConversationRequest {
-    workstreamSummary: string;
-    conversation: string;
-}
-
-export interface WorkstreamSummaryDisassociatePersonRequest {
-    workstreamSummary: string;
-    person: string;
-}
-
-export interface WorkstreamSummaryDisassociateRangeRequest {
-    workstreamSummary: string;
-    range: string;
-}
-
-export interface WorkstreamSummaryDisassociateWebsiteRequest {
-    workstreamSummary: string;
-    website: string;
-}
-
-export interface WorkstreamSummaryDisassociateWorkstreamEventRequest {
-    workstreamSummary: string;
-    workstreamEvent: string;
-}
-
-export interface WorkstreamSummaryScoresIncrementRequest {
-    workstreamSummary: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface WorkstreamSummaryUpdateRequest {
-    transferables?: boolean;
-    workstreamSummary?: WorkstreamSummary;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryAssociateAnchorRequest
+ * @typedef {WorkstreamSummaryAssociateAnchorRequest}
+ */
+export interface WorkstreamSummaryAssociateAnchorRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+anchor: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryAssociateAssetRequest
+ * @typedef {WorkstreamSummaryAssociateAssetRequest}
+ */
+export interface WorkstreamSummaryAssociateAssetRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+asset: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryAssociateConversationRequest
+ * @typedef {WorkstreamSummaryAssociateConversationRequest}
+ */
+export interface WorkstreamSummaryAssociateConversationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryAssociatePersonRequest
+ * @typedef {WorkstreamSummaryAssociatePersonRequest}
+ */
+export interface WorkstreamSummaryAssociatePersonRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+person: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryAssociateRangeRequest
+ * @typedef {WorkstreamSummaryAssociateRangeRequest}
+ */
+export interface WorkstreamSummaryAssociateRangeRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+range: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryAssociateWebsiteRequest
+ * @typedef {WorkstreamSummaryAssociateWebsiteRequest}
+ */
+export interface WorkstreamSummaryAssociateWebsiteRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryAssociateWorkstreamEventRequest
+ * @typedef {WorkstreamSummaryAssociateWorkstreamEventRequest}
+ */
+export interface WorkstreamSummaryAssociateWorkstreamEventRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamEvent: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryDisassociateAnchorRequest
+ * @typedef {WorkstreamSummaryDisassociateAnchorRequest}
+ */
+export interface WorkstreamSummaryDisassociateAnchorRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+anchor: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryDisassociateAssetRequest
+ * @typedef {WorkstreamSummaryDisassociateAssetRequest}
+ */
+export interface WorkstreamSummaryDisassociateAssetRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+asset: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryDisassociateConversationRequest
+ * @typedef {WorkstreamSummaryDisassociateConversationRequest}
+ */
+export interface WorkstreamSummaryDisassociateConversationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryDisassociatePersonRequest
+ * @typedef {WorkstreamSummaryDisassociatePersonRequest}
+ */
+export interface WorkstreamSummaryDisassociatePersonRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+person: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryDisassociateRangeRequest
+ * @typedef {WorkstreamSummaryDisassociateRangeRequest}
+ */
+export interface WorkstreamSummaryDisassociateRangeRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+range: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryDisassociateWebsiteRequest
+ * @typedef {WorkstreamSummaryDisassociateWebsiteRequest}
+ */
+export interface WorkstreamSummaryDisassociateWebsiteRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryDisassociateWorkstreamEventRequest
+ * @typedef {WorkstreamSummaryDisassociateWorkstreamEventRequest}
+ */
+export interface WorkstreamSummaryDisassociateWorkstreamEventRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamEvent: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryScoresIncrementRequest
+ * @typedef {WorkstreamSummaryScoresIncrementRequest}
+ */
+export interface WorkstreamSummaryScoresIncrementRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummaryUpdateRequest
+ * @typedef {WorkstreamSummaryUpdateRequest}
+ */
+export interface WorkstreamSummaryUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?WorkstreamSummary}
+ */
+workstreamSummary?: WorkstreamSummary;
+}
+
+/**
+ *
  */
 export class WorkstreamSummaryApi extends runtime.BaseAPI {
 

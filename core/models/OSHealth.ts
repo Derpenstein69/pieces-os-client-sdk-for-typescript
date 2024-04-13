@@ -27,7 +27,7 @@ import {
  */
 export interface OSHealth {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OSHealth
      */
@@ -57,22 +57,47 @@ export function instanceOfOSHealth(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OSHealth}
+ */
 export function OSHealthFromJSON(json: any): OSHealth {
     return OSHealthFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OSHealth}
+ */
 export function OSHealthFromJSONTyped(json: any, ignoreDiscriminator: boolean): OSHealth {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'version': json['version'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(OSHealth | null)} [value]
+ * @returns {*}
+ */
 export function OSHealthToJSON(value?: OSHealth | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function OSHealthToJSON(value?: OSHealth | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'version': value.version,

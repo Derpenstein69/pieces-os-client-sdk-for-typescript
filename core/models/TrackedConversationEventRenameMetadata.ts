@@ -27,19 +27,19 @@ import {
  */
 export interface TrackedConversationEventRenameMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedConversationEventRenameMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedConversationEventRenameMetadata
      */
     previous: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedConversationEventRenameMetadata
      */
@@ -57,22 +57,47 @@ export function instanceOfTrackedConversationEventRenameMetadata(value: object):
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedConversationEventRenameMetadata}
+ */
 export function TrackedConversationEventRenameMetadataFromJSON(json: any): TrackedConversationEventRenameMetadata {
     return TrackedConversationEventRenameMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedConversationEventRenameMetadata}
+ */
 export function TrackedConversationEventRenameMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedConversationEventRenameMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'previous': json['previous'],
         'current': json['current'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedConversationEventRenameMetadata | null)} [value]
+ * @returns {*}
+ */
 export function TrackedConversationEventRenameMetadataToJSON(value?: TrackedConversationEventRenameMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function TrackedConversationEventRenameMetadataToJSON(value?: TrackedConv
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'previous': value.previous,
         'current': value.current,

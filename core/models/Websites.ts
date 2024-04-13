@@ -39,13 +39,13 @@ import {
  */
 export interface Websites {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Websites
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Website>}
      * @memberof Websites
      */
@@ -57,7 +57,7 @@ export interface Websites {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Websites
      */
@@ -74,16 +74,33 @@ export function instanceOfWebsites(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Websites}
+ */
 export function WebsitesFromJSON(json: any): Websites {
     return WebsitesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Websites}
+ */
 export function WebsitesFromJSONTyped(json: any, ignoreDiscriminator: boolean): Websites {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(WebsiteFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function WebsitesFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(Websites | null)} [value]
+ * @returns {*}
+ */
 export function WebsitesToJSON(value?: Websites | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function WebsitesToJSON(value?: Websites | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(WebsiteToJSON)),
         'indices': value.indices,

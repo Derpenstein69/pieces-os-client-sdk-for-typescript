@@ -28,7 +28,7 @@ import {
 
 /**
  * NOTE: if we want to remove all the data the from would be unset, the to will be right now.
- * 
+ *
  * from: is always in the past
  * to: is always at least before from in our time.
  * @export
@@ -36,13 +36,13 @@ import {
  */
 export interface WorkstreamPatternEngineDataCleanupRequest {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof WorkstreamPatternEngineDataCleanupRequest
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<AnonymousTemporalRange>}
      * @memberof WorkstreamPatternEngineDataCleanupRequest
      */
@@ -58,21 +58,46 @@ export function instanceOfWorkstreamPatternEngineDataCleanupRequest(value: objec
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {WorkstreamPatternEngineDataCleanupRequest}
+ */
 export function WorkstreamPatternEngineDataCleanupRequestFromJSON(json: any): WorkstreamPatternEngineDataCleanupRequest {
     return WorkstreamPatternEngineDataCleanupRequestFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {WorkstreamPatternEngineDataCleanupRequest}
+ */
 export function WorkstreamPatternEngineDataCleanupRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): WorkstreamPatternEngineDataCleanupRequest {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'ranges': !exists(json, 'ranges') ? undefined : ((json['ranges'] as Array<any>).map(AnonymousTemporalRangeFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(WorkstreamPatternEngineDataCleanupRequest | null)} [value]
+ * @returns {*}
+ */
 export function WorkstreamPatternEngineDataCleanupRequestToJSON(value?: WorkstreamPatternEngineDataCleanupRequest | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function WorkstreamPatternEngineDataCleanupRequestToJSON(value?: Workstre
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'ranges': value.ranges === undefined ? undefined : ((value.ranges as Array<any>).map(AnonymousTemporalRangeToJSON)),
     };

@@ -44,20 +44,45 @@ export function instanceOfTLPDirectedDiscoveryFilters(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPDirectedDiscoveryFilters}
+ */
 export function TLPDirectedDiscoveryFiltersFromJSON(json: any): TLPDirectedDiscoveryFilters {
     return TLPDirectedDiscoveryFiltersFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPDirectedDiscoveryFilters}
+ */
 export function TLPDirectedDiscoveryFiltersFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPDirectedDiscoveryFilters {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'iterable': ((json['iterable'] as Array<any>).map(TLPDirectedDiscoveryFilterFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TLPDirectedDiscoveryFilters | null)} [value]
+ * @returns {*}
+ */
 export function TLPDirectedDiscoveryFiltersToJSON(value?: TLPDirectedDiscoveryFilters | null): any {
     if (value === undefined) {
         return undefined;
@@ -66,7 +91,7 @@ export function TLPDirectedDiscoveryFiltersToJSON(value?: TLPDirectedDiscoveryFi
         return null;
     }
     return {
-        
+
         'iterable': ((value.iterable as Array<any>).map(TLPDirectedDiscoveryFilterToJSON)),
     };
 }

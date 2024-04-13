@@ -34,52 +34,196 @@ import {
     BackupStreamedProgressToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupRequest
+ * @typedef {BackupRequest}
+ */
 export interface BackupRequest {
-    assets?: Assets;
-}
-
-export interface BackupAssetRequest {
-    asset?: Asset;
-}
-
-export interface BackupRestoreSpecificBackupRequest {
-    backup: string;
-    backup2?: Backup;
-}
-
-export interface BackupRestoreSpecificBackupStreamedRequest {
-    backup: string;
-    backup2?: Backup;
-}
-
-export interface BackupSpecificBackupSnapshotRequest {
-    backup: string;
-}
-
-export interface BackupSpecificCreationCancelRequest {
-    backup: string;
-}
-
-export interface BackupSpecificCreationStatusRequest {
-    backup: string;
-}
-
-export interface BackupSpecificRestorationCancelRequest {
-    backup: string;
-    backup2?: Backup;
-}
-
-export interface BackupSpecificRestorationStatusRequest {
-    backup: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Assets}
+ */
+assets?: Assets;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupAssetRequest
+ * @typedef {BackupAssetRequest}
+ */
+export interface BackupAssetRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Asset}
+ */
+asset?: Asset;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupRestoreSpecificBackupRequest
+ * @typedef {BackupRestoreSpecificBackupRequest}
+ */
+export interface BackupRestoreSpecificBackupRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+backup: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Backup}
+ */
+backup2?: Backup;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupRestoreSpecificBackupStreamedRequest
+ * @typedef {BackupRestoreSpecificBackupStreamedRequest}
+ */
+export interface BackupRestoreSpecificBackupStreamedRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+backup: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Backup}
+ */
+backup2?: Backup;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupSpecificBackupSnapshotRequest
+ * @typedef {BackupSpecificBackupSnapshotRequest}
+ */
+export interface BackupSpecificBackupSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+backup: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupSpecificCreationCancelRequest
+ * @typedef {BackupSpecificCreationCancelRequest}
+ */
+export interface BackupSpecificCreationCancelRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+backup: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupSpecificCreationStatusRequest
+ * @typedef {BackupSpecificCreationStatusRequest}
+ */
+export interface BackupSpecificCreationStatusRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+backup: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupSpecificRestorationCancelRequest
+ * @typedef {BackupSpecificRestorationCancelRequest}
+ */
+export interface BackupSpecificRestorationCancelRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+backup: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Backup}
+ */
+backup2?: Backup;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupSpecificRestorationStatusRequest
+ * @typedef {BackupSpecificRestorationStatusRequest}
+ */
+export interface BackupSpecificRestorationStatusRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+backup: string;
+}
+
+/**
+ *
  */
 export class BackupApi extends runtime.BaseAPI {
 
     /**
-     * 
+     *
      * /backup [POST]
      */
     async backupRaw(requestParameters: BackupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
@@ -101,7 +245,7 @@ export class BackupApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * /backup [POST]
      */
     async backup(requestParameters: BackupRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {

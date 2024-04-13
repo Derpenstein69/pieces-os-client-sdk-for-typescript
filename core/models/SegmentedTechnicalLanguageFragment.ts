@@ -40,32 +40,32 @@ import {
 
 /**
  * This is the output iterable model for '/machine_learning/text/technical_language/parsers/segmentation'
- * 
+ *
  * specific is optional here, however you can pass in classify: true to get the specific classificaiton in the case the generic is code.
  * @export
  * @interface SegmentedTechnicalLanguageFragment
  */
 export interface SegmentedTechnicalLanguageFragment {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SegmentedTechnicalLanguageFragment
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ClassificationGenericEnum}
      * @memberof SegmentedTechnicalLanguageFragment
      */
     generic: ClassificationGenericEnum;
     /**
-     * 
+     *
      * @type {ClassificationSpecificEnum}
      * @memberof SegmentedTechnicalLanguageFragment
      */
     specific?: ClassificationSpecificEnum;
     /**
-     * 
+     *
      * @type {FragmentFormat}
      * @memberof SegmentedTechnicalLanguageFragment
      */
@@ -83,16 +83,33 @@ export function instanceOfSegmentedTechnicalLanguageFragment(value: object): boo
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SegmentedTechnicalLanguageFragment}
+ */
 export function SegmentedTechnicalLanguageFragmentFromJSON(json: any): SegmentedTechnicalLanguageFragment {
     return SegmentedTechnicalLanguageFragmentFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SegmentedTechnicalLanguageFragment}
+ */
 export function SegmentedTechnicalLanguageFragmentFromJSONTyped(json: any, ignoreDiscriminator: boolean): SegmentedTechnicalLanguageFragment {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'generic': ClassificationGenericEnumFromJSON(json['generic']),
         'specific': !exists(json, 'specific') ? undefined : ClassificationSpecificEnumFromJSON(json['specific']),
@@ -100,6 +117,14 @@ export function SegmentedTechnicalLanguageFragmentFromJSONTyped(json: any, ignor
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(SegmentedTechnicalLanguageFragment | null)} [value]
+ * @returns {*}
+ */
 export function SegmentedTechnicalLanguageFragmentToJSON(value?: SegmentedTechnicalLanguageFragment | null): any {
     if (value === undefined) {
         return undefined;
@@ -108,7 +133,7 @@ export function SegmentedTechnicalLanguageFragmentToJSON(value?: SegmentedTechni
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'generic': ClassificationGenericEnumToJSON(value.generic),
         'specific': ClassificationSpecificEnumToJSON(value.specific),

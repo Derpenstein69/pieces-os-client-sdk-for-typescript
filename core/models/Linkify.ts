@@ -52,27 +52,27 @@ import {
 
 /**
  * This is the incoming linkify model.
- * 
+ *
  * if access is PRIVATE then please provide and array of users to enable the link for.
- * 
+ *
  * @export
  * @interface Linkify
  */
 export interface Linkify {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Linkify
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Seed}
      * @memberof Linkify
      */
     seed?: Seed;
     /**
-     * 
+     *
      * @type {Asset}
      * @memberof Linkify
      */
@@ -84,13 +84,13 @@ export interface Linkify {
      */
     users?: Array<SeededUser>;
     /**
-     * 
+     *
      * @type {AccessEnum}
      * @memberof Linkify
      */
     access: AccessEnum;
     /**
-     * 
+     *
      * @type {SeededDistributions}
      * @memberof Linkify
      */
@@ -107,16 +107,33 @@ export function instanceOfLinkify(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Linkify}
+ */
 export function LinkifyFromJSON(json: any): Linkify {
     return LinkifyFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Linkify}
+ */
 export function LinkifyFromJSONTyped(json: any, ignoreDiscriminator: boolean): Linkify {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'seed': !exists(json, 'seed') ? undefined : SeedFromJSON(json['seed']),
         'asset': !exists(json, 'asset') ? undefined : AssetFromJSON(json['asset']),
@@ -126,6 +143,14 @@ export function LinkifyFromJSONTyped(json: any, ignoreDiscriminator: boolean): L
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(Linkify | null)} [value]
+ * @returns {*}
+ */
 export function LinkifyToJSON(value?: Linkify | null): any {
     if (value === undefined) {
         return undefined;
@@ -134,7 +159,7 @@ export function LinkifyToJSON(value?: Linkify | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'seed': SeedToJSON(value.seed),
         'asset': AssetToJSON(value.asset),

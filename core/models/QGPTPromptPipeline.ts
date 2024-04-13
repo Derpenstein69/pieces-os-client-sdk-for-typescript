@@ -33,32 +33,32 @@ import {
 } from './QGPTTaskPipeline';
 
 /**
- * This is a model related to switching between different prompts based on if we are dealing with 
+ * This is a model related to switching between different prompts based on if we are dealing with
  * various tasks or if we are attempting to converse with LLMs via conversation.
- * 
+ *
  * You will have 2 options-
- * 
+ *
  * 1) task- This is specifically for 1 off task operations for instance explaning a bit of code
- * 2) conversation- This is specifically for conversing with our LLMs, will provide better results && high fedility 
+ * 2) conversation- This is specifically for conversing with our LLMs, will provide better results && high fedility
  *               responses for instance contextualize code conversations.
  * @export
  * @interface QGPTPromptPipeline
  */
 export interface QGPTPromptPipeline {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTPromptPipeline
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {QGPTTaskPipeline}
      * @memberof QGPTPromptPipeline
      */
     task?: QGPTTaskPipeline;
     /**
-     * 
+     *
      * @type {QGPTConversationPipeline}
      * @memberof QGPTPromptPipeline
      */
@@ -74,22 +74,47 @@ export function instanceOfQGPTPromptPipeline(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTPromptPipeline}
+ */
 export function QGPTPromptPipelineFromJSON(json: any): QGPTPromptPipeline {
     return QGPTPromptPipelineFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTPromptPipeline}
+ */
 export function QGPTPromptPipelineFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTPromptPipeline {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'task': !exists(json, 'task') ? undefined : QGPTTaskPipelineFromJSON(json['task']),
         'conversation': !exists(json, 'conversation') ? undefined : QGPTConversationPipelineFromJSON(json['conversation']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTPromptPipeline | null)} [value]
+ * @returns {*}
+ */
 export function QGPTPromptPipelineToJSON(value?: QGPTPromptPipeline | null): any {
     if (value === undefined) {
         return undefined;
@@ -98,7 +123,7 @@ export function QGPTPromptPipelineToJSON(value?: QGPTPromptPipeline | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'task': QGPTTaskPipelineToJSON(value.task),
         'conversation': QGPTConversationPipelineToJSON(value.conversation),

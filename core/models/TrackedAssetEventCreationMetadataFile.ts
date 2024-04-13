@@ -48,22 +48,47 @@ export function instanceOfTrackedAssetEventCreationMetadataFile(value: object): 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedAssetEventCreationMetadataFile}
+ */
 export function TrackedAssetEventCreationMetadataFileFromJSON(json: any): TrackedAssetEventCreationMetadataFile {
     return TrackedAssetEventCreationMetadataFileFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedAssetEventCreationMetadataFile}
+ */
 export function TrackedAssetEventCreationMetadataFileFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedAssetEventCreationMetadataFile {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'keyboard': !exists(json, 'keyboard') ? undefined : json['keyboard'],
         'dragAndDrop': !exists(json, 'drag_and_drop') ? undefined : json['drag_and_drop'],
         'interaction': !exists(json, 'interaction') ? undefined : json['interaction'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TrackedAssetEventCreationMetadataFile | null)} [value]
+ * @returns {*}
+ */
 export function TrackedAssetEventCreationMetadataFileToJSON(value?: TrackedAssetEventCreationMetadataFile | null): any {
     if (value === undefined) {
         return undefined;
@@ -72,7 +97,7 @@ export function TrackedAssetEventCreationMetadataFileToJSON(value?: TrackedAsset
         return null;
     }
     return {
-        
+
         'keyboard': value.keyboard,
         'drag_and_drop': value.dragAndDrop,
         'interaction': value.interaction,

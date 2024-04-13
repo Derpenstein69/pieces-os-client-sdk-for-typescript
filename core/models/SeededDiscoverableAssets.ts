@@ -39,7 +39,7 @@ import {
  */
 export interface SeededDiscoverableAssets {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededDiscoverableAssets
      */
@@ -57,7 +57,7 @@ export interface SeededDiscoverableAssets {
      */
     iterable: Array<SeededDiscoverableAsset>;
     /**
-     * 
+     *
      * @type {TLPDirectedDiscoveryFilters}
      * @memberof SeededDiscoverableAssets
      */
@@ -75,16 +75,33 @@ export function instanceOfSeededDiscoverableAssets(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededDiscoverableAssets}
+ */
 export function SeededDiscoverableAssetsFromJSON(json: any): SeededDiscoverableAssets {
     return SeededDiscoverableAssetsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededDiscoverableAssets}
+ */
 export function SeededDiscoverableAssetsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededDiscoverableAssets {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'application': json['application'],
         'iterable': ((json['iterable'] as Array<any>).map(SeededDiscoverableAssetFromJSON)),
@@ -92,6 +109,14 @@ export function SeededDiscoverableAssetsFromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededDiscoverableAssets | null)} [value]
+ * @returns {*}
+ */
 export function SeededDiscoverableAssetsToJSON(value?: SeededDiscoverableAssets | null): any {
     if (value === undefined) {
         return undefined;
@@ -100,7 +125,7 @@ export function SeededDiscoverableAssetsToJSON(value?: SeededDiscoverableAssets 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'application': value.application,
         'iterable': ((value.iterable as Array<any>).map(SeededDiscoverableAssetToJSON)),

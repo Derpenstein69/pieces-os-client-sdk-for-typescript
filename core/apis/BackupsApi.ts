@@ -31,21 +31,69 @@ import {
     SeededBackupToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupsCreateNewBackupRequest
+ * @typedef {BackupsCreateNewBackupRequest}
+ */
 export interface BackupsCreateNewBackupRequest {
-    seededBackup?: SeededBackup;
-}
-
-export interface BackupsCreateNewBackupStreamedRequest {
-    seededBackup?: SeededBackup;
-}
-
-export interface BackupsDeleteSpecificBackupRequest {
-    backup: string;
-    backup2?: Backup;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededBackup}
+ */
+seededBackup?: SeededBackup;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupsCreateNewBackupStreamedRequest
+ * @typedef {BackupsCreateNewBackupStreamedRequest}
+ */
+export interface BackupsCreateNewBackupStreamedRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededBackup}
+ */
+seededBackup?: SeededBackup;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface BackupsDeleteSpecificBackupRequest
+ * @typedef {BackupsDeleteSpecificBackupRequest}
+ */
+export interface BackupsDeleteSpecificBackupRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+backup: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Backup}
+ */
+backup2?: Backup;
+}
+
+/**
+ *
  */
 export class BackupsApi extends runtime.BaseAPI {
 

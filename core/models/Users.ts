@@ -33,13 +33,13 @@ import {
  */
 export interface Users {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Users
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<UserProfile>}
      * @memberof Users
      */
@@ -55,21 +55,46 @@ export function instanceOfUsers(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Users}
+ */
 export function UsersFromJSON(json: any): Users {
     return UsersFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Users}
+ */
 export function UsersFromJSONTyped(json: any, ignoreDiscriminator: boolean): Users {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': !exists(json, 'iterable') ? undefined : ((json['iterable'] as Array<any>).map(UserProfileFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(Users | null)} [value]
+ * @returns {*}
+ */
 export function UsersToJSON(value?: Users | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function UsersToJSON(value?: Users | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': value.iterable === undefined ? undefined : ((value.iterable as Array<any>).map(UserProfileToJSON)),
     };

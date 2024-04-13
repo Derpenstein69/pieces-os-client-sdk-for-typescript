@@ -25,33 +25,133 @@ import {
     WorkstreamEventToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamEventAssociateWorkstreamSummaryRequest
+ * @typedef {WorkstreamEventAssociateWorkstreamSummaryRequest}
+ */
 export interface WorkstreamEventAssociateWorkstreamSummaryRequest {
-    workstreamEvent: string;
-    workstreamSummary: string;
-}
-
-export interface WorkstreamEventDisassociateWorkstreamSummaryRequest {
-    workstreamEvent: string;
-    workstreamSummary: string;
-}
-
-export interface WorkstreamEventScoresIncrementRequest {
-    workstreamEvent: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface WorkstreamEventUpdateRequest {
-    transferables?: boolean;
-    workstreamEvent?: WorkstreamEvent;
-}
-
-export interface WorkstreamEventsSpecificWorkstreamEventSnapshotRequest {
-    workstreamEvent: string;
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamEvent: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamEventDisassociateWorkstreamSummaryRequest
+ * @typedef {WorkstreamEventDisassociateWorkstreamSummaryRequest}
+ */
+export interface WorkstreamEventDisassociateWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamEvent: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamEventScoresIncrementRequest
+ * @typedef {WorkstreamEventScoresIncrementRequest}
+ */
+export interface WorkstreamEventScoresIncrementRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamEvent: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamEventUpdateRequest
+ * @typedef {WorkstreamEventUpdateRequest}
+ */
+export interface WorkstreamEventUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?WorkstreamEvent}
+ */
+workstreamEvent?: WorkstreamEvent;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamEventsSpecificWorkstreamEventSnapshotRequest
+ * @typedef {WorkstreamEventsSpecificWorkstreamEventSnapshotRequest}
+ */
+export interface WorkstreamEventsSpecificWorkstreamEventSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamEvent: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class WorkstreamEventApi extends runtime.BaseAPI {
 

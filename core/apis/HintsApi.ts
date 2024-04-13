@@ -28,16 +28,44 @@ import {
     SeededHintToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface HintsCreateNewHintRequest
+ * @typedef {HintsCreateNewHintRequest}
+ */
 export interface HintsCreateNewHintRequest {
-    seededHint?: SeededHint;
-}
-
-export interface HintsDeleteSpecificHintRequest {
-    hint: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededHint}
+ */
+seededHint?: SeededHint;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface HintsDeleteSpecificHintRequest
+ * @typedef {HintsDeleteSpecificHintRequest}
+ */
+export interface HintsDeleteSpecificHintRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+hint: string;
+}
+
+/**
+ *
  */
 export class HintsApi extends runtime.BaseAPI {
 

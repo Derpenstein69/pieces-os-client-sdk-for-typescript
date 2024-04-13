@@ -28,20 +28,62 @@ import {
     UsersToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface AuthenticateFromOauthTokenRequest
+ * @typedef {AuthenticateFromOauthTokenRequest}
+ */
 export interface AuthenticateFromOauthTokenRequest {
-    oAuthToken?: OAuthToken;
-}
-
-export interface UsersDisconnectUserRequest {
-    user: string;
-}
-
-export interface UsersSpecificUserSnapshotRequest {
-    user: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?OAuthToken}
+ */
+oAuthToken?: OAuthToken;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface UsersDisconnectUserRequest
+ * @typedef {UsersDisconnectUserRequest}
+ */
+export interface UsersDisconnectUserRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+user: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface UsersSpecificUserSnapshotRequest
+ * @typedef {UsersSpecificUserSnapshotRequest}
+ */
+export interface UsersSpecificUserSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+user: string;
+}
+
+/**
+ *
  */
 export class UsersApi extends runtime.BaseAPI {
 

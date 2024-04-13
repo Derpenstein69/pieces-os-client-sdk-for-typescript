@@ -39,7 +39,7 @@ import {
  */
 export interface SeededAssetTag {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededAssetTag
      */
@@ -51,13 +51,13 @@ export interface SeededAssetTag {
      */
     text: string;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededAssetTag
      */
     mechanism?: MechanismEnum;
     /**
-     * 
+     *
      * @type {TagCategoryEnum}
      * @memberof SeededAssetTag
      */
@@ -74,16 +74,33 @@ export function instanceOfSeededAssetTag(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededAssetTag}
+ */
 export function SeededAssetTagFromJSON(json: any): SeededAssetTag {
     return SeededAssetTagFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededAssetTag}
+ */
 export function SeededAssetTagFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededAssetTag {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'text': json['text'],
         'mechanism': !exists(json, 'mechanism') ? undefined : MechanismEnumFromJSON(json['mechanism']),
@@ -91,6 +108,14 @@ export function SeededAssetTagFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededAssetTag | null)} [value]
+ * @returns {*}
+ */
 export function SeededAssetTagToJSON(value?: SeededAssetTag | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function SeededAssetTagToJSON(value?: SeededAssetTag | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'text': value.text,
         'mechanism': MechanismEnumToJSON(value.mechanism),

@@ -22,34 +22,34 @@ import {
 
 /**
  * This will describe the MaxTokens for an MLModel
- * 
+ *
  * total is required.
- * 
+ *
  * iff there is a differentiator with inputs/outputs, then we can also provide those as well.
  * @export
  * @interface ModelMaxTokens
  */
 export interface ModelMaxTokens {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ModelMaxTokens
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ModelMaxTokens
      */
     total: number | null;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ModelMaxTokens
      */
     input?: number | null;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ModelMaxTokens
      */
@@ -66,16 +66,33 @@ export function instanceOfModelMaxTokens(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ModelMaxTokens}
+ */
 export function ModelMaxTokensFromJSON(json: any): ModelMaxTokens {
     return ModelMaxTokensFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ModelMaxTokens}
+ */
 export function ModelMaxTokensFromJSONTyped(json: any, ignoreDiscriminator: boolean): ModelMaxTokens {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'total': json['total'],
         'input': !exists(json, 'input') ? undefined : json['input'],
@@ -83,6 +100,14 @@ export function ModelMaxTokensFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(ModelMaxTokens | null)} [value]
+ * @returns {*}
+ */
 export function ModelMaxTokensToJSON(value?: ModelMaxTokens | null): any {
     if (value === undefined) {
         return undefined;
@@ -91,7 +116,7 @@ export function ModelMaxTokensToJSON(value?: ModelMaxTokens | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'total': value.total,
         'input': value.input,

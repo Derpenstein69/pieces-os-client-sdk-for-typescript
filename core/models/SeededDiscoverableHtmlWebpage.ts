@@ -21,20 +21,20 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface SeededDiscoverableHtmlWebpage
  */
 export interface SeededDiscoverableHtmlWebpage {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededDiscoverableHtmlWebpage
      */
     schema?: EmbeddedModelSchema;
     /**
      * The route of the page
-     * 
+     *
      * @type {string}
      * @memberof SeededDiscoverableHtmlWebpage
      */
@@ -58,22 +58,47 @@ export function instanceOfSeededDiscoverableHtmlWebpage(value: object): boolean 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededDiscoverableHtmlWebpage}
+ */
 export function SeededDiscoverableHtmlWebpageFromJSON(json: any): SeededDiscoverableHtmlWebpage {
     return SeededDiscoverableHtmlWebpageFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededDiscoverableHtmlWebpage}
+ */
 export function SeededDiscoverableHtmlWebpageFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededDiscoverableHtmlWebpage {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'url': json['url'],
         'page': json['page'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededDiscoverableHtmlWebpage | null)} [value]
+ * @returns {*}
+ */
 export function SeededDiscoverableHtmlWebpageToJSON(value?: SeededDiscoverableHtmlWebpage | null): any {
     if (value === undefined) {
         return undefined;
@@ -82,7 +107,7 @@ export function SeededDiscoverableHtmlWebpageToJSON(value?: SeededDiscoverableHt
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'url': value.url,
         'page': value.page,

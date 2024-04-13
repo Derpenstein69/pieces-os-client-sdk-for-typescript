@@ -33,19 +33,19 @@ import {
  */
 export interface ReferencedSensitive {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedSensitive
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedSensitive
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedSensitive}
      * @memberof ReferencedSensitive
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedSensitive(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedSensitive}
+ */
 export function ReferencedSensitiveFromJSON(json: any): ReferencedSensitive {
     return ReferencedSensitiveFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedSensitive}
+ */
 export function ReferencedSensitiveFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedSensitive {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedSensitiveFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedSensitive | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedSensitiveToJSON(value?: ReferencedSensitive | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedSensitiveToJSON(value?: ReferencedSensitive | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedSensitiveToJSON(value.reference),

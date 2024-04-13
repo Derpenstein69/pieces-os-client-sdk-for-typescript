@@ -28,7 +28,7 @@ import {
 
 /**
  * This model is used for the output of the /qgpt/related/persons endpoint.
- * 
+ *
  * Explanations here is a custom object with key value pairs,
  * when the key is the personUUId and the value is an explanation as to why this person was reccommended.
  * @export
@@ -36,13 +36,13 @@ import {
  */
 export interface QGPTPersonsRelatedOutput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTPersonsRelatedOutput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Persons}
      * @memberof QGPTPersonsRelatedOutput
      */
@@ -65,22 +65,47 @@ export function instanceOfQGPTPersonsRelatedOutput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTPersonsRelatedOutput}
+ */
 export function QGPTPersonsRelatedOutputFromJSON(json: any): QGPTPersonsRelatedOutput {
     return QGPTPersonsRelatedOutputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTPersonsRelatedOutput}
+ */
 export function QGPTPersonsRelatedOutputFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTPersonsRelatedOutput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'persons': PersonsFromJSON(json['persons']),
         'explanations': !exists(json, 'explanations') ? undefined : json['explanations'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTPersonsRelatedOutput | null)} [value]
+ * @returns {*}
+ */
 export function QGPTPersonsRelatedOutputToJSON(value?: QGPTPersonsRelatedOutput | null): any {
     if (value === undefined) {
         return undefined;
@@ -89,7 +114,7 @@ export function QGPTPersonsRelatedOutputToJSON(value?: QGPTPersonsRelatedOutput 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'persons': PersonsToJSON(value.persons),
         'explanations': value.explanations,

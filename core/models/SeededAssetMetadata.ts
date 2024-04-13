@@ -70,14 +70,14 @@ import {
 
 /**
  * This is optional metadata sent with the SeededAsset and other SeededAssets ie (UE, Jetbrains...)
- * 
+ *
  * Note: if a user/develop didnt explicitly state a mechanism we will default to manual(user Driven only)
  * @export
  * @interface SeededAssetMetadata
  */
 export interface SeededAssetMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededAssetMetadata
      */
@@ -89,7 +89,7 @@ export interface SeededAssetMetadata {
      */
     name?: string;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededAssetMetadata
      */
@@ -101,37 +101,37 @@ export interface SeededAssetMetadata {
      */
     tags?: Array<SeededAssetTag>;
     /**
-     * 
+     *
      * @type {Array<SeededAssetWebsite>}
      * @memberof SeededAssetMetadata
      */
     websites?: Array<SeededAssetWebsite>;
     /**
-     * 
+     *
      * @type {Array<SeededAssetSensitive>}
      * @memberof SeededAssetMetadata
      */
     sensitives?: Array<SeededAssetSensitive>;
     /**
-     * 
+     *
      * @type {Array<SeededPerson>}
      * @memberof SeededAssetMetadata
      */
     persons?: Array<SeededPerson>;
     /**
-     * 
+     *
      * @type {Array<SeededAnnotation>}
      * @memberof SeededAssetMetadata
      */
     annotations?: Array<SeededAnnotation>;
     /**
-     * 
+     *
      * @type {Array<SeededHint>}
      * @memberof SeededAssetMetadata
      */
     hints?: Array<SeededHint>;
     /**
-     * 
+     *
      * @type {Array<SeededAnchor>}
      * @memberof SeededAssetMetadata
      */
@@ -147,16 +147,33 @@ export function instanceOfSeededAssetMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededAssetMetadata}
+ */
 export function SeededAssetMetadataFromJSON(json: any): SeededAssetMetadata {
     return SeededAssetMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededAssetMetadata}
+ */
 export function SeededAssetMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededAssetMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'name': !exists(json, 'name') ? undefined : json['name'],
         'mechanism': !exists(json, 'mechanism') ? undefined : MechanismEnumFromJSON(json['mechanism']),
@@ -170,6 +187,14 @@ export function SeededAssetMetadataFromJSONTyped(json: any, ignoreDiscriminator:
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededAssetMetadata | null)} [value]
+ * @returns {*}
+ */
 export function SeededAssetMetadataToJSON(value?: SeededAssetMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -178,7 +203,7 @@ export function SeededAssetMetadataToJSON(value?: SeededAssetMetadata | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'name': value.name,
         'mechanism': MechanismEnumToJSON(value.mechanism),

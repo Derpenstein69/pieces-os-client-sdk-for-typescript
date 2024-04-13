@@ -15,12 +15,26 @@
 
 import * as runtime from '../runtime';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface HtmlShareRequest
+ * @typedef {HtmlShareRequest}
+ */
 export interface HtmlShareRequest {
-    p: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+p: string;
 }
 
 /**
- * 
+ *
  */
 export class PieceApi extends runtime.BaseAPI {
 

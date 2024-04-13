@@ -27,7 +27,7 @@ import {
 } from './Model';
 
 /**
- * 
+ *
  * @export
  * @interface Embedding
  */
@@ -39,25 +39,25 @@ export interface Embedding {
      */
     raw: Array<number>;
     /**
-     * 
+     *
      * @type {Model}
      * @memberof Embedding
      */
     model: Model;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Embedding
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Embedding
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Embedding
      */
@@ -77,16 +77,33 @@ export function instanceOfEmbedding(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Embedding}
+ */
 export function EmbeddingFromJSON(json: any): Embedding {
     return EmbeddingFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Embedding}
+ */
 export function EmbeddingFromJSONTyped(json: any, ignoreDiscriminator: boolean): Embedding {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'raw': json['raw'],
         'model': ModelFromJSON(json['model']),
         'created': GroupedTimestampFromJSON(json['created']),
@@ -95,6 +112,14 @@ export function EmbeddingFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(Embedding | null)} [value]
+ * @returns {*}
+ */
 export function EmbeddingToJSON(value?: Embedding | null): any {
     if (value === undefined) {
         return undefined;
@@ -103,7 +128,7 @@ export function EmbeddingToJSON(value?: Embedding | null): any {
         return null;
     }
     return {
-        
+
         'raw': value.raw,
         'model': ModelToJSON(value.model),
         'created': GroupedTimestampToJSON(value.created),

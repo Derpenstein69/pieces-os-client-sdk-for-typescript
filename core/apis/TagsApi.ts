@@ -34,25 +34,87 @@ import {
     TagsToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface TagsCreateNewTagRequest
+ * @typedef {TagsCreateNewTagRequest}
+ */
 export interface TagsCreateNewTagRequest {
-    transferables?: boolean;
-    seededTag?: SeededTag;
-}
-
-export interface TagsDeleteSpecificTagRequest {
-    tag: string;
-}
-
-export interface TagsExistsRequest {
-    existentMetadata?: ExistentMetadata;
-}
-
-export interface TagsSnapshotRequest {
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?SeededTag}
+ */
+seededTag?: SeededTag;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface TagsDeleteSpecificTagRequest
+ * @typedef {TagsDeleteSpecificTagRequest}
+ */
+export interface TagsDeleteSpecificTagRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+tag: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface TagsExistsRequest
+ * @typedef {TagsExistsRequest}
+ */
+export interface TagsExistsRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?ExistentMetadata}
+ */
+existentMetadata?: ExistentMetadata;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface TagsSnapshotRequest
+ * @typedef {TagsSnapshotRequest}
+ */
+export interface TagsSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class TagsApi extends runtime.BaseAPI {
 

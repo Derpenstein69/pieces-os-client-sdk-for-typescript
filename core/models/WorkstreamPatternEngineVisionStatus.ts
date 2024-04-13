@@ -28,28 +28,28 @@ import {
 
 /**
  * activation: can be active for forever w/ continous true, or it can be activated for the next couple hours
- * 
+ *
  * deactivation: here can be deactivated for forever w/ continuous true, or it can be deactivated for the next couple hours
- * 
+ *
  * Note: one or the other will be set and both are nullable.
  * @export
  * @interface WorkstreamPatternEngineVisionStatus
  */
 export interface WorkstreamPatternEngineVisionStatus {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof WorkstreamPatternEngineVisionStatus
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {AnonymousTemporalRange}
      * @memberof WorkstreamPatternEngineVisionStatus
      */
     activation?: AnonymousTemporalRange;
     /**
-     * 
+     *
      * @type {AnonymousTemporalRange}
      * @memberof WorkstreamPatternEngineVisionStatus
      */
@@ -65,22 +65,47 @@ export function instanceOfWorkstreamPatternEngineVisionStatus(value: object): bo
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {WorkstreamPatternEngineVisionStatus}
+ */
 export function WorkstreamPatternEngineVisionStatusFromJSON(json: any): WorkstreamPatternEngineVisionStatus {
     return WorkstreamPatternEngineVisionStatusFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {WorkstreamPatternEngineVisionStatus}
+ */
 export function WorkstreamPatternEngineVisionStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): WorkstreamPatternEngineVisionStatus {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'activation': !exists(json, 'activation') ? undefined : AnonymousTemporalRangeFromJSON(json['activation']),
         'deactivation': !exists(json, 'deactivation') ? undefined : AnonymousTemporalRangeFromJSON(json['deactivation']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(WorkstreamPatternEngineVisionStatus | null)} [value]
+ * @returns {*}
+ */
 export function WorkstreamPatternEngineVisionStatusToJSON(value?: WorkstreamPatternEngineVisionStatus | null): any {
     if (value === undefined) {
         return undefined;
@@ -89,7 +114,7 @@ export function WorkstreamPatternEngineVisionStatusToJSON(value?: WorkstreamPatt
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'activation': AnonymousTemporalRangeToJSON(value.activation),
         'deactivation': AnonymousTemporalRangeToJSON(value.deactivation),

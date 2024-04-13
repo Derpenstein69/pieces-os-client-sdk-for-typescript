@@ -27,19 +27,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface AssetFilterPhraseOptions
  */
 export interface AssetFilterPhraseOptions {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AssetFilterPhraseOptions
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {AnnotationTypeEnum}
      * @memberof AssetFilterPhraseOptions
      */
@@ -55,21 +55,46 @@ export function instanceOfAssetFilterPhraseOptions(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AssetFilterPhraseOptions}
+ */
 export function AssetFilterPhraseOptionsFromJSON(json: any): AssetFilterPhraseOptions {
     return AssetFilterPhraseOptionsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AssetFilterPhraseOptions}
+ */
 export function AssetFilterPhraseOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssetFilterPhraseOptions {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'annotation': !exists(json, 'annotation') ? undefined : AnnotationTypeEnumFromJSON(json['annotation']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(AssetFilterPhraseOptions | null)} [value]
+ * @returns {*}
+ */
 export function AssetFilterPhraseOptionsToJSON(value?: AssetFilterPhraseOptions | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function AssetFilterPhraseOptionsToJSON(value?: AssetFilterPhraseOptions 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'annotation': AnnotationTypeEnumToJSON(value.annotation),
     };

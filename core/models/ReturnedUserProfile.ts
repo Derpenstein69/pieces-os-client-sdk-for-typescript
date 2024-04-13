@@ -33,13 +33,13 @@ import {
  */
 export interface ReturnedUserProfile {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReturnedUserProfile
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {UserProfile}
      * @memberof ReturnedUserProfile
      */
@@ -55,21 +55,46 @@ export function instanceOfReturnedUserProfile(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReturnedUserProfile}
+ */
 export function ReturnedUserProfileFromJSON(json: any): ReturnedUserProfile {
     return ReturnedUserProfileFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReturnedUserProfile}
+ */
 export function ReturnedUserProfileFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReturnedUserProfile {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'user': !exists(json, 'user') ? undefined : UserProfileFromJSON(json['user']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(ReturnedUserProfile | null)} [value]
+ * @returns {*}
+ */
 export function ReturnedUserProfileToJSON(value?: ReturnedUserProfile | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function ReturnedUserProfileToJSON(value?: ReturnedUserProfile | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'user': UserProfileToJSON(value.user),
     };

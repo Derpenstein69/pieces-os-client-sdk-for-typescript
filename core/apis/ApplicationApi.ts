@@ -22,12 +22,26 @@ import {
     ApplicationToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ApplicationUpdateRequest
+ * @typedef {ApplicationUpdateRequest}
+ */
 export interface ApplicationUpdateRequest {
-    application?: Application;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Application}
+ */
+application?: Application;
 }
 
 /**
- * 
+ *
  */
 export class ApplicationApi extends runtime.BaseAPI {
 

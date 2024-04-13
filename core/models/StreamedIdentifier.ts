@@ -33,13 +33,13 @@ import {
  */
 export interface StreamedIdentifier {
     /**
-     * 
+     *
      * @type {ReferencedAsset}
      * @memberof StreamedIdentifier
      */
     asset?: ReferencedAsset;
     /**
-     * 
+     *
      * @type {ReferencedConversation}
      * @memberof StreamedIdentifier
      */
@@ -61,22 +61,47 @@ export function instanceOfStreamedIdentifier(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {StreamedIdentifier}
+ */
 export function StreamedIdentifierFromJSON(json: any): StreamedIdentifier {
     return StreamedIdentifierFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {StreamedIdentifier}
+ */
 export function StreamedIdentifierFromJSONTyped(json: any, ignoreDiscriminator: boolean): StreamedIdentifier {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'asset': !exists(json, 'asset') ? undefined : ReferencedAssetFromJSON(json['asset']),
         'conversation': !exists(json, 'conversation') ? undefined : ReferencedConversationFromJSON(json['conversation']),
         'deleted': !exists(json, 'deleted') ? undefined : json['deleted'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(StreamedIdentifier | null)} [value]
+ * @returns {*}
+ */
 export function StreamedIdentifierToJSON(value?: StreamedIdentifier | null): any {
     if (value === undefined) {
         return undefined;
@@ -85,7 +110,7 @@ export function StreamedIdentifierToJSON(value?: StreamedIdentifier | null): any
         return null;
     }
     return {
-        
+
         'asset': ReferencedAssetToJSON(value.asset),
         'conversation': ReferencedConversationToJSON(value.conversation),
         'deleted': value.deleted,

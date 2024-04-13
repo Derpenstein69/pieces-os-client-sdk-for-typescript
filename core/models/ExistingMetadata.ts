@@ -41,19 +41,19 @@ import {
  */
 export interface ExistingMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ExistingMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ReferencedWebsite}
      * @memberof ExistingMetadata
      */
     website?: ReferencedWebsite;
     /**
-     * 
+     *
      * @type {ReferencedTag}
      * @memberof ExistingMetadata
      */
@@ -69,22 +69,47 @@ export function instanceOfExistingMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExistingMetadata}
+ */
 export function ExistingMetadataFromJSON(json: any): ExistingMetadata {
     return ExistingMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExistingMetadata}
+ */
 export function ExistingMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExistingMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'website': !exists(json, 'website') ? undefined : ReferencedWebsiteFromJSON(json['website']),
         'tag': !exists(json, 'tag') ? undefined : ReferencedTagFromJSON(json['tag']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExistingMetadata | null)} [value]
+ * @returns {*}
+ */
 export function ExistingMetadataToJSON(value?: ExistingMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -93,7 +118,7 @@ export function ExistingMetadataToJSON(value?: ExistingMetadata | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'website': ReferencedWebsiteToJSON(value.website),
         'tag': ReferencedTagToJSON(value.tag),

@@ -46,62 +46,62 @@ import {
 
 /**
  * ** in the future, consider adding an optional bool's called nextAnd, nextOr which will say that the next filter will be  AND behavor or OR behavior.
- * 
+ *
  * "operations": here is is an optional property to allow or behavior,(we will only allow 1 level deep of or's), if or is not passed in then it is just simply ignored. If or is passed in then we will be or'd together with the top level filter and considered extras. default behavior for operations is and, however yoour can specifiy OR operations as well.
  * @export
  * @interface AssetFilter
  */
 export interface AssetFilter {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AssetFilter
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ClassificationSpecificEnum}
      * @memberof AssetFilter
      */
     classification?: ClassificationSpecificEnum;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof AssetFilter
      */
     tags?: Array<string>;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof AssetFilter
      */
     websites?: Array<string>;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof AssetFilter
      */
     persons?: Array<string>;
     /**
-     * 
+     *
      * @type {AssetFilterPhrase}
      * @memberof AssetFilter
      */
     phrase?: AssetFilterPhrase;
     /**
-     * 
+     *
      * @type {AssetFilterTimestamp}
      * @memberof AssetFilter
      */
     created?: AssetFilterTimestamp;
     /**
-     * 
+     *
      * @type {AssetFilterTimestamp}
      * @memberof AssetFilter
      */
     updated?: AssetFilterTimestamp;
     /**
-     * 
+     *
      * @type {AssetFilters}
      * @memberof AssetFilter
      */
@@ -117,16 +117,33 @@ export function instanceOfAssetFilter(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AssetFilter}
+ */
 export function AssetFilterFromJSON(json: any): AssetFilter {
     return AssetFilterFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AssetFilter}
+ */
 export function AssetFilterFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssetFilter {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'classification': !exists(json, 'classification') ? undefined : ClassificationSpecificEnumFromJSON(json['classification']),
         'tags': !exists(json, 'tags') ? undefined : json['tags'],
@@ -139,6 +156,14 @@ export function AssetFilterFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(AssetFilter | null)} [value]
+ * @returns {*}
+ */
 export function AssetFilterToJSON(value?: AssetFilter | null): any {
     if (value === undefined) {
         return undefined;
@@ -147,7 +172,7 @@ export function AssetFilterToJSON(value?: AssetFilter | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'classification': ClassificationSpecificEnumToJSON(value.classification),
         'tags': value.tags,

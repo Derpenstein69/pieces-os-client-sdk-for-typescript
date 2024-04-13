@@ -34,28 +34,28 @@ import {
 
 /**
  * This the the MlAnalysis Object, that will go on a format.
- * 
+ *
  * this will hold all the different analysis models!
- * 
+ *
  * ** keep format just a uuid for now **
  * @export
  * @interface Analysis
  */
 export interface Analysis {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Analysis
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {CodeAnalysis}
      * @memberof Analysis
      */
     code?: CodeAnalysis;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Analysis
      */
@@ -67,7 +67,7 @@ export interface Analysis {
      */
     format: string;
     /**
-     * 
+     *
      * @type {ImageAnalysis}
      * @memberof Analysis
      */
@@ -85,16 +85,33 @@ export function instanceOfAnalysis(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Analysis}
+ */
 export function AnalysisFromJSON(json: any): Analysis {
     return AnalysisFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Analysis}
+ */
 export function AnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): Analysis {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'code': !exists(json, 'code') ? undefined : CodeAnalysisFromJSON(json['code']),
         'id': json['id'],
@@ -103,6 +120,14 @@ export function AnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(Analysis | null)} [value]
+ * @returns {*}
+ */
 export function AnalysisToJSON(value?: Analysis | null): any {
     if (value === undefined) {
         return undefined;
@@ -111,7 +136,7 @@ export function AnalysisToJSON(value?: Analysis | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'code': CodeAnalysisToJSON(value.code),
         'id': value.id,

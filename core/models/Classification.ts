@@ -45,25 +45,25 @@ import {
  */
 export interface Classification {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Classification
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ClassificationGenericEnum}
      * @memberof Classification
      */
     generic: ClassificationGenericEnum;
     /**
-     * 
+     *
      * @type {ClassificationSpecificEnum}
      * @memberof Classification
      */
     specific: ClassificationSpecificEnum;
     /**
-     * 
+     *
      * @type {ClassificationRenderingEnum}
      * @memberof Classification
      */
@@ -81,16 +81,33 @@ export function instanceOfClassification(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Classification}
+ */
 export function ClassificationFromJSON(json: any): Classification {
     return ClassificationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Classification}
+ */
 export function ClassificationFromJSONTyped(json: any, ignoreDiscriminator: boolean): Classification {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'generic': ClassificationGenericEnumFromJSON(json['generic']),
         'specific': ClassificationSpecificEnumFromJSON(json['specific']),
@@ -98,6 +115,14 @@ export function ClassificationFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Classification | null)} [value]
+ * @returns {*}
+ */
 export function ClassificationToJSON(value?: Classification | null): any {
     if (value === undefined) {
         return undefined;
@@ -106,7 +131,7 @@ export function ClassificationToJSON(value?: Classification | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'generic': ClassificationGenericEnumToJSON(value.generic),
         'specific': ClassificationSpecificEnumToJSON(value.specific),

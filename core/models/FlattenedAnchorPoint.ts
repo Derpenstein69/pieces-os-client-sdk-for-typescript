@@ -45,25 +45,25 @@ import {
 } from './Score';
 
 /**
- * 
+ *
  * @export
  * @interface FlattenedAnchorPoint
  */
 export interface FlattenedAnchorPoint {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedAnchorPoint
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedAnchorPoint
      */
     id: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof FlattenedAnchorPoint
      */
@@ -75,37 +75,37 @@ export interface FlattenedAnchorPoint {
      */
     fullpath: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedAnchorPoint
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedAnchorPoint
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedAnchorPoint
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {PlatformEnum}
      * @memberof FlattenedAnchorPoint
      */
     platform?: PlatformEnum;
     /**
-     * 
+     *
      * @type {ReferencedAnchor}
      * @memberof FlattenedAnchorPoint
      */
     anchor: ReferencedAnchor;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedAnchorPoint
      */
@@ -126,16 +126,33 @@ export function instanceOfFlattenedAnchorPoint(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedAnchorPoint}
+ */
 export function FlattenedAnchorPointFromJSON(json: any): FlattenedAnchorPoint {
     return FlattenedAnchorPointFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedAnchorPoint}
+ */
 export function FlattenedAnchorPointFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedAnchorPoint {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'verified': !exists(json, 'verified') ? undefined : json['verified'],
@@ -149,6 +166,14 @@ export function FlattenedAnchorPointFromJSONTyped(json: any, ignoreDiscriminator
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(FlattenedAnchorPoint | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedAnchorPointToJSON(value?: FlattenedAnchorPoint | null): any {
     if (value === undefined) {
         return undefined;
@@ -157,7 +182,7 @@ export function FlattenedAnchorPointToJSON(value?: FlattenedAnchorPoint | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'verified': value.verified,

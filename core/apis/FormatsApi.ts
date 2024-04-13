@@ -25,17 +25,51 @@ import {
     FormatsToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface FormatsSnapshotRequest
+ * @typedef {FormatsSnapshotRequest}
+ */
 export interface FormatsSnapshotRequest {
-    transferables?: boolean;
-}
-
-export interface FormatsSpecificFormatSnapshotRequest {
-    format: string;
-    transferable?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface FormatsSpecificFormatSnapshotRequest
+ * @typedef {FormatsSpecificFormatSnapshotRequest}
+ */
+export interface FormatsSpecificFormatSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+format: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferable?: boolean;
+}
+
+/**
+ *
  */
 export class FormatsApi extends runtime.BaseAPI {
 

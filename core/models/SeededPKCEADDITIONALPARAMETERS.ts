@@ -20,13 +20,13 @@ import { exists, mapValues } from '../runtime';
  */
 export interface SeededPKCEADDITIONALPARAMETERS {
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededPKCEADDITIONALPARAMETERS
      */
     accessType?: SeededPKCEADDITIONALPARAMETERSAccessTypeEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededPKCEADDITIONALPARAMETERS
      */
@@ -40,6 +40,13 @@ export interface SeededPKCEADDITIONALPARAMETERS {
 export const SeededPKCEADDITIONALPARAMETERSAccessTypeEnum = {
     Offline: 'offline'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @typedef {SeededPKCEADDITIONALPARAMETERSAccessTypeEnum}
+ */
 export type SeededPKCEADDITIONALPARAMETERSAccessTypeEnum = typeof SeededPKCEADDITIONALPARAMETERSAccessTypeEnum[keyof typeof SeededPKCEADDITIONALPARAMETERSAccessTypeEnum];
 
 /**
@@ -48,6 +55,13 @@ export type SeededPKCEADDITIONALPARAMETERSAccessTypeEnum = typeof SeededPKCEADDI
 export const SeededPKCEADDITIONALPARAMETERSDisplayEnum = {
     Popup: 'popup'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @typedef {SeededPKCEADDITIONALPARAMETERSDisplayEnum}
+ */
 export type SeededPKCEADDITIONALPARAMETERSDisplayEnum = typeof SeededPKCEADDITIONALPARAMETERSDisplayEnum[keyof typeof SeededPKCEADDITIONALPARAMETERSDisplayEnum];
 
 
@@ -60,21 +74,46 @@ export function instanceOfSeededPKCEADDITIONALPARAMETERS(value: object): boolean
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededPKCEADDITIONALPARAMETERS}
+ */
 export function SeededPKCEADDITIONALPARAMETERSFromJSON(json: any): SeededPKCEADDITIONALPARAMETERS {
     return SeededPKCEADDITIONALPARAMETERSFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededPKCEADDITIONALPARAMETERS}
+ */
 export function SeededPKCEADDITIONALPARAMETERSFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededPKCEADDITIONALPARAMETERS {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'accessType': !exists(json, 'access_type') ? undefined : json['access_type'],
         'display': !exists(json, 'display') ? undefined : json['display'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededPKCEADDITIONALPARAMETERS | null)} [value]
+ * @returns {*}
+ */
 export function SeededPKCEADDITIONALPARAMETERSToJSON(value?: SeededPKCEADDITIONALPARAMETERS | null): any {
     if (value === undefined) {
         return undefined;
@@ -83,7 +122,7 @@ export function SeededPKCEADDITIONALPARAMETERSToJSON(value?: SeededPKCEADDITIONA
         return null;
     }
     return {
-        
+
         'access_type': value.accessType,
         'display': value.display,
     };

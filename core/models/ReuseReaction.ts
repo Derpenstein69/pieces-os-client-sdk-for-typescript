@@ -27,13 +27,13 @@ import {
  */
 export interface ReuseReaction {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReuseReaction
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReuseReaction
      */
@@ -50,21 +50,46 @@ export function instanceOfReuseReaction(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReuseReaction}
+ */
 export function ReuseReactionFromJSON(json: any): ReuseReaction {
     return ReuseReactionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReuseReaction}
+ */
 export function ReuseReactionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReuseReaction {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': json['asset'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(ReuseReaction | null)} [value]
+ * @returns {*}
+ */
 export function ReuseReactionToJSON(value?: ReuseReaction | null): any {
     if (value === undefined) {
         return undefined;
@@ -73,7 +98,7 @@ export function ReuseReactionToJSON(value?: ReuseReaction | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': value.asset,
     };

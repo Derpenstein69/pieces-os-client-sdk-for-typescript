@@ -27,7 +27,7 @@ import {
  */
 export interface SeededTrackedAssetsEventMetadata {
     /**
-     * 
+     *
      * @type {TrackedAssetsEventSearchMetadata}
      * @memberof SeededTrackedAssetsEventMetadata
      */
@@ -43,20 +43,45 @@ export function instanceOfSeededTrackedAssetsEventMetadata(value: object): boole
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTrackedAssetsEventMetadata}
+ */
 export function SeededTrackedAssetsEventMetadataFromJSON(json: any): SeededTrackedAssetsEventMetadata {
     return SeededTrackedAssetsEventMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTrackedAssetsEventMetadata}
+ */
 export function SeededTrackedAssetsEventMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTrackedAssetsEventMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'search': !exists(json, 'search') ? undefined : TrackedAssetsEventSearchMetadataFromJSON(json['search']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededTrackedAssetsEventMetadata | null)} [value]
+ * @returns {*}
+ */
 export function SeededTrackedAssetsEventMetadataToJSON(value?: SeededTrackedAssetsEventMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -65,7 +90,7 @@ export function SeededTrackedAssetsEventMetadataToJSON(value?: SeededTrackedAsse
         return null;
     }
     return {
-        
+
         'search': TrackedAssetsEventSearchMetadataToJSON(value.search),
     };
 }

@@ -34,31 +34,119 @@ import {
     TrackedFormatEventToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface FormatAnalysisRequest
+ * @typedef {FormatAnalysisRequest}
+ */
 export interface FormatAnalysisRequest {
-    format: string;
-}
-
-export interface FormatReclassifyRequest {
-    transferable?: boolean;
-    formatReclassification?: FormatReclassification;
-}
-
-export interface FormatSnapshotRequest {
-    format: string;
-    transferable?: boolean;
-}
-
-export interface FormatUpdateValueRequest {
-    transferable?: boolean;
-    format?: Format;
-}
-
-export interface FormatUsageEventRequest {
-    seededTrackedFormatEvent?: SeededTrackedFormatEvent;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+format: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface FormatReclassifyRequest
+ * @typedef {FormatReclassifyRequest}
+ */
+export interface FormatReclassifyRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferable?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?FormatReclassification}
+ */
+formatReclassification?: FormatReclassification;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface FormatSnapshotRequest
+ * @typedef {FormatSnapshotRequest}
+ */
+export interface FormatSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+format: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferable?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface FormatUpdateValueRequest
+ * @typedef {FormatUpdateValueRequest}
+ */
+export interface FormatUpdateValueRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferable?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?Format}
+ */
+format?: Format;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface FormatUsageEventRequest
+ * @typedef {FormatUsageEventRequest}
+ */
+export interface FormatUsageEventRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededTrackedFormatEvent}
+ */
+seededTrackedFormatEvent?: SeededTrackedFormatEvent;
+}
+
+/**
+ *
  */
 export class FormatApi extends runtime.BaseAPI {
 

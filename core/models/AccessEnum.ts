@@ -14,24 +14,56 @@
 
 
 /**
- * 
+ *
  * @export
  */
 export const AccessEnum = {
     Public: 'PUBLIC',
     Private: 'PRIVATE'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @typedef {AccessEnum}
+ */
 export type AccessEnum = typeof AccessEnum[keyof typeof AccessEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AccessEnum}
+ */
 export function AccessEnumFromJSON(json: any): AccessEnum {
     return AccessEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AccessEnum}
+ */
 export function AccessEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccessEnum {
     return json as AccessEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(AccessEnum | null)} [value]
+ * @returns {*}
+ */
 export function AccessEnumToJSON(value?: AccessEnum | null): any {
     return value as any;
 }

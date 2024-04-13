@@ -15,236 +15,236 @@
 import { exists, mapValues } from '../runtime';
 /**
  * All of these will be optional.
- * 
+ *
  * Will support ProfileData from all our social providers.
  * @export
  * @interface ExternalProviderProfileData
  */
 export interface ExternalProviderProfileData {
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     name?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     picture?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     nickname?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     email?: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof ExternalProviderProfileData
      */
     emailVerified?: boolean;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     nodeId?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     gravatarId?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     url?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     htmlUrl?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     followersUrl?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     followingUrl?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     gistsUrl?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     starredUrl?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     subscriptionsUrl?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     organizationsUrl?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     reposUrl?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     eventsUrl?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     receivedEventsUrl?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     type?: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof ExternalProviderProfileData
      */
     siteAdmin?: boolean;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     company?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     blog?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     anchor?: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof ExternalProviderProfileData
      */
     hireable?: boolean;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     bio?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     twitterUsername?: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExternalProviderProfileData
      */
     publicRepos?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExternalProviderProfileData
      */
     publicGists?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExternalProviderProfileData
      */
     followers?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExternalProviderProfileData
      */
     following?: number;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     createdAt?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExternalProviderProfileData
      */
     updatedAt?: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExternalProviderProfileData
      */
     privateGists?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExternalProviderProfileData
      */
     totalPrivateRepos?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExternalProviderProfileData
      */
     ownedPrivateRepos?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExternalProviderProfileData
      */
     diskUsage?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ExternalProviderProfileData
      */
     collaborators?: number;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof ExternalProviderProfileData
      */
@@ -260,16 +260,33 @@ export function instanceOfExternalProviderProfileData(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExternalProviderProfileData}
+ */
 export function ExternalProviderProfileDataFromJSON(json: any): ExternalProviderProfileData {
     return ExternalProviderProfileDataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExternalProviderProfileData}
+ */
 export function ExternalProviderProfileDataFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExternalProviderProfileData {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'name': !exists(json, 'name') ? undefined : json['name'],
         'picture': !exists(json, 'picture') ? undefined : json['picture'],
         'nickname': !exists(json, 'nickname') ? undefined : json['nickname'],
@@ -311,6 +328,14 @@ export function ExternalProviderProfileDataFromJSONTyped(json: any, ignoreDiscri
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExternalProviderProfileData | null)} [value]
+ * @returns {*}
+ */
 export function ExternalProviderProfileDataToJSON(value?: ExternalProviderProfileData | null): any {
     if (value === undefined) {
         return undefined;
@@ -319,7 +344,7 @@ export function ExternalProviderProfileDataToJSON(value?: ExternalProviderProfil
         return null;
     }
     return {
-        
+
         'name': value.name,
         'picture': value.picture,
         'nickname': value.nickname,

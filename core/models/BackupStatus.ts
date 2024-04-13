@@ -34,20 +34,20 @@ import {
 
 /**
  * TODO add more description to this.
- * 
+ *
  * can eventually add a number that display the percent downloaded an so on.(this is called percent 0-100)
  * @export
  * @interface BackupStatus
  */
 export interface BackupStatus {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof BackupStatus
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {BackupStatusEnum}
      * @memberof BackupStatus
      */
@@ -59,7 +59,7 @@ export interface BackupStatus {
      */
     percentage?: number | null;
     /**
-     * 
+     *
      * @type {Backup}
      * @memberof BackupStatus
      */
@@ -76,16 +76,33 @@ export function instanceOfBackupStatus(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {BackupStatus}
+ */
 export function BackupStatusFromJSON(json: any): BackupStatus {
     return BackupStatusFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {BackupStatus}
+ */
 export function BackupStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): BackupStatus {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'value': !exists(json, 'value') ? undefined : BackupStatusEnumFromJSON(json['value']),
         'percentage': !exists(json, 'percentage') ? undefined : json['percentage'],
@@ -93,6 +110,14 @@ export function BackupStatusFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(BackupStatus | null)} [value]
+ * @returns {*}
+ */
 export function BackupStatusToJSON(value?: BackupStatus | null): any {
     if (value === undefined) {
         return undefined;
@@ -101,7 +126,7 @@ export function BackupStatusToJSON(value?: BackupStatus | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'value': BackupStatusEnumToJSON(value.value),
         'percentage': value.percentage,

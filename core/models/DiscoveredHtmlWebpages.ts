@@ -33,19 +33,19 @@ import {
  */
 export interface DiscoveredHtmlWebpages {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof DiscoveredHtmlWebpages
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<DiscoveredHtmlWebpage>}
      * @memberof DiscoveredHtmlWebpages
      */
     iterable: Array<DiscoveredHtmlWebpage>;
     /**
-     * 
+     *
      * @type {string}
      * @memberof DiscoveredHtmlWebpages
      */
@@ -63,22 +63,47 @@ export function instanceOfDiscoveredHtmlWebpages(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {DiscoveredHtmlWebpages}
+ */
 export function DiscoveredHtmlWebpagesFromJSON(json: any): DiscoveredHtmlWebpages {
     return DiscoveredHtmlWebpagesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {DiscoveredHtmlWebpages}
+ */
 export function DiscoveredHtmlWebpagesFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveredHtmlWebpages {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(DiscoveredHtmlWebpageFromJSON)),
         'application': json['application'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(DiscoveredHtmlWebpages | null)} [value]
+ * @returns {*}
+ */
 export function DiscoveredHtmlWebpagesToJSON(value?: DiscoveredHtmlWebpages | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function DiscoveredHtmlWebpagesToJSON(value?: DiscoveredHtmlWebpages | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(DiscoveredHtmlWebpageToJSON)),
         'application': value.application,

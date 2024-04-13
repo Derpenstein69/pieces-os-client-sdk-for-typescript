@@ -64,7 +64,7 @@ import {
 
 /**
  * This is Precursor to a Model.
- * 
+ *
  * bytes: here is the size of the model in a file local on your computer.
  * ram: is the amount of ram usage when the model is loaded into memory.
  * @export
@@ -72,7 +72,7 @@ import {
  */
 export interface SeededModel {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededModel
      */
@@ -84,7 +84,7 @@ export interface SeededModel {
      */
     version: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof SeededModel
      */
@@ -108,25 +108,25 @@ export interface SeededModel {
      */
     cloud: boolean;
     /**
-     * 
+     *
      * @type {ModelTypeEnum}
      * @memberof SeededModel
      */
     type: ModelTypeEnum;
     /**
-     * 
+     *
      * @type {ModelUsageEnum}
      * @memberof SeededModel
      */
     usage: ModelUsageEnum;
     /**
-     * 
+     *
      * @type {ByteDescriptor}
      * @memberof SeededModel
      */
     bytes?: ByteDescriptor;
     /**
-     * 
+     *
      * @type {ByteDescriptor}
      * @memberof SeededModel
      */
@@ -138,7 +138,7 @@ export interface SeededModel {
      */
     quantization?: string;
     /**
-     * 
+     *
      * @type {ModelFoundationEnum}
      * @memberof SeededModel
      */
@@ -162,7 +162,7 @@ export interface SeededModel {
      */
     parameters?: number | null;
     /**
-     * 
+     *
      * @type {ExternalMLProviderEnum}
      * @memberof SeededModel
      */
@@ -174,7 +174,7 @@ export interface SeededModel {
      */
     cpu?: boolean;
     /**
-     * 
+     *
      * @type {ModelMaxTokens}
      * @memberof SeededModel
      */
@@ -202,16 +202,33 @@ export function instanceOfSeededModel(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededModel}
+ */
 export function SeededModelFromJSON(json: any): SeededModel {
     return SeededModelFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededModel}
+ */
 export function SeededModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededModel {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'version': json['version'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -234,6 +251,14 @@ export function SeededModelFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededModel | null)} [value]
+ * @returns {*}
+ */
 export function SeededModelToJSON(value?: SeededModel | null): any {
     if (value === undefined) {
         return undefined;
@@ -242,7 +267,7 @@ export function SeededModelToJSON(value?: SeededModel | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'version': value.version,
         'created': GroupedTimestampToJSON(value.created),

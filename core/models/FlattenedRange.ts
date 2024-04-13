@@ -51,61 +51,61 @@ import {
  */
 export interface FlattenedRange {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedRange
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedRange
      */
     id: string;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedRange
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedRange
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedRange
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedRange
      */
     to?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedRange
      */
     from?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof FlattenedRange
      */
     between?: boolean;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof FlattenedRange
      */
     summaries?: FlattenedWorkstreamSummaries;
     /**
-     * 
+     *
      * @type {FlattenedConversations}
      * @memberof FlattenedRange
      */
@@ -124,16 +124,33 @@ export function instanceOfFlattenedRange(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedRange}
+ */
 export function FlattenedRangeFromJSON(json: any): FlattenedRange {
     return FlattenedRangeFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedRange}
+ */
 export function FlattenedRangeFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedRange {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'score': !exists(json, 'score') ? undefined : ScoreFromJSON(json['score']),
@@ -147,6 +164,14 @@ export function FlattenedRangeFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedRange | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedRangeToJSON(value?: FlattenedRange | null): any {
     if (value === undefined) {
         return undefined;
@@ -155,7 +180,7 @@ export function FlattenedRangeToJSON(value?: FlattenedRange | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'score': ScoreToJSON(value.score),

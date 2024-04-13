@@ -28,7 +28,7 @@ import {
  */
 export interface MailgunMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof MailgunMetadata
      */
@@ -51,21 +51,46 @@ export function instanceOfMailgunMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {MailgunMetadata}
+ */
 export function MailgunMetadataFromJSON(json: any): MailgunMetadata {
     return MailgunMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {MailgunMetadata}
+ */
 export function MailgunMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): MailgunMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'messageId': json['messageId'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(MailgunMetadata | null)} [value]
+ * @returns {*}
+ */
 export function MailgunMetadataToJSON(value?: MailgunMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -74,7 +99,7 @@ export function MailgunMetadataToJSON(value?: MailgunMetadata | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'messageId': value.messageId,
     };

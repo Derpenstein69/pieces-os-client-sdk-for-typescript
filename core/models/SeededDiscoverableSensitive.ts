@@ -51,13 +51,13 @@ import {
  */
 export interface SeededDiscoverableSensitive {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededDiscoverableSensitive
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededDiscoverableSensitive
      */
@@ -69,37 +69,37 @@ export interface SeededDiscoverableSensitive {
      */
     text: string;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededDiscoverableSensitive
      */
     mechanism?: MechanismEnum;
     /**
-     * 
+     *
      * @type {SensitiveCategoryEnum}
      * @memberof SeededDiscoverableSensitive
      */
     category?: SensitiveCategoryEnum;
     /**
-     * 
+     *
      * @type {SensitiveSeverityEnum}
      * @memberof SeededDiscoverableSensitive
      */
     severity?: SensitiveSeverityEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededDiscoverableSensitive
      */
     name?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededDiscoverableSensitive
      */
     description?: string;
     /**
-     * 
+     *
      * @type {SensitiveMetadata}
      * @memberof SeededDiscoverableSensitive
      */
@@ -117,16 +117,33 @@ export function instanceOfSeededDiscoverableSensitive(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededDiscoverableSensitive}
+ */
 export function SeededDiscoverableSensitiveFromJSON(json: any): SeededDiscoverableSensitive {
     return SeededDiscoverableSensitiveFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededDiscoverableSensitive}
+ */
 export function SeededDiscoverableSensitiveFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededDiscoverableSensitive {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': json['asset'],
         'text': json['text'],
@@ -139,6 +156,14 @@ export function SeededDiscoverableSensitiveFromJSONTyped(json: any, ignoreDiscri
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededDiscoverableSensitive | null)} [value]
+ * @returns {*}
+ */
 export function SeededDiscoverableSensitiveToJSON(value?: SeededDiscoverableSensitive | null): any {
     if (value === undefined) {
         return undefined;
@@ -147,7 +172,7 @@ export function SeededDiscoverableSensitiveToJSON(value?: SeededDiscoverableSens
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': value.asset,
         'text': value.text,

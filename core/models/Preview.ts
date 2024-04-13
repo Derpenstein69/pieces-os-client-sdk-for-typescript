@@ -33,19 +33,19 @@ import {
  */
 export interface Preview {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Preview
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ReferencedFormat}
      * @memberof Preview
      */
     base: ReferencedFormat;
     /**
-     * 
+     *
      * @type {ReferencedFormat}
      * @memberof Preview
      */
@@ -62,22 +62,47 @@ export function instanceOfPreview(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Preview}
+ */
 export function PreviewFromJSON(json: any): Preview {
     return PreviewFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Preview}
+ */
 export function PreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): Preview {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'base': ReferencedFormatFromJSON(json['base']),
         'overlay': !exists(json, 'overlay') ? undefined : ReferencedFormatFromJSON(json['overlay']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(Preview | null)} [value]
+ * @returns {*}
+ */
 export function PreviewToJSON(value?: Preview | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function PreviewToJSON(value?: Preview | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'base': ReferencedFormatToJSON(value.base),
         'overlay': ReferencedFormatToJSON(value.overlay),

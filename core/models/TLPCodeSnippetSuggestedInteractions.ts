@@ -33,25 +33,25 @@ import {
 } from './TLPCodeFragmentSuggestedSave';
 
 /**
- * 
+ *
  * @export
  * @interface TLPCodeSnippetSuggestedInteractions
  */
 export interface TLPCodeSnippetSuggestedInteractions {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeSnippetSuggestedInteractions
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TLPCodeFragmentSuggestedSave}
      * @memberof TLPCodeSnippetSuggestedInteractions
      */
     save?: TLPCodeFragmentSuggestedSave;
     /**
-     * 
+     *
      * @type {TLPCodeFragmentSuggestedReuse}
      * @memberof TLPCodeSnippetSuggestedInteractions
      */
@@ -67,22 +67,47 @@ export function instanceOfTLPCodeSnippetSuggestedInteractions(value: object): bo
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeSnippetSuggestedInteractions}
+ */
 export function TLPCodeSnippetSuggestedInteractionsFromJSON(json: any): TLPCodeSnippetSuggestedInteractions {
     return TLPCodeSnippetSuggestedInteractionsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeSnippetSuggestedInteractions}
+ */
 export function TLPCodeSnippetSuggestedInteractionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeSnippetSuggestedInteractions {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'save': !exists(json, 'save') ? undefined : TLPCodeFragmentSuggestedSaveFromJSON(json['save']),
         'reuse': !exists(json, 'reuse') ? undefined : TLPCodeFragmentSuggestedReuseFromJSON(json['reuse']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TLPCodeSnippetSuggestedInteractions | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeSnippetSuggestedInteractionsToJSON(value?: TLPCodeSnippetSuggestedInteractions | null): any {
     if (value === undefined) {
         return undefined;
@@ -91,7 +116,7 @@ export function TLPCodeSnippetSuggestedInteractionsToJSON(value?: TLPCodeSnippet
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'save': TLPCodeFragmentSuggestedSaveToJSON(value.save),
         'reuse': TLPCodeFragmentSuggestedReuseToJSON(value.reuse),

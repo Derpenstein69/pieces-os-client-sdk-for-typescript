@@ -33,31 +33,31 @@ import {
  */
 export interface TLPCodeFragmentReclassification {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeFragmentReclassification
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentReclassification
      */
     asset: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentReclassification
      */
     model: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentReclassification
      */
     created: string;
     /**
-     * 
+     *
      * @type {TLPCodeFragmentReclassificationUpdates}
      * @memberof TLPCodeFragmentReclassification
      */
@@ -91,16 +91,33 @@ export function instanceOfTLPCodeFragmentReclassification(value: object): boolea
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeFragmentReclassification}
+ */
 export function TLPCodeFragmentReclassificationFromJSON(json: any): TLPCodeFragmentReclassification {
     return TLPCodeFragmentReclassificationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeFragmentReclassification}
+ */
 export function TLPCodeFragmentReclassificationFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeFragmentReclassification {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': json['asset'],
         'model': json['model'],
@@ -111,6 +128,14 @@ export function TLPCodeFragmentReclassificationFromJSONTyped(json: any, ignoreDi
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TLPCodeFragmentReclassification | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeFragmentReclassificationToJSON(value?: TLPCodeFragmentReclassification | null): any {
     if (value === undefined) {
         return undefined;
@@ -119,7 +144,7 @@ export function TLPCodeFragmentReclassificationToJSON(value?: TLPCodeFragmentRec
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': value.asset,
         'model': value.model,

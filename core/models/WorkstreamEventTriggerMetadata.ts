@@ -22,16 +22,16 @@ import {
 
 /**
  * This is a free form data object that will enable additional data to be passed into SeededWorkstreamEvent, that corresponds to the event on the WorkstreamEvent.
- * 
+ *
  * This is a WIP object.
- * 
+ *
  * Need to think if we want to do something like raw:string (that is just a jsonObject) that is stringified, or if we add specific bits of data that we want. and specific fields for each event.
  * @export
  * @interface WorkstreamEventTriggerMetadata
  */
 export interface WorkstreamEventTriggerMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof WorkstreamEventTriggerMetadata
      */
@@ -47,20 +47,45 @@ export function instanceOfWorkstreamEventTriggerMetadata(value: object): boolean
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {WorkstreamEventTriggerMetadata}
+ */
 export function WorkstreamEventTriggerMetadataFromJSON(json: any): WorkstreamEventTriggerMetadata {
     return WorkstreamEventTriggerMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {WorkstreamEventTriggerMetadata}
+ */
 export function WorkstreamEventTriggerMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): WorkstreamEventTriggerMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(WorkstreamEventTriggerMetadata | null)} [value]
+ * @returns {*}
+ */
 export function WorkstreamEventTriggerMetadataToJSON(value?: WorkstreamEventTriggerMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -69,7 +94,7 @@ export function WorkstreamEventTriggerMetadataToJSON(value?: WorkstreamEventTrig
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
     };
 }

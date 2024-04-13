@@ -42,17 +42,49 @@ export const ExternalMLProviderEnum = {
     Jina: 'JINA',
     Pieces: 'PIECES'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @typedef {ExternalMLProviderEnum}
+ */
 export type ExternalMLProviderEnum = typeof ExternalMLProviderEnum[keyof typeof ExternalMLProviderEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExternalMLProviderEnum}
+ */
 export function ExternalMLProviderEnumFromJSON(json: any): ExternalMLProviderEnum {
     return ExternalMLProviderEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExternalMLProviderEnum}
+ */
 export function ExternalMLProviderEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExternalMLProviderEnum {
     return json as ExternalMLProviderEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExternalMLProviderEnum | null)} [value]
+ * @returns {*}
+ */
 export function ExternalMLProviderEnumToJSON(value?: ExternalMLProviderEnum | null): any {
     return value as any;
 }

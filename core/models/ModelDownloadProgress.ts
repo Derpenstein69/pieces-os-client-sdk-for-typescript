@@ -28,20 +28,20 @@ import {
 
 /**
  * This is the model that is sent over our ws for streaming the progress of a model that is being downloaded.
- * 
+ *
  * can eventually add a number that display the percent downloaded an so on.(this is called percent 0-100)
  * @export
  * @interface ModelDownloadProgress
  */
 export interface ModelDownloadProgress {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ModelDownloadProgress
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ModelDownloadProgressStatusEnum}
      * @memberof ModelDownloadProgress
      */
@@ -63,22 +63,47 @@ export function instanceOfModelDownloadProgress(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ModelDownloadProgress}
+ */
 export function ModelDownloadProgressFromJSON(json: any): ModelDownloadProgress {
     return ModelDownloadProgressFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ModelDownloadProgress}
+ */
 export function ModelDownloadProgressFromJSONTyped(json: any, ignoreDiscriminator: boolean): ModelDownloadProgress {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'status': !exists(json, 'status') ? undefined : ModelDownloadProgressStatusEnumFromJSON(json['status']),
         'percentage': !exists(json, 'percentage') ? undefined : json['percentage'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(ModelDownloadProgress | null)} [value]
+ * @returns {*}
+ */
 export function ModelDownloadProgressToJSON(value?: ModelDownloadProgress | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function ModelDownloadProgressToJSON(value?: ModelDownloadProgress | null
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'status': ModelDownloadProgressStatusEnumToJSON(value.status),
         'percentage': value.percentage,

@@ -33,13 +33,13 @@ import {
  */
 export interface PseudoAssets {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof PseudoAssets
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof PseudoAssets
      */
@@ -55,21 +55,46 @@ export function instanceOfPseudoAssets(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PseudoAssets}
+ */
 export function PseudoAssetsFromJSON(json: any): PseudoAssets {
     return PseudoAssetsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PseudoAssets}
+ */
 export function PseudoAssetsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PseudoAssets {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'identifiers': !exists(json, 'identifiers') ? undefined : FlattenedAssetsFromJSON(json['identifiers']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(PseudoAssets | null)} [value]
+ * @returns {*}
+ */
 export function PseudoAssetsToJSON(value?: PseudoAssets | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function PseudoAssetsToJSON(value?: PseudoAssets | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'identifiers': FlattenedAssetsToJSON(value.identifiers),
     };

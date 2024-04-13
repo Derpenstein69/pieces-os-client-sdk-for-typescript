@@ -25,13 +25,33 @@ import {
     SeedsToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ImportGithubGistsRequest
+ * @typedef {ImportGithubGistsRequest}
+ */
 export interface ImportGithubGistsRequest {
-    automatic?: boolean;
-    seededGithubGistsImport?: SeededGithubGistsImport;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+automatic?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededGithubGistsImport}
+ */
+seededGithubGistsImport?: SeededGithubGistsImport;
 }
 
 /**
- * 
+ *
  */
 export class GithubApi extends runtime.BaseAPI {
 

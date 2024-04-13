@@ -33,31 +33,31 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface AssetsSearchWithFiltersInput
  */
 export interface AssetsSearchWithFiltersInput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AssetsSearchWithFiltersInput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof AssetsSearchWithFiltersInput
      */
     query?: string;
     /**
-     * 
+     *
      * @type {AssetSearchSpace}
      * @memberof AssetsSearchWithFiltersInput
      */
     space?: AssetSearchSpace;
     /**
-     * 
+     *
      * @type {AssetFilters}
      * @memberof AssetsSearchWithFiltersInput
      */
@@ -79,16 +79,33 @@ export function instanceOfAssetsSearchWithFiltersInput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AssetsSearchWithFiltersInput}
+ */
 export function AssetsSearchWithFiltersInputFromJSON(json: any): AssetsSearchWithFiltersInput {
     return AssetsSearchWithFiltersInputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AssetsSearchWithFiltersInput}
+ */
 export function AssetsSearchWithFiltersInputFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssetsSearchWithFiltersInput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'query': !exists(json, 'query') ? undefined : json['query'],
         'space': !exists(json, 'space') ? undefined : AssetSearchSpaceFromJSON(json['space']),
@@ -97,6 +114,14 @@ export function AssetsSearchWithFiltersInputFromJSONTyped(json: any, ignoreDiscr
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(AssetsSearchWithFiltersInput | null)} [value]
+ * @returns {*}
+ */
 export function AssetsSearchWithFiltersInputToJSON(value?: AssetsSearchWithFiltersInput | null): any {
     if (value === undefined) {
         return undefined;
@@ -105,7 +130,7 @@ export function AssetsSearchWithFiltersInputToJSON(value?: AssetsSearchWithFilte
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'query': value.query,
         'space': AssetSearchSpaceToJSON(value.space),

@@ -39,13 +39,13 @@ import {
  */
 export interface FlattenedWebsites {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedWebsites
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedWebsite>}
      * @memberof FlattenedWebsites
      */
@@ -57,7 +57,7 @@ export interface FlattenedWebsites {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedWebsites
      */
@@ -74,16 +74,33 @@ export function instanceOfFlattenedWebsites(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedWebsites}
+ */
 export function FlattenedWebsitesFromJSON(json: any): FlattenedWebsites {
     return FlattenedWebsitesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedWebsites}
+ */
 export function FlattenedWebsitesFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedWebsites {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedWebsiteFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function FlattenedWebsitesFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FlattenedWebsites | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedWebsitesToJSON(value?: FlattenedWebsites | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function FlattenedWebsitesToJSON(value?: FlattenedWebsites | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedWebsiteToJSON)),
         'indices': value.indices,

@@ -39,13 +39,13 @@ import {
  */
 export interface FlattenedWorkstreamEvents {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedWorkstreamEvents
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedWorkstreamEvent>}
      * @memberof FlattenedWorkstreamEvents
      */
@@ -57,7 +57,7 @@ export interface FlattenedWorkstreamEvents {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedWorkstreamEvents
      */
@@ -74,16 +74,33 @@ export function instanceOfFlattenedWorkstreamEvents(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedWorkstreamEvents}
+ */
 export function FlattenedWorkstreamEventsFromJSON(json: any): FlattenedWorkstreamEvents {
     return FlattenedWorkstreamEventsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedWorkstreamEvents}
+ */
 export function FlattenedWorkstreamEventsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedWorkstreamEvents {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedWorkstreamEventFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function FlattenedWorkstreamEventsFromJSONTyped(json: any, ignoreDiscrimi
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FlattenedWorkstreamEvents | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedWorkstreamEventsToJSON(value?: FlattenedWorkstreamEvents | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function FlattenedWorkstreamEventsToJSON(value?: FlattenedWorkstreamEvent
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedWorkstreamEventToJSON)),
         'indices': value.indices,

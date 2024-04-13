@@ -24,17 +24,49 @@ export const AllocationStatusEnum = {
     Succeeded: 'SUCCEEDED',
     Unknown: 'UNKNOWN'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @typedef {AllocationStatusEnum}
+ */
 export type AllocationStatusEnum = typeof AllocationStatusEnum[keyof typeof AllocationStatusEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AllocationStatusEnum}
+ */
 export function AllocationStatusEnumFromJSON(json: any): AllocationStatusEnum {
     return AllocationStatusEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AllocationStatusEnum}
+ */
 export function AllocationStatusEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): AllocationStatusEnum {
     return json as AllocationStatusEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(AllocationStatusEnum | null)} [value]
+ * @returns {*}
+ */
 export function AllocationStatusEnumToJSON(value?: AllocationStatusEnum | null): any {
     return value as any;
 }

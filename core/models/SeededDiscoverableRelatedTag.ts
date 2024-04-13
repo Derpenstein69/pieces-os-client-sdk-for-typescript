@@ -33,13 +33,13 @@ import {
 } from './TagCategoryEnum';
 
 /**
- * 
+ *
  * @export
  * @interface SeededDiscoverableRelatedTag
  */
 export interface SeededDiscoverableRelatedTag {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededDiscoverableRelatedTag
      */
@@ -57,7 +57,7 @@ export interface SeededDiscoverableRelatedTag {
      */
     asset: string;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededDiscoverableRelatedTag
      */
@@ -69,7 +69,7 @@ export interface SeededDiscoverableRelatedTag {
      */
     format?: string;
     /**
-     * 
+     *
      * @type {TagCategoryEnum}
      * @memberof SeededDiscoverableRelatedTag
      */
@@ -87,16 +87,33 @@ export function instanceOfSeededDiscoverableRelatedTag(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededDiscoverableRelatedTag}
+ */
 export function SeededDiscoverableRelatedTagFromJSON(json: any): SeededDiscoverableRelatedTag {
     return SeededDiscoverableRelatedTagFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededDiscoverableRelatedTag}
+ */
 export function SeededDiscoverableRelatedTagFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededDiscoverableRelatedTag {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'text': json['text'],
         'asset': json['asset'],
@@ -106,6 +123,14 @@ export function SeededDiscoverableRelatedTagFromJSONTyped(json: any, ignoreDiscr
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededDiscoverableRelatedTag | null)} [value]
+ * @returns {*}
+ */
 export function SeededDiscoverableRelatedTagToJSON(value?: SeededDiscoverableRelatedTag | null): any {
     if (value === undefined) {
         return undefined;
@@ -114,7 +139,7 @@ export function SeededDiscoverableRelatedTagToJSON(value?: SeededDiscoverableRel
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'text': value.text,
         'asset': value.asset,

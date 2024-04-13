@@ -33,19 +33,19 @@ import {
 } from './Score';
 
 /**
- * 
+ *
  * @export
  * @interface FlattenedAnchors
  */
 export interface FlattenedAnchors {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedAnchors
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedAnchor>}
      * @memberof FlattenedAnchors
      */
@@ -57,7 +57,7 @@ export interface FlattenedAnchors {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedAnchors
      */
@@ -74,16 +74,33 @@ export function instanceOfFlattenedAnchors(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedAnchors}
+ */
 export function FlattenedAnchorsFromJSON(json: any): FlattenedAnchors {
     return FlattenedAnchorsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedAnchors}
+ */
 export function FlattenedAnchorsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedAnchors {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedAnchorFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function FlattenedAnchorsFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(FlattenedAnchors | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedAnchorsToJSON(value?: FlattenedAnchors | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function FlattenedAnchorsToJSON(value?: FlattenedAnchors | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedAnchorToJSON)),
         'indices': value.indices,

@@ -33,13 +33,13 @@ import {
  */
 export interface RelevantQGPTSeeds {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof RelevantQGPTSeeds
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<RelevantQGPTSeed>}
      * @memberof RelevantQGPTSeeds
      */
@@ -56,21 +56,46 @@ export function instanceOfRelevantQGPTSeeds(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {RelevantQGPTSeeds}
+ */
 export function RelevantQGPTSeedsFromJSON(json: any): RelevantQGPTSeeds {
     return RelevantQGPTSeedsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {RelevantQGPTSeeds}
+ */
 export function RelevantQGPTSeedsFromJSONTyped(json: any, ignoreDiscriminator: boolean): RelevantQGPTSeeds {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(RelevantQGPTSeedFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(RelevantQGPTSeeds | null)} [value]
+ * @returns {*}
+ */
 export function RelevantQGPTSeedsToJSON(value?: RelevantQGPTSeeds | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function RelevantQGPTSeedsToJSON(value?: RelevantQGPTSeeds | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(RelevantQGPTSeedToJSON)),
     };

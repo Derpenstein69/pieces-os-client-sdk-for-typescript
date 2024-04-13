@@ -31,22 +31,76 @@ import {
     TokenizedPKCEToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface GenerateCodeRequest
+ * @typedef {GenerateCodeRequest}
+ */
 export interface GenerateCodeRequest {
-    seededPKCE?: SeededPKCE;
-}
-
-export interface GenerateTokenRequest {
-    tokenizedPKCE?: TokenizedPKCE;
-}
-
-export interface RespondWithCodeRequest {
-    code: string;
-    state: string;
-    schema?: EmbeddedModelSchema;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededPKCE}
+ */
+seededPKCE?: SeededPKCE;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface GenerateTokenRequest
+ * @typedef {GenerateTokenRequest}
+ */
+export interface GenerateTokenRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?TokenizedPKCE}
+ */
+tokenizedPKCE?: TokenizedPKCE;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RespondWithCodeRequest
+ * @typedef {RespondWithCodeRequest}
+ */
+export interface RespondWithCodeRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+code: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+state: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?EmbeddedModelSchema}
+ */
+schema?: EmbeddedModelSchema;
+}
+
+/**
+ *
  */
 export class PKCEApi extends runtime.BaseAPI {
 

@@ -22,18 +22,18 @@ import {
 
 /**
  * This is the body of the /github/gists/import,
- * 
+ *
  * by default we will look for everything from your private gists, (TODO hook up public gists.)&& get clever
- * 
+ *
  * currently we will not ensure that this is a good pieces for you but we will just get you the gist and let you do what you want with it(room for improvement, if we want to layer in advanced pieces discovery)
- * 
+ *
  * For the future, we might want to add a max number of assets that are returned from this.
  * @export
  * @interface SeededGithubGistsImport
  */
 export interface SeededGithubGistsImport {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededGithubGistsImport
      */
@@ -62,22 +62,47 @@ export function instanceOfSeededGithubGistsImport(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededGithubGistsImport}
+ */
 export function SeededGithubGistsImportFromJSON(json: any): SeededGithubGistsImport {
     return SeededGithubGistsImportFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededGithubGistsImport}
+ */
 export function SeededGithubGistsImportFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededGithubGistsImport {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'application': json['application'],
         '_public': !exists(json, 'public') ? undefined : json['public'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededGithubGistsImport | null)} [value]
+ * @returns {*}
+ */
 export function SeededGithubGistsImportToJSON(value?: SeededGithubGistsImport | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function SeededGithubGistsImportToJSON(value?: SeededGithubGistsImport | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'application': value.application,
         'public': value._public,

@@ -21,19 +21,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface SeededTrackedKeyboardEventIdentifierDescriptionPairs
  */
 export interface SeededTrackedKeyboardEventIdentifierDescriptionPairs {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededTrackedKeyboardEventIdentifierDescriptionPairs
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededTrackedKeyboardEventIdentifierDescriptionPairs
      */
@@ -47,6 +47,13 @@ export interface SeededTrackedKeyboardEventIdentifierDescriptionPairs {
 export const SeededTrackedKeyboardEventIdentifierDescriptionPairsAssetsListRefreshedEnum = {
     TheAssetsListWasRefreshedThroughAKeyboardShortcut: 'the_assets_list_was_refreshed_through_a_keyboard_shortcut'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @typedef {SeededTrackedKeyboardEventIdentifierDescriptionPairsAssetsListRefreshedEnum}
+ */
 export type SeededTrackedKeyboardEventIdentifierDescriptionPairsAssetsListRefreshedEnum = typeof SeededTrackedKeyboardEventIdentifierDescriptionPairsAssetsListRefreshedEnum[keyof typeof SeededTrackedKeyboardEventIdentifierDescriptionPairsAssetsListRefreshedEnum];
 
 
@@ -59,21 +66,46 @@ export function instanceOfSeededTrackedKeyboardEventIdentifierDescriptionPairs(v
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTrackedKeyboardEventIdentifierDescriptionPairs}
+ */
 export function SeededTrackedKeyboardEventIdentifierDescriptionPairsFromJSON(json: any): SeededTrackedKeyboardEventIdentifierDescriptionPairs {
     return SeededTrackedKeyboardEventIdentifierDescriptionPairsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTrackedKeyboardEventIdentifierDescriptionPairs}
+ */
 export function SeededTrackedKeyboardEventIdentifierDescriptionPairsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTrackedKeyboardEventIdentifierDescriptionPairs {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'assetsListRefreshed': !exists(json, 'assets_list_refreshed') ? undefined : json['assets_list_refreshed'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededTrackedKeyboardEventIdentifierDescriptionPairs | null)} [value]
+ * @returns {*}
+ */
 export function SeededTrackedKeyboardEventIdentifierDescriptionPairsToJSON(value?: SeededTrackedKeyboardEventIdentifierDescriptionPairs | null): any {
     if (value === undefined) {
         return undefined;
@@ -82,7 +114,7 @@ export function SeededTrackedKeyboardEventIdentifierDescriptionPairsToJSON(value
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'assets_list_refreshed': value.assetsListRefreshed,
     };

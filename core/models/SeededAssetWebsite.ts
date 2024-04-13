@@ -33,25 +33,25 @@ import {
  */
 export interface SeededAssetWebsite {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededAssetWebsite
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAssetWebsite
      */
     url: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAssetWebsite
      */
     name: string;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededAssetWebsite
      */
@@ -69,16 +69,33 @@ export function instanceOfSeededAssetWebsite(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededAssetWebsite}
+ */
 export function SeededAssetWebsiteFromJSON(json: any): SeededAssetWebsite {
     return SeededAssetWebsiteFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededAssetWebsite}
+ */
 export function SeededAssetWebsiteFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededAssetWebsite {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'url': json['url'],
         'name': json['name'],
@@ -86,6 +103,14 @@ export function SeededAssetWebsiteFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededAssetWebsite | null)} [value]
+ * @returns {*}
+ */
 export function SeededAssetWebsiteToJSON(value?: SeededAssetWebsite | null): any {
     if (value === undefined) {
         return undefined;
@@ -94,7 +119,7 @@ export function SeededAssetWebsiteToJSON(value?: SeededAssetWebsite | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'url': value.url,
         'name': value.name,

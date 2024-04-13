@@ -40,14 +40,14 @@ import {
 
 /**
  * update && version: will be present only if your cloud was successfully spun up && running.
- * 
+ *
  * updated: is the last time this was updated.
  * @export
  * @interface AllocationCloud
  */
 export interface AllocationCloud {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AllocationCloud
      */
@@ -65,13 +65,13 @@ export interface AllocationCloud {
      */
     user: string;
     /**
-     * 
+     *
      * @type {AllocationCloudUrls}
      * @memberof AllocationCloud
      */
     urls: AllocationCloudUrls;
     /**
-     * 
+     *
      * @type {AllocationCloudStatus}
      * @memberof AllocationCloud
      */
@@ -83,7 +83,7 @@ export interface AllocationCloud {
      */
     project: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof AllocationCloud
      */
@@ -116,16 +116,33 @@ export function instanceOfAllocationCloud(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AllocationCloud}
+ */
 export function AllocationCloudFromJSON(json: any): AllocationCloud {
     return AllocationCloudFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AllocationCloud}
+ */
 export function AllocationCloudFromJSONTyped(json: any, ignoreDiscriminator: boolean): AllocationCloud {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'user': json['user'],
@@ -138,6 +155,14 @@ export function AllocationCloudFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(AllocationCloud | null)} [value]
+ * @returns {*}
+ */
 export function AllocationCloudToJSON(value?: AllocationCloud | null): any {
     if (value === undefined) {
         return undefined;
@@ -146,7 +171,7 @@ export function AllocationCloudToJSON(value?: AllocationCloud | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'user': value.user,

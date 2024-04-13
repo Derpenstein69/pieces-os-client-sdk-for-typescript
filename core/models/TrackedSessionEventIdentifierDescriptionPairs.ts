@@ -27,7 +27,7 @@ import {
  */
 export interface TrackedSessionEventIdentifierDescriptionPairs {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedSessionEventIdentifierDescriptionPairs
      */
@@ -113,6 +113,13 @@ export interface TrackedSessionEventIdentifierDescriptionPairs {
 export const TrackedSessionEventIdentifierDescriptionPairsSessionInitializedEnum = {
     ASessionHasBeenInitializedAndTheApplicationHasBeenOpened: 'a_session_has_been_initialized_and_the_application_has_been_opened'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionInitializedEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionInitializedEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionInitializedEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionInitializedEnum];
 
 /**
@@ -121,6 +128,13 @@ export type TrackedSessionEventIdentifierDescriptionPairsSessionInitializedEnum 
 export const TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionSucceededEnum = {
     OneOrMoreApplicationsHasSuccessfullyConnected: 'one_or_more_applications_has_successfully_connected'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionSucceededEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionSucceededEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionSucceededEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionSucceededEnum];
 
 /**
@@ -129,6 +143,13 @@ export type TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionS
 export const TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionFailedEnum = {
     OneOrMoreApplicationsHasFailedToConnectLocally: 'one_or_more_applications_has_failed_to_connect_locally'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionFailedEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionFailedEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionFailedEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionFailedEnum];
 
 /**
@@ -137,6 +158,13 @@ export type TrackedSessionEventIdentifierDescriptionPairsSessionLocalConnectionF
 export const TrackedSessionEventIdentifierDescriptionPairsSessionInactiveEnum = {
     ASessionIsInactiveBecauseTheApplicationIsNotInTheForeground: 'a_session_is_inactive_because_the_application_is_not_in_the_foreground'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionInactiveEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionInactiveEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionInactiveEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionInactiveEnum];
 
 /**
@@ -145,6 +173,13 @@ export type TrackedSessionEventIdentifierDescriptionPairsSessionInactiveEnum = t
 export const TrackedSessionEventIdentifierDescriptionPairsSessionActiveEnum = {
     ASessionIsActiveBecauseTheApplicationIsInTheForeground: 'a_session_is_active_because_the_application_is_in_the_foreground'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionActiveEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionActiveEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionActiveEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionActiveEnum];
 
 /**
@@ -153,6 +188,13 @@ export type TrackedSessionEventIdentifierDescriptionPairsSessionActiveEnum = typ
 export const TrackedSessionEventIdentifierDescriptionPairsSessionTerminatedEnum = {
     ASessionHasBeenEndedAndTheApplicationHasBeenClosed: 'a_session_has_been_ended_and_the_application_has_been_closed'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionTerminatedEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionTerminatedEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionTerminatedEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionTerminatedEnum];
 
 /**
@@ -161,6 +203,13 @@ export type TrackedSessionEventIdentifierDescriptionPairsSessionTerminatedEnum =
 export const TrackedSessionEventIdentifierDescriptionPairsSessionAuthenticatedWithSignInEnum = {
     AUserHasSignedIntoThisSessionWithAAnExternalAccount: 'a_user_has_signed_into_this_session_with_a_an_external_account'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionAuthenticatedWithSignInEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionAuthenticatedWithSignInEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionAuthenticatedWithSignInEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionAuthenticatedWithSignInEnum];
 
 /**
@@ -169,6 +218,13 @@ export type TrackedSessionEventIdentifierDescriptionPairsSessionAuthenticatedWit
 export const TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithSignOutEnum = {
     AUserHasSignedOutOfThisSession: 'a_user_has_signed_out_of_this_session'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithSignOutEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithSignOutEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithSignOutEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithSignOutEnum];
 
 /**
@@ -177,6 +233,13 @@ export type TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedW
 export const TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithDismissEnum = {
     AUserDidNotSignIntoTheSessionWithADismissal: 'a_user_did_not_sign_into_the_session_with_a_dismissal'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithDismissEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithDismissEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithDismissEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithDismissEnum];
 
 /**
@@ -185,6 +248,13 @@ export type TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedW
 export const TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithRemindEnum = {
     AUserDidNotSignIntoTheSessionWithAReminder: 'a_user_did_not_sign_into_the_session_with_a_reminder'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithRemindEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithRemindEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithRemindEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedWithRemindEnum];
 
 /**
@@ -193,6 +263,13 @@ export type TrackedSessionEventIdentifierDescriptionPairsSessionUnauthenticatedW
 export const TrackedSessionEventIdentifierDescriptionPairsSessionOnboardingInitializedEnum = {
     OnboardingHasBeenInitializedForThisSession: 'onboarding_has_been_initialized_for_this_session'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionOnboardingInitializedEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionOnboardingInitializedEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionOnboardingInitializedEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionOnboardingInitializedEnum];
 
 /**
@@ -201,6 +278,13 @@ export type TrackedSessionEventIdentifierDescriptionPairsSessionOnboardingInitia
 export const TrackedSessionEventIdentifierDescriptionPairsSessionOnboardingCompletedEnum = {
     OnboardingHasBeenCompletedForThisSession: 'onboarding_has_been_completed_for_this_session'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedSessionEventIdentifierDescriptionPairsSessionOnboardingCompletedEnum}
+ */
 export type TrackedSessionEventIdentifierDescriptionPairsSessionOnboardingCompletedEnum = typeof TrackedSessionEventIdentifierDescriptionPairsSessionOnboardingCompletedEnum[keyof typeof TrackedSessionEventIdentifierDescriptionPairsSessionOnboardingCompletedEnum];
 
 
@@ -213,16 +297,33 @@ export function instanceOfTrackedSessionEventIdentifierDescriptionPairs(value: o
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedSessionEventIdentifierDescriptionPairs}
+ */
 export function TrackedSessionEventIdentifierDescriptionPairsFromJSON(json: any): TrackedSessionEventIdentifierDescriptionPairs {
     return TrackedSessionEventIdentifierDescriptionPairsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedSessionEventIdentifierDescriptionPairs}
+ */
 export function TrackedSessionEventIdentifierDescriptionPairsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedSessionEventIdentifierDescriptionPairs {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'sessionInitialized': !exists(json, 'session_initialized') ? undefined : json['session_initialized'],
         'sessionLocalConnectionSucceeded': !exists(json, 'session_local_connection_succeeded') ? undefined : json['session_local_connection_succeeded'],
@@ -239,6 +340,14 @@ export function TrackedSessionEventIdentifierDescriptionPairsFromJSONTyped(json:
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedSessionEventIdentifierDescriptionPairs | null)} [value]
+ * @returns {*}
+ */
 export function TrackedSessionEventIdentifierDescriptionPairsToJSON(value?: TrackedSessionEventIdentifierDescriptionPairs | null): any {
     if (value === undefined) {
         return undefined;
@@ -247,7 +356,7 @@ export function TrackedSessionEventIdentifierDescriptionPairsToJSON(value?: Trac
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'session_initialized': value.sessionInitialized,
         'session_local_connection_succeeded': value.sessionLocalConnectionSucceeded,

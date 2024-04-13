@@ -33,19 +33,19 @@ import {
  */
 export interface ReferencedWorkstreamEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedWorkstreamEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedWorkstreamEvent
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamEvent}
      * @memberof ReferencedWorkstreamEvent
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedWorkstreamEvent(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedWorkstreamEvent}
+ */
 export function ReferencedWorkstreamEventFromJSON(json: any): ReferencedWorkstreamEvent {
     return ReferencedWorkstreamEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedWorkstreamEvent}
+ */
 export function ReferencedWorkstreamEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedWorkstreamEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedWorkstreamEventFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(ReferencedWorkstreamEvent | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedWorkstreamEventToJSON(value?: ReferencedWorkstreamEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedWorkstreamEventToJSON(value?: ReferencedWorkstreamEven
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedWorkstreamEventToJSON(value.reference),

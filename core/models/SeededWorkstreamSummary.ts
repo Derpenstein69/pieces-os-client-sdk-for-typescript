@@ -87,73 +87,73 @@ import {
  */
 export interface SeededWorkstreamSummary {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededWorkstreamSummary
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamEvents}
      * @memberof SeededWorkstreamSummary
      */
     events?: FlattenedWorkstreamEvents;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededWorkstreamSummary
      */
     name: string;
     /**
-     * 
+     *
      * @type {Array<SeededAnnotation>}
      * @memberof SeededWorkstreamSummary
      */
     annotations?: Array<SeededAnnotation>;
     /**
-     * 
+     *
      * @type {FlattenedRanges}
      * @memberof SeededWorkstreamSummary
      */
     ranges?: FlattenedRanges;
     /**
-     * 
+     *
      * @type {Model}
      * @memberof SeededWorkstreamSummary
      */
     model: Model;
     /**
-     * 
+     *
      * @type {FlattenedWebsites}
      * @memberof SeededWorkstreamSummary
      */
     websites?: FlattenedWebsites;
     /**
-     * 
+     *
      * @type {FlattenedAnchors}
      * @memberof SeededWorkstreamSummary
      */
     anchors?: FlattenedAnchors;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof SeededWorkstreamSummary
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {FlattenedConversations}
      * @memberof SeededWorkstreamSummary
      */
     conversations?: FlattenedConversations;
     /**
-     * 
+     *
      * @type {FlattenedPersons}
      * @memberof SeededWorkstreamSummary
      */
     persons?: FlattenedPersons;
     /**
-     * 
+     *
      * @type {Applications}
      * @memberof SeededWorkstreamSummary
      */
@@ -171,16 +171,33 @@ export function instanceOfSeededWorkstreamSummary(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededWorkstreamSummary}
+ */
 export function SeededWorkstreamSummaryFromJSON(json: any): SeededWorkstreamSummary {
     return SeededWorkstreamSummaryFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededWorkstreamSummary}
+ */
 export function SeededWorkstreamSummaryFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededWorkstreamSummary {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'events': !exists(json, 'events') ? undefined : FlattenedWorkstreamEventsFromJSON(json['events']),
         'name': json['name'],
@@ -196,6 +213,14 @@ export function SeededWorkstreamSummaryFromJSONTyped(json: any, ignoreDiscrimina
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededWorkstreamSummary | null)} [value]
+ * @returns {*}
+ */
 export function SeededWorkstreamSummaryToJSON(value?: SeededWorkstreamSummary | null): any {
     if (value === undefined) {
         return undefined;
@@ -204,7 +229,7 @@ export function SeededWorkstreamSummaryToJSON(value?: SeededWorkstreamSummary | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'events': FlattenedWorkstreamEventsToJSON(value.events),
         'name': value.name,

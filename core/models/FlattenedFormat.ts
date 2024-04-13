@@ -82,90 +82,90 @@ import {
 
 /**
  * A representation of Data for a particular Form Factor of an Asset.[DAG Compatible - Directed Acyclic Graph Data Structure]
- * 
+ *
  * FlattenedFormats prevent Cycles in Reference because all outbound references are strings as opposed to crosspollinated objects.
- * 
+ *
  * i.e. FlattenedFormat.asset is Type String
- * 
+ *
  * fragment or file will always be defined. Even thought they are both optional.
  * @export
  * @interface FlattenedFormat
  */
 export interface FlattenedFormat {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedFormat
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedFormat
      */
     id: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedFormat
      */
     creator: string;
     /**
-     * 
+     *
      * @type {Classification}
      * @memberof FlattenedFormat
      */
     classification: Classification;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedFormat
      */
     icon?: string;
     /**
-     * 
+     *
      * @type {Role}
      * @memberof FlattenedFormat
      */
     role: Role;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof FlattenedFormat
      */
     application: Application;
     /**
-     * A uuid model. 36 Characters (4 Dashes, 32 Numbers/Letters) 
+     * A uuid model. 36 Characters (4 Dashes, 32 Numbers/Letters)
      * @type {string}
      * @memberof FlattenedFormat
      */
     asset: string;
     /**
-     * 
+     *
      * @type {ByteDescriptor}
      * @memberof FlattenedFormat
      */
     bytes: ByteDescriptor;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedFormat
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedFormat
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedFormat
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedFormat
      */
@@ -177,31 +177,31 @@ export interface FlattenedFormat {
      */
     cloud?: string;
     /**
-     * 
+     *
      * @type {FragmentFormat}
      * @memberof FlattenedFormat
      */
     fragment?: FragmentFormat;
     /**
-     * 
+     *
      * @type {FileFormat}
      * @memberof FlattenedFormat
      */
     file?: FileFormat;
     /**
-     * 
+     *
      * @type {FlattenedAnalysis}
      * @memberof FlattenedFormat
      */
     analysis?: FlattenedAnalysis;
     /**
-     * 
+     *
      * @type {Relationship}
      * @memberof FlattenedFormat
      */
     relationship?: Relationship;
     /**
-     * 
+     *
      * @type {FlattenedActivities}
      * @memberof FlattenedFormat
      */
@@ -226,16 +226,33 @@ export function instanceOfFlattenedFormat(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedFormat}
+ */
 export function FlattenedFormatFromJSON(json: any): FlattenedFormat {
     return FlattenedFormatFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedFormat}
+ */
 export function FlattenedFormatFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedFormat {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'creator': json['creator'],
@@ -258,6 +275,14 @@ export function FlattenedFormatFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(FlattenedFormat | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedFormatToJSON(value?: FlattenedFormat | null): any {
     if (value === undefined) {
         return undefined;
@@ -266,7 +291,7 @@ export function FlattenedFormatToJSON(value?: FlattenedFormat | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'creator': value.creator,

@@ -33,7 +33,7 @@ import {
  */
 export interface SeededTrackedKeyboardEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededTrackedKeyboardEvent
      */
@@ -45,13 +45,13 @@ export interface SeededTrackedKeyboardEvent {
      */
     description: string;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof SeededTrackedKeyboardEvent
      */
     shortcut: Array<number>;
     /**
-     * 
+     *
      * @type {SeededTrackedKeyboardEventIdentifierDescriptionPairs}
      * @memberof SeededTrackedKeyboardEvent
      */
@@ -69,16 +69,33 @@ export function instanceOfSeededTrackedKeyboardEvent(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTrackedKeyboardEvent}
+ */
 export function SeededTrackedKeyboardEventFromJSON(json: any): SeededTrackedKeyboardEvent {
     return SeededTrackedKeyboardEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTrackedKeyboardEvent}
+ */
 export function SeededTrackedKeyboardEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTrackedKeyboardEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'description': json['description'],
         'shortcut': json['shortcut'],
@@ -86,6 +103,14 @@ export function SeededTrackedKeyboardEventFromJSONTyped(json: any, ignoreDiscrim
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededTrackedKeyboardEvent | null)} [value]
+ * @returns {*}
+ */
 export function SeededTrackedKeyboardEventToJSON(value?: SeededTrackedKeyboardEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -94,7 +119,7 @@ export function SeededTrackedKeyboardEventToJSON(value?: SeededTrackedKeyboardEv
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'description': value.description,
         'shortcut': value.shortcut,

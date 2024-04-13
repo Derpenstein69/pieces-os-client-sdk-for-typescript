@@ -58,66 +58,66 @@ import {
 
 /**
  * This is a Shadow Activity event:
- * 
+ *
  * This is used to for 2 collections the internal Shadow Activity collection and the Shadow Activity Collection.
- * 
+ *
  * The Internal Shadow Activity will me just a massive growing and shrinkling persisted list activity event that will endup getting rolled up into Workstream summaries. When we roll up the internalWorkstreamEvent events we will do a ton of filtering and only take the highly relevant events and turn them into WorkstreamEvent (these will be used to create a reference to the workstream summary, so we can know what event were used to generate the summary and vise versa).
- * 
+ *
  * A Shadow Activity model is a collection of a ton of small interactions with the plugins (copy/paste/file open/file close/tab changed/...etc events) that will also enable use to know what materials are being used to funnel them into our engine to show highly relevant data according to your given flow.
  * @export
  * @interface WorkstreamEvent
  */
 export interface WorkstreamEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof WorkstreamEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof WorkstreamEvent
      */
     id: string;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof WorkstreamEvent
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof WorkstreamEvent
      */
     application: Application;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof WorkstreamEvent
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof WorkstreamEvent
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {WorkstreamEventTrigger}
      * @memberof WorkstreamEvent
      */
     trigger: WorkstreamEventTrigger;
     /**
-     * 
+     *
      * @type {WorkstreamEventTriggerMetadata}
      * @memberof WorkstreamEvent
      */
     metadata?: WorkstreamEventTriggerMetadata;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof WorkstreamEvent
      */
@@ -138,16 +138,33 @@ export function instanceOfWorkstreamEvent(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {WorkstreamEvent}
+ */
 export function WorkstreamEventFromJSON(json: any): WorkstreamEvent {
     return WorkstreamEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {WorkstreamEvent}
+ */
 export function WorkstreamEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): WorkstreamEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'score': !exists(json, 'score') ? undefined : ScoreFromJSON(json['score']),
@@ -160,6 +177,14 @@ export function WorkstreamEventFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(WorkstreamEvent | null)} [value]
+ * @returns {*}
+ */
 export function WorkstreamEventToJSON(value?: WorkstreamEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -168,7 +193,7 @@ export function WorkstreamEventToJSON(value?: WorkstreamEvent | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'score': ScoreToJSON(value.score),

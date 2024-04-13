@@ -27,7 +27,7 @@ import {
  */
 export interface QGPTQuestionAnswer {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTQuestionAnswer
      */
@@ -39,7 +39,7 @@ export interface QGPTQuestionAnswer {
      */
     score: number;
     /**
-     * 
+     *
      * @type {string}
      * @memberof QGPTQuestionAnswer
      */
@@ -57,22 +57,47 @@ export function instanceOfQGPTQuestionAnswer(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTQuestionAnswer}
+ */
 export function QGPTQuestionAnswerFromJSON(json: any): QGPTQuestionAnswer {
     return QGPTQuestionAnswerFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTQuestionAnswer}
+ */
 export function QGPTQuestionAnswerFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTQuestionAnswer {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'score': json['score'],
         'text': json['text'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTQuestionAnswer | null)} [value]
+ * @returns {*}
+ */
 export function QGPTQuestionAnswerToJSON(value?: QGPTQuestionAnswer | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function QGPTQuestionAnswerToJSON(value?: QGPTQuestionAnswer | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'score': value.score,
         'text': value.text,

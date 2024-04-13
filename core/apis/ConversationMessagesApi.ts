@@ -28,21 +28,69 @@ import {
     SeededConversationMessageToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface MessagesCreateSpecificMessageRequest
+ * @typedef {MessagesCreateSpecificMessageRequest}
+ */
 export interface MessagesCreateSpecificMessageRequest {
-    transferables?: boolean;
-    seededConversationMessage?: SeededConversationMessage;
-}
-
-export interface MessagesDeleteSpecificMessageRequest {
-    message: string;
-}
-
-export interface MessagesSnapshotRequest {
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededConversationMessage}
+ */
+seededConversationMessage?: SeededConversationMessage;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface MessagesDeleteSpecificMessageRequest
+ * @typedef {MessagesDeleteSpecificMessageRequest}
+ */
+export interface MessagesDeleteSpecificMessageRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+message: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface MessagesSnapshotRequest
+ * @typedef {MessagesSnapshotRequest}
+ */
+export interface MessagesSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class ConversationMessagesApi extends runtime.BaseAPI {
 

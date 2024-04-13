@@ -99,97 +99,97 @@ import {
  */
 export interface WorkstreamSummary {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof WorkstreamSummary
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof WorkstreamSummary
      */
     id: string;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof WorkstreamSummary
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof WorkstreamSummary
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof WorkstreamSummary
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamEvents}
      * @memberof WorkstreamSummary
      */
     events?: FlattenedWorkstreamEvents;
     /**
-     * 
+     *
      * @type {string}
      * @memberof WorkstreamSummary
      */
     name: string;
     /**
-     * 
+     *
      * @type {FlattenedAnnotations}
      * @memberof WorkstreamSummary
      */
     annotations?: FlattenedAnnotations;
     /**
-     * 
+     *
      * @type {FlattenedRanges}
      * @memberof WorkstreamSummary
      */
     ranges?: FlattenedRanges;
     /**
-     * 
+     *
      * @type {Model}
      * @memberof WorkstreamSummary
      */
     model: Model;
     /**
-     * 
+     *
      * @type {FlattenedWebsites}
      * @memberof WorkstreamSummary
      */
     websites?: FlattenedWebsites;
     /**
-     * 
+     *
      * @type {FlattenedAnchors}
      * @memberof WorkstreamSummary
      */
     anchors?: FlattenedAnchors;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof WorkstreamSummary
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {FlattenedConversations}
      * @memberof WorkstreamSummary
      */
     conversations?: FlattenedConversations;
     /**
-     * 
+     *
      * @type {FlattenedPersons}
      * @memberof WorkstreamSummary
      */
     persons?: FlattenedPersons;
     /**
-     * 
+     *
      * @type {Applications}
      * @memberof WorkstreamSummary
      */
@@ -210,16 +210,33 @@ export function instanceOfWorkstreamSummary(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {WorkstreamSummary}
+ */
 export function WorkstreamSummaryFromJSON(json: any): WorkstreamSummary {
     return WorkstreamSummaryFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {WorkstreamSummary}
+ */
 export function WorkstreamSummaryFromJSONTyped(json: any, ignoreDiscriminator: boolean): WorkstreamSummary {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'score': !exists(json, 'score') ? undefined : ScoreFromJSON(json['score']),
@@ -239,6 +256,14 @@ export function WorkstreamSummaryFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(WorkstreamSummary | null)} [value]
+ * @returns {*}
+ */
 export function WorkstreamSummaryToJSON(value?: WorkstreamSummary | null): any {
     if (value === undefined) {
         return undefined;
@@ -247,7 +272,7 @@ export function WorkstreamSummaryToJSON(value?: WorkstreamSummary | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'score': ScoreToJSON(value.score),

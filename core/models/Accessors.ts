@@ -27,19 +27,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface Accessors
  */
 export interface Accessors {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Accessors
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Accessor>}
      * @memberof Accessors
      */
@@ -56,21 +56,46 @@ export function instanceOfAccessors(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Accessors}
+ */
 export function AccessorsFromJSON(json: any): Accessors {
     return AccessorsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Accessors}
+ */
 export function AccessorsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Accessors {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(AccessorFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(Accessors | null)} [value]
+ * @returns {*}
+ */
 export function AccessorsToJSON(value?: Accessors | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function AccessorsToJSON(value?: Accessors | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(AccessorToJSON)),
     };

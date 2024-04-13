@@ -41,19 +41,19 @@ import {
  */
 export interface PersonType {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof PersonType
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {PersonBasicType}
      * @memberof PersonType
      */
     basic?: PersonBasicType;
     /**
-     * 
+     *
      * @type {UserProfile}
      * @memberof PersonType
      */
@@ -69,22 +69,47 @@ export function instanceOfPersonType(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PersonType}
+ */
 export function PersonTypeFromJSON(json: any): PersonType {
     return PersonTypeFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PersonType}
+ */
 export function PersonTypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): PersonType {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'basic': !exists(json, 'basic') ? undefined : PersonBasicTypeFromJSON(json['basic']),
         'platform': !exists(json, 'platform') ? undefined : UserProfileFromJSON(json['platform']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(PersonType | null)} [value]
+ * @returns {*}
+ */
 export function PersonTypeToJSON(value?: PersonType | null): any {
     if (value === undefined) {
         return undefined;
@@ -93,7 +118,7 @@ export function PersonTypeToJSON(value?: PersonType | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'basic': PersonBasicTypeToJSON(value.basic),
         'platform': UserProfileToJSON(value.platform),

@@ -33,13 +33,13 @@ import {
  */
 export interface OpenAIModelsListOutput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OpenAIModelsListOutput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededModels}
      * @memberof OpenAIModelsListOutput
      */
@@ -56,21 +56,46 @@ export function instanceOfOpenAIModelsListOutput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OpenAIModelsListOutput}
+ */
 export function OpenAIModelsListOutputFromJSON(json: any): OpenAIModelsListOutput {
     return OpenAIModelsListOutputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OpenAIModelsListOutput}
+ */
 export function OpenAIModelsListOutputFromJSONTyped(json: any, ignoreDiscriminator: boolean): OpenAIModelsListOutput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'models': SeededModelsFromJSON(json['models']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OpenAIModelsListOutput | null)} [value]
+ * @returns {*}
+ */
 export function OpenAIModelsListOutputToJSON(value?: OpenAIModelsListOutput | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function OpenAIModelsListOutputToJSON(value?: OpenAIModelsListOutput | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'models': SeededModelsToJSON(value.models),
     };

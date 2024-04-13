@@ -30,26 +30,26 @@ import {
  * Query is your hints question.
  * Relevant is the relevant snippets.
  * Answer is the previous answer.(that we are asking a hint up for.)
- * 
+ *
  * Query and Answer are both optional here because, you may pass over relevant snippets over ahead of hand if you already have them to answer your questions.
  * @export
  * @interface QGPTHintsInput
  */
 export interface QGPTHintsInput {
     /**
-     * 
+     *
      * @type {string}
      * @memberof QGPTHintsInput
      */
     query?: string;
     /**
-     * 
+     *
      * @type {QGPTQuestionAnswer}
      * @memberof QGPTHintsInput
      */
     answer?: QGPTQuestionAnswer;
     /**
-     * 
+     *
      * @type {RelevantQGPTSeeds}
      * @memberof QGPTHintsInput
      */
@@ -78,16 +78,33 @@ export function instanceOfQGPTHintsInput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTHintsInput}
+ */
 export function QGPTHintsInputFromJSON(json: any): QGPTHintsInput {
     return QGPTHintsInputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTHintsInput}
+ */
 export function QGPTHintsInputFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTHintsInput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'query': !exists(json, 'query') ? undefined : json['query'],
         'answer': !exists(json, 'answer') ? undefined : QGPTQuestionAnswerFromJSON(json['answer']),
         'relevant': RelevantQGPTSeedsFromJSON(json['relevant']),
@@ -96,6 +113,14 @@ export function QGPTHintsInputFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTHintsInput | null)} [value]
+ * @returns {*}
+ */
 export function QGPTHintsInputToJSON(value?: QGPTHintsInput | null): any {
     if (value === undefined) {
         return undefined;
@@ -104,7 +129,7 @@ export function QGPTHintsInputToJSON(value?: QGPTHintsInput | null): any {
         return null;
     }
     return {
-        
+
         'query': value.query,
         'answer': QGPTQuestionAnswerToJSON(value.answer),
         'relevant': RelevantQGPTSeedsToJSON(value.relevant),

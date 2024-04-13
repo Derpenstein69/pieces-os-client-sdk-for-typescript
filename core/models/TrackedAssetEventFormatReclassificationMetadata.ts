@@ -33,19 +33,19 @@ import {
  */
 export interface TrackedAssetEventFormatReclassificationMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedAssetEventFormatReclassificationMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Classification}
      * @memberof TrackedAssetEventFormatReclassificationMetadata
      */
     previous?: Classification;
     /**
-     * 
+     *
      * @type {Classification}
      * @memberof TrackedAssetEventFormatReclassificationMetadata
      */
@@ -61,22 +61,47 @@ export function instanceOfTrackedAssetEventFormatReclassificationMetadata(value:
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedAssetEventFormatReclassificationMetadata}
+ */
 export function TrackedAssetEventFormatReclassificationMetadataFromJSON(json: any): TrackedAssetEventFormatReclassificationMetadata {
     return TrackedAssetEventFormatReclassificationMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedAssetEventFormatReclassificationMetadata}
+ */
 export function TrackedAssetEventFormatReclassificationMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedAssetEventFormatReclassificationMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'previous': !exists(json, 'previous') ? undefined : ClassificationFromJSON(json['previous']),
         'current': !exists(json, 'current') ? undefined : ClassificationFromJSON(json['current']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TrackedAssetEventFormatReclassificationMetadata | null)} [value]
+ * @returns {*}
+ */
 export function TrackedAssetEventFormatReclassificationMetadataToJSON(value?: TrackedAssetEventFormatReclassificationMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -85,7 +110,7 @@ export function TrackedAssetEventFormatReclassificationMetadataToJSON(value?: Tr
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'previous': ClassificationToJSON(value.previous),
         'current': ClassificationToJSON(value.current),

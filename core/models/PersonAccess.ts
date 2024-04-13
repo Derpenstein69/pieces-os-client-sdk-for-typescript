@@ -34,26 +34,26 @@ import {
 
 /**
  * if scoped is provided will let us know what level of permission(access) this specific person has in relation to what scope.(collection, asset,...etc)
- * 
+ *
  * in the future will expand to global (with its own enumeration for a global entire project/cloud scope)
  * @export
  * @interface PersonAccess
  */
 export interface PersonAccess {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof PersonAccess
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {PersonAccessScopedEnum}
      * @memberof PersonAccess
      */
     scoped?: PersonAccessScopedEnum;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof PersonAccess
      */
@@ -69,22 +69,47 @@ export function instanceOfPersonAccess(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PersonAccess}
+ */
 export function PersonAccessFromJSON(json: any): PersonAccess {
     return PersonAccessFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PersonAccess}
+ */
 export function PersonAccessFromJSONTyped(json: any, ignoreDiscriminator: boolean): PersonAccess {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'scoped': !exists(json, 'scoped') ? undefined : PersonAccessScopedEnumFromJSON(json['scoped']),
         'deleted': !exists(json, 'deleted') ? undefined : GroupedTimestampFromJSON(json['deleted']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(PersonAccess | null)} [value]
+ * @returns {*}
+ */
 export function PersonAccessToJSON(value?: PersonAccess | null): any {
     if (value === undefined) {
         return undefined;
@@ -93,7 +118,7 @@ export function PersonAccessToJSON(value?: PersonAccess | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'scoped': PersonAccessScopedEnumToJSON(value.scoped),
         'deleted': GroupedTimestampToJSON(value.deleted),

@@ -33,13 +33,13 @@ import {
  */
 export interface ModelDeleteCacheOutput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ModelDeleteCacheOutput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ReferencedModel}
      * @memberof ModelDeleteCacheOutput
      */
@@ -56,21 +56,46 @@ export function instanceOfModelDeleteCacheOutput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ModelDeleteCacheOutput}
+ */
 export function ModelDeleteCacheOutputFromJSON(json: any): ModelDeleteCacheOutput {
     return ModelDeleteCacheOutputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ModelDeleteCacheOutput}
+ */
 export function ModelDeleteCacheOutputFromJSONTyped(json: any, ignoreDiscriminator: boolean): ModelDeleteCacheOutput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'model': ReferencedModelFromJSON(json['model']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(ModelDeleteCacheOutput | null)} [value]
+ * @returns {*}
+ */
 export function ModelDeleteCacheOutputToJSON(value?: ModelDeleteCacheOutput | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function ModelDeleteCacheOutputToJSON(value?: ModelDeleteCacheOutput | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'model': ReferencedModelToJSON(value.model),
     };

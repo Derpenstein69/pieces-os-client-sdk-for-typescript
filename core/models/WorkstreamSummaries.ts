@@ -39,13 +39,13 @@ import {
  */
 export interface WorkstreamSummaries {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof WorkstreamSummaries
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<WorkstreamSummary>}
      * @memberof WorkstreamSummaries
      */
@@ -57,7 +57,7 @@ export interface WorkstreamSummaries {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof WorkstreamSummaries
      */
@@ -74,16 +74,33 @@ export function instanceOfWorkstreamSummaries(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {WorkstreamSummaries}
+ */
 export function WorkstreamSummariesFromJSON(json: any): WorkstreamSummaries {
     return WorkstreamSummariesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {WorkstreamSummaries}
+ */
 export function WorkstreamSummariesFromJSONTyped(json: any, ignoreDiscriminator: boolean): WorkstreamSummaries {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(WorkstreamSummaryFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function WorkstreamSummariesFromJSONTyped(json: any, ignoreDiscriminator:
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(WorkstreamSummaries | null)} [value]
+ * @returns {*}
+ */
 export function WorkstreamSummariesToJSON(value?: WorkstreamSummaries | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function WorkstreamSummariesToJSON(value?: WorkstreamSummaries | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(WorkstreamSummaryToJSON)),
         'indices': value.indices,

@@ -22,14 +22,14 @@ import {
 
 /**
  * This is the SaveSuggestion. Mainly creating an additional model here because I imagine that we will want to add some additional data to this in the future (potentially with more numerical data that is emitted from the ML Models)
- * 
+ *
  * **Note: suggested is required here because we will want to say if we reccomend to take this action of save or not.
  * @export
  * @interface SaveSuggestion
  */
 export interface SaveSuggestion {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SaveSuggestion
      */
@@ -52,21 +52,46 @@ export function instanceOfSaveSuggestion(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SaveSuggestion}
+ */
 export function SaveSuggestionFromJSON(json: any): SaveSuggestion {
     return SaveSuggestionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SaveSuggestion}
+ */
 export function SaveSuggestionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SaveSuggestion {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'suggested': json['suggested'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(SaveSuggestion | null)} [value]
+ * @returns {*}
+ */
 export function SaveSuggestionToJSON(value?: SaveSuggestion | null): any {
     if (value === undefined) {
         return undefined;
@@ -75,7 +100,7 @@ export function SaveSuggestionToJSON(value?: SaveSuggestion | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'suggested': value.suggested,
     };

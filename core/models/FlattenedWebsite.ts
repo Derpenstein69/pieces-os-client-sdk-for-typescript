@@ -69,7 +69,7 @@ import {
  */
 export interface FlattenedWebsite {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedWebsite
      */
@@ -81,7 +81,7 @@ export interface FlattenedWebsite {
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof FlattenedWebsite
      */
@@ -99,19 +99,19 @@ export interface FlattenedWebsite {
      */
     url: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedWebsite
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedWebsite
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedWebsite
      */
@@ -129,25 +129,25 @@ export interface FlattenedWebsite {
      */
     interactions?: number;
     /**
-     * 
+     *
      * @type {FlattenedPersons}
      * @memberof FlattenedWebsite
      */
     persons?: FlattenedPersons;
     /**
-     * 
+     *
      * @type {FlattenedConversations}
      * @memberof FlattenedWebsite
      */
     conversations?: FlattenedConversations;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedWebsite
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof FlattenedWebsite
      */
@@ -168,16 +168,33 @@ export function instanceOfFlattenedWebsite(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedWebsite}
+ */
 export function FlattenedWebsiteFromJSON(json: any): FlattenedWebsite {
     return FlattenedWebsiteFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedWebsite}
+ */
 export function FlattenedWebsiteFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedWebsite {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'assets': !exists(json, 'assets') ? undefined : FlattenedAssetsFromJSON(json['assets']),
@@ -195,6 +212,14 @@ export function FlattenedWebsiteFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FlattenedWebsite | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedWebsiteToJSON(value?: FlattenedWebsite | null): any {
     if (value === undefined) {
         return undefined;
@@ -203,7 +228,7 @@ export function FlattenedWebsiteToJSON(value?: FlattenedWebsite | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'assets': FlattenedAssetsToJSON(value.assets),

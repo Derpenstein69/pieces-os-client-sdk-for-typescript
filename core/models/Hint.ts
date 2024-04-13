@@ -63,49 +63,49 @@ import {
  */
 export interface Hint {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Hint
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Hint
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Hint
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Hint
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Hint
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof Hint
      */
     mechanism?: MechanismEnum;
     /**
-     * 
+     *
      * @type {ReferencedAsset}
      * @memberof Hint
      */
     asset?: ReferencedAsset;
     /**
-     * 
+     *
      * @type {HintTypeEnum}
      * @memberof Hint
      */
@@ -117,13 +117,13 @@ export interface Hint {
      */
     text: string;
     /**
-     * 
+     *
      * @type {ReferencedModel}
      * @memberof Hint
      */
     model?: ReferencedModel;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Hint
      */
@@ -144,16 +144,33 @@ export function instanceOfHint(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Hint}
+ */
 export function HintFromJSON(json: any): Hint {
     return HintFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Hint}
+ */
 export function HintFromJSONTyped(json: any, ignoreDiscriminator: boolean): Hint {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -168,6 +185,14 @@ export function HintFromJSONTyped(json: any, ignoreDiscriminator: boolean): Hint
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(Hint | null)} [value]
+ * @returns {*}
+ */
 export function HintToJSON(value?: Hint | null): any {
     if (value === undefined) {
         return undefined;
@@ -176,7 +201,7 @@ export function HintToJSON(value?: Hint | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'created': GroupedTimestampToJSON(value.created),

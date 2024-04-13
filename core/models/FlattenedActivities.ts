@@ -27,19 +27,19 @@ import {
 } from './ReferencedActivity';
 
 /**
- * 
+ *
  * @export
  * @interface FlattenedActivities
  */
 export interface FlattenedActivities {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedActivities
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedActivity>}
      * @memberof FlattenedActivities
      */
@@ -56,21 +56,46 @@ export function instanceOfFlattenedActivities(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedActivities}
+ */
 export function FlattenedActivitiesFromJSON(json: any): FlattenedActivities {
     return FlattenedActivitiesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedActivities}
+ */
 export function FlattenedActivitiesFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedActivities {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedActivityFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(FlattenedActivities | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedActivitiesToJSON(value?: FlattenedActivities | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function FlattenedActivitiesToJSON(value?: FlattenedActivities | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedActivityToJSON)),
     };

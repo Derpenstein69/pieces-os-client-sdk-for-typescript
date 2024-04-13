@@ -39,13 +39,13 @@ import {
  */
 export interface FlattenedHints {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedHints
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedHint>}
      * @memberof FlattenedHints
      */
@@ -57,7 +57,7 @@ export interface FlattenedHints {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedHints
      */
@@ -74,16 +74,33 @@ export function instanceOfFlattenedHints(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedHints}
+ */
 export function FlattenedHintsFromJSON(json: any): FlattenedHints {
     return FlattenedHintsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedHints}
+ */
 export function FlattenedHintsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedHints {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedHintFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function FlattenedHintsFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedHints | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedHintsToJSON(value?: FlattenedHints | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function FlattenedHintsToJSON(value?: FlattenedHints | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedHintToJSON)),
         'indices': value.indices,

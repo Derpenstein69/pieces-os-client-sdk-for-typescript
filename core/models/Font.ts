@@ -27,13 +27,13 @@ import {
  */
 export interface Font {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Font
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {number}
      * @memberof Font
      */
@@ -50,21 +50,46 @@ export function instanceOfFont(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Font}
+ */
 export function FontFromJSON(json: any): Font {
     return FontFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Font}
+ */
 export function FontFromJSONTyped(json: any, ignoreDiscriminator: boolean): Font {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'size': json['size'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(Font | null)} [value]
+ * @returns {*}
+ */
 export function FontToJSON(value?: Font | null): any {
     if (value === undefined) {
         return undefined;
@@ -73,7 +98,7 @@ export function FontToJSON(value?: Font | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'size': value.size,
     };

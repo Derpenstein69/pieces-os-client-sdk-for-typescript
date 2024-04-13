@@ -27,7 +27,7 @@ import {
  */
 export interface OSDeviceGPUHardwareCapabilitiesInformation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OSDeviceGPUHardwareCapabilitiesInformation
      */
@@ -49,21 +49,46 @@ export function instanceOfOSDeviceGPUHardwareCapabilitiesInformation(value: obje
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OSDeviceGPUHardwareCapabilitiesInformation}
+ */
 export function OSDeviceGPUHardwareCapabilitiesInformationFromJSON(json: any): OSDeviceGPUHardwareCapabilitiesInformation {
     return OSDeviceGPUHardwareCapabilitiesInformationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OSDeviceGPUHardwareCapabilitiesInformation}
+ */
 export function OSDeviceGPUHardwareCapabilitiesInformationFromJSONTyped(json: any, ignoreDiscriminator: boolean): OSDeviceGPUHardwareCapabilitiesInformation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'llm': !exists(json, 'llm') ? undefined : json['llm'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OSDeviceGPUHardwareCapabilitiesInformation | null)} [value]
+ * @returns {*}
+ */
 export function OSDeviceGPUHardwareCapabilitiesInformationToJSON(value?: OSDeviceGPUHardwareCapabilitiesInformation | null): any {
     if (value === undefined) {
         return undefined;
@@ -72,7 +97,7 @@ export function OSDeviceGPUHardwareCapabilitiesInformationToJSON(value?: OSDevic
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'llm': value.llm,
     };

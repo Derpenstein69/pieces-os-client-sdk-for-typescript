@@ -25,21 +25,69 @@ import {
     SensitiveToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface SensitiveScoresIncrementRequest
+ * @typedef {SensitiveScoresIncrementRequest}
+ */
 export interface SensitiveScoresIncrementRequest {
-    sensitive: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface SensitiveSnapshotRequest {
-    sensitive: string;
-}
-
-export interface UpdateSensitiveRequest {
-    sensitive?: Sensitive;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+sensitive: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface SensitiveSnapshotRequest
+ * @typedef {SensitiveSnapshotRequest}
+ */
+export interface SensitiveSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+sensitive: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface UpdateSensitiveRequest
+ * @typedef {UpdateSensitiveRequest}
+ */
+export interface UpdateSensitiveRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?Sensitive}
+ */
+sensitive?: Sensitive;
+}
+
+/**
+ *
  */
 export class SensitiveApi extends runtime.BaseAPI {
 

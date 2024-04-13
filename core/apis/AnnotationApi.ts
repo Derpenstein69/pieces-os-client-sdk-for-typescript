@@ -25,21 +25,69 @@ import {
     SeededScoreIncrementToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AnnotationScoresIncrementRequest
+ * @typedef {AnnotationScoresIncrementRequest}
+ */
 export interface AnnotationScoresIncrementRequest {
-    annotation: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface AnnotationSpecificAnnotationSnapshotRequest {
-    annotation: string;
-}
-
-export interface AnnotationUpdateRequest {
-    annotation?: Annotation;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+annotation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AnnotationSpecificAnnotationSnapshotRequest
+ * @typedef {AnnotationSpecificAnnotationSnapshotRequest}
+ */
+export interface AnnotationSpecificAnnotationSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+annotation: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AnnotationUpdateRequest
+ * @typedef {AnnotationUpdateRequest}
+ */
+export interface AnnotationUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Annotation}
+ */
+annotation?: Annotation;
+}
+
+/**
+ *
  */
 export class AnnotationApi extends runtime.BaseAPI {
 

@@ -27,19 +27,19 @@ import {
 } from './GraphicalImageStatistics';
 
 /**
- * 
+ *
  * @export
  * @interface GraphicalImageProcessing
  */
 export interface GraphicalImageProcessing {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof GraphicalImageProcessing
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {GraphicalImageStatistics}
      * @memberof GraphicalImageProcessing
      */
@@ -55,21 +55,46 @@ export function instanceOfGraphicalImageProcessing(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {GraphicalImageProcessing}
+ */
 export function GraphicalImageProcessingFromJSON(json: any): GraphicalImageProcessing {
     return GraphicalImageProcessingFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {GraphicalImageProcessing}
+ */
 export function GraphicalImageProcessingFromJSONTyped(json: any, ignoreDiscriminator: boolean): GraphicalImageProcessing {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'statistics': !exists(json, 'statistics') ? undefined : GraphicalImageStatisticsFromJSON(json['statistics']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(GraphicalImageProcessing | null)} [value]
+ * @returns {*}
+ */
 export function GraphicalImageProcessingToJSON(value?: GraphicalImageProcessing | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function GraphicalImageProcessingToJSON(value?: GraphicalImageProcessing 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'statistics': GraphicalImageStatisticsToJSON(value.statistics),
     };

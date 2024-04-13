@@ -39,19 +39,19 @@ import {
  */
 export interface TrackedAssetEventCreationMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedAssetEventCreationMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TrackedAssetEventCreationMetadataClipboard}
      * @memberof TrackedAssetEventCreationMetadata
      */
     clipboard?: TrackedAssetEventCreationMetadataClipboard;
     /**
-     * 
+     *
      * @type {TrackedAssetEventCreationMetadataFile}
      * @memberof TrackedAssetEventCreationMetadata
      */
@@ -67,22 +67,47 @@ export function instanceOfTrackedAssetEventCreationMetadata(value: object): bool
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedAssetEventCreationMetadata}
+ */
 export function TrackedAssetEventCreationMetadataFromJSON(json: any): TrackedAssetEventCreationMetadata {
     return TrackedAssetEventCreationMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedAssetEventCreationMetadata}
+ */
 export function TrackedAssetEventCreationMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedAssetEventCreationMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'clipboard': !exists(json, 'clipboard') ? undefined : TrackedAssetEventCreationMetadataClipboardFromJSON(json['clipboard']),
         'file': !exists(json, 'file') ? undefined : TrackedAssetEventCreationMetadataFileFromJSON(json['file']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TrackedAssetEventCreationMetadata | null)} [value]
+ * @returns {*}
+ */
 export function TrackedAssetEventCreationMetadataToJSON(value?: TrackedAssetEventCreationMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -91,7 +116,7 @@ export function TrackedAssetEventCreationMetadataToJSON(value?: TrackedAssetEven
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'clipboard': TrackedAssetEventCreationMetadataClipboardToJSON(value.clipboard),
         'file': TrackedAssetEventCreationMetadataFileToJSON(value.file),

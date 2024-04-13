@@ -28,16 +28,44 @@ import {
     SensitivesToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface SensitivesCreateNewSensitiveRequest
+ * @typedef {SensitivesCreateNewSensitiveRequest}
+ */
 export interface SensitivesCreateNewSensitiveRequest {
-    seededSensitive?: SeededSensitive;
-}
-
-export interface SensitivesDeleteSensitiveRequest {
-    sensitive: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededSensitive}
+ */
+seededSensitive?: SeededSensitive;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface SensitivesDeleteSensitiveRequest
+ * @typedef {SensitivesDeleteSensitiveRequest}
+ */
+export interface SensitivesDeleteSensitiveRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+sensitive: string;
+}
+
+/**
+ *
  */
 export class SensitivesApi extends runtime.BaseAPI {
 

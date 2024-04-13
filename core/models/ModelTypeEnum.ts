@@ -22,17 +22,49 @@ export const ModelTypeEnum = {
     Speed: 'SPEED',
     Accuracy: 'ACCURACY'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @typedef {ModelTypeEnum}
+ */
 export type ModelTypeEnum = typeof ModelTypeEnum[keyof typeof ModelTypeEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ModelTypeEnum}
+ */
 export function ModelTypeEnumFromJSON(json: any): ModelTypeEnum {
     return ModelTypeEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ModelTypeEnum}
+ */
 export function ModelTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ModelTypeEnum {
     return json as ModelTypeEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(ModelTypeEnum | null)} [value]
+ * @returns {*}
+ */
 export function ModelTypeEnumToJSON(value?: ModelTypeEnum | null): any {
     return value as any;
 }

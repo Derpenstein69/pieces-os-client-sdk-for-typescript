@@ -27,49 +27,49 @@ import {
  */
 export interface GraphicalImageDescriptiveStatistics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof GraphicalImageDescriptiveStatistics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalImageDescriptiveStatistics
      */
     width: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalImageDescriptiveStatistics
      */
     height: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalImageDescriptiveStatistics
      */
     channels: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalImageDescriptiveStatistics
      */
     asset: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalImageDescriptiveStatistics
      */
     user?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalImageDescriptiveStatistics
      */
     created: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalImageDescriptiveStatistics
      */
@@ -91,16 +91,33 @@ export function instanceOfGraphicalImageDescriptiveStatistics(value: object): bo
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {GraphicalImageDescriptiveStatistics}
+ */
 export function GraphicalImageDescriptiveStatisticsFromJSON(json: any): GraphicalImageDescriptiveStatistics {
     return GraphicalImageDescriptiveStatisticsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {GraphicalImageDescriptiveStatistics}
+ */
 export function GraphicalImageDescriptiveStatisticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GraphicalImageDescriptiveStatistics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'width': json['width'],
         'height': json['height'],
@@ -112,6 +129,14 @@ export function GraphicalImageDescriptiveStatisticsFromJSONTyped(json: any, igno
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(GraphicalImageDescriptiveStatistics | null)} [value]
+ * @returns {*}
+ */
 export function GraphicalImageDescriptiveStatisticsToJSON(value?: GraphicalImageDescriptiveStatistics | null): any {
     if (value === undefined) {
         return undefined;
@@ -120,7 +145,7 @@ export function GraphicalImageDescriptiveStatisticsToJSON(value?: GraphicalImage
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'width': value.width,
         'height': value.height,

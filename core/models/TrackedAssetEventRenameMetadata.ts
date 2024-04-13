@@ -27,19 +27,19 @@ import {
  */
 export interface TrackedAssetEventRenameMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedAssetEventRenameMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventRenameMetadata
      */
     previous: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventRenameMetadata
      */
@@ -57,22 +57,47 @@ export function instanceOfTrackedAssetEventRenameMetadata(value: object): boolea
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedAssetEventRenameMetadata}
+ */
 export function TrackedAssetEventRenameMetadataFromJSON(json: any): TrackedAssetEventRenameMetadata {
     return TrackedAssetEventRenameMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedAssetEventRenameMetadata}
+ */
 export function TrackedAssetEventRenameMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedAssetEventRenameMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'previous': json['previous'],
         'current': json['current'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedAssetEventRenameMetadata | null)} [value]
+ * @returns {*}
+ */
 export function TrackedAssetEventRenameMetadataToJSON(value?: TrackedAssetEventRenameMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function TrackedAssetEventRenameMetadataToJSON(value?: TrackedAssetEventR
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'previous': value.previous,
         'current': value.current,

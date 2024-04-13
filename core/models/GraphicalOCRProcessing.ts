@@ -27,19 +27,19 @@ import {
 } from './GraphicalOCRStatistics';
 
 /**
- * 
+ *
  * @export
  * @interface GraphicalOCRProcessing
  */
 export interface GraphicalOCRProcessing {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof GraphicalOCRProcessing
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {GraphicalOCRStatistics}
      * @memberof GraphicalOCRProcessing
      */
@@ -55,21 +55,46 @@ export function instanceOfGraphicalOCRProcessing(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {GraphicalOCRProcessing}
+ */
 export function GraphicalOCRProcessingFromJSON(json: any): GraphicalOCRProcessing {
     return GraphicalOCRProcessingFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {GraphicalOCRProcessing}
+ */
 export function GraphicalOCRProcessingFromJSONTyped(json: any, ignoreDiscriminator: boolean): GraphicalOCRProcessing {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'statistics': !exists(json, 'statistics') ? undefined : GraphicalOCRStatisticsFromJSON(json['statistics']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(GraphicalOCRProcessing | null)} [value]
+ * @returns {*}
+ */
 export function GraphicalOCRProcessingToJSON(value?: GraphicalOCRProcessing | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function GraphicalOCRProcessingToJSON(value?: GraphicalOCRProcessing | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'statistics': GraphicalOCRStatisticsToJSON(value.statistics),
     };

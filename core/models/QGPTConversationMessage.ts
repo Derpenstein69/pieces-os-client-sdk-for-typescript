@@ -39,25 +39,25 @@ import {
  */
 export interface QGPTConversationMessage {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTConversationMessage
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof QGPTConversationMessage
      */
     text: string;
     /**
-     * 
+     *
      * @type {QGPTConversationMessageRoleEnum}
      * @memberof QGPTConversationMessage
      */
     role: QGPTConversationMessageRoleEnum;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof QGPTConversationMessage
      */
@@ -76,16 +76,33 @@ export function instanceOfQGPTConversationMessage(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTConversationMessage}
+ */
 export function QGPTConversationMessageFromJSON(json: any): QGPTConversationMessage {
     return QGPTConversationMessageFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTConversationMessage}
+ */
 export function QGPTConversationMessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTConversationMessage {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'text': json['text'],
         'role': QGPTConversationMessageRoleEnumFromJSON(json['role']),
@@ -93,6 +110,14 @@ export function QGPTConversationMessageFromJSONTyped(json: any, ignoreDiscrimina
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTConversationMessage | null)} [value]
+ * @returns {*}
+ */
 export function QGPTConversationMessageToJSON(value?: QGPTConversationMessage | null): any {
     if (value === undefined) {
         return undefined;
@@ -101,7 +126,7 @@ export function QGPTConversationMessageToJSON(value?: QGPTConversationMessage | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'text': value.text,
         'role': QGPTConversationMessageRoleEnumToJSON(value.role),

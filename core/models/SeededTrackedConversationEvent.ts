@@ -45,25 +45,25 @@ import {
  */
 export interface SeededTrackedConversationEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededTrackedConversationEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TrackedConversationEventIdentifierDescriptionPairs}
      * @memberof SeededTrackedConversationEvent
      */
     identifierDescriptionPair: TrackedConversationEventIdentifierDescriptionPairs;
     /**
-     * 
+     *
      * @type {ReferencedConversation}
      * @memberof SeededTrackedConversationEvent
      */
     conversation: ReferencedConversation;
     /**
-     * 
+     *
      * @type {TrackedConversationEventMetadata}
      * @memberof SeededTrackedConversationEvent
      */
@@ -81,16 +81,33 @@ export function instanceOfSeededTrackedConversationEvent(value: object): boolean
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTrackedConversationEvent}
+ */
 export function SeededTrackedConversationEventFromJSON(json: any): SeededTrackedConversationEvent {
     return SeededTrackedConversationEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTrackedConversationEvent}
+ */
 export function SeededTrackedConversationEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTrackedConversationEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'identifierDescriptionPair': TrackedConversationEventIdentifierDescriptionPairsFromJSON(json['identifier_description_pair']),
         'conversation': ReferencedConversationFromJSON(json['conversation']),
@@ -98,6 +115,14 @@ export function SeededTrackedConversationEventFromJSONTyped(json: any, ignoreDis
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededTrackedConversationEvent | null)} [value]
+ * @returns {*}
+ */
 export function SeededTrackedConversationEventToJSON(value?: SeededTrackedConversationEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -106,7 +131,7 @@ export function SeededTrackedConversationEventToJSON(value?: SeededTrackedConver
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'identifier_description_pair': TrackedConversationEventIdentifierDescriptionPairsToJSON(value.identifierDescriptionPair),
         'conversation': ReferencedConversationToJSON(value.conversation),

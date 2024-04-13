@@ -118,17 +118,49 @@ export const ModelFoundationEnum = {
     Gemma112B: 'GEMMA_1.1_2B',
     Gemma117B: 'GEMMA_1.1_7B'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @typedef {ModelFoundationEnum}
+ */
 export type ModelFoundationEnum = typeof ModelFoundationEnum[keyof typeof ModelFoundationEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ModelFoundationEnum}
+ */
 export function ModelFoundationEnumFromJSON(json: any): ModelFoundationEnum {
     return ModelFoundationEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ModelFoundationEnum}
+ */
 export function ModelFoundationEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ModelFoundationEnum {
     return json as ModelFoundationEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(ModelFoundationEnum | null)} [value]
+ * @returns {*}
+ */
 export function ModelFoundationEnumToJSON(value?: ModelFoundationEnum | null): any {
     return value as any;
 }

@@ -124,14 +124,14 @@ import {
 
 /**
  * An Asset Model representing data extracted from an Application connecting a group of data containing one or more Formats.
- * 
+ *
  * Below formats, preview, and original CAN to be pollinated (DAG Unsafe) because it is a root node and it's child leaf nodes will prevent cycles agressively.
  * @export
  * @interface Asset
  */
 export interface Asset {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Asset
      */
@@ -143,97 +143,97 @@ export interface Asset {
      */
     id: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Asset
      */
     name?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Asset
      */
     creator: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Asset
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Asset
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Asset
      */
     synced?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Asset
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {Formats}
      * @memberof Asset
      */
     formats: Formats;
     /**
-     * 
+     *
      * @type {Preview}
      * @memberof Asset
      */
     preview: Preview;
     /**
-     * 
+     *
      * @type {ReferencedFormat}
      * @memberof Asset
      */
     original: ReferencedFormat;
     /**
-     * 
+     *
      * @type {Shares}
      * @memberof Asset
      */
     shares?: Shares;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof Asset
      */
     mechanism: MechanismEnum;
     /**
-     * 
+     *
      * @type {Websites}
      * @memberof Asset
      */
     websites?: Websites;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Asset
      */
     interacted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {Tags}
      * @memberof Asset
      */
     tags?: Tags;
     /**
-     * 
+     *
      * @type {Sensitives}
      * @memberof Asset
      */
     sensitives?: Sensitives;
     /**
-     * 
+     *
      * @type {Persons}
      * @memberof Asset
      */
@@ -245,25 +245,25 @@ export interface Asset {
      */
     curated?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof Asset
      */
     discovered?: boolean;
     /**
-     * 
+     *
      * @type {Activities}
      * @memberof Asset
      */
     activities?: Activities;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Asset
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof Asset
      */
@@ -275,31 +275,31 @@ export interface Asset {
      */
     pseudo?: boolean;
     /**
-     * 
+     *
      * @type {Annotations}
      * @memberof Asset
      */
     annotations?: Annotations;
     /**
-     * 
+     *
      * @type {Hints}
      * @memberof Asset
      */
     hints?: Hints;
     /**
-     * 
+     *
      * @type {Anchors}
      * @memberof Asset
      */
     anchors?: Anchors;
     /**
-     * 
+     *
      * @type {Conversations}
      * @memberof Asset
      */
     conversations?: Conversations;
     /**
-     * 
+     *
      * @type {WorkstreamSummaries}
      * @memberof Asset
      */
@@ -329,16 +329,33 @@ export function instanceOfAsset(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Asset}
+ */
 export function AssetFromJSON(json: any): Asset {
     return AssetFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Asset}
+ */
 export function AssetFromJSONTyped(json: any, ignoreDiscriminator: boolean): Asset {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'name': !exists(json, 'name') ? undefined : json['name'],
@@ -372,6 +389,14 @@ export function AssetFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ass
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(Asset | null)} [value]
+ * @returns {*}
+ */
 export function AssetToJSON(value?: Asset | null): any {
     if (value === undefined) {
         return undefined;
@@ -380,7 +405,7 @@ export function AssetToJSON(value?: Asset | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'name': value.name,

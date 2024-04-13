@@ -34,28 +34,28 @@ import {
 
 /**
  * This is a generic model used, to wrap a seed, as well as give an identifier used to further identifiy this snippet.
- * 
+ *
  * Seed is optional here because you may just want to provide the id, and not the original seed.
- * 
+ *
  * id is also optional here as you may provide an id or not here.(however with specific endpoint this ID is a guarentee.)
  * @export
  * @interface RelevantQGPTSeed
  */
 export interface RelevantQGPTSeed {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof RelevantQGPTSeed
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof RelevantQGPTSeed
      */
     id?: string;
     /**
-     * 
+     *
      * @type {Seed}
      * @memberof RelevantQGPTSeed
      */
@@ -67,7 +67,7 @@ export interface RelevantQGPTSeed {
      */
     path?: string;
     /**
-     * 
+     *
      * @type {ReferencedAsset}
      * @memberof RelevantQGPTSeed
      */
@@ -83,16 +83,33 @@ export function instanceOfRelevantQGPTSeed(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {RelevantQGPTSeed}
+ */
 export function RelevantQGPTSeedFromJSON(json: any): RelevantQGPTSeed {
     return RelevantQGPTSeedFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {RelevantQGPTSeed}
+ */
 export function RelevantQGPTSeedFromJSONTyped(json: any, ignoreDiscriminator: boolean): RelevantQGPTSeed {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': !exists(json, 'id') ? undefined : json['id'],
         'seed': !exists(json, 'seed') ? undefined : SeedFromJSON(json['seed']),
@@ -101,6 +118,14 @@ export function RelevantQGPTSeedFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(RelevantQGPTSeed | null)} [value]
+ * @returns {*}
+ */
 export function RelevantQGPTSeedToJSON(value?: RelevantQGPTSeed | null): any {
     if (value === undefined) {
         return undefined;
@@ -109,7 +134,7 @@ export function RelevantQGPTSeedToJSON(value?: RelevantQGPTSeed | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'seed': SeedToJSON(value.seed),

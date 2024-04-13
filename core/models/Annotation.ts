@@ -88,9 +88,9 @@ import {
 
 /**
  * An Annotation is the replacement for descriptions, this will enable comments, description, summaries and many more.
- * 
+ *
  * person on here is a reference to the description/comment/annotation about a person
- * 
+ *
  * NOTE: person here is NOT the creator of the annotaion. but rather the descriptions of the person.
  * NOTE****: if we want to add "who" wrote the annotation, we will want to add a new field on here called author && will need to also layer in behavior the enable an author(person) and an asset both being referenced(ensure you check the side effect in the AssetsFacade.delete)
  * @export
@@ -98,55 +98,55 @@ import {
  */
 export interface Annotation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Annotation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Annotation
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Annotation
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Annotation
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Annotation
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof Annotation
      */
     mechanism?: MechanismEnum;
     /**
-     * 
+     *
      * @type {ReferencedAsset}
      * @memberof Annotation
      */
     asset?: ReferencedAsset;
     /**
-     * 
+     *
      * @type {ReferencedPerson}
      * @memberof Annotation
      */
     person?: ReferencedPerson;
     /**
-     * 
+     *
      * @type {AnnotationTypeEnum}
      * @memberof Annotation
      */
@@ -158,49 +158,49 @@ export interface Annotation {
      */
     text: string;
     /**
-     * 
+     *
      * @type {ReferencedModel}
      * @memberof Annotation
      */
     model?: ReferencedModel;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof Annotation
      */
     pseudo?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof Annotation
      */
     favorited?: boolean;
     /**
-     * 
+     *
      * @type {ReferencedAnchor}
      * @memberof Annotation
      */
     anchor?: ReferencedAnchor;
     /**
-     * 
+     *
      * @type {ReferencedConversation}
      * @memberof Annotation
      */
     conversation?: ReferencedConversation;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Annotation
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {FlattenedConversationMessages}
      * @memberof Annotation
      */
     messages?: FlattenedConversationMessages;
     /**
-     * 
+     *
      * @type {ReferencedWorkstreamSummary}
      * @memberof Annotation
      */
@@ -221,16 +221,33 @@ export function instanceOfAnnotation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Annotation}
+ */
 export function AnnotationFromJSON(json: any): Annotation {
     return AnnotationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Annotation}
+ */
 export function AnnotationFromJSONTyped(json: any, ignoreDiscriminator: boolean): Annotation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -252,6 +269,14 @@ export function AnnotationFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(Annotation | null)} [value]
+ * @returns {*}
+ */
 export function AnnotationToJSON(value?: Annotation | null): any {
     if (value === undefined) {
         return undefined;
@@ -260,7 +285,7 @@ export function AnnotationToJSON(value?: Annotation | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'created': GroupedTimestampToJSON(value.created),

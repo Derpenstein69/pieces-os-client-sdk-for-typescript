@@ -28,25 +28,67 @@ import {
     SharesToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface LinkifyRequest
+ * @typedef {LinkifyRequest}
+ */
 export interface LinkifyRequest {
-    linkify?: Linkify;
-}
-
-export interface LinkifyMultipleRequest {
-    linkifyMultiple?: LinkifyMultiple;
-}
-
-export interface LinkifyShareRevokeRequest {
-    share: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?Linkify}
+ */
+linkify?: Linkify;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface LinkifyMultipleRequest
+ * @typedef {LinkifyMultipleRequest}
+ */
+export interface LinkifyMultipleRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?LinkifyMultiple}
+ */
+linkifyMultiple?: LinkifyMultiple;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface LinkifyShareRevokeRequest
+ * @typedef {LinkifyShareRevokeRequest}
+ */
+export interface LinkifyShareRevokeRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+share: string;
+}
+
+/**
+ *
  */
 export class LinkifyApi extends runtime.BaseAPI {
 
     /**
-     * 
+     *
      * /linkify [POST]
      */
     async linkifyRaw(requestParameters: LinkifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Shares>> {
@@ -68,7 +110,7 @@ export class LinkifyApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * /linkify [POST]
      */
     async linkify(requestParameters: LinkifyRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Shares> {

@@ -32,17 +32,49 @@ export const SensitiveCategoryEnum = {
     ApiId: 'API_ID',
     WebHookUrl: 'WEB_HOOK_URL'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @typedef {SensitiveCategoryEnum}
+ */
 export type SensitiveCategoryEnum = typeof SensitiveCategoryEnum[keyof typeof SensitiveCategoryEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SensitiveCategoryEnum}
+ */
 export function SensitiveCategoryEnumFromJSON(json: any): SensitiveCategoryEnum {
     return SensitiveCategoryEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SensitiveCategoryEnum}
+ */
 export function SensitiveCategoryEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): SensitiveCategoryEnum {
     return json as SensitiveCategoryEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(SensitiveCategoryEnum | null)} [value]
+ * @returns {*}
+ */
 export function SensitiveCategoryEnumToJSON(value?: SensitiveCategoryEnum | null): any {
     return value as any;
 }

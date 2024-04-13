@@ -69,19 +69,19 @@ import {
  */
 export interface Website {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Website
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Website
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof Website
      */
@@ -99,19 +99,19 @@ export interface Website {
      */
     name: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Website
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Website
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Website
      */
@@ -129,25 +129,25 @@ export interface Website {
      */
     interactions?: number;
     /**
-     * 
+     *
      * @type {FlattenedPersons}
      * @memberof Website
      */
     persons?: FlattenedPersons;
     /**
-     * 
+     *
      * @type {FlattenedConversations}
      * @memberof Website
      */
     conversations?: FlattenedConversations;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Website
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof Website
      */
@@ -168,16 +168,33 @@ export function instanceOfWebsite(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Website}
+ */
 export function WebsiteFromJSON(json: any): Website {
     return WebsiteFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Website}
+ */
 export function WebsiteFromJSONTyped(json: any, ignoreDiscriminator: boolean): Website {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'assets': !exists(json, 'assets') ? undefined : FlattenedAssetsFromJSON(json['assets']),
@@ -195,6 +212,14 @@ export function WebsiteFromJSONTyped(json: any, ignoreDiscriminator: boolean): W
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(Website | null)} [value]
+ * @returns {*}
+ */
 export function WebsiteToJSON(value?: Website | null): any {
     if (value === undefined) {
         return undefined;
@@ -203,7 +228,7 @@ export function WebsiteToJSON(value?: Website | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'assets': FlattenedAssetsToJSON(value.assets),

@@ -27,37 +27,37 @@ import {
  */
 export interface TLPCodeFragmentSuggestedSave {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeFragmentSuggestedSave
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentSuggestedSave
      */
     asset: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentSuggestedSave
      */
     user: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentSuggestedSave
      */
     model: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentSuggestedSave
      */
     created: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentSuggestedSave
      */
@@ -96,16 +96,33 @@ export function instanceOfTLPCodeFragmentSuggestedSave(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeFragmentSuggestedSave}
+ */
 export function TLPCodeFragmentSuggestedSaveFromJSON(json: any): TLPCodeFragmentSuggestedSave {
     return TLPCodeFragmentSuggestedSaveFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeFragmentSuggestedSave}
+ */
 export function TLPCodeFragmentSuggestedSaveFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeFragmentSuggestedSave {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': json['asset'],
         'user': json['user'],
@@ -118,6 +135,14 @@ export function TLPCodeFragmentSuggestedSaveFromJSONTyped(json: any, ignoreDiscr
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TLPCodeFragmentSuggestedSave | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeFragmentSuggestedSaveToJSON(value?: TLPCodeFragmentSuggestedSave | null): any {
     if (value === undefined) {
         return undefined;
@@ -126,7 +151,7 @@ export function TLPCodeFragmentSuggestedSaveToJSON(value?: TLPCodeFragmentSugges
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': value.asset,
         'user': value.user,

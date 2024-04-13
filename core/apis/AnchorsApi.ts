@@ -28,26 +28,94 @@ import {
     SeededAnchorToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AnchorDisassociateAssetRequest
+ * @typedef {AnchorDisassociateAssetRequest}
+ */
 export interface AnchorDisassociateAssetRequest {
-    anchor: string;
-    asset: string;
-}
-
-export interface AnchorsCreateNewAnchorRequest {
-    transferables?: boolean;
-    seededAnchor?: SeededAnchor;
-}
-
-export interface AnchorsDeleteSpecificAnchorRequest {
-    anchor: string;
-}
-
-export interface AnchorsSnapshotRequest {
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+anchor: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AnchorsCreateNewAnchorRequest
+ * @typedef {AnchorsCreateNewAnchorRequest}
+ */
+export interface AnchorsCreateNewAnchorRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededAnchor}
+ */
+seededAnchor?: SeededAnchor;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AnchorsDeleteSpecificAnchorRequest
+ * @typedef {AnchorsDeleteSpecificAnchorRequest}
+ */
+export interface AnchorsDeleteSpecificAnchorRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+anchor: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AnchorsSnapshotRequest
+ * @typedef {AnchorsSnapshotRequest}
+ */
+export interface AnchorsSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class AnchorsApi extends runtime.BaseAPI {
 

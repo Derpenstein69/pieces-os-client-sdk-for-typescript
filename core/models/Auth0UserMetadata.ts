@@ -45,19 +45,19 @@ import {
  */
 export interface Auth0UserMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Auth0UserMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0UserMetadata
      */
     globalId: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0UserMetadata
      */
@@ -75,19 +75,19 @@ export interface Auth0UserMetadata {
      */
     vanityname?: string;
     /**
-     * 
+     *
      * @type {Auth0UserAllocationMetadata}
      * @memberof Auth0UserMetadata
      */
     allocation?: Auth0UserAllocationMetadata;
     /**
-     * 
+     *
      * @type {Auth0OpenAIUserMetadata}
      * @memberof Auth0UserMetadata
      */
     openAI?: Auth0OpenAIUserMetadata;
     /**
-     * 
+     *
      * @type {AnonymousTemporalRange}
      * @memberof Auth0UserMetadata
      */
@@ -104,16 +104,33 @@ export function instanceOfAuth0UserMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Auth0UserMetadata}
+ */
 export function Auth0UserMetadataFromJSON(json: any): Auth0UserMetadata {
     return Auth0UserMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Auth0UserMetadata}
+ */
 export function Auth0UserMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): Auth0UserMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'globalId': json['global_id'],
         'cloudKey': !exists(json, 'cloud_key') ? undefined : json['cloud_key'],
@@ -125,6 +142,14 @@ export function Auth0UserMetadataFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Auth0UserMetadata | null)} [value]
+ * @returns {*}
+ */
 export function Auth0UserMetadataToJSON(value?: Auth0UserMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -133,7 +158,7 @@ export function Auth0UserMetadataToJSON(value?: Auth0UserMetadata | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'global_id': value.globalId,
         'cloud_key': value.cloudKey,

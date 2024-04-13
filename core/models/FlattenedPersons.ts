@@ -39,13 +39,13 @@ import {
  */
 export interface FlattenedPersons {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedPersons
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedPerson>}
      * @memberof FlattenedPersons
      */
@@ -57,7 +57,7 @@ export interface FlattenedPersons {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedPersons
      */
@@ -74,16 +74,33 @@ export function instanceOfFlattenedPersons(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedPersons}
+ */
 export function FlattenedPersonsFromJSON(json: any): FlattenedPersons {
     return FlattenedPersonsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedPersons}
+ */
 export function FlattenedPersonsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedPersons {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedPersonFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function FlattenedPersonsFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedPersons | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedPersonsToJSON(value?: FlattenedPersons | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function FlattenedPersonsToJSON(value?: FlattenedPersons | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedPersonToJSON)),
         'indices': value.indices,

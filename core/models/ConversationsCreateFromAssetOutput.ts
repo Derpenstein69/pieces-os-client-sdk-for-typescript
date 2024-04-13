@@ -33,13 +33,13 @@ import {
  */
 export interface ConversationsCreateFromAssetOutput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ConversationsCreateFromAssetOutput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ReferencedConversation}
      * @memberof ConversationsCreateFromAssetOutput
      */
@@ -56,21 +56,46 @@ export function instanceOfConversationsCreateFromAssetOutput(value: object): boo
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ConversationsCreateFromAssetOutput}
+ */
 export function ConversationsCreateFromAssetOutputFromJSON(json: any): ConversationsCreateFromAssetOutput {
     return ConversationsCreateFromAssetOutputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ConversationsCreateFromAssetOutput}
+ */
 export function ConversationsCreateFromAssetOutputFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConversationsCreateFromAssetOutput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'conversation': ReferencedConversationFromJSON(json['conversation']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(ConversationsCreateFromAssetOutput | null)} [value]
+ * @returns {*}
+ */
 export function ConversationsCreateFromAssetOutputToJSON(value?: ConversationsCreateFromAssetOutput | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function ConversationsCreateFromAssetOutputToJSON(value?: ConversationsCr
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'conversation': ReferencedConversationToJSON(value.conversation),
     };

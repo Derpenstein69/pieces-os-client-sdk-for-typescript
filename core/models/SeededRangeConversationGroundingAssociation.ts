@@ -27,19 +27,19 @@ import {
 } from './SeededRangeConversationGroundingTemporalAssociation';
 
 /**
- * 
+ *
  * @export
  * @interface SeededRangeConversationGroundingAssociation
  */
 export interface SeededRangeConversationGroundingAssociation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededRangeConversationGroundingAssociation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededRangeConversationGroundingTemporalAssociation}
      * @memberof SeededRangeConversationGroundingAssociation
      */
@@ -55,21 +55,46 @@ export function instanceOfSeededRangeConversationGroundingAssociation(value: obj
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededRangeConversationGroundingAssociation}
+ */
 export function SeededRangeConversationGroundingAssociationFromJSON(json: any): SeededRangeConversationGroundingAssociation {
     return SeededRangeConversationGroundingAssociationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededRangeConversationGroundingAssociation}
+ */
 export function SeededRangeConversationGroundingAssociationFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededRangeConversationGroundingAssociation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'temporal': !exists(json, 'temporal') ? undefined : SeededRangeConversationGroundingTemporalAssociationFromJSON(json['temporal']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededRangeConversationGroundingAssociation | null)} [value]
+ * @returns {*}
+ */
 export function SeededRangeConversationGroundingAssociationToJSON(value?: SeededRangeConversationGroundingAssociation | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function SeededRangeConversationGroundingAssociationToJSON(value?: Seeded
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'temporal': SeededRangeConversationGroundingTemporalAssociationToJSON(value.temporal),
     };

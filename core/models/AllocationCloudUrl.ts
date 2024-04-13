@@ -33,13 +33,13 @@ import {
  */
 export interface AllocationCloudUrl {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AllocationCloudUrl
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {AllocationStatusEnum}
      * @memberof AllocationCloudUrl
      */
@@ -63,22 +63,47 @@ export function instanceOfAllocationCloudUrl(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AllocationCloudUrl}
+ */
 export function AllocationCloudUrlFromJSON(json: any): AllocationCloudUrl {
     return AllocationCloudUrlFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AllocationCloudUrl}
+ */
 export function AllocationCloudUrlFromJSONTyped(json: any, ignoreDiscriminator: boolean): AllocationCloudUrl {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'status': AllocationStatusEnumFromJSON(json['status']),
         'url': json['url'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(AllocationCloudUrl | null)} [value]
+ * @returns {*}
+ */
 export function AllocationCloudUrlToJSON(value?: AllocationCloudUrl | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function AllocationCloudUrlToJSON(value?: AllocationCloudUrl | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'status': AllocationStatusEnumToJSON(value.status),
         'url': value.url,

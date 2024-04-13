@@ -57,37 +57,37 @@ import {
  */
 export interface SeededWorkstreamEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededWorkstreamEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof SeededWorkstreamEvent
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof SeededWorkstreamEvent
      */
     application: Application;
     /**
-     * 
+     *
      * @type {WorkstreamEventTrigger}
      * @memberof SeededWorkstreamEvent
      */
     trigger: WorkstreamEventTrigger;
     /**
-     * 
+     *
      * @type {WorkstreamEventTriggerMetadata}
      * @memberof SeededWorkstreamEvent
      */
     metadata?: WorkstreamEventTriggerMetadata;
     /**
-     * 
+     *
      * @type {ReferencedWorkstreamSummary}
      * @memberof SeededWorkstreamEvent
      */
@@ -111,16 +111,33 @@ export function instanceOfSeededWorkstreamEvent(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededWorkstreamEvent}
+ */
 export function SeededWorkstreamEventFromJSON(json: any): SeededWorkstreamEvent {
     return SeededWorkstreamEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededWorkstreamEvent}
+ */
 export function SeededWorkstreamEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededWorkstreamEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'score': !exists(json, 'score') ? undefined : ScoreFromJSON(json['score']),
         'application': ApplicationFromJSON(json['application']),
@@ -131,6 +148,14 @@ export function SeededWorkstreamEventFromJSONTyped(json: any, ignoreDiscriminato
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededWorkstreamEvent | null)} [value]
+ * @returns {*}
+ */
 export function SeededWorkstreamEventToJSON(value?: SeededWorkstreamEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -139,7 +164,7 @@ export function SeededWorkstreamEventToJSON(value?: SeededWorkstreamEvent | null
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'score': ScoreToJSON(value.score),
         'application': ApplicationToJSON(value.application),

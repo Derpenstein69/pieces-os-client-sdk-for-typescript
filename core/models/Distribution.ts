@@ -52,49 +52,49 @@ import {
  */
 export interface Distribution {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Distribution
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Distribution
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedShare}
      * @memberof Distribution
      */
     share: FlattenedShare;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Distribution
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Distribution
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Distribution
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {MailgunDistribution}
      * @memberof Distribution
      */
     mailgun?: MailgunDistribution;
     /**
-     * 
+     *
      * @type {GitHubDistribution}
      * @memberof Distribution
      */
@@ -114,16 +114,33 @@ export function instanceOfDistribution(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Distribution}
+ */
 export function DistributionFromJSON(json: any): Distribution {
     return DistributionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Distribution}
+ */
 export function DistributionFromJSONTyped(json: any, ignoreDiscriminator: boolean): Distribution {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'share': FlattenedShareFromJSON(json['share']),
@@ -135,6 +152,14 @@ export function DistributionFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(Distribution | null)} [value]
+ * @returns {*}
+ */
 export function DistributionToJSON(value?: Distribution | null): any {
     if (value === undefined) {
         return undefined;
@@ -143,7 +168,7 @@ export function DistributionToJSON(value?: Distribution | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'share': FlattenedShareToJSON(value.share),

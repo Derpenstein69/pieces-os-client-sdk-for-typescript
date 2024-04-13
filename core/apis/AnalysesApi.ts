@@ -22,12 +22,26 @@ import {
     AnalysesToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnalysesSnapshotRequest
+ * @typedef {AnalysesSnapshotRequest}
+ */
 export interface AnalysesSnapshotRequest {
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
 }
 
 /**
- * 
+ *
  */
 export class AnalysesApi extends runtime.BaseAPI {
 

@@ -27,25 +27,25 @@ import {
 } from './FlattenedPerson';
 
 /**
- * [DAG Safe] version of a Person Model. 
+ * [DAG Safe] version of a Person Model.
  * @export
  * @interface ReferencedPerson
  */
 export interface ReferencedPerson {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedPerson
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedPerson
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedPerson}
      * @memberof ReferencedPerson
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedPerson(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedPerson}
+ */
 export function ReferencedPersonFromJSON(json: any): ReferencedPerson {
     return ReferencedPersonFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedPerson}
+ */
 export function ReferencedPersonFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedPerson {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedPersonFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedPerson | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedPersonToJSON(value?: ReferencedPerson | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedPersonToJSON(value?: ReferencedPerson | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedPersonToJSON(value.reference),

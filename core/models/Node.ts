@@ -28,22 +28,22 @@ import {
 
 /**
  * This describes a node within a relationship graph used to related like types. ie asset to asset, tag to tag, ...etc
- * 
+ *
  * created: is here to let us know when the node was attached.
- * 
+ *
  * id: this is the the id of the type ie, if the type is Asset the id here points to the asset that this node represents.
  * @export
  * @interface Node
  */
 export interface Node {
     /**
-     * 
+     *
      * @type {string}
      * @memberof Node
      */
     id: string;
     /**
-     * 
+     *
      * @type {NodeTypeEnum}
      * @memberof Node
      */
@@ -55,7 +55,7 @@ export interface Node {
      */
     root: boolean;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Node
      */
@@ -75,16 +75,33 @@ export function instanceOfNode(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Node}
+ */
 export function NodeFromJSON(json: any): Node {
     return NodeFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Node}
+ */
 export function NodeFromJSONTyped(json: any, ignoreDiscriminator: boolean): Node {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'id': json['id'],
         'type': NodeTypeEnumFromJSON(json['type']),
         'root': json['root'],
@@ -92,6 +109,14 @@ export function NodeFromJSONTyped(json: any, ignoreDiscriminator: boolean): Node
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(Node | null)} [value]
+ * @returns {*}
+ */
 export function NodeToJSON(value?: Node | null): any {
     if (value === undefined) {
         return undefined;
@@ -100,7 +125,7 @@ export function NodeToJSON(value?: Node | null): any {
         return null;
     }
     return {
-        
+
         'id': value.id,
         'type': NodeTypeEnumToJSON(value.type),
         'root': value.root,

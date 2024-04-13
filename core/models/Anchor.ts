@@ -69,91 +69,91 @@ import {
 } from './Score';
 
 /**
- * 
+ *
  * @export
  * @interface Anchor
  */
 export interface Anchor {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Anchor
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Anchor
      */
     id: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Anchor
      */
     name?: string;
     /**
-     * 
+     *
      * @type {AnchorTypeEnum}
      * @memberof Anchor
      */
     type: AnchorTypeEnum;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof Anchor
      */
     watch?: boolean;
     /**
-     * 
+     *
      * @type {FlattenedAnchorPoints}
      * @memberof Anchor
      */
     points: FlattenedAnchorPoints;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Anchor
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Anchor
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Anchor
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof Anchor
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {FlattenedAnnotations}
      * @memberof Anchor
      */
     annotations?: FlattenedAnnotations;
     /**
-     * 
+     *
      * @type {FlattenedConversations}
      * @memberof Anchor
      */
     conversations?: FlattenedConversations;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Anchor
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof Anchor
      */
@@ -174,16 +174,33 @@ export function instanceOfAnchor(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Anchor}
+ */
 export function AnchorFromJSON(json: any): Anchor {
     return AnchorFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Anchor}
+ */
 export function AnchorFromJSONTyped(json: any, ignoreDiscriminator: boolean): Anchor {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'name': !exists(json, 'name') ? undefined : json['name'],
@@ -201,6 +218,14 @@ export function AnchorFromJSONTyped(json: any, ignoreDiscriminator: boolean): An
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(Anchor | null)} [value]
+ * @returns {*}
+ */
 export function AnchorToJSON(value?: Anchor | null): any {
     if (value === undefined) {
         return undefined;
@@ -209,7 +234,7 @@ export function AnchorToJSON(value?: Anchor | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'name': value.name,

@@ -27,7 +27,7 @@ import {
  */
 export interface DetectedExternalApplication {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof DetectedExternalApplication
      */
@@ -39,7 +39,7 @@ export interface DetectedExternalApplication {
      */
     name: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof DetectedExternalApplication
      */
@@ -56,22 +56,47 @@ export function instanceOfDetectedExternalApplication(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {DetectedExternalApplication}
+ */
 export function DetectedExternalApplicationFromJSON(json: any): DetectedExternalApplication {
     return DetectedExternalApplicationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {DetectedExternalApplication}
+ */
 export function DetectedExternalApplicationFromJSONTyped(json: any, ignoreDiscriminator: boolean): DetectedExternalApplication {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'name': json['name'],
         'version': !exists(json, 'version') ? undefined : json['version'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(DetectedExternalApplication | null)} [value]
+ * @returns {*}
+ */
 export function DetectedExternalApplicationToJSON(value?: DetectedExternalApplication | null): any {
     if (value === undefined) {
         return undefined;
@@ -80,7 +105,7 @@ export function DetectedExternalApplicationToJSON(value?: DetectedExternalApplic
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'name': value.name,
         'version': value.version,

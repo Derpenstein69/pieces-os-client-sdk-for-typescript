@@ -27,25 +27,25 @@ import {
  */
 export interface Auth0OpenAIUserMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Auth0OpenAIUserMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0OpenAIUserMetadata
      */
     apiKey?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0OpenAIUserMetadata
      */
     apiKeyName?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0OpenAIUserMetadata
      */
@@ -61,16 +61,33 @@ export function instanceOfAuth0OpenAIUserMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Auth0OpenAIUserMetadata}
+ */
 export function Auth0OpenAIUserMetadataFromJSON(json: any): Auth0OpenAIUserMetadata {
     return Auth0OpenAIUserMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Auth0OpenAIUserMetadata}
+ */
 export function Auth0OpenAIUserMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): Auth0OpenAIUserMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'apiKey': !exists(json, 'api_key') ? undefined : json['api_key'],
         'apiKeyName': !exists(json, 'api_key_name') ? undefined : json['api_key_name'],
@@ -78,6 +95,14 @@ export function Auth0OpenAIUserMetadataFromJSONTyped(json: any, ignoreDiscrimina
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Auth0OpenAIUserMetadata | null)} [value]
+ * @returns {*}
+ */
 export function Auth0OpenAIUserMetadataToJSON(value?: Auth0OpenAIUserMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function Auth0OpenAIUserMetadataToJSON(value?: Auth0OpenAIUserMetadata | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'api_key': value.apiKey,
         'api_key_name': value.apiKeyName,

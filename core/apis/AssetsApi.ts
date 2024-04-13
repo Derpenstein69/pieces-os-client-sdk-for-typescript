@@ -52,63 +52,283 @@ import {
     StreamedIdentifiersToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetsCreateNewAssetRequest
+ * @typedef {AssetsCreateNewAssetRequest}
+ */
 export interface AssetsCreateNewAssetRequest {
-    transferables?: boolean;
-    seed?: Seed;
-}
-
-export interface AssetsDeleteAssetRequest {
-    asset: string;
-}
-
-export interface AssetsDraftRequest {
-    transferables?: boolean;
-    seed?: Seed;
-}
-
-export interface AssetsGetRecommendedAssetsRequest {
-    seededAssetsRecommendation?: SeededAssetsRecommendation;
-}
-
-export interface AssetsGetRelatedAssetsRequest {
-    assets?: Assets;
-}
-
-export interface AssetsIdentifiersSnapshotRequest {
-    pseudo?: boolean;
-}
-
-export interface AssetsSearchAssetsRequest {
-    query?: string;
-    transferables?: boolean;
-    searchableTags?: string;
-    pseudo?: boolean;
-}
-
-export interface AssetsSearchWithFiltersRequest {
-    transferables?: boolean;
-    pseudo?: boolean;
-    assetsSearchWithFiltersInput?: AssetsSearchWithFiltersInput;
-}
-
-export interface AssetsSnapshotRequest {
-    transferables?: boolean;
-    suggested?: boolean;
-    pseudo?: boolean;
-}
-
-export interface AssetsSpecificAssetFormatsSnapshotRequest {
-    asset: string;
-    transferables?: boolean;
-}
-
-export interface AssetsSpecificAssetSnapshotRequest {
-    asset: string;
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Seed}
+ */
+seed?: Seed;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetsDeleteAssetRequest
+ * @typedef {AssetsDeleteAssetRequest}
+ */
+export interface AssetsDeleteAssetRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetsDraftRequest
+ * @typedef {AssetsDraftRequest}
+ */
+export interface AssetsDraftRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Seed}
+ */
+seed?: Seed;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetsGetRecommendedAssetsRequest
+ * @typedef {AssetsGetRecommendedAssetsRequest}
+ */
+export interface AssetsGetRecommendedAssetsRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededAssetsRecommendation}
+ */
+seededAssetsRecommendation?: SeededAssetsRecommendation;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetsGetRelatedAssetsRequest
+ * @typedef {AssetsGetRelatedAssetsRequest}
+ */
+export interface AssetsGetRelatedAssetsRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Assets}
+ */
+assets?: Assets;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetsIdentifiersSnapshotRequest
+ * @typedef {AssetsIdentifiersSnapshotRequest}
+ */
+export interface AssetsIdentifiersSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+pseudo?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetsSearchAssetsRequest
+ * @typedef {AssetsSearchAssetsRequest}
+ */
+export interface AssetsSearchAssetsRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?string}
+ */
+query?: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?string}
+ */
+searchableTags?: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+pseudo?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetsSearchWithFiltersRequest
+ * @typedef {AssetsSearchWithFiltersRequest}
+ */
+export interface AssetsSearchWithFiltersRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+pseudo?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?AssetsSearchWithFiltersInput}
+ */
+assetsSearchWithFiltersInput?: AssetsSearchWithFiltersInput;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetsSnapshotRequest
+ * @typedef {AssetsSnapshotRequest}
+ */
+export interface AssetsSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+suggested?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+pseudo?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetsSpecificAssetFormatsSnapshotRequest
+ * @typedef {AssetsSpecificAssetFormatsSnapshotRequest}
+ */
+export interface AssetsSpecificAssetFormatsSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetsSpecificAssetSnapshotRequest
+ * @typedef {AssetsSpecificAssetSnapshotRequest}
+ */
+export interface AssetsSpecificAssetSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class AssetsApi extends runtime.BaseAPI {
 

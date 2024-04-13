@@ -23,17 +23,49 @@ export const PersonAccessScopedEnum = {
     Commenter: 'COMMENTER',
     Viewer: 'VIEWER'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @typedef {PersonAccessScopedEnum}
+ */
 export type PersonAccessScopedEnum = typeof PersonAccessScopedEnum[keyof typeof PersonAccessScopedEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PersonAccessScopedEnum}
+ */
 export function PersonAccessScopedEnumFromJSON(json: any): PersonAccessScopedEnum {
     return PersonAccessScopedEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PersonAccessScopedEnum}
+ */
 export function PersonAccessScopedEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PersonAccessScopedEnum {
     return json as PersonAccessScopedEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(PersonAccessScopedEnum | null)} [value]
+ * @returns {*}
+ */
 export function PersonAccessScopedEnumToJSON(value?: PersonAccessScopedEnum | null): any {
     return value as any;
 }

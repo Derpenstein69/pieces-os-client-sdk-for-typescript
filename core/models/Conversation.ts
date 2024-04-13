@@ -100,24 +100,24 @@ import {
 
 /**
  * This is a fully referenced Conversation.
- * 
+ *
  * This will hold together a conversation. Ie allthe message within a conversation.
- * 
+ *
  * All the additional properties on here used on here like(anchors/assets) are used for context that will seed the conversation.
- * 
+ *
  * model is a calculated property, and will be the model of the last message sent if applicable.
  * @export
  * @interface Conversation
  */
 export interface Conversation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Conversation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Conversation
      */
@@ -129,91 +129,91 @@ export interface Conversation {
      */
     name?: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Conversation
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Conversation
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Conversation
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof Conversation
      */
     favorited?: boolean;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof Conversation
      */
     application?: Application;
     /**
-     * 
+     *
      * @type {FlattenedAnnotations}
      * @memberof Conversation
      */
     annotations?: FlattenedAnnotations;
     /**
-     * 
+     *
      * @type {FlattenedConversationMessages}
      * @memberof Conversation
      */
     messages: FlattenedConversationMessages;
     /**
-     * 
+     *
      * @type {ReferencedModel}
      * @memberof Conversation
      */
     model?: ReferencedModel;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof Conversation
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {FlattenedWebsites}
      * @memberof Conversation
      */
     websites?: FlattenedWebsites;
     /**
-     * 
+     *
      * @type {FlattenedAnchors}
      * @memberof Conversation
      */
     anchors?: FlattenedAnchors;
     /**
-     * 
+     *
      * @type {ConversationTypeEnum}
      * @memberof Conversation
      */
     type: ConversationTypeEnum;
     /**
-     * 
+     *
      * @type {ConversationGrounding}
      * @memberof Conversation
      */
     grounding?: ConversationGrounding;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Conversation
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {QGPTPromptPipeline}
      * @memberof Conversation
      */
@@ -225,7 +225,7 @@ export interface Conversation {
      */
     demo?: boolean;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof Conversation
      */
@@ -246,16 +246,33 @@ export function instanceOfConversation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Conversation}
+ */
 export function ConversationFromJSON(json: any): Conversation {
     return ConversationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Conversation}
+ */
 export function ConversationFromJSONTyped(json: any, ignoreDiscriminator: boolean): Conversation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'name': !exists(json, 'name') ? undefined : json['name'],
@@ -279,6 +296,14 @@ export function ConversationFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(Conversation | null)} [value]
+ * @returns {*}
+ */
 export function ConversationToJSON(value?: Conversation | null): any {
     if (value === undefined) {
         return undefined;
@@ -287,7 +312,7 @@ export function ConversationToJSON(value?: Conversation | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'name': value.name,

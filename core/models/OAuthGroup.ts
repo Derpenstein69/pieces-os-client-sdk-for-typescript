@@ -33,13 +33,13 @@ import {
  */
 export interface OAuthGroup {
     /**
-     * 
+     *
      * @type {OAuthToken}
      * @memberof OAuthGroup
      */
     token?: OAuthToken;
     /**
-     * 
+     *
      * @type {OAuthAccount}
      * @memberof OAuthGroup
      */
@@ -55,21 +55,46 @@ export function instanceOfOAuthGroup(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OAuthGroup}
+ */
 export function OAuthGroupFromJSON(json: any): OAuthGroup {
     return OAuthGroupFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OAuthGroup}
+ */
 export function OAuthGroupFromJSONTyped(json: any, ignoreDiscriminator: boolean): OAuthGroup {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'token': !exists(json, 'token') ? undefined : OAuthTokenFromJSON(json['token']),
         'account': !exists(json, 'account') ? undefined : OAuthAccountFromJSON(json['account']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OAuthGroup | null)} [value]
+ * @returns {*}
+ */
 export function OAuthGroupToJSON(value?: OAuthGroup | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function OAuthGroupToJSON(value?: OAuthGroup | null): any {
         return null;
     }
     return {
-        
+
         'token': OAuthTokenToJSON(value.token),
         'account': OAuthAccountToJSON(value.account),
     };

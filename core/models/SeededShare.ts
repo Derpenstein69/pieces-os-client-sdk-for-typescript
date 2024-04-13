@@ -51,13 +51,13 @@ import {
  */
 export interface SeededShare {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededShare
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Asset}
      * @memberof SeededShare
      */
@@ -69,13 +69,13 @@ export interface SeededShare {
      */
     users?: Array<SeededUser>;
     /**
-     * 
+     *
      * @type {AccessEnum}
      * @memberof SeededShare
      */
     access: AccessEnum;
     /**
-     * 
+     *
      * @type {Assets}
      * @memberof SeededShare
      */
@@ -98,16 +98,33 @@ export function instanceOfSeededShare(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededShare}
+ */
 export function SeededShareFromJSON(json: any): SeededShare {
     return SeededShareFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededShare}
+ */
 export function SeededShareFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededShare {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': !exists(json, 'asset') ? undefined : AssetFromJSON(json['asset']),
         'users': !exists(json, 'users') ? undefined : ((json['users'] as Array<any>).map(SeededUserFromJSON)),
@@ -117,6 +134,14 @@ export function SeededShareFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededShare | null)} [value]
+ * @returns {*}
+ */
 export function SeededShareToJSON(value?: SeededShare | null): any {
     if (value === undefined) {
         return undefined;
@@ -125,7 +150,7 @@ export function SeededShareToJSON(value?: SeededShare | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': AssetToJSON(value.asset),
         'users': value.users === undefined ? undefined : ((value.users as Array<any>).map(SeededUserToJSON)),

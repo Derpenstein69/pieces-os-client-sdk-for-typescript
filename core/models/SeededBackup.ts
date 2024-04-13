@@ -27,7 +27,7 @@ import {
  */
 export interface SeededBackup {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededBackup
      */
@@ -43,20 +43,45 @@ export function instanceOfSeededBackup(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededBackup}
+ */
 export function SeededBackupFromJSON(json: any): SeededBackup {
     return SeededBackupFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededBackup}
+ */
 export function SeededBackupFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededBackup {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededBackup | null)} [value]
+ * @returns {*}
+ */
 export function SeededBackupToJSON(value?: SeededBackup | null): any {
     if (value === undefined) {
         return undefined;
@@ -65,7 +90,7 @@ export function SeededBackupToJSON(value?: SeededBackup | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
     };
 }

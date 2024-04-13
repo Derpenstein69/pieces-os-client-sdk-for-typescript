@@ -27,7 +27,7 @@ import {
  */
 export interface TextLocation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TextLocation
      */
@@ -64,16 +64,33 @@ export function instanceOfTextLocation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TextLocation}
+ */
 export function TextLocationFromJSON(json: any): TextLocation {
     return TextLocationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TextLocation}
+ */
 export function TextLocationFromJSONTyped(json: any, ignoreDiscriminator: boolean): TextLocation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'text': json['text'],
         'start': json['start'],
@@ -81,6 +98,14 @@ export function TextLocationFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TextLocation | null)} [value]
+ * @returns {*}
+ */
 export function TextLocationToJSON(value?: TextLocation | null): any {
     if (value === undefined) {
         return undefined;
@@ -89,7 +114,7 @@ export function TextLocationToJSON(value?: TextLocation | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'text': value.text,
         'start': value.start,

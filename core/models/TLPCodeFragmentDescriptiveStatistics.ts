@@ -27,49 +27,49 @@ import {
  */
 export interface TLPCodeFragmentDescriptiveStatistics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeFragmentDescriptiveStatistics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentDescriptiveStatistics
      */
     user: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentDescriptiveStatistics
      */
     os: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentDescriptiveStatistics
      */
     language: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof TLPCodeFragmentDescriptiveStatistics
      */
     length: number;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentDescriptiveStatistics
      */
     ast: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentDescriptiveStatistics
      */
     timestamp: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentDescriptiveStatistics
      */
@@ -106,16 +106,33 @@ export function instanceOfTLPCodeFragmentDescriptiveStatistics(value: object): b
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeFragmentDescriptiveStatistics}
+ */
 export function TLPCodeFragmentDescriptiveStatisticsFromJSON(json: any): TLPCodeFragmentDescriptiveStatistics {
     return TLPCodeFragmentDescriptiveStatisticsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeFragmentDescriptiveStatistics}
+ */
 export function TLPCodeFragmentDescriptiveStatisticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeFragmentDescriptiveStatistics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'user': json['user'],
         'os': json['os'],
@@ -129,6 +146,14 @@ export function TLPCodeFragmentDescriptiveStatisticsFromJSONTyped(json: any, ign
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TLPCodeFragmentDescriptiveStatistics | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeFragmentDescriptiveStatisticsToJSON(value?: TLPCodeFragmentDescriptiveStatistics | null): any {
     if (value === undefined) {
         return undefined;
@@ -137,7 +162,7 @@ export function TLPCodeFragmentDescriptiveStatisticsToJSON(value?: TLPCodeFragme
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'user': value.user,
         'os': value.os,

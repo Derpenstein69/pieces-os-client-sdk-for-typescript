@@ -25,23 +25,83 @@ import {
     FlattenedActivitiesToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface ActivitiesSpecificActivitySnapshotRequest
+ * @typedef {ActivitiesSpecificActivitySnapshotRequest}
+ */
 export interface ActivitiesSpecificActivitySnapshotRequest {
-    activity: string;
-    transferables?: boolean;
-}
-
-export interface ActivityIdentifiersSnapshotRequest {
-    pseudo?: boolean;
-    activityFilterEnum?: ActivityIdentifiersSnapshotActivityFilterEnumEnum;
-}
-
-export interface ActivityUpdateRequest {
-    transferables?: boolean;
-    activity?: Activity;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+activity: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface ActivityIdentifiersSnapshotRequest
+ * @typedef {ActivityIdentifiersSnapshotRequest}
+ */
+export interface ActivityIdentifiersSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+pseudo?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?ActivityIdentifiersSnapshotActivityFilterEnumEnum}
+ */
+activityFilterEnum?: ActivityIdentifiersSnapshotActivityFilterEnumEnum;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface ActivityUpdateRequest
+ * @typedef {ActivityUpdateRequest}
+ */
+export interface ActivityUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?Activity}
+ */
+activity?: Activity;
+}
+
+/**
+ *
  */
 export class ActivityApi extends runtime.BaseAPI {
 
@@ -163,4 +223,11 @@ export const ActivityIdentifiersSnapshotActivityFilterEnumEnum = {
     Deleted: 'DELETED',
     Referenced: 'REFERENCED'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @typedef {ActivityIdentifiersSnapshotActivityFilterEnumEnum}
+ */
 export type ActivityIdentifiersSnapshotActivityFilterEnumEnum = typeof ActivityIdentifiersSnapshotActivityFilterEnumEnum[keyof typeof ActivityIdentifiersSnapshotActivityFilterEnumEnum];

@@ -40,37 +40,151 @@ import {
     SuggestionToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConnectRequest
+ * @typedef {ConnectRequest}
+ */
 export interface ConnectRequest {
-    seededConnectorConnection?: SeededConnectorConnection;
-}
-
-export interface IntentionRequest {
-    application: string;
-    seededConnectorAsset?: SeededConnectorAsset;
-}
-
-export interface OnboardedRequest {
-    application: string;
-    body?: boolean;
-}
-
-export interface ReactRequest {
-    application: string;
-    reaction?: Reaction;
-}
-
-export interface SuggestRequest {
-    application: string;
-    seededConnectorCreation?: SeededConnectorCreation;
-}
-
-export interface TrackRequest {
-    application: string;
-    seededConnectorTracking?: SeededConnectorTracking;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededConnectorConnection}
+ */
+seededConnectorConnection?: SeededConnectorConnection;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface IntentionRequest
+ * @typedef {IntentionRequest}
+ */
+export interface IntentionRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+application: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededConnectorAsset}
+ */
+seededConnectorAsset?: SeededConnectorAsset;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface OnboardedRequest
+ * @typedef {OnboardedRequest}
+ */
+export interface OnboardedRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+application: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+body?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ReactRequest
+ * @typedef {ReactRequest}
+ */
+export interface ReactRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+application: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Reaction}
+ */
+reaction?: Reaction;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface SuggestRequest
+ * @typedef {SuggestRequest}
+ */
+export interface SuggestRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+application: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededConnectorCreation}
+ */
+seededConnectorCreation?: SeededConnectorCreation;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface TrackRequest
+ * @typedef {TrackRequest}
+ */
+export interface TrackRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+application: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededConnectorTracking}
+ */
+seededConnectorTracking?: SeededConnectorTracking;
+}
+
+/**
+ *
  */
 export class ConnectorApi extends runtime.BaseAPI {
 
@@ -184,7 +298,7 @@ export class ConnectorApi extends runtime.BaseAPI {
     }
 
     /**
-     * This will react to the response returned from the /suggest endpoint. 
+     * This will react to the response returned from the /suggest endpoint.
      * /{application}/reaction [POST]
      */
     async reactRaw(requestParameters: ReactRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
@@ -214,7 +328,7 @@ export class ConnectorApi extends runtime.BaseAPI {
     }
 
     /**
-     * This will react to the response returned from the /suggest endpoint. 
+     * This will react to the response returned from the /suggest endpoint.
      * /{application}/reaction [POST]
      */
     async react(requestParameters: ReactRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {

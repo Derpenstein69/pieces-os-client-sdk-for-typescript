@@ -21,13 +21,13 @@ import {
 } from './Embedding';
 
 /**
- * 
+ *
  * @export
  * @interface Embeddings
  */
 export interface Embeddings {
     /**
-     * 
+     *
      * @type {Array<Embedding>}
      * @memberof Embeddings
      */
@@ -44,20 +44,45 @@ export function instanceOfEmbeddings(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Embeddings}
+ */
 export function EmbeddingsFromJSON(json: any): Embeddings {
     return EmbeddingsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Embeddings}
+ */
 export function EmbeddingsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Embeddings {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'iterable': ((json['iterable'] as Array<any>).map(EmbeddingFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(Embeddings | null)} [value]
+ * @returns {*}
+ */
 export function EmbeddingsToJSON(value?: Embeddings | null): any {
     if (value === undefined) {
         return undefined;
@@ -66,7 +91,7 @@ export function EmbeddingsToJSON(value?: Embeddings | null): any {
         return null;
     }
     return {
-        
+
         'iterable': ((value.iterable as Array<any>).map(EmbeddingToJSON)),
     };
 }

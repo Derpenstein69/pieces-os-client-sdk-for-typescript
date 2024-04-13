@@ -33,13 +33,13 @@ import {
  */
 export interface InteractedAssets {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof InteractedAssets
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<InteractedAsset>}
      * @memberof InteractedAssets
      */
@@ -56,21 +56,46 @@ export function instanceOfInteractedAssets(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {InteractedAssets}
+ */
 export function InteractedAssetsFromJSON(json: any): InteractedAssets {
     return InteractedAssetsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {InteractedAssets}
+ */
 export function InteractedAssetsFromJSONTyped(json: any, ignoreDiscriminator: boolean): InteractedAssets {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(InteractedAssetFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(InteractedAssets | null)} [value]
+ * @returns {*}
+ */
 export function InteractedAssetsToJSON(value?: InteractedAssets | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function InteractedAssetsToJSON(value?: InteractedAssets | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(InteractedAssetToJSON)),
     };

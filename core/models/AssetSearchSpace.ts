@@ -33,13 +33,13 @@ import {
  */
 export interface AssetSearchSpace {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AssetSearchSpace
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof AssetSearchSpace
      */
@@ -56,21 +56,46 @@ export function instanceOfAssetSearchSpace(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AssetSearchSpace}
+ */
 export function AssetSearchSpaceFromJSON(json: any): AssetSearchSpace {
     return AssetSearchSpaceFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AssetSearchSpace}
+ */
 export function AssetSearchSpaceFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssetSearchSpace {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'identifers': FlattenedAssetsFromJSON(json['identifers']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(AssetSearchSpace | null)} [value]
+ * @returns {*}
+ */
 export function AssetSearchSpaceToJSON(value?: AssetSearchSpace | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function AssetSearchSpaceToJSON(value?: AssetSearchSpace | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'identifers': FlattenedAssetsToJSON(value.identifers),
     };

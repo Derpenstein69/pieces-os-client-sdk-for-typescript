@@ -49,40 +49,152 @@ import {
     TrackedKeyboardEventToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ApplicationsRegisterRequest
+ * @typedef {ApplicationsRegisterRequest}
+ */
 export interface ApplicationsRegisterRequest {
-    application?: Application;
-}
-
-export interface ApplicationsSessionCloseRequest {
-    body?: string;
-}
-
-export interface ApplicationsSessionSnapshotRequest {
-    session: string;
-}
-
-export interface ApplicationsSpecificApplicationSnapshotRequest {
-    application: string;
-}
-
-export interface ApplicationsUsageEngagementInteractionRequest {
-    seededTrackedInteractionEvent?: SeededTrackedInteractionEvent;
-}
-
-export interface ApplicationsUsageEngagementKeyboardRequest {
-    seededTrackedKeyboardEvent?: SeededTrackedKeyboardEvent;
-}
-
-export interface ApplicationsUsageInstallationRequest {
-    trackedApplicationInstall?: TrackedApplicationInstall;
-}
-
-export interface PostApplicationsUsageUpdatedRequest {
-    trackedApplicationUpdate?: TrackedApplicationUpdate;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Application}
+ */
+application?: Application;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ApplicationsSessionCloseRequest
+ * @typedef {ApplicationsSessionCloseRequest}
+ */
+export interface ApplicationsSessionCloseRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?string}
+ */
+body?: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ApplicationsSessionSnapshotRequest
+ * @typedef {ApplicationsSessionSnapshotRequest}
+ */
+export interface ApplicationsSessionSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+session: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ApplicationsSpecificApplicationSnapshotRequest
+ * @typedef {ApplicationsSpecificApplicationSnapshotRequest}
+ */
+export interface ApplicationsSpecificApplicationSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+application: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ApplicationsUsageEngagementInteractionRequest
+ * @typedef {ApplicationsUsageEngagementInteractionRequest}
+ */
+export interface ApplicationsUsageEngagementInteractionRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededTrackedInteractionEvent}
+ */
+seededTrackedInteractionEvent?: SeededTrackedInteractionEvent;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ApplicationsUsageEngagementKeyboardRequest
+ * @typedef {ApplicationsUsageEngagementKeyboardRequest}
+ */
+export interface ApplicationsUsageEngagementKeyboardRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededTrackedKeyboardEvent}
+ */
+seededTrackedKeyboardEvent?: SeededTrackedKeyboardEvent;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ApplicationsUsageInstallationRequest
+ * @typedef {ApplicationsUsageInstallationRequest}
+ */
+export interface ApplicationsUsageInstallationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?TrackedApplicationInstall}
+ */
+trackedApplicationInstall?: TrackedApplicationInstall;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface PostApplicationsUsageUpdatedRequest
+ * @typedef {PostApplicationsUsageUpdatedRequest}
+ */
+export interface PostApplicationsUsageUpdatedRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?TrackedApplicationUpdate}
+ */
+trackedApplicationUpdate?: TrackedApplicationUpdate;
+}
+
+/**
+ *
  */
 export class ApplicationsApi extends runtime.BaseAPI {
 
@@ -265,7 +377,7 @@ export class ApplicationsApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * /applications [GET]
      */
     async applicationsSnapshotRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Applications>> {
@@ -284,7 +396,7 @@ export class ApplicationsApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * /applications [GET]
      */
     async applicationsSnapshot(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Applications> {
@@ -417,7 +529,7 @@ export class ApplicationsApi extends runtime.BaseAPI {
     }
 
     /**
-     * This is an endpoint to determine when an application has been updated 
+     * This is an endpoint to determine when an application has been updated
      * /applications/usage/updated [POST]
      */
     async postApplicationsUsageUpdatedRaw(requestParameters: PostApplicationsUsageUpdatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
@@ -439,7 +551,7 @@ export class ApplicationsApi extends runtime.BaseAPI {
     }
 
     /**
-     * This is an endpoint to determine when an application has been updated 
+     * This is an endpoint to determine when an application has been updated
      * /applications/usage/updated [POST]
      */
     async postApplicationsUsageUpdated(requestParameters: PostApplicationsUsageUpdatedRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {

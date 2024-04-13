@@ -93,16 +93,33 @@ export function instanceOfOAuthAccount(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OAuthAccount}
+ */
 export function OAuthAccountFromJSON(json: any): OAuthAccount {
     return OAuthAccountFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OAuthAccount}
+ */
 export function OAuthAccountFromJSONTyped(json: any, ignoreDiscriminator: boolean): OAuthAccount {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'clientId': json['client_id'],
         'email': json['email'],
         'connection': json['connection'],
@@ -115,6 +132,14 @@ export function OAuthAccountFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OAuthAccount | null)} [value]
+ * @returns {*}
+ */
 export function OAuthAccountToJSON(value?: OAuthAccount | null): any {
     if (value === undefined) {
         return undefined;
@@ -123,7 +148,7 @@ export function OAuthAccountToJSON(value?: OAuthAccount | null): any {
         return null;
     }
     return {
-        
+
         'client_id': value.clientId,
         'email': value.email,
         'connection': value.connection,

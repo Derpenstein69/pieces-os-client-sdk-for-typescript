@@ -39,13 +39,13 @@ import {
  */
 export interface FlattenedConversations {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedConversations
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedConversation>}
      * @memberof FlattenedConversations
      */
@@ -57,7 +57,7 @@ export interface FlattenedConversations {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedConversations
      */
@@ -74,16 +74,33 @@ export function instanceOfFlattenedConversations(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedConversations}
+ */
 export function FlattenedConversationsFromJSON(json: any): FlattenedConversations {
     return FlattenedConversationsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedConversations}
+ */
 export function FlattenedConversationsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedConversations {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedConversationFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function FlattenedConversationsFromJSONTyped(json: any, ignoreDiscriminat
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(FlattenedConversations | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedConversationsToJSON(value?: FlattenedConversations | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function FlattenedConversationsToJSON(value?: FlattenedConversations | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedConversationToJSON)),
         'indices': value.indices,

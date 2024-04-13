@@ -45,25 +45,25 @@ import {
  */
 export interface SeededTrackedAssetEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededTrackedAssetEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ReferencedAsset}
      * @memberof SeededTrackedAssetEvent
      */
     asset: ReferencedAsset;
     /**
-     * 
+     *
      * @type {TrackedAssetEventIdentifierDescriptionPairs}
      * @memberof SeededTrackedAssetEvent
      */
     identifierDescriptionPair: TrackedAssetEventIdentifierDescriptionPairs;
     /**
-     * 
+     *
      * @type {TrackedAssetEventMetadata}
      * @memberof SeededTrackedAssetEvent
      */
@@ -81,16 +81,33 @@ export function instanceOfSeededTrackedAssetEvent(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTrackedAssetEvent}
+ */
 export function SeededTrackedAssetEventFromJSON(json: any): SeededTrackedAssetEvent {
     return SeededTrackedAssetEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTrackedAssetEvent}
+ */
 export function SeededTrackedAssetEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTrackedAssetEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': ReferencedAssetFromJSON(json['asset']),
         'identifierDescriptionPair': TrackedAssetEventIdentifierDescriptionPairsFromJSON(json['identifier_description_pair']),
@@ -98,6 +115,14 @@ export function SeededTrackedAssetEventFromJSONTyped(json: any, ignoreDiscrimina
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededTrackedAssetEvent | null)} [value]
+ * @returns {*}
+ */
 export function SeededTrackedAssetEventToJSON(value?: SeededTrackedAssetEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -106,7 +131,7 @@ export function SeededTrackedAssetEventToJSON(value?: SeededTrackedAssetEvent | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': ReferencedAssetToJSON(value.asset),
         'identifier_description_pair': TrackedAssetEventIdentifierDescriptionPairsToJSON(value.identifierDescriptionPair),

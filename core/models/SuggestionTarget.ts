@@ -33,13 +33,13 @@ import {
  */
 export interface SuggestionTarget {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SuggestionTarget
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededConnectorCreation}
      * @memberof SuggestionTarget
      */
@@ -63,22 +63,47 @@ export function instanceOfSuggestionTarget(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SuggestionTarget}
+ */
 export function SuggestionTargetFromJSON(json: any): SuggestionTarget {
     return SuggestionTargetFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SuggestionTarget}
+ */
 export function SuggestionTargetFromJSONTyped(json: any, ignoreDiscriminator: boolean): SuggestionTarget {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'seed': SeededConnectorCreationFromJSON(json['seed']),
         'vector': json['vector'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(SuggestionTarget | null)} [value]
+ * @returns {*}
+ */
 export function SuggestionTargetToJSON(value?: SuggestionTarget | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function SuggestionTargetToJSON(value?: SuggestionTarget | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'seed': SeededConnectorCreationToJSON(value.seed),
         'vector': value.vector,

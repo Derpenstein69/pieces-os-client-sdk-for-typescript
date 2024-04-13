@@ -27,19 +27,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface Allocations
  */
 export interface Allocations {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Allocations
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<AllocationCloud>}
      * @memberof Allocations
      */
@@ -56,21 +56,46 @@ export function instanceOfAllocations(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Allocations}
+ */
 export function AllocationsFromJSON(json: any): Allocations {
     return AllocationsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Allocations}
+ */
 export function AllocationsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Allocations {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(AllocationCloudFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(Allocations | null)} [value]
+ * @returns {*}
+ */
 export function AllocationsToJSON(value?: Allocations | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function AllocationsToJSON(value?: Allocations | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(AllocationCloudToJSON)),
     };

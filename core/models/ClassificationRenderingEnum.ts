@@ -22,17 +22,49 @@ export const ClassificationRenderingEnum = {
     TwentyFourBitAnsiEscapedSequences: 'TWENTY_FOUR_BIT_ANSI_ESCAPED_SEQUENCES',
     HighlightJsHtml: 'HIGHLIGHT_JS_HTML'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @typedef {ClassificationRenderingEnum}
+ */
 export type ClassificationRenderingEnum = typeof ClassificationRenderingEnum[keyof typeof ClassificationRenderingEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ClassificationRenderingEnum}
+ */
 export function ClassificationRenderingEnumFromJSON(json: any): ClassificationRenderingEnum {
     return ClassificationRenderingEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ClassificationRenderingEnum}
+ */
 export function ClassificationRenderingEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ClassificationRenderingEnum {
     return json as ClassificationRenderingEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(ClassificationRenderingEnum | null)} [value]
+ * @returns {*}
+ */
 export function ClassificationRenderingEnumToJSON(value?: ClassificationRenderingEnum | null): any {
     return value as any;
 }

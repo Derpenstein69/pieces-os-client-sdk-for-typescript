@@ -22,12 +22,26 @@ import {
     NotificationToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface SendLocalNotificationRequest
+ * @typedef {SendLocalNotificationRequest}
+ */
 export interface SendLocalNotificationRequest {
-    notification?: Notification;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?Notification}
+ */
+notification?: Notification;
 }
 
 /**
- * 
+ *
  */
 export class NotificationsApi extends runtime.BaseAPI {
 

@@ -21,13 +21,13 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface TLPCodeSnippetTagifyCode
  */
 export interface TLPCodeSnippetTagifyCode {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeSnippetTagifyCode
      */
@@ -58,7 +58,7 @@ export interface TLPCodeSnippetTagifyCode {
     inferredTags: string;
     /**
      * this is the model version
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeSnippetTagifyCode
      */
@@ -114,16 +114,33 @@ export function instanceOfTLPCodeSnippetTagifyCode(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeSnippetTagifyCode}
+ */
 export function TLPCodeSnippetTagifyCodeFromJSON(json: any): TLPCodeSnippetTagifyCode {
     return TLPCodeSnippetTagifyCodeFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeSnippetTagifyCode}
+ */
 export function TLPCodeSnippetTagifyCodeFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeSnippetTagifyCode {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'distribution': json['distribution'],
         'inferredDistribution': json['inferred_distribution'],
@@ -138,6 +155,14 @@ export function TLPCodeSnippetTagifyCodeFromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TLPCodeSnippetTagifyCode | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeSnippetTagifyCodeToJSON(value?: TLPCodeSnippetTagifyCode | null): any {
     if (value === undefined) {
         return undefined;
@@ -146,7 +171,7 @@ export function TLPCodeSnippetTagifyCodeToJSON(value?: TLPCodeSnippetTagifyCode 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'distribution': value.distribution,
         'inferred_distribution': value.inferredDistribution,

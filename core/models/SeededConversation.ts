@@ -76,18 +76,18 @@ import {
 
 /**
  * This is a pre-Conversation object.
- * 
+ *
  * This will hold together a conversation. Ie allthe message within a conversation.
- * 
+ *
  * All the additional properties on here used on here like(anchors/assets) are used for context that will seed the conversation.
- * 
+ *
  * model is a calculated property, and will be the model of the last message sent if applicable.
  * @export
  * @interface SeededConversation
  */
 export interface SeededConversation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededConversation
      */
@@ -99,61 +99,61 @@ export interface SeededConversation {
      */
     name?: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof SeededConversation
      */
     favorited?: boolean;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof SeededConversation
      */
     application?: Application;
     /**
-     * 
+     *
      * @type {Array<SeededAnnotation>}
      * @memberof SeededConversation
      */
     annotations?: Array<SeededAnnotation>;
     /**
-     * 
+     *
      * @type {Array<SeededConversationMessage>}
      * @memberof SeededConversation
      */
     messages?: Array<SeededConversationMessage>;
     /**
-     * 
+     *
      * @type {ReferencedModel}
      * @memberof SeededConversation
      */
     model?: ReferencedModel;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof SeededConversation
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {FlattenedWebsites}
      * @memberof SeededConversation
      */
     websites?: FlattenedWebsites;
     /**
-     * 
+     *
      * @type {Array<SeededAnchor>}
      * @memberof SeededConversation
      */
     anchors?: Array<SeededAnchor>;
     /**
-     * 
+     *
      * @type {ConversationTypeEnum}
      * @memberof SeededConversation
      */
     type: ConversationTypeEnum;
     /**
-     * 
+     *
      * @type {QGPTPromptPipeline}
      * @memberof SeededConversation
      */
@@ -176,16 +176,33 @@ export function instanceOfSeededConversation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededConversation}
+ */
 export function SeededConversationFromJSON(json: any): SeededConversation {
     return SeededConversationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededConversation}
+ */
 export function SeededConversationFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededConversation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'name': !exists(json, 'name') ? undefined : json['name'],
         'favorited': !exists(json, 'favorited') ? undefined : json['favorited'],
@@ -202,6 +219,14 @@ export function SeededConversationFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededConversation | null)} [value]
+ * @returns {*}
+ */
 export function SeededConversationToJSON(value?: SeededConversation | null): any {
     if (value === undefined) {
         return undefined;
@@ -210,7 +235,7 @@ export function SeededConversationToJSON(value?: SeededConversation | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'name': value.name,
         'favorited': value.favorited,

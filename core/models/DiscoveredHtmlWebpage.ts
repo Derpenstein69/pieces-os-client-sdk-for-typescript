@@ -33,19 +33,19 @@ import {
  */
 export interface DiscoveredHtmlWebpage {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof DiscoveredHtmlWebpage
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {DiscoveredAssets}
      * @memberof DiscoveredHtmlWebpage
      */
     assets: DiscoveredAssets;
     /**
-     * 
+     *
      * @type {string}
      * @memberof DiscoveredHtmlWebpage
      */
@@ -63,22 +63,47 @@ export function instanceOfDiscoveredHtmlWebpage(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {DiscoveredHtmlWebpage}
+ */
 export function DiscoveredHtmlWebpageFromJSON(json: any): DiscoveredHtmlWebpage {
     return DiscoveredHtmlWebpageFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {DiscoveredHtmlWebpage}
+ */
 export function DiscoveredHtmlWebpageFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveredHtmlWebpage {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'assets': DiscoveredAssetsFromJSON(json['assets']),
         'url': json['url'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(DiscoveredHtmlWebpage | null)} [value]
+ * @returns {*}
+ */
 export function DiscoveredHtmlWebpageToJSON(value?: DiscoveredHtmlWebpage | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function DiscoveredHtmlWebpageToJSON(value?: DiscoveredHtmlWebpage | null
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'assets': DiscoveredAssetsToJSON(value.assets),
         'url': value.url,

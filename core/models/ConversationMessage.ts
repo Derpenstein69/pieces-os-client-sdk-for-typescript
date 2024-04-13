@@ -70,82 +70,82 @@ import {
 
 /**
  * This is a fully referenced ConversationMessage.
- * 
+ *
  * This has the minimum amount of properties to keep this light weight
- * 
+ *
  * (will consider additional properties in the future like people/tags/links xyz)
  * @export
  * @interface ConversationMessage
  */
 export interface ConversationMessage {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ConversationMessage
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ConversationMessage
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof ConversationMessage
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof ConversationMessage
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof ConversationMessage
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {Model}
      * @memberof ConversationMessage
      */
     model?: Model;
     /**
-     * 
+     *
      * @type {FragmentFormat}
      * @memberof ConversationMessage
      */
     fragment?: FragmentFormat;
     /**
-     * 
+     *
      * @type {ReferencedConversation}
      * @memberof ConversationMessage
      */
     conversation: ReferencedConversation;
     /**
-     * 
+     *
      * @type {ConversationMessageSentimentEnum}
      * @memberof ConversationMessage
      */
     sentiment?: ConversationMessageSentimentEnum;
     /**
-     * 
+     *
      * @type {QGPTConversationMessageRoleEnum}
      * @memberof ConversationMessage
      */
     role: QGPTConversationMessageRoleEnum;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof ConversationMessage
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {FlattenedAnnotations}
      * @memberof ConversationMessage
      */
@@ -166,16 +166,33 @@ export function instanceOfConversationMessage(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ConversationMessage}
+ */
 export function ConversationMessageFromJSON(json: any): ConversationMessage {
     return ConversationMessageFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ConversationMessage}
+ */
 export function ConversationMessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConversationMessage {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -191,6 +208,14 @@ export function ConversationMessageFromJSONTyped(json: any, ignoreDiscriminator:
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(ConversationMessage | null)} [value]
+ * @returns {*}
+ */
 export function ConversationMessageToJSON(value?: ConversationMessage | null): any {
     if (value === undefined) {
         return undefined;
@@ -199,7 +224,7 @@ export function ConversationMessageToJSON(value?: ConversationMessage | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'created': GroupedTimestampToJSON(value.created),

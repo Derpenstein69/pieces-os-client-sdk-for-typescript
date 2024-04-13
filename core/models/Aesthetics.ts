@@ -39,19 +39,19 @@ import {
  */
 export interface Aesthetics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Aesthetics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Theme}
      * @memberof Aesthetics
      */
     theme: Theme;
     /**
-     * 
+     *
      * @type {Font}
      * @memberof Aesthetics
      */
@@ -69,22 +69,47 @@ export function instanceOfAesthetics(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Aesthetics}
+ */
 export function AestheticsFromJSON(json: any): Aesthetics {
     return AestheticsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Aesthetics}
+ */
 export function AestheticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Aesthetics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'theme': ThemeFromJSON(json['theme']),
         'font': FontFromJSON(json['font']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(Aesthetics | null)} [value]
+ * @returns {*}
+ */
 export function AestheticsToJSON(value?: Aesthetics | null): any {
     if (value === undefined) {
         return undefined;
@@ -93,7 +118,7 @@ export function AestheticsToJSON(value?: Aesthetics | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'theme': ThemeToJSON(value.theme),
         'font': FontToJSON(value.font),

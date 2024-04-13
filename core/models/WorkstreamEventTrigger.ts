@@ -27,7 +27,7 @@ import {
  */
 export interface WorkstreamEventTrigger {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof WorkstreamEventTrigger
      */
@@ -39,79 +39,79 @@ export interface WorkstreamEventTrigger {
      */
     checkIn?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     copy?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     paste?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     fileOpen?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     fileClose?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     tabSwitch?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     tabClose?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     tabOpen?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     tabEnter?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     tabLeave?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     urlChanged?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     applicationEnter?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
     applicationLeave?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof WorkstreamEventTrigger
      */
@@ -127,16 +127,33 @@ export function instanceOfWorkstreamEventTrigger(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {WorkstreamEventTrigger}
+ */
 export function WorkstreamEventTriggerFromJSON(json: any): WorkstreamEventTrigger {
     return WorkstreamEventTriggerFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {WorkstreamEventTrigger}
+ */
 export function WorkstreamEventTriggerFromJSONTyped(json: any, ignoreDiscriminator: boolean): WorkstreamEventTrigger {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'checkIn': !exists(json, 'check_in') ? undefined : json['check_in'],
         'copy': !exists(json, 'copy') ? undefined : json['copy'],
@@ -155,6 +172,14 @@ export function WorkstreamEventTriggerFromJSONTyped(json: any, ignoreDiscriminat
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(WorkstreamEventTrigger | null)} [value]
+ * @returns {*}
+ */
 export function WorkstreamEventTriggerToJSON(value?: WorkstreamEventTrigger | null): any {
     if (value === undefined) {
         return undefined;
@@ -163,7 +188,7 @@ export function WorkstreamEventTriggerToJSON(value?: WorkstreamEventTrigger | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'check_in': value.checkIn,
         'copy': value.copy,

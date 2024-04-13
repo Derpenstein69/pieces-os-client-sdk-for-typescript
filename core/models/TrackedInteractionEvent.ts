@@ -22,13 +22,13 @@ import {
 
 /**
  * This is a model that will hold relavent information in relation to an interaction(ONLY CLICK/TAP) analytics event(usage). If you want to register an event that relates to an interaction with the key then register a Keyboard Event.
- * 
+ *
  * @export
  * @interface TrackedInteractionEvent
  */
 export interface TrackedInteractionEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedInteractionEvent
      */
@@ -57,22 +57,47 @@ export function instanceOfTrackedInteractionEvent(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedInteractionEvent}
+ */
 export function TrackedInteractionEventFromJSON(json: any): TrackedInteractionEvent {
     return TrackedInteractionEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedInteractionEvent}
+ */
 export function TrackedInteractionEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedInteractionEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'description': json['description'],
         'element': !exists(json, 'element') ? undefined : json['element'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedInteractionEvent | null)} [value]
+ * @returns {*}
+ */
 export function TrackedInteractionEventToJSON(value?: TrackedInteractionEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function TrackedInteractionEventToJSON(value?: TrackedInteractionEvent | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'description': value.description,
         'element': value.element,

@@ -28,16 +28,44 @@ import {
     SeededDistributionToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface DistributionsCreateNewDistributionRequest
+ * @typedef {DistributionsCreateNewDistributionRequest}
+ */
 export interface DistributionsCreateNewDistributionRequest {
-    seededDistribution?: SeededDistribution;
-}
-
-export interface DistributionsDeleteSpecificDistributionRequest {
-    distribution: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededDistribution}
+ */
+seededDistribution?: SeededDistribution;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface DistributionsDeleteSpecificDistributionRequest
+ * @typedef {DistributionsDeleteSpecificDistributionRequest}
+ */
+export interface DistributionsDeleteSpecificDistributionRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+distribution: string;
+}
+
+/**
+ *
  */
 export class DistributionsApi extends runtime.BaseAPI {
 

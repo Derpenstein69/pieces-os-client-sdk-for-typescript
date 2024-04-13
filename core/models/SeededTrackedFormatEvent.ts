@@ -40,31 +40,31 @@ import {
 
 /**
  * Again this is a model designed to be sent over to a context server to be built and then sent along to segment.
- * 
+ *
  * @export
  * @interface SeededTrackedFormatEvent
  */
 export interface SeededTrackedFormatEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededTrackedFormatEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TrackedFormatEventIdentifierDescriptionPairs}
      * @memberof SeededTrackedFormatEvent
      */
     identifierDescriptionPair: TrackedFormatEventIdentifierDescriptionPairs;
     /**
-     * 
+     *
      * @type {ReferencedFormat}
      * @memberof SeededTrackedFormatEvent
      */
     format: ReferencedFormat;
     /**
-     * 
+     *
      * @type {TrackedFormatEventMetadata}
      * @memberof SeededTrackedFormatEvent
      */
@@ -82,16 +82,33 @@ export function instanceOfSeededTrackedFormatEvent(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTrackedFormatEvent}
+ */
 export function SeededTrackedFormatEventFromJSON(json: any): SeededTrackedFormatEvent {
     return SeededTrackedFormatEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTrackedFormatEvent}
+ */
 export function SeededTrackedFormatEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTrackedFormatEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'identifierDescriptionPair': TrackedFormatEventIdentifierDescriptionPairsFromJSON(json['identifier_description_pair']),
         'format': ReferencedFormatFromJSON(json['format']),
@@ -99,6 +116,14 @@ export function SeededTrackedFormatEventFromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededTrackedFormatEvent | null)} [value]
+ * @returns {*}
+ */
 export function SeededTrackedFormatEventToJSON(value?: SeededTrackedFormatEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -107,7 +132,7 @@ export function SeededTrackedFormatEventToJSON(value?: SeededTrackedFormatEvent 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'identifier_description_pair': TrackedFormatEventIdentifierDescriptionPairsToJSON(value.identifierDescriptionPair),
         'format': ReferencedFormatToJSON(value.format),

@@ -22,16 +22,44 @@ import {
     AllocationCloudToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AllocationSnapshotRequest
+ * @typedef {AllocationSnapshotRequest}
+ */
 export interface AllocationSnapshotRequest {
-    allocation: string;
-}
-
-export interface AllocationUpdateRequest {
-    allocationCloud?: AllocationCloud;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+allocation: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AllocationUpdateRequest
+ * @typedef {AllocationUpdateRequest}
+ */
+export interface AllocationUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?AllocationCloud}
+ */
+allocationCloud?: AllocationCloud;
+}
+
+/**
+ *
  */
 export class AllocationApi extends runtime.BaseAPI {
 

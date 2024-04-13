@@ -21,17 +21,49 @@ export const AnchorTypeEnum = {
     File: 'FILE',
     Directory: 'DIRECTORY'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @typedef {AnchorTypeEnum}
+ */
 export type AnchorTypeEnum = typeof AnchorTypeEnum[keyof typeof AnchorTypeEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AnchorTypeEnum}
+ */
 export function AnchorTypeEnumFromJSON(json: any): AnchorTypeEnum {
     return AnchorTypeEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AnchorTypeEnum}
+ */
 export function AnchorTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): AnchorTypeEnum {
     return json as AnchorTypeEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(AnchorTypeEnum | null)} [value]
+ * @returns {*}
+ */
 export function AnchorTypeEnumToJSON(value?: AnchorTypeEnum | null): any {
     return value as any;
 }

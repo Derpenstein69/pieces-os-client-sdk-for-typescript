@@ -33,13 +33,13 @@ import {
  */
 export interface FragmentMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FragmentMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ClassificationSpecificEnum}
      * @memberof FragmentMetadata
      */
@@ -55,21 +55,46 @@ export function instanceOfFragmentMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FragmentMetadata}
+ */
 export function FragmentMetadataFromJSON(json: any): FragmentMetadata {
     return FragmentMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FragmentMetadata}
+ */
 export function FragmentMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): FragmentMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'ext': !exists(json, 'ext') ? undefined : ClassificationSpecificEnumFromJSON(json['ext']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FragmentMetadata | null)} [value]
+ * @returns {*}
+ */
 export function FragmentMetadataToJSON(value?: FragmentMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function FragmentMetadataToJSON(value?: FragmentMetadata | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'ext': ClassificationSpecificEnumToJSON(value.ext),
     };

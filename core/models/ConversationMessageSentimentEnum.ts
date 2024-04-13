@@ -22,17 +22,49 @@ export const ConversationMessageSentimentEnum = {
     Dislike: 'DISLIKE',
     Report: 'REPORT'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @typedef {ConversationMessageSentimentEnum}
+ */
 export type ConversationMessageSentimentEnum = typeof ConversationMessageSentimentEnum[keyof typeof ConversationMessageSentimentEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ConversationMessageSentimentEnum}
+ */
 export function ConversationMessageSentimentEnumFromJSON(json: any): ConversationMessageSentimentEnum {
     return ConversationMessageSentimentEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ConversationMessageSentimentEnum}
+ */
 export function ConversationMessageSentimentEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConversationMessageSentimentEnum {
     return json as ConversationMessageSentimentEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(ConversationMessageSentimentEnum | null)} [value]
+ * @returns {*}
+ */
 export function ConversationMessageSentimentEnumToJSON(value?: ConversationMessageSentimentEnum | null): any {
     return value as any;
 }

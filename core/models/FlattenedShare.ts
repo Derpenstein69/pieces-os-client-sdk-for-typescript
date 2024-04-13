@@ -58,14 +58,14 @@ import {
 
 /**
  * This is a dag safe version of the Share.
- * 
+ *
  * if user is undefined && access is public then we have an asset that is publicly available.
  * @export
  * @interface FlattenedShare
  */
 export interface FlattenedShare {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedShare
      */
@@ -95,19 +95,19 @@ export interface FlattenedShare {
      */
     link: string;
     /**
-     * 
+     *
      * @type {AccessEnum}
      * @memberof FlattenedShare
      */
     access: AccessEnum;
     /**
-     * 
+     *
      * @type {Accessors}
      * @memberof FlattenedShare
      */
     accessors: Accessors;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedShare
      */
@@ -119,25 +119,25 @@ export interface FlattenedShare {
      */
     _short: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedShare
      */
     name?: string;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof FlattenedShare
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {FlattenedDistributions}
      * @memberof FlattenedShare
      */
     distributions?: FlattenedDistributions;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedShare
      */
@@ -159,16 +159,33 @@ export function instanceOfFlattenedShare(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedShare}
+ */
 export function FlattenedShareFromJSON(json: any): FlattenedShare {
     return FlattenedShareFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedShare}
+ */
 export function FlattenedShareFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedShare {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'asset': !exists(json, 'asset') ? undefined : json['asset'],
@@ -185,6 +202,14 @@ export function FlattenedShareFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedShare | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedShareToJSON(value?: FlattenedShare | null): any {
     if (value === undefined) {
         return undefined;
@@ -193,7 +218,7 @@ export function FlattenedShareToJSON(value?: FlattenedShare | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'asset': value.asset,

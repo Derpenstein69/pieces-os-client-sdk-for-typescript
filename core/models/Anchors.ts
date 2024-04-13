@@ -39,13 +39,13 @@ import {
  */
 export interface Anchors {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Anchors
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Anchor>}
      * @memberof Anchors
      */
@@ -57,7 +57,7 @@ export interface Anchors {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Anchors
      */
@@ -74,16 +74,33 @@ export function instanceOfAnchors(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Anchors}
+ */
 export function AnchorsFromJSON(json: any): Anchors {
     return AnchorsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Anchors}
+ */
 export function AnchorsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Anchors {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(AnchorFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function AnchorsFromJSONTyped(json: any, ignoreDiscriminator: boolean): A
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(Anchors | null)} [value]
+ * @returns {*}
+ */
 export function AnchorsToJSON(value?: Anchors | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function AnchorsToJSON(value?: Anchors | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(AnchorToJSON)),
         'indices': value.indices,

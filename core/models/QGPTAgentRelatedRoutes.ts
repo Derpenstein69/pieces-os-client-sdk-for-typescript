@@ -27,7 +27,7 @@ import {
  */
 export interface QGPTAgentRelatedRoutes {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTAgentRelatedRoutes
      */
@@ -49,21 +49,46 @@ export function instanceOfQGPTAgentRelatedRoutes(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTAgentRelatedRoutes}
+ */
 export function QGPTAgentRelatedRoutesFromJSON(json: any): QGPTAgentRelatedRoutes {
     return QGPTAgentRelatedRoutesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTAgentRelatedRoutes}
+ */
 export function QGPTAgentRelatedRoutesFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTAgentRelatedRoutes {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'people': !exists(json, 'people') ? undefined : json['people'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTAgentRelatedRoutes | null)} [value]
+ * @returns {*}
+ */
 export function QGPTAgentRelatedRoutesToJSON(value?: QGPTAgentRelatedRoutes | null): any {
     if (value === undefined) {
         return undefined;
@@ -72,7 +97,7 @@ export function QGPTAgentRelatedRoutesToJSON(value?: QGPTAgentRelatedRoutes | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'people': value.people,
     };

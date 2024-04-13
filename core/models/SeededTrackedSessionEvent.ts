@@ -33,13 +33,13 @@ import {
  */
 export interface SeededTrackedSessionEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededTrackedSessionEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TrackedSessionEventIdentifierDescriptionPairs}
      * @memberof SeededTrackedSessionEvent
      */
@@ -56,21 +56,46 @@ export function instanceOfSeededTrackedSessionEvent(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTrackedSessionEvent}
+ */
 export function SeededTrackedSessionEventFromJSON(json: any): SeededTrackedSessionEvent {
     return SeededTrackedSessionEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTrackedSessionEvent}
+ */
 export function SeededTrackedSessionEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTrackedSessionEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'identifierDescriptionPair': TrackedSessionEventIdentifierDescriptionPairsFromJSON(json['identifier_description_pair']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededTrackedSessionEvent | null)} [value]
+ * @returns {*}
+ */
 export function SeededTrackedSessionEventToJSON(value?: SeededTrackedSessionEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function SeededTrackedSessionEventToJSON(value?: SeededTrackedSessionEven
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'identifier_description_pair': TrackedSessionEventIdentifierDescriptionPairsToJSON(value.identifierDescriptionPair),
     };

@@ -28,22 +28,22 @@ import {
 
 /**
  * This is used as the returnable for the /applications/external && /applications/external/related endpoints.
- * 
+ *
  * This will return an iterable of Deteched Application a detected Application is an application that is currently installed on your machine.
- * 
+ *
  * the /applications/external/related endpoint, will return a subset of the applications returned mainly applications that we detect are Pieces Applications that you have yet to install + names of applications where Pieces is coming soon.
  * @export
  * @interface DetectedExternalApplications
  */
 export interface DetectedExternalApplications {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof DetectedExternalApplications
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<DetectedExternalApplication>}
      * @memberof DetectedExternalApplications
      */
@@ -60,21 +60,46 @@ export function instanceOfDetectedExternalApplications(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {DetectedExternalApplications}
+ */
 export function DetectedExternalApplicationsFromJSON(json: any): DetectedExternalApplications {
     return DetectedExternalApplicationsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {DetectedExternalApplications}
+ */
 export function DetectedExternalApplicationsFromJSONTyped(json: any, ignoreDiscriminator: boolean): DetectedExternalApplications {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(DetectedExternalApplicationFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(DetectedExternalApplications | null)} [value]
+ * @returns {*}
+ */
 export function DetectedExternalApplicationsToJSON(value?: DetectedExternalApplications | null): any {
     if (value === undefined) {
         return undefined;
@@ -83,7 +108,7 @@ export function DetectedExternalApplicationsToJSON(value?: DetectedExternalAppli
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(DetectedExternalApplicationToJSON)),
     };

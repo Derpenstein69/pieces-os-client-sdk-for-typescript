@@ -33,13 +33,13 @@ import {
  */
 export interface Health {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Health
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {OSHealth}
      * @memberof Health
      */
@@ -56,21 +56,46 @@ export function instanceOfHealth(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Health}
+ */
 export function HealthFromJSON(json: any): Health {
     return HealthFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Health}
+ */
 export function HealthFromJSONTyped(json: any, ignoreDiscriminator: boolean): Health {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'os': OSHealthFromJSON(json['os']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(Health | null)} [value]
+ * @returns {*}
+ */
 export function HealthToJSON(value?: Health | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function HealthToJSON(value?: Health | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'os': OSHealthToJSON(value.os),
     };

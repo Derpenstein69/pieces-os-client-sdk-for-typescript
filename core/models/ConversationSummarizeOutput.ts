@@ -39,19 +39,19 @@ import {
  */
 export interface ConversationSummarizeOutput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ConversationSummarizeOutput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ReferencedConversation}
      * @memberof ConversationSummarizeOutput
      */
     conversation: ReferencedConversation;
     /**
-     * 
+     *
      * @type {ReferencedAnnotation}
      * @memberof ConversationSummarizeOutput
      */
@@ -69,22 +69,47 @@ export function instanceOfConversationSummarizeOutput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ConversationSummarizeOutput}
+ */
 export function ConversationSummarizeOutputFromJSON(json: any): ConversationSummarizeOutput {
     return ConversationSummarizeOutputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ConversationSummarizeOutput}
+ */
 export function ConversationSummarizeOutputFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConversationSummarizeOutput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'conversation': ReferencedConversationFromJSON(json['conversation']),
         'annotation': ReferencedAnnotationFromJSON(json['annotation']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(ConversationSummarizeOutput | null)} [value]
+ * @returns {*}
+ */
 export function ConversationSummarizeOutputToJSON(value?: ConversationSummarizeOutput | null): any {
     if (value === undefined) {
         return undefined;
@@ -93,7 +118,7 @@ export function ConversationSummarizeOutputToJSON(value?: ConversationSummarizeO
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'conversation': ReferencedConversationToJSON(value.conversation),
         'annotation': ReferencedAnnotationToJSON(value.annotation),

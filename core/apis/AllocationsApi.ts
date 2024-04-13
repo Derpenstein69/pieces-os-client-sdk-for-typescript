@@ -28,28 +28,98 @@ import {
     UserProfileToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AllocationsConnectNewCloudRequest
+ * @typedef {AllocationsConnectNewCloudRequest}
+ */
 export interface AllocationsConnectNewCloudRequest {
-    userProfile?: UserProfile;
-}
-
-export interface AllocationsCreateNewAllocationRequest {
-    allocationCloud?: AllocationCloud;
-}
-
-export interface AllocationsDeleteAllocationRequest {
-    allocationCloud?: AllocationCloud;
-}
-
-export interface AllocationsDisconnectCloudRequest {
-    allocationCloud?: AllocationCloud;
-}
-
-export interface AllocationsReconnectCloudRequest {
-    allocationCloud?: AllocationCloud;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?UserProfile}
+ */
+userProfile?: UserProfile;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AllocationsCreateNewAllocationRequest
+ * @typedef {AllocationsCreateNewAllocationRequest}
+ */
+export interface AllocationsCreateNewAllocationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?AllocationCloud}
+ */
+allocationCloud?: AllocationCloud;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AllocationsDeleteAllocationRequest
+ * @typedef {AllocationsDeleteAllocationRequest}
+ */
+export interface AllocationsDeleteAllocationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?AllocationCloud}
+ */
+allocationCloud?: AllocationCloud;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AllocationsDisconnectCloudRequest
+ * @typedef {AllocationsDisconnectCloudRequest}
+ */
+export interface AllocationsDisconnectCloudRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?AllocationCloud}
+ */
+allocationCloud?: AllocationCloud;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AllocationsReconnectCloudRequest
+ * @typedef {AllocationsReconnectCloudRequest}
+ */
+export interface AllocationsReconnectCloudRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?AllocationCloud}
+ */
+allocationCloud?: AllocationCloud;
+}
+
+/**
+ *
  */
 export class AllocationsApi extends runtime.BaseAPI {
 

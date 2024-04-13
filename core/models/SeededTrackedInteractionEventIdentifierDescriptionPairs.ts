@@ -21,19 +21,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface SeededTrackedInteractionEventIdentifierDescriptionPairs
  */
 export interface SeededTrackedInteractionEventIdentifierDescriptionPairs {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededTrackedInteractionEventIdentifierDescriptionPairs
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededTrackedInteractionEventIdentifierDescriptionPairs
      */
@@ -47,6 +47,13 @@ export interface SeededTrackedInteractionEventIdentifierDescriptionPairs {
 export const SeededTrackedInteractionEventIdentifierDescriptionPairsAssetsListRefreshedEnum = {
     TheAssetsListWasRefreshedThroughUiElement: 'the_assets_list_was_refreshed_through_ui_element'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @typedef {SeededTrackedInteractionEventIdentifierDescriptionPairsAssetsListRefreshedEnum}
+ */
 export type SeededTrackedInteractionEventIdentifierDescriptionPairsAssetsListRefreshedEnum = typeof SeededTrackedInteractionEventIdentifierDescriptionPairsAssetsListRefreshedEnum[keyof typeof SeededTrackedInteractionEventIdentifierDescriptionPairsAssetsListRefreshedEnum];
 
 
@@ -59,21 +66,46 @@ export function instanceOfSeededTrackedInteractionEventIdentifierDescriptionPair
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTrackedInteractionEventIdentifierDescriptionPairs}
+ */
 export function SeededTrackedInteractionEventIdentifierDescriptionPairsFromJSON(json: any): SeededTrackedInteractionEventIdentifierDescriptionPairs {
     return SeededTrackedInteractionEventIdentifierDescriptionPairsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTrackedInteractionEventIdentifierDescriptionPairs}
+ */
 export function SeededTrackedInteractionEventIdentifierDescriptionPairsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTrackedInteractionEventIdentifierDescriptionPairs {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'assetsListRefreshed': !exists(json, 'assets_list_refreshed') ? undefined : json['assets_list_refreshed'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededTrackedInteractionEventIdentifierDescriptionPairs | null)} [value]
+ * @returns {*}
+ */
 export function SeededTrackedInteractionEventIdentifierDescriptionPairsToJSON(value?: SeededTrackedInteractionEventIdentifierDescriptionPairs | null): any {
     if (value === undefined) {
         return undefined;
@@ -82,7 +114,7 @@ export function SeededTrackedInteractionEventIdentifierDescriptionPairsToJSON(va
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'assets_list_refreshed': value.assetsListRefreshed,
     };

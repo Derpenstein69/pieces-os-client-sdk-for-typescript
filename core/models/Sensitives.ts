@@ -39,19 +39,19 @@ import {
  */
 export interface Sensitives {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Sensitives
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Sensitive>}
      * @memberof Sensitives
      */
     iterable: Array<Sensitive>;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Sensitives
      */
@@ -68,22 +68,47 @@ export function instanceOfSensitives(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Sensitives}
+ */
 export function SensitivesFromJSON(json: any): Sensitives {
     return SensitivesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Sensitives}
+ */
 export function SensitivesFromJSONTyped(json: any, ignoreDiscriminator: boolean): Sensitives {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(SensitiveFromJSON)),
         'score': !exists(json, 'score') ? undefined : ScoreFromJSON(json['score']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(Sensitives | null)} [value]
+ * @returns {*}
+ */
 export function SensitivesToJSON(value?: Sensitives | null): any {
     if (value === undefined) {
         return undefined;
@@ -92,7 +117,7 @@ export function SensitivesToJSON(value?: Sensitives | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(SensitiveToJSON)),
         'score': ScoreToJSON(value.score),

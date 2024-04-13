@@ -33,19 +33,19 @@ import {
  */
 export interface ReferencedHint {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedHint
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedHint
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedHint}
      * @memberof ReferencedHint
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedHint(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedHint}
+ */
 export function ReferencedHintFromJSON(json: any): ReferencedHint {
     return ReferencedHintFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedHint}
+ */
 export function ReferencedHintFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedHint {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedHintFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedHint | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedHintToJSON(value?: ReferencedHint | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedHintToJSON(value?: ReferencedHint | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedHintToJSON(value.reference),

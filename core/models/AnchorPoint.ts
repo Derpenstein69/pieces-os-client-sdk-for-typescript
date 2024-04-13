@@ -45,25 +45,25 @@ import {
 } from './Score';
 
 /**
- * 
+ *
  * @export
  * @interface AnchorPoint
  */
 export interface AnchorPoint {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AnchorPoint
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof AnchorPoint
      */
     id: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof AnchorPoint
      */
@@ -75,37 +75,37 @@ export interface AnchorPoint {
      */
     fullpath: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof AnchorPoint
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof AnchorPoint
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof AnchorPoint
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {PlatformEnum}
      * @memberof AnchorPoint
      */
     platform?: PlatformEnum;
     /**
-     * 
+     *
      * @type {ReferencedAnchor}
      * @memberof AnchorPoint
      */
     anchor: ReferencedAnchor;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof AnchorPoint
      */
@@ -126,16 +126,33 @@ export function instanceOfAnchorPoint(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AnchorPoint}
+ */
 export function AnchorPointFromJSON(json: any): AnchorPoint {
     return AnchorPointFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AnchorPoint}
+ */
 export function AnchorPointFromJSONTyped(json: any, ignoreDiscriminator: boolean): AnchorPoint {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'verified': !exists(json, 'verified') ? undefined : json['verified'],
@@ -149,6 +166,14 @@ export function AnchorPointFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(AnchorPoint | null)} [value]
+ * @returns {*}
+ */
 export function AnchorPointToJSON(value?: AnchorPoint | null): any {
     if (value === undefined) {
         return undefined;
@@ -157,7 +182,7 @@ export function AnchorPointToJSON(value?: AnchorPoint | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'verified': value.verified,

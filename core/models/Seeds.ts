@@ -33,13 +33,13 @@ import {
  */
 export interface Seeds {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Seeds
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Seed>}
      * @memberof Seeds
      */
@@ -56,21 +56,46 @@ export function instanceOfSeeds(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Seeds}
+ */
 export function SeedsFromJSON(json: any): Seeds {
     return SeedsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Seeds}
+ */
 export function SeedsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Seeds {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(SeedFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(Seeds | null)} [value]
+ * @returns {*}
+ */
 export function SeedsToJSON(value?: Seeds | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function SeedsToJSON(value?: Seeds | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(SeedToJSON)),
     };

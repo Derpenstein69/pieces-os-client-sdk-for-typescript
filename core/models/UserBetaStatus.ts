@@ -33,19 +33,19 @@ import {
  */
 export interface UserBetaStatus {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof UserBetaStatus
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Auth0UserBetaStatus}
      * @memberof UserBetaStatus
      */
     auth0?: Auth0UserBetaStatus;
     /**
-     * 
+     *
      * @type {string}
      * @memberof UserBetaStatus
      */
@@ -62,22 +62,47 @@ export function instanceOfUserBetaStatus(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {UserBetaStatus}
+ */
 export function UserBetaStatusFromJSON(json: any): UserBetaStatus {
     return UserBetaStatusFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {UserBetaStatus}
+ */
 export function UserBetaStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserBetaStatus {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'auth0': !exists(json, 'auth0') ? undefined : Auth0UserBetaStatusFromJSON(json['auth0']),
         'user': json['user'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(UserBetaStatus | null)} [value]
+ * @returns {*}
+ */
 export function UserBetaStatusToJSON(value?: UserBetaStatus | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function UserBetaStatusToJSON(value?: UserBetaStatus | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'auth0': Auth0UserBetaStatusToJSON(value.auth0),
         'user': value.user,

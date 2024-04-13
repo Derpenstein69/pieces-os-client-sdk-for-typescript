@@ -27,19 +27,19 @@ import {
 } from './ImageAnalysis';
 
 /**
- * 
+ *
  * @export
  * @interface ImageAnalyses
  */
 export interface ImageAnalyses {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ImageAnalyses
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ImageAnalysis>}
      * @memberof ImageAnalyses
      */
@@ -56,21 +56,46 @@ export function instanceOfImageAnalyses(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ImageAnalyses}
+ */
 export function ImageAnalysesFromJSON(json: any): ImageAnalyses {
     return ImageAnalysesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ImageAnalyses}
+ */
 export function ImageAnalysesFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImageAnalyses {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ImageAnalysisFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ImageAnalyses | null)} [value]
+ * @returns {*}
+ */
 export function ImageAnalysesToJSON(value?: ImageAnalyses | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function ImageAnalysesToJSON(value?: ImageAnalyses | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ImageAnalysisToJSON)),
     };

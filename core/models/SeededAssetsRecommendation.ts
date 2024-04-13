@@ -33,25 +33,25 @@ import {
 } from './InteractedAssets';
 
 /**
- * This is the input data model for the /assets/recommend [GET] endpoint. It includes both a list of assets but also 
+ * This is the input data model for the /assets/recommend [GET] endpoint. It includes both a list of assets but also
  * @export
  * @interface SeededAssetsRecommendation
  */
 export interface SeededAssetsRecommendation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededAssetsRecommendation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Assets}
      * @memberof SeededAssetsRecommendation
      */
     assets: Assets;
     /**
-     * 
+     *
      * @type {InteractedAssets}
      * @memberof SeededAssetsRecommendation
      */
@@ -69,22 +69,47 @@ export function instanceOfSeededAssetsRecommendation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededAssetsRecommendation}
+ */
 export function SeededAssetsRecommendationFromJSON(json: any): SeededAssetsRecommendation {
     return SeededAssetsRecommendationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededAssetsRecommendation}
+ */
 export function SeededAssetsRecommendationFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededAssetsRecommendation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'assets': AssetsFromJSON(json['assets']),
         'interactions': InteractedAssetsFromJSON(json['interactions']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededAssetsRecommendation | null)} [value]
+ * @returns {*}
+ */
 export function SeededAssetsRecommendationToJSON(value?: SeededAssetsRecommendation | null): any {
     if (value === undefined) {
         return undefined;
@@ -93,7 +118,7 @@ export function SeededAssetsRecommendationToJSON(value?: SeededAssetsRecommendat
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'assets': AssetsToJSON(value.assets),
         'interactions': InteractedAssetsToJSON(value.interactions),

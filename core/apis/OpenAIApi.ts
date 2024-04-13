@@ -25,12 +25,26 @@ import {
     OpenAIModelsListOutputToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface OpenAiModelsListRequest
+ * @typedef {OpenAiModelsListRequest}
+ */
 export interface OpenAiModelsListRequest {
-    openAIModelsListInput?: OpenAIModelsListInput;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?OpenAIModelsListInput}
+ */
+openAIModelsListInput?: OpenAIModelsListInput;
 }
 
 /**
- * 
+ *
  */
 export class OpenAIApi extends runtime.BaseAPI {
 

@@ -27,13 +27,13 @@ import {
  */
 export interface Theme {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Theme
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof Theme
      */
@@ -50,21 +50,46 @@ export function instanceOfTheme(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Theme}
+ */
 export function ThemeFromJSON(json: any): Theme {
     return ThemeFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Theme}
+ */
 export function ThemeFromJSONTyped(json: any, ignoreDiscriminator: boolean): Theme {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'dark': json['dark'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(Theme | null)} [value]
+ * @returns {*}
+ */
 export function ThemeToJSON(value?: Theme | null): any {
     if (value === undefined) {
         return undefined;
@@ -73,7 +98,7 @@ export function ThemeToJSON(value?: Theme | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'dark': value.dark,
     };

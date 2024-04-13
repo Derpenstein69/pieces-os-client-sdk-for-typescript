@@ -22,16 +22,16 @@ import {
 
 /**
  * This task is for explaining a bit of code.
- * 
+ *
  * This is a class so that we can add optional properties in the future.
- * 
+ *
  * Note: the snippet && language that needs to be explaned should be within the QGPTQuestionInput.relevant
  * @export
  * @interface QGPTTaskPipelineForCodeExplanation
  */
 export interface QGPTTaskPipelineForCodeExplanation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTTaskPipelineForCodeExplanation
      */
@@ -47,20 +47,45 @@ export function instanceOfQGPTTaskPipelineForCodeExplanation(value: object): boo
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTTaskPipelineForCodeExplanation}
+ */
 export function QGPTTaskPipelineForCodeExplanationFromJSON(json: any): QGPTTaskPipelineForCodeExplanation {
     return QGPTTaskPipelineForCodeExplanationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTTaskPipelineForCodeExplanation}
+ */
 export function QGPTTaskPipelineForCodeExplanationFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTTaskPipelineForCodeExplanation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTTaskPipelineForCodeExplanation | null)} [value]
+ * @returns {*}
+ */
 export function QGPTTaskPipelineForCodeExplanationToJSON(value?: QGPTTaskPipelineForCodeExplanation | null): any {
     if (value === undefined) {
         return undefined;
@@ -69,7 +94,7 @@ export function QGPTTaskPipelineForCodeExplanationToJSON(value?: QGPTTaskPipelin
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
     };
 }

@@ -21,19 +21,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface GraphicalSVGStatistics
  */
 export interface GraphicalSVGStatistics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof GraphicalSVGStatistics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalSVGStatistics
      */
@@ -49,21 +49,46 @@ export function instanceOfGraphicalSVGStatistics(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {GraphicalSVGStatistics}
+ */
 export function GraphicalSVGStatisticsFromJSON(json: any): GraphicalSVGStatistics {
     return GraphicalSVGStatisticsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {GraphicalSVGStatistics}
+ */
 export function GraphicalSVGStatisticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GraphicalSVGStatistics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': !exists(json, 'id') ? undefined : json['id'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(GraphicalSVGStatistics | null)} [value]
+ * @returns {*}
+ */
 export function GraphicalSVGStatisticsToJSON(value?: GraphicalSVGStatistics | null): any {
     if (value === undefined) {
         return undefined;
@@ -72,7 +97,7 @@ export function GraphicalSVGStatisticsToJSON(value?: GraphicalSVGStatistics | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
     };

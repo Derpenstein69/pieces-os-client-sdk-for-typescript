@@ -33,31 +33,31 @@ import {
 } from './PlatformEnum';
 
 /**
- * 
+ *
  * @export
  * @interface SeededAnchorPoint
  */
 export interface SeededAnchorPoint {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededAnchorPoint
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {AnchorTypeEnum}
      * @memberof SeededAnchorPoint
      */
     type: AnchorTypeEnum;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof SeededAnchorPoint
      */
     watch?: boolean;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAnchorPoint
      */
@@ -69,7 +69,7 @@ export interface SeededAnchorPoint {
      */
     anchor: string;
     /**
-     * 
+     *
      * @type {PlatformEnum}
      * @memberof SeededAnchorPoint
      */
@@ -88,16 +88,33 @@ export function instanceOfSeededAnchorPoint(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededAnchorPoint}
+ */
 export function SeededAnchorPointFromJSON(json: any): SeededAnchorPoint {
     return SeededAnchorPointFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededAnchorPoint}
+ */
 export function SeededAnchorPointFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededAnchorPoint {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'type': AnchorTypeEnumFromJSON(json['type']),
         'watch': !exists(json, 'watch') ? undefined : json['watch'],
@@ -107,6 +124,14 @@ export function SeededAnchorPointFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededAnchorPoint | null)} [value]
+ * @returns {*}
+ */
 export function SeededAnchorPointToJSON(value?: SeededAnchorPoint | null): any {
     if (value === undefined) {
         return undefined;
@@ -115,7 +140,7 @@ export function SeededAnchorPointToJSON(value?: SeededAnchorPoint | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'type': AnchorTypeEnumToJSON(value.type),
         'watch': value.watch,

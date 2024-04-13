@@ -33,25 +33,25 @@ import {
 } from './FlattenedImageAnalysis';
 
 /**
- * 
+ *
  * @export
  * @interface FlattenedAnalysis
  */
 export interface FlattenedAnalysis {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedAnalysis
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {CodeAnalysis}
      * @memberof FlattenedAnalysis
      */
     code?: CodeAnalysis;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedAnalysis
      */
@@ -63,7 +63,7 @@ export interface FlattenedAnalysis {
      */
     format: string;
     /**
-     * 
+     *
      * @type {FlattenedImageAnalysis}
      * @memberof FlattenedAnalysis
      */
@@ -81,16 +81,33 @@ export function instanceOfFlattenedAnalysis(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedAnalysis}
+ */
 export function FlattenedAnalysisFromJSON(json: any): FlattenedAnalysis {
     return FlattenedAnalysisFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedAnalysis}
+ */
 export function FlattenedAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedAnalysis {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'code': !exists(json, 'code') ? undefined : CodeAnalysisFromJSON(json['code']),
         'id': json['id'],
@@ -99,6 +116,14 @@ export function FlattenedAnalysisFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(FlattenedAnalysis | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedAnalysisToJSON(value?: FlattenedAnalysis | null): any {
     if (value === undefined) {
         return undefined;
@@ -107,7 +132,7 @@ export function FlattenedAnalysisToJSON(value?: FlattenedAnalysis | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'code': CodeAnalysisToJSON(value.code),
         'id': value.id,

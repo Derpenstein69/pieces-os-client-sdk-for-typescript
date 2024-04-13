@@ -27,25 +27,25 @@ import {
 } from './FlattenedWebsite';
 
 /**
- * 
+ *
  * @export
  * @interface ReferencedWebsite
  */
 export interface ReferencedWebsite {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedWebsite
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedWebsite
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedWebsite}
      * @memberof ReferencedWebsite
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedWebsite(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedWebsite}
+ */
 export function ReferencedWebsiteFromJSON(json: any): ReferencedWebsite {
     return ReferencedWebsiteFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedWebsite}
+ */
 export function ReferencedWebsiteFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedWebsite {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedWebsiteFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(ReferencedWebsite | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedWebsiteToJSON(value?: ReferencedWebsite | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedWebsiteToJSON(value?: ReferencedWebsite | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedWebsiteToJSON(value.reference),

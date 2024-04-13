@@ -34,25 +34,87 @@ import {
     SeededConversationToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationsCreateFromAssetRequest
+ * @typedef {ConversationsCreateFromAssetRequest}
+ */
 export interface ConversationsCreateFromAssetRequest {
-    asset: string;
-}
-
-export interface ConversationsCreateSpecificConversationRequest {
-    transferables?: boolean;
-    seededConversation?: SeededConversation;
-}
-
-export interface ConversationsDeleteSpecificConversationRequest {
-    conversation: string;
-}
-
-export interface ConversationsSnapshotRequest {
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationsCreateSpecificConversationRequest
+ * @typedef {ConversationsCreateSpecificConversationRequest}
+ */
+export interface ConversationsCreateSpecificConversationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededConversation}
+ */
+seededConversation?: SeededConversation;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationsDeleteSpecificConversationRequest
+ * @typedef {ConversationsDeleteSpecificConversationRequest}
+ */
+export interface ConversationsDeleteSpecificConversationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationsSnapshotRequest
+ * @typedef {ConversationsSnapshotRequest}
+ */
+export interface ConversationsSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class ConversationsApi extends runtime.BaseAPI {
 

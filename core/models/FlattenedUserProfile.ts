@@ -27,7 +27,7 @@ import {
  */
 export interface FlattenedUserProfile {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedUserProfile
      */
@@ -39,31 +39,31 @@ export interface FlattenedUserProfile {
      */
     id: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedUserProfile
      */
     email?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedUserProfile
      */
     name?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedUserProfile
      */
     username?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedUserProfile
      */
     picture?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedUserProfile
      */
@@ -80,16 +80,33 @@ export function instanceOfFlattenedUserProfile(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedUserProfile}
+ */
 export function FlattenedUserProfileFromJSON(json: any): FlattenedUserProfile {
     return FlattenedUserProfileFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedUserProfile}
+ */
 export function FlattenedUserProfileFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedUserProfile {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'email': !exists(json, 'email') ? undefined : json['email'],
@@ -100,6 +117,14 @@ export function FlattenedUserProfileFromJSONTyped(json: any, ignoreDiscriminator
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FlattenedUserProfile | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedUserProfileToJSON(value?: FlattenedUserProfile | null): any {
     if (value === undefined) {
         return undefined;
@@ -108,7 +133,7 @@ export function FlattenedUserProfileToJSON(value?: FlattenedUserProfile | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'email': value.email,

@@ -28,194 +28,194 @@ import {
 
 /**
  * This is the body for a respective scores increment,
- * 
+ *
  * This will enable us to know what material we want to increment, all of which are optional, if it is defined we will attempt to increment the material.
  * @export
  * @interface SeededScoreIncrement
  */
 export interface SeededScoreIncrement {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededScoreIncrement
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     asset?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     assets?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     website?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     websites?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     anchor?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     anchors?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     anchorPoint?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     anchorPoints?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     annotation?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     annotations?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     conversation?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     conversations?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     conversationMessage?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     conversationMessages?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     share?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     shares?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     sensitive?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     sensitives?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     hint?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     hints?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     person?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     persons?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     tag?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     tags?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     workstreamSummary?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     workstreamSummaries?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     workstreamEvents?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     workstreamEvent?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
     ranges?: SeededScore;
     /**
-     * 
+     *
      * @type {SeededScore}
      * @memberof SeededScoreIncrement
      */
@@ -231,16 +231,33 @@ export function instanceOfSeededScoreIncrement(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededScoreIncrement}
+ */
 export function SeededScoreIncrementFromJSON(json: any): SeededScoreIncrement {
     return SeededScoreIncrementFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededScoreIncrement}
+ */
 export function SeededScoreIncrementFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededScoreIncrement {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': !exists(json, 'asset') ? undefined : SeededScoreFromJSON(json['asset']),
         'assets': !exists(json, 'assets') ? undefined : SeededScoreFromJSON(json['assets']),
@@ -275,6 +292,14 @@ export function SeededScoreIncrementFromJSONTyped(json: any, ignoreDiscriminator
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededScoreIncrement | null)} [value]
+ * @returns {*}
+ */
 export function SeededScoreIncrementToJSON(value?: SeededScoreIncrement | null): any {
     if (value === undefined) {
         return undefined;
@@ -283,7 +308,7 @@ export function SeededScoreIncrementToJSON(value?: SeededScoreIncrement | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': SeededScoreToJSON(value.asset),
         'assets': SeededScoreToJSON(value.assets),

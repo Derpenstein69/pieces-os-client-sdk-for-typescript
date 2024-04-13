@@ -28,26 +28,94 @@ import {
     SeededPersonToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface PersonDisassociateAssetRequest
+ * @typedef {PersonDisassociateAssetRequest}
+ */
 export interface PersonDisassociateAssetRequest {
-    person: string;
-    asset: string;
-}
-
-export interface PersonsCreateNewPersonRequest {
-    transferables?: boolean;
-    seededPerson?: SeededPerson;
-}
-
-export interface PersonsDeletePersonRequest {
-    person: string;
-}
-
-export interface PersonsSnapshotRequest {
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+person: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+asset: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface PersonsCreateNewPersonRequest
+ * @typedef {PersonsCreateNewPersonRequest}
+ */
+export interface PersonsCreateNewPersonRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededPerson}
+ */
+seededPerson?: SeededPerson;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface PersonsDeletePersonRequest
+ * @typedef {PersonsDeletePersonRequest}
+ */
+export interface PersonsDeletePersonRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+person: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface PersonsSnapshotRequest
+ * @typedef {PersonsSnapshotRequest}
+ */
+export interface PersonsSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class PersonsApi extends runtime.BaseAPI {
 

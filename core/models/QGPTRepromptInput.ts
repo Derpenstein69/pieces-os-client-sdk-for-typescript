@@ -34,7 +34,7 @@ import {
 
 /**
  * Query is your followup question.
- * 
+ *
  * Conversation is a list of the back and fourth with the qgpt bot.
  * where the first entry in the array was the last message sent.
  * @export
@@ -42,19 +42,19 @@ import {
  */
 export interface QGPTRepromptInput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTRepromptInput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof QGPTRepromptInput
      */
     query: string;
     /**
-     * 
+     *
      * @type {QGPTConversation}
      * @memberof QGPTRepromptInput
      */
@@ -72,7 +72,7 @@ export interface QGPTRepromptInput {
      */
     model?: string;
     /**
-     * 
+     *
      * @type {QGPTPromptPipeline}
      * @memberof QGPTRepromptInput
      */
@@ -90,16 +90,33 @@ export function instanceOfQGPTRepromptInput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTRepromptInput}
+ */
 export function QGPTRepromptInputFromJSON(json: any): QGPTRepromptInput {
     return QGPTRepromptInputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTRepromptInput}
+ */
 export function QGPTRepromptInputFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTRepromptInput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'query': json['query'],
         'conversation': QGPTConversationFromJSON(json['conversation']),
@@ -109,6 +126,14 @@ export function QGPTRepromptInputFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTRepromptInput | null)} [value]
+ * @returns {*}
+ */
 export function QGPTRepromptInputToJSON(value?: QGPTRepromptInput | null): any {
     if (value === undefined) {
         return undefined;
@@ -117,7 +142,7 @@ export function QGPTRepromptInputToJSON(value?: QGPTRepromptInput | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'query': value.query,
         'conversation': QGPTConversationToJSON(value.conversation),

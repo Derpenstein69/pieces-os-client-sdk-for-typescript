@@ -39,31 +39,31 @@ import {
  */
 export interface SearchedAsset {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SearchedAsset
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Asset}
      * @memberof SearchedAsset
      */
     asset?: Asset;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof SearchedAsset
      */
     exact: boolean;
     /**
-     * 
+     *
      * @type {number}
      * @memberof SearchedAsset
      */
     score: number;
     /**
-     * 
+     *
      * @type {SearchedMatchEnum}
      * @memberof SearchedAsset
      */
@@ -95,16 +95,33 @@ export function instanceOfSearchedAsset(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SearchedAsset}
+ */
 export function SearchedAssetFromJSON(json: any): SearchedAsset {
     return SearchedAssetFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SearchedAsset}
+ */
 export function SearchedAssetFromJSONTyped(json: any, ignoreDiscriminator: boolean): SearchedAsset {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': !exists(json, 'asset') ? undefined : AssetFromJSON(json['asset']),
         'exact': json['exact'],
@@ -115,6 +132,14 @@ export function SearchedAssetFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(SearchedAsset | null)} [value]
+ * @returns {*}
+ */
 export function SearchedAssetToJSON(value?: SearchedAsset | null): any {
     if (value === undefined) {
         return undefined;
@@ -123,7 +148,7 @@ export function SearchedAssetToJSON(value?: SearchedAsset | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': AssetToJSON(value.asset),
         'exact': value.exact,

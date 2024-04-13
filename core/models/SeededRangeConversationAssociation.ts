@@ -33,25 +33,25 @@ import {
 } from './SeededRangeConversationGroundingAssociation';
 
 /**
- * 
+ *
  * @export
  * @interface SeededRangeConversationAssociation
  */
 export interface SeededRangeConversationAssociation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededRangeConversationAssociation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ReferencedConversation}
      * @memberof SeededRangeConversationAssociation
      */
     reference: ReferencedConversation;
     /**
-     * 
+     *
      * @type {SeededRangeConversationGroundingAssociation}
      * @memberof SeededRangeConversationAssociation
      */
@@ -68,22 +68,47 @@ export function instanceOfSeededRangeConversationAssociation(value: object): boo
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededRangeConversationAssociation}
+ */
 export function SeededRangeConversationAssociationFromJSON(json: any): SeededRangeConversationAssociation {
     return SeededRangeConversationAssociationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededRangeConversationAssociation}
+ */
 export function SeededRangeConversationAssociationFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededRangeConversationAssociation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'reference': ReferencedConversationFromJSON(json['reference']),
         'grounding': !exists(json, 'grounding') ? undefined : SeededRangeConversationGroundingAssociationFromJSON(json['grounding']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededRangeConversationAssociation | null)} [value]
+ * @returns {*}
+ */
 export function SeededRangeConversationAssociationToJSON(value?: SeededRangeConversationAssociation | null): any {
     if (value === undefined) {
         return undefined;
@@ -92,7 +117,7 @@ export function SeededRangeConversationAssociationToJSON(value?: SeededRangeConv
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'reference': ReferencedConversationToJSON(value.reference),
         'grounding': SeededRangeConversationGroundingAssociationToJSON(value.grounding),

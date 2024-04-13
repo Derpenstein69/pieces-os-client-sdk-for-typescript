@@ -27,7 +27,7 @@ import {
  */
 export interface TrackedAssetEventCreationMetadataClipboard {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedAssetEventCreationMetadataClipboard
      */
@@ -55,22 +55,47 @@ export function instanceOfTrackedAssetEventCreationMetadataClipboard(value: obje
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedAssetEventCreationMetadataClipboard}
+ */
 export function TrackedAssetEventCreationMetadataClipboardFromJSON(json: any): TrackedAssetEventCreationMetadataClipboard {
     return TrackedAssetEventCreationMetadataClipboardFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedAssetEventCreationMetadataClipboard}
+ */
 export function TrackedAssetEventCreationMetadataClipboardFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedAssetEventCreationMetadataClipboard {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'keyboard': !exists(json, 'keyboard') ? undefined : json['keyboard'],
         'interaction': !exists(json, 'interaction') ? undefined : json['interaction'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TrackedAssetEventCreationMetadataClipboard | null)} [value]
+ * @returns {*}
+ */
 export function TrackedAssetEventCreationMetadataClipboardToJSON(value?: TrackedAssetEventCreationMetadataClipboard | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function TrackedAssetEventCreationMetadataClipboardToJSON(value?: Tracked
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'keyboard': value.keyboard,
         'interaction': value.interaction,

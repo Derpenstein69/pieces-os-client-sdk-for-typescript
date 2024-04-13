@@ -27,43 +27,43 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface AssetFilterPhrase
  */
 export interface AssetFilterPhrase {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AssetFilterPhrase
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof AssetFilterPhrase
      */
     value?: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof AssetFilterPhrase
      */
     annotation?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof AssetFilterPhrase
      */
     title?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof AssetFilterPhrase
      */
     content?: boolean;
     /**
-     * 
+     *
      * @type {AssetFilterPhraseOptions}
      * @memberof AssetFilterPhrase
      */
@@ -79,16 +79,33 @@ export function instanceOfAssetFilterPhrase(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AssetFilterPhrase}
+ */
 export function AssetFilterPhraseFromJSON(json: any): AssetFilterPhrase {
     return AssetFilterPhraseFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AssetFilterPhrase}
+ */
 export function AssetFilterPhraseFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssetFilterPhrase {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'value': !exists(json, 'value') ? undefined : json['value'],
         'annotation': !exists(json, 'annotation') ? undefined : json['annotation'],
@@ -98,6 +115,14 @@ export function AssetFilterPhraseFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(AssetFilterPhrase | null)} [value]
+ * @returns {*}
+ */
 export function AssetFilterPhraseToJSON(value?: AssetFilterPhrase | null): any {
     if (value === undefined) {
         return undefined;
@@ -106,7 +131,7 @@ export function AssetFilterPhraseToJSON(value?: AssetFilterPhrase | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'value': value.value,
         'annotation': value.annotation,

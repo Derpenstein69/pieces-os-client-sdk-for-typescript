@@ -22,16 +22,44 @@ import {
     DistributionToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface DistributionUpdateRequest
+ * @typedef {DistributionUpdateRequest}
+ */
 export interface DistributionUpdateRequest {
-    distribution?: Distribution;
-}
-
-export interface DistributionsSpecificDistributionSnapshotRequest {
-    distribution: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Distribution}
+ */
+distribution?: Distribution;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface DistributionsSpecificDistributionSnapshotRequest
+ * @typedef {DistributionsSpecificDistributionSnapshotRequest}
+ */
+export interface DistributionsSpecificDistributionSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+distribution: string;
+}
+
+/**
+ *
  */
 export class DistributionApi extends runtime.BaseAPI {
 

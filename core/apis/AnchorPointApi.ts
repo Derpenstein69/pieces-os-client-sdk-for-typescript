@@ -25,23 +25,83 @@ import {
     SeededScoreIncrementToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorPointScoresIncrementRequest
+ * @typedef {AnchorPointScoresIncrementRequest}
+ */
 export interface AnchorPointScoresIncrementRequest {
-    anchorPoint: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface AnchorPointSpecificAnchorPointSnapshotRequest {
-    anchorPoint: string;
-    transferables?: boolean;
-}
-
-export interface AnchorPointUpdateRequest {
-    transferables?: boolean;
-    anchorPoint?: AnchorPoint;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+anchorPoint: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorPointSpecificAnchorPointSnapshotRequest
+ * @typedef {AnchorPointSpecificAnchorPointSnapshotRequest}
+ */
+export interface AnchorPointSpecificAnchorPointSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+anchorPoint: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorPointUpdateRequest
+ * @typedef {AnchorPointUpdateRequest}
+ */
+export interface AnchorPointUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?AnchorPoint}
+ */
+anchorPoint?: AnchorPoint;
+}
+
+/**
+ *
  */
 export class AnchorPointApi extends runtime.BaseAPI {
 

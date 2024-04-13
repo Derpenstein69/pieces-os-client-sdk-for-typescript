@@ -27,19 +27,19 @@ import {
 } from './FormatMetric';
 
 /**
- * 
+ *
  * @export
  * @interface FormatsMetrics
  */
 export interface FormatsMetrics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FormatsMetrics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<FormatMetric>}
      * @memberof FormatsMetrics
      */
@@ -56,21 +56,46 @@ export function instanceOfFormatsMetrics(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FormatsMetrics}
+ */
 export function FormatsMetricsFromJSON(json: any): FormatsMetrics {
     return FormatsMetricsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FormatsMetrics}
+ */
 export function FormatsMetricsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FormatsMetrics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(FormatMetricFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FormatsMetrics | null)} [value]
+ * @returns {*}
+ */
 export function FormatsMetricsToJSON(value?: FormatsMetrics | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function FormatsMetricsToJSON(value?: FormatsMetrics | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(FormatMetricToJSON)),
     };

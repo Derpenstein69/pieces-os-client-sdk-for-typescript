@@ -21,13 +21,13 @@ import {
 } from './Relationship';
 
 /**
- * 
+ *
  * @export
  * @interface Relationships
  */
 export interface Relationships {
     /**
-     * 
+     *
      * @type {Array<Relationship>}
      * @memberof Relationships
      */
@@ -44,20 +44,45 @@ export function instanceOfRelationships(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Relationships}
+ */
 export function RelationshipsFromJSON(json: any): Relationships {
     return RelationshipsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Relationships}
+ */
 export function RelationshipsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Relationships {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'iterable': ((json['iterable'] as Array<any>).map(RelationshipFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(Relationships | null)} [value]
+ * @returns {*}
+ */
 export function RelationshipsToJSON(value?: Relationships | null): any {
     if (value === undefined) {
         return undefined;
@@ -66,7 +91,7 @@ export function RelationshipsToJSON(value?: Relationships | null): any {
         return null;
     }
     return {
-        
+
         'iterable': ((value.iterable as Array<any>).map(RelationshipToJSON)),
     };
 }

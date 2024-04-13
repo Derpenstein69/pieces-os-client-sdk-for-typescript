@@ -27,19 +27,19 @@ import {
  */
 export interface ByteDescriptor {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ByteDescriptor
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {number}
      * @memberof ByteDescriptor
      */
     value: number;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ByteDescriptor
      */
@@ -57,22 +57,47 @@ export function instanceOfByteDescriptor(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ByteDescriptor}
+ */
 export function ByteDescriptorFromJSON(json: any): ByteDescriptor {
     return ByteDescriptorFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ByteDescriptor}
+ */
 export function ByteDescriptorFromJSONTyped(json: any, ignoreDiscriminator: boolean): ByteDescriptor {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'value': json['value'],
         'readable': json['readable'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(ByteDescriptor | null)} [value]
+ * @returns {*}
+ */
 export function ByteDescriptorToJSON(value?: ByteDescriptor | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function ByteDescriptorToJSON(value?: ByteDescriptor | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'value': value.value,
         'readable': value.readable,

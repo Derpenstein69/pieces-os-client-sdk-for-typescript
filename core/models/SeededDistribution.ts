@@ -34,26 +34,26 @@ import {
 
 /**
  * TODO if we add another distribution add to this, Distribution, and flattenedDistribution.
- * 
+ *
  * can only use this Model with our Linkify Model.
  * @export
  * @interface SeededDistribution
  */
 export interface SeededDistribution {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededDistribution
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {MailgunDistribution}
      * @memberof SeededDistribution
      */
     mailgun?: MailgunDistribution;
     /**
-     * 
+     *
      * @type {SeededGitHubDistribution}
      * @memberof SeededDistribution
      */
@@ -69,22 +69,47 @@ export function instanceOfSeededDistribution(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededDistribution}
+ */
 export function SeededDistributionFromJSON(json: any): SeededDistribution {
     return SeededDistributionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededDistribution}
+ */
 export function SeededDistributionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededDistribution {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'mailgun': !exists(json, 'mailgun') ? undefined : MailgunDistributionFromJSON(json['mailgun']),
         'github': !exists(json, 'github') ? undefined : SeededGitHubDistributionFromJSON(json['github']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededDistribution | null)} [value]
+ * @returns {*}
+ */
 export function SeededDistributionToJSON(value?: SeededDistribution | null): any {
     if (value === undefined) {
         return undefined;
@@ -93,7 +118,7 @@ export function SeededDistributionToJSON(value?: SeededDistribution | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'mailgun': MailgunDistributionToJSON(value.mailgun),
         'github': SeededGitHubDistributionToJSON(value.github),

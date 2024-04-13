@@ -43,84 +43,390 @@ import {
     SeededScoreIncrementToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetAssociateTagRequest
+ * @typedef {AssetAssociateTagRequest}
+ */
 export interface AssetAssociateTagRequest {
-    asset: string;
-    tag: string;
-}
-
-export interface AssetAssociateWebsiteRequest {
-    asset: string;
-    website: string;
-}
-
-export interface AssetAssociateWorkstreamSummaryRequest {
-    asset: string;
-    workstreamSummary: string;
-}
-
-export interface AssetDisassociateTagRequest {
-    tag: string;
-    asset: string;
-}
-
-export interface AssetDisassociateWebsiteRequest {
-    website: string;
-    asset: string;
-}
-
-export interface AssetDisassociateWorkstreamSummaryRequest {
-    asset: string;
-    workstreamSummary: string;
-}
-
-export interface AssetFormatsRequest {
-    asset: string;
-    transferables?: boolean;
-}
-
-export interface AssetReclassifyRequest {
-    transferables?: boolean;
-    assetReclassification?: AssetReclassification;
-}
-
-export interface AssetScoresIncrementRequest {
-    asset: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface AssetSnapshotRequest {
-    asset: string;
-    transferables?: boolean;
-}
-
-export interface AssetSnapshotPostRequest {
-    asset: string;
-    transferables?: boolean;
-    seededAccessor?: SeededAccessor;
-}
-
-export interface AssetSpecificAssetActivitiesRequest {
-    asset: string;
-    transferables?: boolean;
-}
-
-export interface AssetSpecificAssetConversationsRequest {
-    asset: string;
-    transferables?: boolean;
-}
-
-export interface AssetSpecificAssetExportRequest {
-    asset: string;
-    exportType: AssetSpecificAssetExportExportTypeEnum;
-}
-
-export interface AssetUpdateRequest {
-    transferables?: boolean;
-    asset?: Asset;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+tag: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetAssociateWebsiteRequest
+ * @typedef {AssetAssociateWebsiteRequest}
+ */
+export interface AssetAssociateWebsiteRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+website: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetAssociateWorkstreamSummaryRequest
+ * @typedef {AssetAssociateWorkstreamSummaryRequest}
+ */
+export interface AssetAssociateWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetDisassociateTagRequest
+ * @typedef {AssetDisassociateTagRequest}
+ */
+export interface AssetDisassociateTagRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+tag: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetDisassociateWebsiteRequest
+ * @typedef {AssetDisassociateWebsiteRequest}
+ */
+export interface AssetDisassociateWebsiteRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+website: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetDisassociateWorkstreamSummaryRequest
+ * @typedef {AssetDisassociateWorkstreamSummaryRequest}
+ */
+export interface AssetDisassociateWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetFormatsRequest
+ * @typedef {AssetFormatsRequest}
+ */
+export interface AssetFormatsRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetReclassifyRequest
+ * @typedef {AssetReclassifyRequest}
+ */
+export interface AssetReclassifyRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?AssetReclassification}
+ */
+assetReclassification?: AssetReclassification;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetScoresIncrementRequest
+ * @typedef {AssetScoresIncrementRequest}
+ */
+export interface AssetScoresIncrementRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetSnapshotRequest
+ * @typedef {AssetSnapshotRequest}
+ */
+export interface AssetSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetSnapshotPostRequest
+ * @typedef {AssetSnapshotPostRequest}
+ */
+export interface AssetSnapshotPostRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededAccessor}
+ */
+seededAccessor?: SeededAccessor;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetSpecificAssetActivitiesRequest
+ * @typedef {AssetSpecificAssetActivitiesRequest}
+ */
+export interface AssetSpecificAssetActivitiesRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetSpecificAssetConversationsRequest
+ * @typedef {AssetSpecificAssetConversationsRequest}
+ */
+export interface AssetSpecificAssetConversationsRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetSpecificAssetExportRequest
+ * @typedef {AssetSpecificAssetExportRequest}
+ */
+export interface AssetSpecificAssetExportRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {AssetSpecificAssetExportExportTypeEnum}
+ */
+exportType: AssetSpecificAssetExportExportTypeEnum;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AssetUpdateRequest
+ * @typedef {AssetUpdateRequest}
+ */
+export interface AssetUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Asset}
+ */
+asset?: Asset;
+}
+
+/**
+ *
  */
 export class AssetApi extends runtime.BaseAPI {
 
@@ -670,4 +976,11 @@ export const AssetSpecificAssetExportExportTypeEnum = {
     Html: 'HTML',
     Md: 'MD'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @typedef {AssetSpecificAssetExportExportTypeEnum}
+ */
 export type AssetSpecificAssetExportExportTypeEnum = typeof AssetSpecificAssetExportExportTypeEnum[keyof typeof AssetSpecificAssetExportExportTypeEnum];

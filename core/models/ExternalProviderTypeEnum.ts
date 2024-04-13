@@ -15,9 +15,9 @@
 
 /**
  * This is an enum to describe the provider used to authenticate a user.
- * 
+ *
  * IMPORTANT NOT to modify tha values here unless they are explicitly mapped with auth0's provider values(example within cloud server)
- * 
+ *
  * 'waad': (windows azure active directory)
  * @export
  */
@@ -31,17 +31,49 @@ export const ExternalProviderTypeEnum = {
     Facebook: 'facebook',
     Waad: 'waad'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @typedef {ExternalProviderTypeEnum}
+ */
 export type ExternalProviderTypeEnum = typeof ExternalProviderTypeEnum[keyof typeof ExternalProviderTypeEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExternalProviderTypeEnum}
+ */
 export function ExternalProviderTypeEnumFromJSON(json: any): ExternalProviderTypeEnum {
     return ExternalProviderTypeEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExternalProviderTypeEnum}
+ */
 export function ExternalProviderTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExternalProviderTypeEnum {
     return json as ExternalProviderTypeEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExternalProviderTypeEnum | null)} [value]
+ * @returns {*}
+ */
 export function ExternalProviderTypeEnumToJSON(value?: ExternalProviderTypeEnum | null): any {
     return value as any;
 }

@@ -25,12 +25,26 @@ import {
     SeededUltraSuiteAssetToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface AssetsCreateUltraSuiteAssetRequest
+ * @typedef {AssetsCreateUltraSuiteAssetRequest}
+ */
 export interface AssetsCreateUltraSuiteAssetRequest {
-    seededUltraSuiteAsset?: SeededUltraSuiteAsset;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?SeededUltraSuiteAsset}
+ */
+seededUltraSuiteAsset?: SeededUltraSuiteAsset;
 }
 
 /**
- * 
+ *
  */
 export class UltraSuiteApi extends runtime.BaseAPI {
 

@@ -33,25 +33,25 @@ import {
 } from './TLPMachineLearningProcessingEvent';
 
 /**
- * 
+ *
  * @export
  * @interface SeededTrackedMachineLearningEvent
  */
 export interface SeededTrackedMachineLearningEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededTrackedMachineLearningEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TLPMachineLearningProcessingEvent}
      * @memberof SeededTrackedMachineLearningEvent
      */
     tlp?: TLPMachineLearningProcessingEvent;
     /**
-     * 
+     *
      * @type {GraphicalMachineLearningProcessingEvent}
      * @memberof SeededTrackedMachineLearningEvent
      */
@@ -67,22 +67,47 @@ export function instanceOfSeededTrackedMachineLearningEvent(value: object): bool
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTrackedMachineLearningEvent}
+ */
 export function SeededTrackedMachineLearningEventFromJSON(json: any): SeededTrackedMachineLearningEvent {
     return SeededTrackedMachineLearningEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTrackedMachineLearningEvent}
+ */
 export function SeededTrackedMachineLearningEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTrackedMachineLearningEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'tlp': !exists(json, 'tlp') ? undefined : TLPMachineLearningProcessingEventFromJSON(json['tlp']),
         'graphical': !exists(json, 'graphical') ? undefined : GraphicalMachineLearningProcessingEventFromJSON(json['graphical']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededTrackedMachineLearningEvent | null)} [value]
+ * @returns {*}
+ */
 export function SeededTrackedMachineLearningEventToJSON(value?: SeededTrackedMachineLearningEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -91,7 +116,7 @@ export function SeededTrackedMachineLearningEventToJSON(value?: SeededTrackedMac
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'tlp': TLPMachineLearningProcessingEventToJSON(value.tlp),
         'graphical': GraphicalMachineLearningProcessingEventToJSON(value.graphical),

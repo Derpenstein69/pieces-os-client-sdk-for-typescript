@@ -42,21 +42,46 @@ export function instanceOfAuth0Redirects(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Auth0Redirects}
+ */
 export function Auth0RedirectsFromJSON(json: any): Auth0Redirects {
     return Auth0RedirectsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Auth0Redirects}
+ */
 export function Auth0RedirectsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Auth0Redirects {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'authenticated': !exists(json, 'authenticated') ? undefined : json['authenticated'],
         'unauthenticated': !exists(json, 'unauthenticated') ? undefined : json['unauthenticated'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Auth0Redirects | null)} [value]
+ * @returns {*}
+ */
 export function Auth0RedirectsToJSON(value?: Auth0Redirects | null): any {
     if (value === undefined) {
         return undefined;
@@ -65,7 +90,7 @@ export function Auth0RedirectsToJSON(value?: Auth0Redirects | null): any {
         return null;
     }
     return {
-        
+
         'authenticated': value.authenticated,
         'unauthenticated': value.unauthenticated,
     };

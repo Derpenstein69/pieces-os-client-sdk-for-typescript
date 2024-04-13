@@ -21,19 +21,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface TLPCodeRepositoryAnalytics
  */
 export interface TLPCodeRepositoryAnalytics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeRepositoryAnalytics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeRepositoryAnalytics
      */
@@ -49,21 +49,46 @@ export function instanceOfTLPCodeRepositoryAnalytics(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeRepositoryAnalytics}
+ */
 export function TLPCodeRepositoryAnalyticsFromJSON(json: any): TLPCodeRepositoryAnalytics {
     return TLPCodeRepositoryAnalyticsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeRepositoryAnalytics}
+ */
 export function TLPCodeRepositoryAnalyticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeRepositoryAnalytics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': !exists(json, 'id') ? undefined : json['id'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TLPCodeRepositoryAnalytics | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeRepositoryAnalyticsToJSON(value?: TLPCodeRepositoryAnalytics | null): any {
     if (value === undefined) {
         return undefined;
@@ -72,7 +97,7 @@ export function TLPCodeRepositoryAnalyticsToJSON(value?: TLPCodeRepositoryAnalyt
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
     };

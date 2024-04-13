@@ -27,25 +27,25 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface TLPCodeFragmentReclassificationUpdates
  */
 export interface TLPCodeFragmentReclassificationUpdates {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeFragmentReclassificationUpdates
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Classification}
      * @memberof TLPCodeFragmentReclassificationUpdates
      */
     previous: Classification;
     /**
-     * 
+     *
      * @type {Classification}
      * @memberof TLPCodeFragmentReclassificationUpdates
      */
@@ -63,22 +63,47 @@ export function instanceOfTLPCodeFragmentReclassificationUpdates(value: object):
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeFragmentReclassificationUpdates}
+ */
 export function TLPCodeFragmentReclassificationUpdatesFromJSON(json: any): TLPCodeFragmentReclassificationUpdates {
     return TLPCodeFragmentReclassificationUpdatesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeFragmentReclassificationUpdates}
+ */
 export function TLPCodeFragmentReclassificationUpdatesFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeFragmentReclassificationUpdates {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'previous': ClassificationFromJSON(json['previous']),
         'current': ClassificationFromJSON(json['current']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TLPCodeFragmentReclassificationUpdates | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeFragmentReclassificationUpdatesToJSON(value?: TLPCodeFragmentReclassificationUpdates | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function TLPCodeFragmentReclassificationUpdatesToJSON(value?: TLPCodeFrag
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'previous': ClassificationToJSON(value.previous),
         'current': ClassificationToJSON(value.current),

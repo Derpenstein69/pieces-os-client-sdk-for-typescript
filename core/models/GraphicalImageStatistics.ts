@@ -27,19 +27,19 @@ import {
 } from './GraphicalImageDescriptiveStatistics';
 
 /**
- * 
+ *
  * @export
  * @interface GraphicalImageStatistics
  */
 export interface GraphicalImageStatistics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof GraphicalImageStatistics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {GraphicalImageDescriptiveStatistics}
      * @memberof GraphicalImageStatistics
      */
@@ -55,21 +55,46 @@ export function instanceOfGraphicalImageStatistics(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {GraphicalImageStatistics}
+ */
 export function GraphicalImageStatisticsFromJSON(json: any): GraphicalImageStatistics {
     return GraphicalImageStatisticsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {GraphicalImageStatistics}
+ */
 export function GraphicalImageStatisticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GraphicalImageStatistics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'descriptive': !exists(json, 'descriptive') ? undefined : GraphicalImageDescriptiveStatisticsFromJSON(json['descriptive']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(GraphicalImageStatistics | null)} [value]
+ * @returns {*}
+ */
 export function GraphicalImageStatisticsToJSON(value?: GraphicalImageStatistics | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function GraphicalImageStatisticsToJSON(value?: GraphicalImageStatistics 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'descriptive': GraphicalImageDescriptiveStatisticsToJSON(value.descriptive),
     };

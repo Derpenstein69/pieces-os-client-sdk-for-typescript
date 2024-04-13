@@ -27,25 +27,25 @@ import {
 } from './FlattenedActivity';
 
 /**
- * 
+ *
  * @export
  * @interface ReferencedActivity
  */
 export interface ReferencedActivity {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedActivity
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedActivity
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedActivity}
      * @memberof ReferencedActivity
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedActivity(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedActivity}
+ */
 export function ReferencedActivityFromJSON(json: any): ReferencedActivity {
     return ReferencedActivityFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedActivity}
+ */
 export function ReferencedActivityFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedActivity {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedActivityFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedActivity | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedActivityToJSON(value?: ReferencedActivity | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedActivityToJSON(value?: ReferencedActivity | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedActivityToJSON(value.reference),

@@ -33,13 +33,13 @@ import {
  */
 export interface ConversationSummarizeInput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ConversationSummarizeInput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {FlattenedConversationMessages}
      * @memberof ConversationSummarizeInput
      */
@@ -55,21 +55,46 @@ export function instanceOfConversationSummarizeInput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ConversationSummarizeInput}
+ */
 export function ConversationSummarizeInputFromJSON(json: any): ConversationSummarizeInput {
     return ConversationSummarizeInputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ConversationSummarizeInput}
+ */
 export function ConversationSummarizeInputFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConversationSummarizeInput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'messages': !exists(json, 'messages') ? undefined : FlattenedConversationMessagesFromJSON(json['messages']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(ConversationSummarizeInput | null)} [value]
+ * @returns {*}
+ */
 export function ConversationSummarizeInputToJSON(value?: ConversationSummarizeInput | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function ConversationSummarizeInputToJSON(value?: ConversationSummarizeIn
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'messages': FlattenedConversationMessagesToJSON(value.messages),
     };

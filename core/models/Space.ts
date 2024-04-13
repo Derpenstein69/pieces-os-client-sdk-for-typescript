@@ -42,21 +42,46 @@ export function instanceOfSpace(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Space}
+ */
 export function SpaceFromJSON(json: any): Space {
     return SpaceFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Space}
+ */
 export function SpaceFromJSONTyped(json: any, ignoreDiscriminator: boolean): Space {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'size': !exists(json, 'size') ? undefined : json['size'],
         'duration': !exists(json, 'duration') ? undefined : json['duration'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(Space | null)} [value]
+ * @returns {*}
+ */
 export function SpaceToJSON(value?: Space | null): any {
     if (value === undefined) {
         return undefined;
@@ -65,7 +90,7 @@ export function SpaceToJSON(value?: Space | null): any {
         return null;
     }
     return {
-        
+
         'size': value.size,
         'duration': value.duration,
     };

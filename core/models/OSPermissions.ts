@@ -33,13 +33,13 @@ import {
  */
 export interface OSPermissions {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OSPermissions
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {OSProcessingPermissions}
      * @memberof OSPermissions
      */
@@ -55,21 +55,46 @@ export function instanceOfOSPermissions(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OSPermissions}
+ */
 export function OSPermissionsFromJSON(json: any): OSPermissions {
     return OSPermissionsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OSPermissions}
+ */
 export function OSPermissionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): OSPermissions {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'processing': !exists(json, 'processing') ? undefined : OSProcessingPermissionsFromJSON(json['processing']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(OSPermissions | null)} [value]
+ * @returns {*}
+ */
 export function OSPermissionsToJSON(value?: OSPermissions | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function OSPermissionsToJSON(value?: OSPermissions | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'processing': OSProcessingPermissionsToJSON(value.processing),
     };

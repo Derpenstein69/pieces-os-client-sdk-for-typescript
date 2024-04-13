@@ -46,16 +46,16 @@ import {
 
 /**
  * This is the seededAssetSensitive, this does not have an id yet as we will add it on the server side.
- * 
+ *
  * can optionally pass in our mechanism here, as the default will be manual unless specified.
- * 
+ *
  * This is different that hte SeededSensitive as this is pre-before the asset has been created.(but added when the asset is created.
  * @export
  * @interface SeededAssetSensitive
  */
 export interface SeededAssetSensitive {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededAssetSensitive
      */
@@ -67,37 +67,37 @@ export interface SeededAssetSensitive {
      */
     text: string;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededAssetSensitive
      */
     mechanism?: MechanismEnum;
     /**
-     * 
+     *
      * @type {SensitiveCategoryEnum}
      * @memberof SeededAssetSensitive
      */
     category: SensitiveCategoryEnum;
     /**
-     * 
+     *
      * @type {SensitiveSeverityEnum}
      * @memberof SeededAssetSensitive
      */
     severity: SensitiveSeverityEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAssetSensitive
      */
     name: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAssetSensitive
      */
     description: string;
     /**
-     * 
+     *
      * @type {SensitiveMetadata}
      * @memberof SeededAssetSensitive
      */
@@ -118,16 +118,33 @@ export function instanceOfSeededAssetSensitive(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededAssetSensitive}
+ */
 export function SeededAssetSensitiveFromJSON(json: any): SeededAssetSensitive {
     return SeededAssetSensitiveFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededAssetSensitive}
+ */
 export function SeededAssetSensitiveFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededAssetSensitive {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'text': json['text'],
         'mechanism': !exists(json, 'mechanism') ? undefined : MechanismEnumFromJSON(json['mechanism']),
@@ -139,6 +156,14 @@ export function SeededAssetSensitiveFromJSONTyped(json: any, ignoreDiscriminator
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededAssetSensitive | null)} [value]
+ * @returns {*}
+ */
 export function SeededAssetSensitiveToJSON(value?: SeededAssetSensitive | null): any {
     if (value === undefined) {
         return undefined;
@@ -147,7 +172,7 @@ export function SeededAssetSensitiveToJSON(value?: SeededAssetSensitive | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'text': value.text,
         'mechanism': MechanismEnumToJSON(value.mechanism),

@@ -70,73 +70,73 @@ import {
  */
 export interface FlattenedActivity {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedActivity
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedActivity
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedActivity
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedActivity
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {SeededConnectorTracking}
      * @memberof FlattenedActivity
      */
     event: SeededConnectorTracking;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof FlattenedActivity
      */
     application: Application;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedActivity
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {ReferencedAsset}
      * @memberof FlattenedActivity
      */
     asset?: ReferencedAsset;
     /**
-     * 
+     *
      * @type {ReferencedFormat}
      * @memberof FlattenedActivity
      */
     format?: ReferencedFormat;
     /**
-     * 
+     *
      * @type {FlattenedUserProfile}
      * @memberof FlattenedActivity
      */
     user?: FlattenedUserProfile;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof FlattenedActivity
      */
     mechanism: MechanismEnum;
     /**
-     * 
+     *
      * @type {number}
      * @memberof FlattenedActivity
      */
@@ -158,16 +158,33 @@ export function instanceOfFlattenedActivity(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedActivity}
+ */
 export function FlattenedActivityFromJSON(json: any): FlattenedActivity {
     return FlattenedActivityFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedActivity}
+ */
 export function FlattenedActivityFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedActivity {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -183,6 +200,14 @@ export function FlattenedActivityFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(FlattenedActivity | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedActivityToJSON(value?: FlattenedActivity | null): any {
     if (value === undefined) {
         return undefined;
@@ -191,7 +216,7 @@ export function FlattenedActivityToJSON(value?: FlattenedActivity | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'created': GroupedTimestampToJSON(value.created),

@@ -22,38 +22,38 @@ import {
 
 /**
  * This is a specific Model for the SeededAsset that will enable the developer to modify the enrichment levels of persons, tags, websites.
- * 
+ *
  * These enrichment levels will guarentee that the # of people/tags/websites do not eceeed the provided value, but will not guarentee a minimum.
  * @export
  * @interface SeededAssetEnrichment
  */
 export interface SeededAssetEnrichment {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededAssetEnrichment
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {number}
      * @memberof SeededAssetEnrichment
      */
     tags?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof SeededAssetEnrichment
      */
     websites?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof SeededAssetEnrichment
      */
     persons?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof SeededAssetEnrichment
      */
@@ -69,16 +69,33 @@ export function instanceOfSeededAssetEnrichment(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededAssetEnrichment}
+ */
 export function SeededAssetEnrichmentFromJSON(json: any): SeededAssetEnrichment {
     return SeededAssetEnrichmentFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededAssetEnrichment}
+ */
 export function SeededAssetEnrichmentFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededAssetEnrichment {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'tags': !exists(json, 'tags') ? undefined : json['tags'],
         'websites': !exists(json, 'websites') ? undefined : json['websites'],
@@ -87,6 +104,14 @@ export function SeededAssetEnrichmentFromJSONTyped(json: any, ignoreDiscriminato
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededAssetEnrichment | null)} [value]
+ * @returns {*}
+ */
 export function SeededAssetEnrichmentToJSON(value?: SeededAssetEnrichment | null): any {
     if (value === undefined) {
         return undefined;
@@ -95,7 +120,7 @@ export function SeededAssetEnrichmentToJSON(value?: SeededAssetEnrichment | null
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'tags': value.tags,
         'websites': value.websites,

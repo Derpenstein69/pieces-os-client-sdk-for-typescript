@@ -26,17 +26,49 @@ export const ModelDownloadProgressStatusEnum = {
     Canceled: 'CANCELED',
     Reset: 'RESET'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @typedef {ModelDownloadProgressStatusEnum}
+ */
 export type ModelDownloadProgressStatusEnum = typeof ModelDownloadProgressStatusEnum[keyof typeof ModelDownloadProgressStatusEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ModelDownloadProgressStatusEnum}
+ */
 export function ModelDownloadProgressStatusEnumFromJSON(json: any): ModelDownloadProgressStatusEnum {
     return ModelDownloadProgressStatusEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ModelDownloadProgressStatusEnum}
+ */
 export function ModelDownloadProgressStatusEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ModelDownloadProgressStatusEnum {
     return json as ModelDownloadProgressStatusEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(ModelDownloadProgressStatusEnum | null)} [value]
+ * @returns {*}
+ */
 export function ModelDownloadProgressStatusEnumToJSON(value?: ModelDownloadProgressStatusEnum | null): any {
     return value as any;
 }

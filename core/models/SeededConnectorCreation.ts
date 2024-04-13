@@ -33,13 +33,13 @@ import {
  */
 export interface SeededConnectorCreation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededConnectorCreation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededConnectorAsset}
      * @memberof SeededConnectorCreation
      */
@@ -55,21 +55,46 @@ export function instanceOfSeededConnectorCreation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededConnectorCreation}
+ */
 export function SeededConnectorCreationFromJSON(json: any): SeededConnectorCreation {
     return SeededConnectorCreationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededConnectorCreation}
+ */
 export function SeededConnectorCreationFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededConnectorCreation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': !exists(json, 'asset') ? undefined : SeededConnectorAssetFromJSON(json['asset']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededConnectorCreation | null)} [value]
+ * @returns {*}
+ */
 export function SeededConnectorCreationToJSON(value?: SeededConnectorCreation | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function SeededConnectorCreationToJSON(value?: SeededConnectorCreation | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': SeededConnectorAssetToJSON(value.asset),
     };

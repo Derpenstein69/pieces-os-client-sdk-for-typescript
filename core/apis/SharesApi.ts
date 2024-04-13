@@ -28,26 +28,94 @@ import {
     SharesToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface SharesCreateNewShareRequest
+ * @typedef {SharesCreateNewShareRequest}
+ */
 export interface SharesCreateNewShareRequest {
-    transferables?: boolean;
-    seededShare?: SeededShare;
-}
-
-export interface SharesDeleteShareRequest {
-    share: string;
-}
-
-export interface SharesSnapshotRequest {
-    transferables?: boolean;
-}
-
-export interface SharesSpecificShareSnapshotRequest {
-    share: string;
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededShare}
+ */
+seededShare?: SeededShare;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface SharesDeleteShareRequest
+ * @typedef {SharesDeleteShareRequest}
+ */
+export interface SharesDeleteShareRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+share: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface SharesSnapshotRequest
+ * @typedef {SharesSnapshotRequest}
+ */
+export interface SharesSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface SharesSpecificShareSnapshotRequest
+ * @typedef {SharesSpecificShareSnapshotRequest}
+ */
+export interface SharesSpecificShareSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+share: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class SharesApi extends runtime.BaseAPI {
 

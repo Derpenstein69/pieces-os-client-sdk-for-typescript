@@ -27,19 +27,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface Analyses
  */
 export interface Analyses {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Analyses
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Analysis>}
      * @memberof Analyses
      */
@@ -56,21 +56,46 @@ export function instanceOfAnalyses(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Analyses}
+ */
 export function AnalysesFromJSON(json: any): Analyses {
     return AnalysesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Analyses}
+ */
 export function AnalysesFromJSONTyped(json: any, ignoreDiscriminator: boolean): Analyses {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(AnalysisFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(Analyses | null)} [value]
+ * @returns {*}
+ */
 export function AnalysesToJSON(value?: Analyses | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function AnalysesToJSON(value?: Analyses | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(AnalysisToJSON)),
     };

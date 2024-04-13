@@ -28,36 +28,36 @@ import {
 
 /**
  * you will have at minimum 2 urls,
- * 
+ *
  * base: is the default url of your cloud.
- * 
+ *
  * id: is the branded url, uuid.pieces.cloud.
- * 
+ *
  * (optional) vanity: is the custom branded url, mark.pieces.cloud
  * @export
  * @interface AllocationCloudUrls
  */
 export interface AllocationCloudUrls {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AllocationCloudUrls
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {AllocationCloudUrl}
      * @memberof AllocationCloudUrls
      */
     base: AllocationCloudUrl;
     /**
-     * 
+     *
      * @type {AllocationCloudUrl}
      * @memberof AllocationCloudUrls
      */
     id: AllocationCloudUrl;
     /**
-     * 
+     *
      * @type {AllocationCloudUrl}
      * @memberof AllocationCloudUrls
      */
@@ -75,16 +75,33 @@ export function instanceOfAllocationCloudUrls(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AllocationCloudUrls}
+ */
 export function AllocationCloudUrlsFromJSON(json: any): AllocationCloudUrls {
     return AllocationCloudUrlsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AllocationCloudUrls}
+ */
 export function AllocationCloudUrlsFromJSONTyped(json: any, ignoreDiscriminator: boolean): AllocationCloudUrls {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'base': AllocationCloudUrlFromJSON(json['base']),
         'id': AllocationCloudUrlFromJSON(json['id']),
@@ -92,6 +109,14 @@ export function AllocationCloudUrlsFromJSONTyped(json: any, ignoreDiscriminator:
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(AllocationCloudUrls | null)} [value]
+ * @returns {*}
+ */
 export function AllocationCloudUrlsToJSON(value?: AllocationCloudUrls | null): any {
     if (value === undefined) {
         return undefined;
@@ -100,7 +125,7 @@ export function AllocationCloudUrlsToJSON(value?: AllocationCloudUrls | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'base': AllocationCloudUrlToJSON(value.base),
         'id': AllocationCloudUrlToJSON(value.id),

@@ -39,19 +39,19 @@ import {
  */
 export interface FileFormat {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FileFormat
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TransferableBytes}
      * @memberof FileFormat
      */
     bytes?: TransferableBytes;
     /**
-     * 
+     *
      * @type {TransferableString}
      * @memberof FileFormat
      */
@@ -67,22 +67,47 @@ export function instanceOfFileFormat(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FileFormat}
+ */
 export function FileFormatFromJSON(json: any): FileFormat {
     return FileFormatFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FileFormat}
+ */
 export function FileFormatFromJSONTyped(json: any, ignoreDiscriminator: boolean): FileFormat {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'bytes': !exists(json, 'bytes') ? undefined : TransferableBytesFromJSON(json['bytes']),
         'string': !exists(json, 'string') ? undefined : TransferableStringFromJSON(json['string']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(FileFormat | null)} [value]
+ * @returns {*}
+ */
 export function FileFormatToJSON(value?: FileFormat | null): any {
     if (value === undefined) {
         return undefined;
@@ -91,7 +116,7 @@ export function FileFormatToJSON(value?: FileFormat | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'bytes': TransferableBytesToJSON(value.bytes),
         'string': TransferableStringToJSON(value.string),

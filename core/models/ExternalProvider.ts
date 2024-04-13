@@ -45,13 +45,13 @@ import {
  */
 export interface ExternalProvider {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ExternalProvider
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ExternalProviderTypeEnum}
      * @memberof ExternalProvider
      */
@@ -75,19 +75,19 @@ export interface ExternalProvider {
      */
     expiresIn?: number;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof ExternalProvider
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof ExternalProvider
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {ExternalProviderProfileData}
      * @memberof ExternalProvider
      */
@@ -99,7 +99,7 @@ export interface ExternalProvider {
      */
     connection?: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof ExternalProvider
      */
@@ -119,16 +119,33 @@ export function instanceOfExternalProvider(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExternalProvider}
+ */
 export function ExternalProviderFromJSON(json: any): ExternalProvider {
     return ExternalProviderFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExternalProvider}
+ */
 export function ExternalProviderFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExternalProvider {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'type': ExternalProviderTypeEnumFromJSON(json['type']),
         'userId': json['user_id'],
@@ -142,6 +159,14 @@ export function ExternalProviderFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExternalProvider | null)} [value]
+ * @returns {*}
+ */
 export function ExternalProviderToJSON(value?: ExternalProvider | null): any {
     if (value === undefined) {
         return undefined;
@@ -150,7 +175,7 @@ export function ExternalProviderToJSON(value?: ExternalProvider | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'type': ExternalProviderTypeEnumToJSON(value.type),
         'user_id': value.userId,

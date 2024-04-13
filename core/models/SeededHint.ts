@@ -33,19 +33,19 @@ import {
 } from './MechanismEnum';
 
 /**
- * 
+ *
  * @export
  * @interface SeededHint
  */
 export interface SeededHint {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededHint
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededHint
      */
@@ -57,7 +57,7 @@ export interface SeededHint {
      */
     asset?: string;
     /**
-     * 
+     *
      * @type {HintTypeEnum}
      * @memberof SeededHint
      */
@@ -87,16 +87,33 @@ export function instanceOfSeededHint(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededHint}
+ */
 export function SeededHintFromJSON(json: any): SeededHint {
     return SeededHintFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededHint}
+ */
 export function SeededHintFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededHint {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'mechanism': !exists(json, 'mechanism') ? undefined : MechanismEnumFromJSON(json['mechanism']),
         'asset': !exists(json, 'asset') ? undefined : json['asset'],
@@ -106,6 +123,14 @@ export function SeededHintFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededHint | null)} [value]
+ * @returns {*}
+ */
 export function SeededHintToJSON(value?: SeededHint | null): any {
     if (value === undefined) {
         return undefined;
@@ -114,7 +139,7 @@ export function SeededHintToJSON(value?: SeededHint | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'mechanism': MechanismEnumToJSON(value.mechanism),
         'asset': value.asset,

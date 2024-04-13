@@ -33,25 +33,25 @@ import {
  */
 export interface OSDeviceGPUHardwareInformation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OSDeviceGPUHardwareInformation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof OSDeviceGPUHardwareInformation
      */
     name?: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof OSDeviceGPUHardwareInformation
      */
     memory?: number;
     /**
-     * 
+     *
      * @type {OSDeviceGPUHardwareCapabilitiesInformation}
      * @memberof OSDeviceGPUHardwareInformation
      */
@@ -67,16 +67,33 @@ export function instanceOfOSDeviceGPUHardwareInformation(value: object): boolean
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OSDeviceGPUHardwareInformation}
+ */
 export function OSDeviceGPUHardwareInformationFromJSON(json: any): OSDeviceGPUHardwareInformation {
     return OSDeviceGPUHardwareInformationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OSDeviceGPUHardwareInformation}
+ */
 export function OSDeviceGPUHardwareInformationFromJSONTyped(json: any, ignoreDiscriminator: boolean): OSDeviceGPUHardwareInformation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'name': !exists(json, 'name') ? undefined : json['name'],
         'memory': !exists(json, 'memory') ? undefined : json['memory'],
@@ -84,6 +101,14 @@ export function OSDeviceGPUHardwareInformationFromJSONTyped(json: any, ignoreDis
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OSDeviceGPUHardwareInformation | null)} [value]
+ * @returns {*}
+ */
 export function OSDeviceGPUHardwareInformationToJSON(value?: OSDeviceGPUHardwareInformation | null): any {
     if (value === undefined) {
         return undefined;
@@ -92,7 +117,7 @@ export function OSDeviceGPUHardwareInformationToJSON(value?: OSDeviceGPUHardware
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'name': value.name,
         'memory': value.memory,

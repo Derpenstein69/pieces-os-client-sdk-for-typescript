@@ -34,62 +34,62 @@ import {
 
 /**
  * This is the ML Analysis object Specific to code.
- * 
+ *
  * prediction and similarity are custom types {[string]: number}. ** please dont not modify **
  * @export
  * @interface CodeAnalysis
  */
 export interface CodeAnalysis {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof CodeAnalysis
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof CodeAnalysis
      */
     tokenized?: Array<string>;
     /**
-     * 
+     *
      * @type {string}
      * @memberof CodeAnalysis
      */
     language?: string;
     /**
-     * 
+     *
      * @type {ClassificationGenericEnum}
      * @memberof CodeAnalysis
      */
     type: ClassificationGenericEnum;
     /**
-     * 
+     *
      * @type {{ [key: string]: number; }}
      * @memberof CodeAnalysis
      */
     prediction?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {{ [key: string]: number; }}
      * @memberof CodeAnalysis
      */
     similarity?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof CodeAnalysis
      */
     top5Colors?: Array<number>;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof CodeAnalysis
      */
     top5Sorted?: Array<string>;
     /**
-     * 
+     *
      * @type {string}
      * @memberof CodeAnalysis
      */
@@ -101,7 +101,7 @@ export interface CodeAnalysis {
      */
     analysis: string;
     /**
-     * 
+     *
      * @type {Model}
      * @memberof CodeAnalysis
      */
@@ -121,16 +121,33 @@ export function instanceOfCodeAnalysis(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {CodeAnalysis}
+ */
 export function CodeAnalysisFromJSON(json: any): CodeAnalysis {
     return CodeAnalysisFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {CodeAnalysis}
+ */
 export function CodeAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): CodeAnalysis {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'tokenized': !exists(json, 'tokenized') ? undefined : json['tokenized'],
         'language': !exists(json, 'language') ? undefined : json['language'],
@@ -145,6 +162,14 @@ export function CodeAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(CodeAnalysis | null)} [value]
+ * @returns {*}
+ */
 export function CodeAnalysisToJSON(value?: CodeAnalysis | null): any {
     if (value === undefined) {
         return undefined;
@@ -153,7 +178,7 @@ export function CodeAnalysisToJSON(value?: CodeAnalysis | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'tokenized': value.tokenized,
         'language': value.language,

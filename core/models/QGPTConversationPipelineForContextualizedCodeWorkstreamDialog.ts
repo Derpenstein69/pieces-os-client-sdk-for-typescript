@@ -23,14 +23,14 @@ import {
 /**
  * This is for the users that wants to have contextualized code conversations around their workstream materials, meaning conversations around code with Context provided,
  * as well as workstream information ie information gathered from the WPE.
- * 
+ *
  * This is a class so that we can add optional properties in the future.
  * @export
  * @interface QGPTConversationPipelineForContextualizedCodeWorkstreamDialog
  */
 export interface QGPTConversationPipelineForContextualizedCodeWorkstreamDialog {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTConversationPipelineForContextualizedCodeWorkstreamDialog
      */
@@ -46,20 +46,45 @@ export function instanceOfQGPTConversationPipelineForContextualizedCodeWorkstrea
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTConversationPipelineForContextualizedCodeWorkstreamDialog}
+ */
 export function QGPTConversationPipelineForContextualizedCodeWorkstreamDialogFromJSON(json: any): QGPTConversationPipelineForContextualizedCodeWorkstreamDialog {
     return QGPTConversationPipelineForContextualizedCodeWorkstreamDialogFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTConversationPipelineForContextualizedCodeWorkstreamDialog}
+ */
 export function QGPTConversationPipelineForContextualizedCodeWorkstreamDialogFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTConversationPipelineForContextualizedCodeWorkstreamDialog {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTConversationPipelineForContextualizedCodeWorkstreamDialog | null)} [value]
+ * @returns {*}
+ */
 export function QGPTConversationPipelineForContextualizedCodeWorkstreamDialogToJSON(value?: QGPTConversationPipelineForContextualizedCodeWorkstreamDialog | null): any {
     if (value === undefined) {
         return undefined;
@@ -68,7 +93,7 @@ export function QGPTConversationPipelineForContextualizedCodeWorkstreamDialogToJ
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
     };
 }

@@ -28,20 +28,62 @@ import {
     SeededAnnotationToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AnnotationsCreateNewAnnotationRequest
+ * @typedef {AnnotationsCreateNewAnnotationRequest}
+ */
 export interface AnnotationsCreateNewAnnotationRequest {
-    seededAnnotation?: SeededAnnotation;
-}
-
-export interface AnnotationsDeleteSpecificAnnotationRequest {
-    annotation: string;
-}
-
-export interface AnnotationsSnapshotRequest {
-    annotationTypeFilter?: AnnotationsSnapshotAnnotationTypeFilterEnum;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededAnnotation}
+ */
+seededAnnotation?: SeededAnnotation;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AnnotationsDeleteSpecificAnnotationRequest
+ * @typedef {AnnotationsDeleteSpecificAnnotationRequest}
+ */
+export interface AnnotationsDeleteSpecificAnnotationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+annotation: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AnnotationsSnapshotRequest
+ * @typedef {AnnotationsSnapshotRequest}
+ */
+export interface AnnotationsSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?AnnotationsSnapshotAnnotationTypeFilterEnum}
+ */
+annotationTypeFilter?: AnnotationsSnapshotAnnotationTypeFilterEnum;
+}
+
+/**
+ *
  */
 export class AnnotationsApi extends runtime.BaseAPI {
 
@@ -154,4 +196,11 @@ export const AnnotationsSnapshotAnnotationTypeFilterEnum = {
     Explanation: 'EXPLANATION',
     GitCommit: 'GIT_COMMIT'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @typedef {AnnotationsSnapshotAnnotationTypeFilterEnum}
+ */
 export type AnnotationsSnapshotAnnotationTypeFilterEnum = typeof AnnotationsSnapshotAnnotationTypeFilterEnum[keyof typeof AnnotationsSnapshotAnnotationTypeFilterEnum];

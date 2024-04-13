@@ -21,13 +21,13 @@ import {
 } from './TrackedAssetEventFormatReclassificationMetadata';
 
 /**
- * 
+ *
  * @export
  * @interface TrackedFormatEventMetadata
  */
 export interface TrackedFormatEventMetadata {
     /**
-     * 
+     *
      * @type {TrackedAssetEventFormatReclassificationMetadata}
      * @memberof TrackedFormatEventMetadata
      */
@@ -43,20 +43,45 @@ export function instanceOfTrackedFormatEventMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedFormatEventMetadata}
+ */
 export function TrackedFormatEventMetadataFromJSON(json: any): TrackedFormatEventMetadata {
     return TrackedFormatEventMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedFormatEventMetadata}
+ */
 export function TrackedFormatEventMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedFormatEventMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'reclassification': !exists(json, 'reclassification') ? undefined : TrackedAssetEventFormatReclassificationMetadataFromJSON(json['reclassification']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedFormatEventMetadata | null)} [value]
+ * @returns {*}
+ */
 export function TrackedFormatEventMetadataToJSON(value?: TrackedFormatEventMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -65,7 +90,7 @@ export function TrackedFormatEventMetadataToJSON(value?: TrackedFormatEventMetad
         return null;
     }
     return {
-        
+
         'reclassification': TrackedAssetEventFormatReclassificationMetadataToJSON(value.reclassification),
     };
 }

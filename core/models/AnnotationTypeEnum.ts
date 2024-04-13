@@ -25,17 +25,49 @@ export const AnnotationTypeEnum = {
     Explanation: 'EXPLANATION',
     GitCommit: 'GIT_COMMIT'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @typedef {AnnotationTypeEnum}
+ */
 export type AnnotationTypeEnum = typeof AnnotationTypeEnum[keyof typeof AnnotationTypeEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AnnotationTypeEnum}
+ */
 export function AnnotationTypeEnumFromJSON(json: any): AnnotationTypeEnum {
     return AnnotationTypeEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AnnotationTypeEnum}
+ */
 export function AnnotationTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): AnnotationTypeEnum {
     return json as AnnotationTypeEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(AnnotationTypeEnum | null)} [value]
+ * @returns {*}
+ */
 export function AnnotationTypeEnumToJSON(value?: AnnotationTypeEnum | null): any {
     return value as any;
 }

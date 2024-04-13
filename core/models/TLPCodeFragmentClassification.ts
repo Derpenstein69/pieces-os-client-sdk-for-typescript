@@ -39,55 +39,55 @@ import {
  */
 export interface TLPCodeFragmentClassification {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeFragmentClassification
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentClassification
      */
     asset: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentClassification
      */
     model: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentClassification
      */
     created: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentClassification
      */
     classification: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof TLPCodeFragmentClassification
      */
     probability: number;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentClassification
      */
     context: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeFragmentClassification
      */
     distribution?: string;
     /**
-     * 
+     *
      * @type {TLPCodeFragmentClassificationMetadata}
      * @memberof TLPCodeFragmentClassification
      */
@@ -105,7 +105,7 @@ export interface TLPCodeFragmentClassification {
      */
     latency?: number;
     /**
-     * 
+     *
      * @type {SystemExecutionInformation}
      * @memberof TLPCodeFragmentClassification
      */
@@ -128,16 +128,33 @@ export function instanceOfTLPCodeFragmentClassification(value: object): boolean 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeFragmentClassification}
+ */
 export function TLPCodeFragmentClassificationFromJSON(json: any): TLPCodeFragmentClassification {
     return TLPCodeFragmentClassificationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeFragmentClassification}
+ */
 export function TLPCodeFragmentClassificationFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeFragmentClassification {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': json['asset'],
         'model': json['model'],
@@ -153,6 +170,14 @@ export function TLPCodeFragmentClassificationFromJSONTyped(json: any, ignoreDisc
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TLPCodeFragmentClassification | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeFragmentClassificationToJSON(value?: TLPCodeFragmentClassification | null): any {
     if (value === undefined) {
         return undefined;
@@ -161,7 +186,7 @@ export function TLPCodeFragmentClassificationToJSON(value?: TLPCodeFragmentClass
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': value.asset,
         'model': value.model,

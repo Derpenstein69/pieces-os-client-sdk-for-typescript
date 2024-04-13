@@ -27,25 +27,25 @@ import {
 } from './FlattenedTag';
 
 /**
- * [DAG Safe] version of a Tag Model. 
+ * [DAG Safe] version of a Tag Model.
  * @export
  * @interface ReferencedTag
  */
 export interface ReferencedTag {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedTag
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedTag
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedTag}
      * @memberof ReferencedTag
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedTag(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedTag}
+ */
 export function ReferencedTagFromJSON(json: any): ReferencedTag {
     return ReferencedTagFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedTag}
+ */
 export function ReferencedTagFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedTag {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedTagFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(ReferencedTag | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedTagToJSON(value?: ReferencedTag | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedTagToJSON(value?: ReferencedTag | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedTagToJSON(value.reference),

@@ -39,7 +39,7 @@ import {
  */
 export interface Shares {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Shares
      */
@@ -51,7 +51,7 @@ export interface Shares {
      */
     iterable: Array<Share>;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Shares
      */
@@ -68,22 +68,47 @@ export function instanceOfShares(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Shares}
+ */
 export function SharesFromJSON(json: any): Shares {
     return SharesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Shares}
+ */
 export function SharesFromJSONTyped(json: any, ignoreDiscriminator: boolean): Shares {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ShareFromJSON)),
         'score': !exists(json, 'score') ? undefined : ScoreFromJSON(json['score']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(Shares | null)} [value]
+ * @returns {*}
+ */
 export function SharesToJSON(value?: Shares | null): any {
     if (value === undefined) {
         return undefined;
@@ -92,7 +117,7 @@ export function SharesToJSON(value?: Shares | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ShareToJSON)),
         'score': ScoreToJSON(value.score),

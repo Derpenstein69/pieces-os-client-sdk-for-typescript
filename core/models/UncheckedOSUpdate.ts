@@ -27,7 +27,7 @@ import {
  */
 export interface UncheckedOSUpdate {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof UncheckedOSUpdate
      */
@@ -43,20 +43,45 @@ export function instanceOfUncheckedOSUpdate(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {UncheckedOSUpdate}
+ */
 export function UncheckedOSUpdateFromJSON(json: any): UncheckedOSUpdate {
     return UncheckedOSUpdateFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {UncheckedOSUpdate}
+ */
 export function UncheckedOSUpdateFromJSONTyped(json: any, ignoreDiscriminator: boolean): UncheckedOSUpdate {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(UncheckedOSUpdate | null)} [value]
+ * @returns {*}
+ */
 export function UncheckedOSUpdateToJSON(value?: UncheckedOSUpdate | null): any {
     if (value === undefined) {
         return undefined;
@@ -65,7 +90,7 @@ export function UncheckedOSUpdateToJSON(value?: UncheckedOSUpdate | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
     };
 }

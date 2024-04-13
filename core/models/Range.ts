@@ -51,61 +51,61 @@ import {
  */
 export interface Range {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Range
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Range
      */
     id: string;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Range
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Range
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Range
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Range
      */
     to?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Range
      */
     from?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof Range
      */
     between?: boolean;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof Range
      */
     summaries?: FlattenedWorkstreamSummaries;
     /**
-     * 
+     *
      * @type {FlattenedConversations}
      * @memberof Range
      */
@@ -124,16 +124,33 @@ export function instanceOfRange(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Range}
+ */
 export function RangeFromJSON(json: any): Range {
     return RangeFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Range}
+ */
 export function RangeFromJSONTyped(json: any, ignoreDiscriminator: boolean): Range {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'score': !exists(json, 'score') ? undefined : ScoreFromJSON(json['score']),
@@ -147,6 +164,14 @@ export function RangeFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ran
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(Range | null)} [value]
+ * @returns {*}
+ */
 export function RangeToJSON(value?: Range | null): any {
     if (value === undefined) {
         return undefined;
@@ -155,7 +180,7 @@ export function RangeToJSON(value?: Range | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'score': ScoreToJSON(value.score),

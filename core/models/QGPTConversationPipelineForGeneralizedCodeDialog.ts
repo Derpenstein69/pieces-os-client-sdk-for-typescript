@@ -22,14 +22,14 @@ import {
 
 /**
  * This is for the users that wants to have generalized code conversations without any context.
- * 
+ *
  * This is a class so that we can add optional properties in the future.
  * @export
  * @interface QGPTConversationPipelineForGeneralizedCodeDialog
  */
 export interface QGPTConversationPipelineForGeneralizedCodeDialog {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTConversationPipelineForGeneralizedCodeDialog
      */
@@ -45,20 +45,45 @@ export function instanceOfQGPTConversationPipelineForGeneralizedCodeDialog(value
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTConversationPipelineForGeneralizedCodeDialog}
+ */
 export function QGPTConversationPipelineForGeneralizedCodeDialogFromJSON(json: any): QGPTConversationPipelineForGeneralizedCodeDialog {
     return QGPTConversationPipelineForGeneralizedCodeDialogFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTConversationPipelineForGeneralizedCodeDialog}
+ */
 export function QGPTConversationPipelineForGeneralizedCodeDialogFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTConversationPipelineForGeneralizedCodeDialog {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTConversationPipelineForGeneralizedCodeDialog | null)} [value]
+ * @returns {*}
+ */
 export function QGPTConversationPipelineForGeneralizedCodeDialogToJSON(value?: QGPTConversationPipelineForGeneralizedCodeDialog | null): any {
     if (value === undefined) {
         return undefined;
@@ -67,7 +92,7 @@ export function QGPTConversationPipelineForGeneralizedCodeDialogToJSON(value?: Q
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
     };
 }

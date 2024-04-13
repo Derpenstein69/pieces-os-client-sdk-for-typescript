@@ -63,55 +63,55 @@ import {
  */
 export interface FlattenedWorkstreamEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedWorkstreamEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedWorkstreamEvent
      */
     id: string;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedWorkstreamEvent
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof FlattenedWorkstreamEvent
      */
     application: Application;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedWorkstreamEvent
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedWorkstreamEvent
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {WorkstreamEventTrigger}
      * @memberof FlattenedWorkstreamEvent
      */
     trigger: WorkstreamEventTrigger;
     /**
-     * 
+     *
      * @type {WorkstreamEventTriggerMetadata}
      * @memberof FlattenedWorkstreamEvent
      */
     metadata?: WorkstreamEventTriggerMetadata;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof FlattenedWorkstreamEvent
      */
@@ -132,16 +132,33 @@ export function instanceOfFlattenedWorkstreamEvent(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedWorkstreamEvent}
+ */
 export function FlattenedWorkstreamEventFromJSON(json: any): FlattenedWorkstreamEvent {
     return FlattenedWorkstreamEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedWorkstreamEvent}
+ */
 export function FlattenedWorkstreamEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedWorkstreamEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'score': !exists(json, 'score') ? undefined : ScoreFromJSON(json['score']),
@@ -154,6 +171,14 @@ export function FlattenedWorkstreamEventFromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FlattenedWorkstreamEvent | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedWorkstreamEventToJSON(value?: FlattenedWorkstreamEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -162,7 +187,7 @@ export function FlattenedWorkstreamEventToJSON(value?: FlattenedWorkstreamEvent 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'score': ScoreToJSON(value.score),

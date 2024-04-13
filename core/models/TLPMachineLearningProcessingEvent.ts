@@ -27,19 +27,19 @@ import {
 } from './TLPCodeProcessing';
 
 /**
- * 
+ *
  * @export
  * @interface TLPMachineLearningProcessingEvent
  */
 export interface TLPMachineLearningProcessingEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPMachineLearningProcessingEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TLPCodeProcessing}
      * @memberof TLPMachineLearningProcessingEvent
      */
@@ -55,21 +55,46 @@ export function instanceOfTLPMachineLearningProcessingEvent(value: object): bool
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPMachineLearningProcessingEvent}
+ */
 export function TLPMachineLearningProcessingEventFromJSON(json: any): TLPMachineLearningProcessingEvent {
     return TLPMachineLearningProcessingEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPMachineLearningProcessingEvent}
+ */
 export function TLPMachineLearningProcessingEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPMachineLearningProcessingEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'code': !exists(json, 'code') ? undefined : TLPCodeProcessingFromJSON(json['code']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TLPMachineLearningProcessingEvent | null)} [value]
+ * @returns {*}
+ */
 export function TLPMachineLearningProcessingEventToJSON(value?: TLPMachineLearningProcessingEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function TLPMachineLearningProcessingEventToJSON(value?: TLPMachineLearni
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'code': TLPCodeProcessingToJSON(value.code),
     };

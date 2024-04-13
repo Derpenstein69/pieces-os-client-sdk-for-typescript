@@ -69,14 +69,14 @@ import {
  */
 export interface Model {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Model
      */
     schema?: EmbeddedModelSchema;
     /**
      * uuid
-     * 
+     *
      * @type {string}
      * @memberof Model
      */
@@ -88,7 +88,7 @@ export interface Model {
      */
     version: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Model
      */
@@ -112,25 +112,25 @@ export interface Model {
      */
     cloud: boolean;
     /**
-     * 
+     *
      * @type {ModelTypeEnum}
      * @memberof Model
      */
     type: ModelTypeEnum;
     /**
-     * 
+     *
      * @type {ModelUsageEnum}
      * @memberof Model
      */
     usage: ModelUsageEnum;
     /**
-     * 
+     *
      * @type {ByteDescriptor}
      * @memberof Model
      */
     bytes?: ByteDescriptor;
     /**
-     * 
+     *
      * @type {ByteDescriptor}
      * @memberof Model
      */
@@ -142,7 +142,7 @@ export interface Model {
      */
     quantization?: string;
     /**
-     * 
+     *
      * @type {ModelFoundationEnum}
      * @memberof Model
      */
@@ -172,7 +172,7 @@ export interface Model {
      */
     parameters?: number | null;
     /**
-     * 
+     *
      * @type {ExternalMLProviderEnum}
      * @memberof Model
      */
@@ -190,13 +190,13 @@ export interface Model {
      */
     downloading?: boolean;
     /**
-     * 
+     *
      * @type {ModelMaxTokens}
      * @memberof Model
      */
     maxTokens?: ModelMaxTokens;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof Model
      */
@@ -219,16 +219,33 @@ export function instanceOfModel(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Model}
+ */
 export function ModelFromJSON(json: any): Model {
     return ModelFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Model}
+ */
 export function ModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): Model {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'version': json['version'],
@@ -254,6 +271,14 @@ export function ModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): Mod
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(Model | null)} [value]
+ * @returns {*}
+ */
 export function ModelToJSON(value?: Model | null): any {
     if (value === undefined) {
         return undefined;
@@ -262,7 +287,7 @@ export function ModelToJSON(value?: Model | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'version': value.version,

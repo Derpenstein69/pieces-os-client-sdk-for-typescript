@@ -39,31 +39,31 @@ import {
 } from './SeededAnnotation';
 
 /**
- * 
+ *
  * @export
  * @interface SeededAnchor
  */
 export interface SeededAnchor {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededAnchor
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {AnchorTypeEnum}
      * @memberof SeededAnchor
      */
     type: AnchorTypeEnum;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof SeededAnchor
      */
     watch?: boolean;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAnchor
      */
@@ -75,25 +75,25 @@ export interface SeededAnchor {
      */
     asset?: string;
     /**
-     * 
+     *
      * @type {PlatformEnum}
      * @memberof SeededAnchor
      */
     platform?: PlatformEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAnchor
      */
     name?: string;
     /**
-     * 
+     *
      * @type {Array<SeededAnnotation>}
      * @memberof SeededAnchor
      */
     annotations?: Array<SeededAnnotation>;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAnchor
      */
@@ -111,16 +111,33 @@ export function instanceOfSeededAnchor(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededAnchor}
+ */
 export function SeededAnchorFromJSON(json: any): SeededAnchor {
     return SeededAnchorFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededAnchor}
+ */
 export function SeededAnchorFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededAnchor {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'type': AnchorTypeEnumFromJSON(json['type']),
         'watch': !exists(json, 'watch') ? undefined : json['watch'],
@@ -133,6 +150,14 @@ export function SeededAnchorFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededAnchor | null)} [value]
+ * @returns {*}
+ */
 export function SeededAnchorToJSON(value?: SeededAnchor | null): any {
     if (value === undefined) {
         return undefined;
@@ -141,7 +166,7 @@ export function SeededAnchorToJSON(value?: SeededAnchor | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'type': AnchorTypeEnumToJSON(value.type),
         'watch': value.watch,

@@ -51,19 +51,19 @@ import {
  */
 export interface Auth0 {
     /**
-     * 
+     *
      * @type {Auth0Identity}
      * @memberof Auth0
      */
     identity?: Auth0Identity;
     /**
-     * 
+     *
      * @type {Auth0User}
      * @memberof Auth0
      */
     user?: Auth0User;
     /**
-     * 
+     *
      * @type {Auth0UserMetadata}
      * @memberof Auth0
      */
@@ -87,13 +87,13 @@ export interface Auth0 {
      */
     audience: string;
     /**
-     * 
+     *
      * @type {Auth0Redirects}
      * @memberof Auth0
      */
     redirects: Auth0Redirects;
     /**
-     * 
+     *
      * @type {OAuthGroup}
      * @memberof Auth0
      */
@@ -120,16 +120,33 @@ export function instanceOfAuth0(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Auth0}
+ */
 export function Auth0FromJSON(json: any): Auth0 {
     return Auth0FromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Auth0}
+ */
 export function Auth0FromJSONTyped(json: any, ignoreDiscriminator: boolean): Auth0 {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'identity': !exists(json, 'identity') ? undefined : Auth0IdentityFromJSON(json['identity']),
         'user': !exists(json, 'user') ? undefined : Auth0UserFromJSON(json['user']),
         'metadata': !exists(json, 'metadata') ? undefined : Auth0UserMetadataFromJSON(json['metadata']),
@@ -142,6 +159,14 @@ export function Auth0FromJSONTyped(json: any, ignoreDiscriminator: boolean): Aut
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Auth0 | null)} [value]
+ * @returns {*}
+ */
 export function Auth0ToJSON(value?: Auth0 | null): any {
     if (value === undefined) {
         return undefined;
@@ -150,7 +175,7 @@ export function Auth0ToJSON(value?: Auth0 | null): any {
         return null;
     }
     return {
-        
+
         'identity': Auth0IdentityToJSON(value.identity),
         'user': Auth0UserToJSON(value.user),
         'metadata': Auth0UserMetadataToJSON(value.metadata),

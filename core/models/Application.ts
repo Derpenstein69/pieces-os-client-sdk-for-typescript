@@ -52,7 +52,7 @@ import {
 
 /**
  * A Model to describe what application a format/analytics event originated.
- * 
+ *
  * mechanism: This will let us know where this came from.
  * ie.only 2 enums are used here or else throw and error.
  * default mechanism here is MANUAL- meaning that this came from our user Connecting an application.
@@ -62,7 +62,7 @@ import {
  */
 export interface Application {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Application
      */
@@ -74,7 +74,7 @@ export interface Application {
      */
     id: string;
     /**
-     * 
+     *
      * @type {ApplicationNameEnum}
      * @memberof Application
      */
@@ -86,31 +86,31 @@ export interface Application {
      */
     version: string;
     /**
-     * 
+     *
      * @type {PlatformEnum}
      * @memberof Application
      */
     platform: PlatformEnum;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof Application
      */
     onboarded: boolean;
     /**
-     * 
+     *
      * @type {PrivacyEnum}
      * @memberof Application
      */
     privacy: PrivacyEnum;
     /**
-     * 
+     *
      * @type {CapabilitiesEnum}
      * @memberof Application
      */
     capabilities?: CapabilitiesEnum;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof Application
      */
@@ -138,16 +138,33 @@ export function instanceOfApplication(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Application}
+ */
 export function ApplicationFromJSON(json: any): Application {
     return ApplicationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Application}
+ */
 export function ApplicationFromJSONTyped(json: any, ignoreDiscriminator: boolean): Application {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'name': ApplicationNameEnumFromJSON(json['name']),
@@ -161,6 +178,14 @@ export function ApplicationFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(Application | null)} [value]
+ * @returns {*}
+ */
 export function ApplicationToJSON(value?: Application | null): any {
     if (value === undefined) {
         return undefined;
@@ -169,7 +194,7 @@ export function ApplicationToJSON(value?: Application | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'name': ApplicationNameEnumToJSON(value.name),

@@ -21,13 +21,13 @@ import {
 } from './Node';
 
 /**
- * 
+ *
  * @export
  * @interface Edges
  */
 export interface Edges {
     /**
-     * 
+     *
      * @type {Array<Node>}
      * @memberof Edges
      */
@@ -44,20 +44,45 @@ export function instanceOfEdges(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Edges}
+ */
 export function EdgesFromJSON(json: any): Edges {
     return EdgesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Edges}
+ */
 export function EdgesFromJSONTyped(json: any, ignoreDiscriminator: boolean): Edges {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'iterable': ((json['iterable'] as Array<any>).map(NodeFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(Edges | null)} [value]
+ * @returns {*}
+ */
 export function EdgesToJSON(value?: Edges | null): any {
     if (value === undefined) {
         return undefined;
@@ -66,7 +91,7 @@ export function EdgesToJSON(value?: Edges | null): any {
         return null;
     }
     return {
-        
+
         'iterable': ((value.iterable as Array<any>).map(NodeToJSON)),
     };
 }

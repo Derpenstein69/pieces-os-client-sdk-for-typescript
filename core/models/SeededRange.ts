@@ -40,8 +40,8 @@ import {
 
 /**
  * This is a preIdentified version of a Range.
- * 
- * conversation: this is here to specify the relationship that we want to set up with the Range. 
+ *
+ * conversation: this is here to specify the relationship that we want to set up with the Range.
  * IE for this case we want to associate a Range with a Conversation.grounding.temporal.workstream. Otherwise, if this
  * was a conversation we would have no way to know what relationship that we want to set up on the conversation w/ the range.
  * (because this will be set up for many relationShip opportunities that have different functionalities)
@@ -50,37 +50,37 @@ import {
  */
 export interface SeededRange {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededRange
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof SeededRange
      */
     to?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof SeededRange
      */
     from?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof SeededRange
      */
     between?: boolean;
     /**
-     * 
+     *
      * @type {ReferencedWorkstreamSummary}
      * @memberof SeededRange
      */
     summary?: ReferencedWorkstreamSummary;
     /**
-     * 
+     *
      * @type {SeededRangeConversationAssociation}
      * @memberof SeededRange
      */
@@ -96,16 +96,33 @@ export function instanceOfSeededRange(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededRange}
+ */
 export function SeededRangeFromJSON(json: any): SeededRange {
     return SeededRangeFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededRange}
+ */
 export function SeededRangeFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededRange {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'to': !exists(json, 'to') ? undefined : GroupedTimestampFromJSON(json['to']),
         'from': !exists(json, 'from') ? undefined : GroupedTimestampFromJSON(json['from']),
@@ -115,6 +132,14 @@ export function SeededRangeFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededRange | null)} [value]
+ * @returns {*}
+ */
 export function SeededRangeToJSON(value?: SeededRange | null): any {
     if (value === undefined) {
         return undefined;
@@ -123,7 +148,7 @@ export function SeededRangeToJSON(value?: SeededRange | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'to': GroupedTimestampToJSON(value.to),
         'from': GroupedTimestampToJSON(value.from),

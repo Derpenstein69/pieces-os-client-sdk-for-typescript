@@ -93,55 +93,55 @@ import {
  */
 export interface FlattenedAnnotation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedAnnotation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedAnnotation
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedAnnotation
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedAnnotation
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedAnnotation
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof FlattenedAnnotation
      */
     mechanism?: MechanismEnum;
     /**
-     * 
+     *
      * @type {ReferencedAsset}
      * @memberof FlattenedAnnotation
      */
     asset?: ReferencedAsset;
     /**
-     * 
+     *
      * @type {ReferencedPerson}
      * @memberof FlattenedAnnotation
      */
     person?: ReferencedPerson;
     /**
-     * 
+     *
      * @type {AnnotationTypeEnum}
      * @memberof FlattenedAnnotation
      */
@@ -153,49 +153,49 @@ export interface FlattenedAnnotation {
      */
     text: string;
     /**
-     * 
+     *
      * @type {ReferencedModel}
      * @memberof FlattenedAnnotation
      */
     model?: ReferencedModel;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof FlattenedAnnotation
      */
     pseudo?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof FlattenedAnnotation
      */
     favorited?: boolean;
     /**
-     * 
+     *
      * @type {ReferencedAnchor}
      * @memberof FlattenedAnnotation
      */
     anchor?: ReferencedAnchor;
     /**
-     * 
+     *
      * @type {ReferencedConversation}
      * @memberof FlattenedAnnotation
      */
     conversation?: ReferencedConversation;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedAnnotation
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {FlattenedConversationMessages}
      * @memberof FlattenedAnnotation
      */
     messages?: FlattenedConversationMessages;
     /**
-     * 
+     *
      * @type {ReferencedWorkstreamSummary}
      * @memberof FlattenedAnnotation
      */
@@ -216,16 +216,33 @@ export function instanceOfFlattenedAnnotation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedAnnotation}
+ */
 export function FlattenedAnnotationFromJSON(json: any): FlattenedAnnotation {
     return FlattenedAnnotationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedAnnotation}
+ */
 export function FlattenedAnnotationFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedAnnotation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -247,6 +264,14 @@ export function FlattenedAnnotationFromJSONTyped(json: any, ignoreDiscriminator:
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(FlattenedAnnotation | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedAnnotationToJSON(value?: FlattenedAnnotation | null): any {
     if (value === undefined) {
         return undefined;
@@ -255,7 +280,7 @@ export function FlattenedAnnotationToJSON(value?: FlattenedAnnotation | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'created': GroupedTimestampToJSON(value.created),

@@ -28,21 +28,69 @@ import {
     SeededAnchorPointToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorPointsCreateNewAnchorPointRequest
+ * @typedef {AnchorPointsCreateNewAnchorPointRequest}
+ */
 export interface AnchorPointsCreateNewAnchorPointRequest {
-    transferables?: boolean;
-    seededAnchorPoint?: SeededAnchorPoint;
-}
-
-export interface AnchorPointsDeleteSpecificAnchorPointRequest {
-    anchorPoint: string;
-}
-
-export interface AnchorPointsSnapshotRequest {
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?SeededAnchorPoint}
+ */
+seededAnchorPoint?: SeededAnchorPoint;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorPointsDeleteSpecificAnchorPointRequest
+ * @typedef {AnchorPointsDeleteSpecificAnchorPointRequest}
+ */
+export interface AnchorPointsDeleteSpecificAnchorPointRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+anchorPoint: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorPointsSnapshotRequest
+ * @typedef {AnchorPointsSnapshotRequest}
+ */
+export interface AnchorPointsSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class AnchorPointsApi extends runtime.BaseAPI {
 

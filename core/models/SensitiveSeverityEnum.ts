@@ -22,17 +22,49 @@ export const SensitiveSeverityEnum = {
     Moderate: 'MODERATE',
     High: 'HIGH'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @typedef {SensitiveSeverityEnum}
+ */
 export type SensitiveSeverityEnum = typeof SensitiveSeverityEnum[keyof typeof SensitiveSeverityEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SensitiveSeverityEnum}
+ */
 export function SensitiveSeverityEnumFromJSON(json: any): SensitiveSeverityEnum {
     return SensitiveSeverityEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SensitiveSeverityEnum}
+ */
 export function SensitiveSeverityEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): SensitiveSeverityEnum {
     return json as SensitiveSeverityEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(SensitiveSeverityEnum | null)} [value]
+ * @returns {*}
+ */
 export function SensitiveSeverityEnumToJSON(value?: SensitiveSeverityEnum | null): any {
     return value as any;
 }

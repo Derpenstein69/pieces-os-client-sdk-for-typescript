@@ -27,13 +27,13 @@ import {
  */
 export interface ReferencedModel {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedModel
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedModel
      */
@@ -50,21 +50,46 @@ export function instanceOfReferencedModel(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedModel}
+ */
 export function ReferencedModelFromJSON(json: any): ReferencedModel {
     return ReferencedModelFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedModel}
+ */
 export function ReferencedModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedModel {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedModel | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedModelToJSON(value?: ReferencedModel | null): any {
     if (value === undefined) {
         return undefined;
@@ -73,7 +98,7 @@ export function ReferencedModelToJSON(value?: ReferencedModel | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
     };

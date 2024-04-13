@@ -45,25 +45,25 @@ import {
  */
 export interface SeededFragment {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededFragment
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TransferableString}
      * @memberof SeededFragment
      */
     string?: TransferableString;
     /**
-     * 
+     *
      * @type {TransferableBytes}
      * @memberof SeededFragment
      */
     bytes?: TransferableBytes;
     /**
-     * 
+     *
      * @type {FragmentMetadata}
      * @memberof SeededFragment
      */
@@ -79,16 +79,33 @@ export function instanceOfSeededFragment(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededFragment}
+ */
 export function SeededFragmentFromJSON(json: any): SeededFragment {
     return SeededFragmentFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededFragment}
+ */
 export function SeededFragmentFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededFragment {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'string': !exists(json, 'string') ? undefined : TransferableStringFromJSON(json['string']),
         'bytes': !exists(json, 'bytes') ? undefined : TransferableBytesFromJSON(json['bytes']),
@@ -96,6 +113,14 @@ export function SeededFragmentFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededFragment | null)} [value]
+ * @returns {*}
+ */
 export function SeededFragmentToJSON(value?: SeededFragment | null): any {
     if (value === undefined) {
         return undefined;
@@ -104,7 +129,7 @@ export function SeededFragmentToJSON(value?: SeededFragment | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'string': TransferableStringToJSON(value.string),
         'bytes': TransferableBytesToJSON(value.bytes),

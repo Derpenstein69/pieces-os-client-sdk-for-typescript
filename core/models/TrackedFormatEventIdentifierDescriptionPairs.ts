@@ -27,7 +27,7 @@ import {
  */
 export interface TrackedFormatEventIdentifierDescriptionPairs {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedFormatEventIdentifierDescriptionPairs
      */
@@ -101,6 +101,13 @@ export interface TrackedFormatEventIdentifierDescriptionPairs {
 export const TrackedFormatEventIdentifierDescriptionPairsFormatCreatedEnum = {
     AFormatWasCreated: 'a_format_was_created'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedFormatEventIdentifierDescriptionPairsFormatCreatedEnum}
+ */
 export type TrackedFormatEventIdentifierDescriptionPairsFormatCreatedEnum = typeof TrackedFormatEventIdentifierDescriptionPairsFormatCreatedEnum[keyof typeof TrackedFormatEventIdentifierDescriptionPairsFormatCreatedEnum];
 
 /**
@@ -109,6 +116,13 @@ export type TrackedFormatEventIdentifierDescriptionPairsFormatCreatedEnum = type
 export const TrackedFormatEventIdentifierDescriptionPairsFormatCopiedEnum = {
     IfAFormatWasEntirelyCopied: 'if_a_format_was_entirely_copied'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedFormatEventIdentifierDescriptionPairsFormatCopiedEnum}
+ */
 export type TrackedFormatEventIdentifierDescriptionPairsFormatCopiedEnum = typeof TrackedFormatEventIdentifierDescriptionPairsFormatCopiedEnum[keyof typeof TrackedFormatEventIdentifierDescriptionPairsFormatCopiedEnum];
 
 /**
@@ -117,6 +131,13 @@ export type TrackedFormatEventIdentifierDescriptionPairsFormatCopiedEnum = typeo
 export const TrackedFormatEventIdentifierDescriptionPairsFormatPartiallyCopiedEnum = {
     IfAFormatWasPartiallyCopied: 'if_a_format_was_partially_copied'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedFormatEventIdentifierDescriptionPairsFormatPartiallyCopiedEnum}
+ */
 export type TrackedFormatEventIdentifierDescriptionPairsFormatPartiallyCopiedEnum = typeof TrackedFormatEventIdentifierDescriptionPairsFormatPartiallyCopiedEnum[keyof typeof TrackedFormatEventIdentifierDescriptionPairsFormatPartiallyCopiedEnum];
 
 /**
@@ -125,6 +146,13 @@ export type TrackedFormatEventIdentifierDescriptionPairsFormatPartiallyCopiedEnu
 export const TrackedFormatEventIdentifierDescriptionPairsFormatDownloadedEnum = {
     IfAFormatWasDownloaded: 'if_a_format_was_downloaded'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedFormatEventIdentifierDescriptionPairsFormatDownloadedEnum}
+ */
 export type TrackedFormatEventIdentifierDescriptionPairsFormatDownloadedEnum = typeof TrackedFormatEventIdentifierDescriptionPairsFormatDownloadedEnum[keyof typeof TrackedFormatEventIdentifierDescriptionPairsFormatDownloadedEnum];
 
 /**
@@ -133,6 +161,13 @@ export type TrackedFormatEventIdentifierDescriptionPairsFormatDownloadedEnum = t
 export const TrackedFormatEventIdentifierDescriptionPairsFormatDeletedEnum = {
     IfAFormatWasDeleted: 'if_a_format_was_deleted'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedFormatEventIdentifierDescriptionPairsFormatDeletedEnum}
+ */
 export type TrackedFormatEventIdentifierDescriptionPairsFormatDeletedEnum = typeof TrackedFormatEventIdentifierDescriptionPairsFormatDeletedEnum[keyof typeof TrackedFormatEventIdentifierDescriptionPairsFormatDeletedEnum];
 
 /**
@@ -141,6 +176,13 @@ export type TrackedFormatEventIdentifierDescriptionPairsFormatDeletedEnum = type
 export const TrackedFormatEventIdentifierDescriptionPairsFormatGenericClassificationUpdatedEnum = {
     IfAGenericClassificationWasChangedOnAFormat: 'if_a_generic_classification_was_changed_on_a_format'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedFormatEventIdentifierDescriptionPairsFormatGenericClassificationUpdatedEnum}
+ */
 export type TrackedFormatEventIdentifierDescriptionPairsFormatGenericClassificationUpdatedEnum = typeof TrackedFormatEventIdentifierDescriptionPairsFormatGenericClassificationUpdatedEnum[keyof typeof TrackedFormatEventIdentifierDescriptionPairsFormatGenericClassificationUpdatedEnum];
 
 /**
@@ -149,6 +191,13 @@ export type TrackedFormatEventIdentifierDescriptionPairsFormatGenericClassificat
 export const TrackedFormatEventIdentifierDescriptionPairsFormatSpecificClassificationUpdatedEnum = {
     IfASpecificClassificationWasChangedOnAFormat: 'if_a_specific_classification_was_changed_on_a_format'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedFormatEventIdentifierDescriptionPairsFormatSpecificClassificationUpdatedEnum}
+ */
 export type TrackedFormatEventIdentifierDescriptionPairsFormatSpecificClassificationUpdatedEnum = typeof TrackedFormatEventIdentifierDescriptionPairsFormatSpecificClassificationUpdatedEnum[keyof typeof TrackedFormatEventIdentifierDescriptionPairsFormatSpecificClassificationUpdatedEnum];
 
 /**
@@ -157,6 +206,13 @@ export type TrackedFormatEventIdentifierDescriptionPairsFormatSpecificClassifica
 export const TrackedFormatEventIdentifierDescriptionPairsFormatUpdatedEnum = {
     AFormatWasUpdated: 'a_format_was_updated'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedFormatEventIdentifierDescriptionPairsFormatUpdatedEnum}
+ */
 export type TrackedFormatEventIdentifierDescriptionPairsFormatUpdatedEnum = typeof TrackedFormatEventIdentifierDescriptionPairsFormatUpdatedEnum[keyof typeof TrackedFormatEventIdentifierDescriptionPairsFormatUpdatedEnum];
 
 /**
@@ -165,6 +221,13 @@ export type TrackedFormatEventIdentifierDescriptionPairsFormatUpdatedEnum = type
 export const TrackedFormatEventIdentifierDescriptionPairsFormatInsertedEnum = {
     AFormatWasInserted: 'a_format_was_inserted'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedFormatEventIdentifierDescriptionPairsFormatInsertedEnum}
+ */
 export type TrackedFormatEventIdentifierDescriptionPairsFormatInsertedEnum = typeof TrackedFormatEventIdentifierDescriptionPairsFormatInsertedEnum[keyof typeof TrackedFormatEventIdentifierDescriptionPairsFormatInsertedEnum];
 
 /**
@@ -173,6 +236,13 @@ export type TrackedFormatEventIdentifierDescriptionPairsFormatInsertedEnum = typ
 export const TrackedFormatEventIdentifierDescriptionPairsFormatValueEditedEnum = {
     AFormatValueWasEdited: 'a_format_value_was_edited'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedFormatEventIdentifierDescriptionPairsFormatValueEditedEnum}
+ */
 export type TrackedFormatEventIdentifierDescriptionPairsFormatValueEditedEnum = typeof TrackedFormatEventIdentifierDescriptionPairsFormatValueEditedEnum[keyof typeof TrackedFormatEventIdentifierDescriptionPairsFormatValueEditedEnum];
 
 
@@ -185,16 +255,33 @@ export function instanceOfTrackedFormatEventIdentifierDescriptionPairs(value: ob
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedFormatEventIdentifierDescriptionPairs}
+ */
 export function TrackedFormatEventIdentifierDescriptionPairsFromJSON(json: any): TrackedFormatEventIdentifierDescriptionPairs {
     return TrackedFormatEventIdentifierDescriptionPairsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedFormatEventIdentifierDescriptionPairs}
+ */
 export function TrackedFormatEventIdentifierDescriptionPairsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedFormatEventIdentifierDescriptionPairs {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'formatCreated': !exists(json, 'format_created') ? undefined : json['format_created'],
         'formatCopied': !exists(json, 'format_copied') ? undefined : json['format_copied'],
@@ -209,6 +296,14 @@ export function TrackedFormatEventIdentifierDescriptionPairsFromJSONTyped(json: 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedFormatEventIdentifierDescriptionPairs | null)} [value]
+ * @returns {*}
+ */
 export function TrackedFormatEventIdentifierDescriptionPairsToJSON(value?: TrackedFormatEventIdentifierDescriptionPairs | null): any {
     if (value === undefined) {
         return undefined;
@@ -217,7 +312,7 @@ export function TrackedFormatEventIdentifierDescriptionPairsToJSON(value?: Track
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'format_created': value.formatCreated,
         'format_copied': value.formatCopied,

@@ -28,21 +28,69 @@ import {
     WorkstreamSummaryToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummariesCreateNewWorkstreamSummaryRequest
+ * @typedef {WorkstreamSummariesCreateNewWorkstreamSummaryRequest}
+ */
 export interface WorkstreamSummariesCreateNewWorkstreamSummaryRequest {
-    transferables?: boolean;
-    seededWorkstreamSummary?: SeededWorkstreamSummary;
-}
-
-export interface WorkstreamSummariesDeleteSpecificWorkstreamSummaryRequest {
-    workstreamSummary: string;
-}
-
-export interface WorkstreamSummariesSnapshotRequest {
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?SeededWorkstreamSummary}
+ */
+seededWorkstreamSummary?: SeededWorkstreamSummary;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummariesDeleteSpecificWorkstreamSummaryRequest
+ * @typedef {WorkstreamSummariesDeleteSpecificWorkstreamSummaryRequest}
+ */
+export interface WorkstreamSummariesDeleteSpecificWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamSummariesSnapshotRequest
+ * @typedef {WorkstreamSummariesSnapshotRequest}
+ */
+export interface WorkstreamSummariesSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class WorkstreamSummariesApi extends runtime.BaseAPI {
 

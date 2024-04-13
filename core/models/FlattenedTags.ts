@@ -39,13 +39,13 @@ import {
  */
 export interface FlattenedTags {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedTags
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedTag>}
      * @memberof FlattenedTags
      */
@@ -57,7 +57,7 @@ export interface FlattenedTags {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedTags
      */
@@ -74,16 +74,33 @@ export function instanceOfFlattenedTags(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedTags}
+ */
 export function FlattenedTagsFromJSON(json: any): FlattenedTags {
     return FlattenedTagsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedTags}
+ */
 export function FlattenedTagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedTags {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedTagFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function FlattenedTagsFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FlattenedTags | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedTagsToJSON(value?: FlattenedTags | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function FlattenedTagsToJSON(value?: FlattenedTags | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedTagToJSON)),
         'indices': value.indices,

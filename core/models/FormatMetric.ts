@@ -34,26 +34,26 @@ import {
 
 /**
  * FormatMetric
- * 
+ *
  * This is a model that will represent the about of specific formats. ie Generic: 'CODE' specific: 'DART' identifiers: ['FormatUID1, 'FormatUID2']
  * @export
  * @interface FormatMetric
  */
 export interface FormatMetric {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FormatMetric
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ClassificationGenericEnum}
      * @memberof FormatMetric
      */
     generic: ClassificationGenericEnum;
     /**
-     * 
+     *
      * @type {ClassificationSpecificEnum}
      * @memberof FormatMetric
      */
@@ -78,16 +78,33 @@ export function instanceOfFormatMetric(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FormatMetric}
+ */
 export function FormatMetricFromJSON(json: any): FormatMetric {
     return FormatMetricFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FormatMetric}
+ */
 export function FormatMetricFromJSONTyped(json: any, ignoreDiscriminator: boolean): FormatMetric {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'generic': ClassificationGenericEnumFromJSON(json['generic']),
         'specific': ClassificationSpecificEnumFromJSON(json['specific']),
@@ -95,6 +112,14 @@ export function FormatMetricFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FormatMetric | null)} [value]
+ * @returns {*}
+ */
 export function FormatMetricToJSON(value?: FormatMetric | null): any {
     if (value === undefined) {
         return undefined;
@@ -103,7 +128,7 @@ export function FormatMetricToJSON(value?: FormatMetric | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'generic': ClassificationGenericEnumToJSON(value.generic),
         'specific': ClassificationSpecificEnumToJSON(value.specific),

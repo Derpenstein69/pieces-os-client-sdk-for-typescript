@@ -33,19 +33,19 @@ import {
  */
 export interface DiscoveredSensitive {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof DiscoveredSensitive
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededSensitive}
      * @memberof DiscoveredSensitive
      */
     seed: SeededSensitive;
     /**
-     * 
+     *
      * @type {string}
      * @memberof DiscoveredSensitive
      */
@@ -63,22 +63,47 @@ export function instanceOfDiscoveredSensitive(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {DiscoveredSensitive}
+ */
 export function DiscoveredSensitiveFromJSON(json: any): DiscoveredSensitive {
     return DiscoveredSensitiveFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {DiscoveredSensitive}
+ */
 export function DiscoveredSensitiveFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveredSensitive {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'seed': SeededSensitiveFromJSON(json['seed']),
         'text': json['text'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(DiscoveredSensitive | null)} [value]
+ * @returns {*}
+ */
 export function DiscoveredSensitiveToJSON(value?: DiscoveredSensitive | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function DiscoveredSensitiveToJSON(value?: DiscoveredSensitive | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'seed': SeededSensitiveToJSON(value.seed),
         'text': value.text,

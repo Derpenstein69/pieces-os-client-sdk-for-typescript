@@ -27,17 +27,49 @@ export const QGPTStreamEnum = {
     Stopped: 'STOPPED',
     Reset: 'RESET'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @typedef {QGPTStreamEnum}
+ */
 export type QGPTStreamEnum = typeof QGPTStreamEnum[keyof typeof QGPTStreamEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTStreamEnum}
+ */
 export function QGPTStreamEnumFromJSON(json: any): QGPTStreamEnum {
     return QGPTStreamEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTStreamEnum}
+ */
 export function QGPTStreamEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTStreamEnum {
     return json as QGPTStreamEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTStreamEnum | null)} [value]
+ * @returns {*}
+ */
 export function QGPTStreamEnumToJSON(value?: QGPTStreamEnum | null): any {
     return value as any;
 }

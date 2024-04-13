@@ -22,14 +22,14 @@ import {
 
 /**
  * This is for the users that wants to have contextualized code conversations, meaning conversations around code with Context provided.
- * 
+ *
  * This is a class so that we can add optional properties in the future.
  * @export
  * @interface QGPTConversationPipelineForContextualizedCodeDialog
  */
 export interface QGPTConversationPipelineForContextualizedCodeDialog {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTConversationPipelineForContextualizedCodeDialog
      */
@@ -45,20 +45,45 @@ export function instanceOfQGPTConversationPipelineForContextualizedCodeDialog(va
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTConversationPipelineForContextualizedCodeDialog}
+ */
 export function QGPTConversationPipelineForContextualizedCodeDialogFromJSON(json: any): QGPTConversationPipelineForContextualizedCodeDialog {
     return QGPTConversationPipelineForContextualizedCodeDialogFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTConversationPipelineForContextualizedCodeDialog}
+ */
 export function QGPTConversationPipelineForContextualizedCodeDialogFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTConversationPipelineForContextualizedCodeDialog {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTConversationPipelineForContextualizedCodeDialog | null)} [value]
+ * @returns {*}
+ */
 export function QGPTConversationPipelineForContextualizedCodeDialogToJSON(value?: QGPTConversationPipelineForContextualizedCodeDialog | null): any {
     if (value === undefined) {
         return undefined;
@@ -67,7 +92,7 @@ export function QGPTConversationPipelineForContextualizedCodeDialogToJSON(value?
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
     };
 }

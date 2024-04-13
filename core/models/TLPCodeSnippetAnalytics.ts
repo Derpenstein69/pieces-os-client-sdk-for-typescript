@@ -57,49 +57,49 @@ import {
 } from './TLPCodeSnippetSuggestedInteractions';
 
 /**
- * 
+ *
  * @export
  * @interface TLPCodeSnippetAnalytics
  */
 export interface TLPCodeSnippetAnalytics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeSnippetAnalytics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TLPCodeFragmentStatistics}
      * @memberof TLPCodeSnippetAnalytics
      */
     statistics?: TLPCodeFragmentStatistics;
     /**
-     * 
+     *
      * @type {TLPCodeFragmentClassification}
      * @memberof TLPCodeSnippetAnalytics
      */
     classification?: TLPCodeFragmentClassification;
     /**
-     * 
+     *
      * @type {TLPCodeFragmentReclassification}
      * @memberof TLPCodeSnippetAnalytics
      */
     reclassification?: TLPCodeFragmentReclassification;
     /**
-     * 
+     *
      * @type {TLPCodeSnippetSuggestedInteractions}
      * @memberof TLPCodeSnippetAnalytics
      */
     suggested?: TLPCodeSnippetSuggestedInteractions;
     /**
-     * 
+     *
      * @type {TLPCodeFragmentTagify}
      * @memberof TLPCodeSnippetAnalytics
      */
     tagify?: TLPCodeFragmentTagify;
     /**
-     * 
+     *
      * @type {TLPCodeFragmentDescription}
      * @memberof TLPCodeSnippetAnalytics
      */
@@ -115,16 +115,33 @@ export function instanceOfTLPCodeSnippetAnalytics(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeSnippetAnalytics}
+ */
 export function TLPCodeSnippetAnalyticsFromJSON(json: any): TLPCodeSnippetAnalytics {
     return TLPCodeSnippetAnalyticsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeSnippetAnalytics}
+ */
 export function TLPCodeSnippetAnalyticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeSnippetAnalytics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'statistics': !exists(json, 'statistics') ? undefined : TLPCodeFragmentStatisticsFromJSON(json['statistics']),
         'classification': !exists(json, 'classification') ? undefined : TLPCodeFragmentClassificationFromJSON(json['classification']),
@@ -135,6 +152,14 @@ export function TLPCodeSnippetAnalyticsFromJSONTyped(json: any, ignoreDiscrimina
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TLPCodeSnippetAnalytics | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeSnippetAnalyticsToJSON(value?: TLPCodeSnippetAnalytics | null): any {
     if (value === undefined) {
         return undefined;
@@ -143,7 +168,7 @@ export function TLPCodeSnippetAnalyticsToJSON(value?: TLPCodeSnippetAnalytics | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'statistics': TLPCodeFragmentStatisticsToJSON(value.statistics),
         'classification': TLPCodeFragmentClassificationToJSON(value.classification),

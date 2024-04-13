@@ -45,43 +45,43 @@ import {
 } from './TLPDirectedDiscoveryFilters';
 
 /**
- * 
+ *
  * @export
  * @interface DiscoveredAsset
  */
 export interface DiscoveredAsset {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof DiscoveredAsset
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededFile}
      * @memberof DiscoveredAsset
      */
     file?: SeededFile;
     /**
-     * 
+     *
      * @type {SeededFragment}
      * @memberof DiscoveredAsset
      */
     fragment?: SeededFragment;
     /**
-     * 
+     *
      * @type {string}
      * @memberof DiscoveredAsset
      */
     directory?: string;
     /**
-     * 
+     *
      * @type {SeededAssetMetadata}
      * @memberof DiscoveredAsset
      */
     metadata?: SeededAssetMetadata;
     /**
-     * 
+     *
      * @type {TLPDirectedDiscoveryFilters}
      * @memberof DiscoveredAsset
      */
@@ -97,16 +97,33 @@ export function instanceOfDiscoveredAsset(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {DiscoveredAsset}
+ */
 export function DiscoveredAssetFromJSON(json: any): DiscoveredAsset {
     return DiscoveredAssetFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {DiscoveredAsset}
+ */
 export function DiscoveredAssetFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveredAsset {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'file': !exists(json, 'file') ? undefined : SeededFileFromJSON(json['file']),
         'fragment': !exists(json, 'fragment') ? undefined : SeededFragmentFromJSON(json['fragment']),
@@ -116,6 +133,14 @@ export function DiscoveredAssetFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(DiscoveredAsset | null)} [value]
+ * @returns {*}
+ */
 export function DiscoveredAssetToJSON(value?: DiscoveredAsset | null): any {
     if (value === undefined) {
         return undefined;
@@ -124,7 +149,7 @@ export function DiscoveredAssetToJSON(value?: DiscoveredAsset | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'file': SeededFileToJSON(value.file),
         'fragment': SeededFragmentToJSON(value.fragment),

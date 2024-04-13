@@ -25,36 +25,134 @@ import {
     ModelDownloadProgressToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ModelSpecificModelDownloadRequest
+ * @typedef {ModelSpecificModelDownloadRequest}
+ */
 export interface ModelSpecificModelDownloadRequest {
-    model: string;
-}
-
-export interface ModelSpecificModelDownloadCancelRequest {
-    model: string;
-}
-
-export interface ModelSpecificModelDownloadProgressRequest {
-    model: string;
-}
-
-export interface ModelSpecificModelLoadRequest {
-    model: string;
-}
-
-export interface ModelSpecificModelUnloadRequest {
-    model: string;
-}
-
-export interface ModelUpdateRequest {
-    model?: Model;
-}
-
-export interface ModelsSpecificModelSnapshotRequest {
-    model: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+model: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ModelSpecificModelDownloadCancelRequest
+ * @typedef {ModelSpecificModelDownloadCancelRequest}
+ */
+export interface ModelSpecificModelDownloadCancelRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+model: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ModelSpecificModelDownloadProgressRequest
+ * @typedef {ModelSpecificModelDownloadProgressRequest}
+ */
+export interface ModelSpecificModelDownloadProgressRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+model: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ModelSpecificModelLoadRequest
+ * @typedef {ModelSpecificModelLoadRequest}
+ */
+export interface ModelSpecificModelLoadRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+model: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ModelSpecificModelUnloadRequest
+ * @typedef {ModelSpecificModelUnloadRequest}
+ */
+export interface ModelSpecificModelUnloadRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+model: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ModelUpdateRequest
+ * @typedef {ModelUpdateRequest}
+ */
+export interface ModelUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?Model}
+ */
+model?: Model;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ModelsSpecificModelSnapshotRequest
+ * @typedef {ModelsSpecificModelSnapshotRequest}
+ */
+export interface ModelsSpecificModelSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+model: string;
+}
+
+/**
+ *
  */
 export class ModelApi extends runtime.BaseAPI {
 
@@ -250,7 +348,7 @@ export class ModelApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * /model/{model} [GET]
      */
     async modelsSpecificModelSnapshotRaw(requestParameters: ModelsSpecificModelSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Model>> {
@@ -273,7 +371,7 @@ export class ModelApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * /model/{model} [GET]
      */
     async modelsSpecificModelSnapshot(requestParameters: ModelsSpecificModelSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Model> {

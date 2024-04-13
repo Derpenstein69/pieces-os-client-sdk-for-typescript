@@ -33,19 +33,19 @@ import {
  */
 export interface ReferencedRange {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedRange
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedRange
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedRange}
      * @memberof ReferencedRange
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedRange(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedRange}
+ */
 export function ReferencedRangeFromJSON(json: any): ReferencedRange {
     return ReferencedRangeFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedRange}
+ */
 export function ReferencedRangeFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedRange {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedRangeFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedRange | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedRangeToJSON(value?: ReferencedRange | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedRangeToJSON(value?: ReferencedRange | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedRangeToJSON(value.reference),

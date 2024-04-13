@@ -27,19 +27,19 @@ import {
 } from './OCRAnalysis';
 
 /**
- * 
+ *
  * @export
  * @interface OCRAnalyses
  */
 export interface OCRAnalyses {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OCRAnalyses
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<OCRAnalysis>}
      * @memberof OCRAnalyses
      */
@@ -56,21 +56,46 @@ export function instanceOfOCRAnalyses(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OCRAnalyses}
+ */
 export function OCRAnalysesFromJSON(json: any): OCRAnalyses {
     return OCRAnalysesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OCRAnalyses}
+ */
 export function OCRAnalysesFromJSONTyped(json: any, ignoreDiscriminator: boolean): OCRAnalyses {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(OCRAnalysisFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OCRAnalyses | null)} [value]
+ * @returns {*}
+ */
 export function OCRAnalysesToJSON(value?: OCRAnalyses | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function OCRAnalysesToJSON(value?: OCRAnalyses | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(OCRAnalysisToJSON)),
     };

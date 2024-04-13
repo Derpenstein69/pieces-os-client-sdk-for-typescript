@@ -22,20 +22,20 @@ import {
 
 /**
  * This is the input model for '/machine_learning/text/technical_language/parsers/segmentation'
- * 
+ *
  * This will take the unsegmentedText here!
  * @export
  * @interface UnsegmentedTechnicalLanguage
  */
 export interface UnsegmentedTechnicalLanguage {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof UnsegmentedTechnicalLanguage
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof UnsegmentedTechnicalLanguage
      */
@@ -52,21 +52,46 @@ export function instanceOfUnsegmentedTechnicalLanguage(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {UnsegmentedTechnicalLanguage}
+ */
 export function UnsegmentedTechnicalLanguageFromJSON(json: any): UnsegmentedTechnicalLanguage {
     return UnsegmentedTechnicalLanguageFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {UnsegmentedTechnicalLanguage}
+ */
 export function UnsegmentedTechnicalLanguageFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnsegmentedTechnicalLanguage {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'value': json['value'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(UnsegmentedTechnicalLanguage | null)} [value]
+ * @returns {*}
+ */
 export function UnsegmentedTechnicalLanguageToJSON(value?: UnsegmentedTechnicalLanguage | null): any {
     if (value === undefined) {
         return undefined;
@@ -75,7 +100,7 @@ export function UnsegmentedTechnicalLanguageToJSON(value?: UnsegmentedTechnicalL
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'value': value.value,
     };

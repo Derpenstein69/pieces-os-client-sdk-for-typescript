@@ -21,19 +21,19 @@ import {
 } from './InteractedAssetInteractions';
 
 /**
- * A model that represents an asset that has been interacted with. 
+ * A model that represents an asset that has been interacted with.
  * @export
  * @interface InteractedAsset
  */
 export interface InteractedAsset {
     /**
-     * A uuid model. 36 Characters (4 Dashes, 32 Numbers/Letters) 
+     * A uuid model. 36 Characters (4 Dashes, 32 Numbers/Letters)
      * @type {string}
      * @memberof InteractedAsset
      */
     asset?: string;
     /**
-     * 
+     *
      * @type {InteractedAssetInteractions}
      * @memberof InteractedAsset
      */
@@ -49,21 +49,46 @@ export function instanceOfInteractedAsset(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {InteractedAsset}
+ */
 export function InteractedAssetFromJSON(json: any): InteractedAsset {
     return InteractedAssetFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {InteractedAsset}
+ */
 export function InteractedAssetFromJSONTyped(json: any, ignoreDiscriminator: boolean): InteractedAsset {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'asset': !exists(json, 'asset') ? undefined : json['asset'],
         'interactions': !exists(json, 'interactions') ? undefined : InteractedAssetInteractionsFromJSON(json['interactions']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(InteractedAsset | null)} [value]
+ * @returns {*}
+ */
 export function InteractedAssetToJSON(value?: InteractedAsset | null): any {
     if (value === undefined) {
         return undefined;
@@ -72,7 +97,7 @@ export function InteractedAssetToJSON(value?: InteractedAsset | null): any {
         return null;
     }
     return {
-        
+
         'asset': value.asset,
         'interactions': InteractedAssetInteractionsToJSON(value.interactions),
     };

@@ -33,19 +33,19 @@ import {
  */
 export interface ReferencedAsset {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedAsset
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedAsset
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedAsset}
      * @memberof ReferencedAsset
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedAsset(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedAsset}
+ */
 export function ReferencedAssetFromJSON(json: any): ReferencedAsset {
     return ReferencedAssetFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedAsset}
+ */
 export function ReferencedAssetFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedAsset {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedAssetFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedAsset | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedAssetToJSON(value?: ReferencedAsset | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedAssetToJSON(value?: ReferencedAsset | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedAssetToJSON(value.reference),

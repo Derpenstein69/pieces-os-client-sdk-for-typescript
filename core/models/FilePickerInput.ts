@@ -27,13 +27,13 @@ import {
  */
 export interface FilePickerInput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FilePickerInput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof FilePickerInput
      */
@@ -49,21 +49,46 @@ export function instanceOfFilePickerInput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FilePickerInput}
+ */
 export function FilePickerInputFromJSON(json: any): FilePickerInput {
     return FilePickerInputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FilePickerInput}
+ */
 export function FilePickerInputFromJSONTyped(json: any, ignoreDiscriminator: boolean): FilePickerInput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'allowedExtensions': !exists(json, 'allowedExtensions') ? undefined : json['allowedExtensions'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(FilePickerInput | null)} [value]
+ * @returns {*}
+ */
 export function FilePickerInputToJSON(value?: FilePickerInput | null): any {
     if (value === undefined) {
         return undefined;
@@ -72,7 +97,7 @@ export function FilePickerInputToJSON(value?: FilePickerInput | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'allowedExtensions': value.allowedExtensions,
     };

@@ -31,17 +31,51 @@ import {
     UnsegmentedTechnicalLanguageToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface PersonificationTechnicalLanguageGenerationRequest
+ * @typedef {PersonificationTechnicalLanguageGenerationRequest}
+ */
 export interface PersonificationTechnicalLanguageGenerationRequest {
-    preonboardedPersonaDetails?: PreonboardedPersonaDetails;
-}
-
-export interface SegmentTechnicalLanguageRequest {
-    classify?: boolean;
-    unsegmentedTechnicalLanguage?: UnsegmentedTechnicalLanguage;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?PreonboardedPersonaDetails}
+ */
+preonboardedPersonaDetails?: PreonboardedPersonaDetails;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface SegmentTechnicalLanguageRequest
+ * @typedef {SegmentTechnicalLanguageRequest}
+ */
+export interface SegmentTechnicalLanguageRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+classify?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?UnsegmentedTechnicalLanguage}
+ */
+unsegmentedTechnicalLanguage?: UnsegmentedTechnicalLanguage;
+}
+
+/**
+ *
  */
 export class MachineLearningApi extends runtime.BaseAPI {
 

@@ -37,20 +37,62 @@ import {
     UpdatedExternalProviderApiKeyToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ExternalProviderApiKeyCreateRequest
+ * @typedef {ExternalProviderApiKeyCreateRequest}
+ */
 export interface ExternalProviderApiKeyCreateRequest {
-    precreatedExternalProviderApiKey?: PrecreatedExternalProviderApiKey;
-}
-
-export interface ExternalProviderApiKeyDeleteRequest {
-    predeletedExternalProviderApiKey?: PredeletedExternalProviderApiKey;
-}
-
-export interface ExternalProviderApiKeyUpdateRequest {
-    preupdatedExternalProviderApiKey?: PreupdatedExternalProviderApiKey;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?PrecreatedExternalProviderApiKey}
+ */
+precreatedExternalProviderApiKey?: PrecreatedExternalProviderApiKey;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ExternalProviderApiKeyDeleteRequest
+ * @typedef {ExternalProviderApiKeyDeleteRequest}
+ */
+export interface ExternalProviderApiKeyDeleteRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?PredeletedExternalProviderApiKey}
+ */
+predeletedExternalProviderApiKey?: PredeletedExternalProviderApiKey;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ExternalProviderApiKeyUpdateRequest
+ * @typedef {ExternalProviderApiKeyUpdateRequest}
+ */
+export interface ExternalProviderApiKeyUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?PreupdatedExternalProviderApiKey}
+ */
+preupdatedExternalProviderApiKey?: PreupdatedExternalProviderApiKey;
+}
+
+/**
+ *
  */
 export class ExternalProviderApi extends runtime.BaseAPI {
 

@@ -33,13 +33,13 @@ import {
  */
 export interface SeededGitHubGistDistribution {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededGitHubGistDistribution
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Recipients}
      * @memberof SeededGitHubGistDistribution
      */
@@ -74,16 +74,33 @@ export function instanceOfSeededGitHubGistDistribution(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededGitHubGistDistribution}
+ */
 export function SeededGitHubGistDistributionFromJSON(json: any): SeededGitHubGistDistribution {
     return SeededGitHubGistDistributionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededGitHubGistDistribution}
+ */
 export function SeededGitHubGistDistributionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededGitHubGistDistribution {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'recipients': !exists(json, 'recipients') ? undefined : RecipientsFromJSON(json['recipients']),
         '_public': !exists(json, 'public') ? undefined : json['public'],
@@ -92,6 +109,14 @@ export function SeededGitHubGistDistributionFromJSONTyped(json: any, ignoreDiscr
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededGitHubGistDistribution | null)} [value]
+ * @returns {*}
+ */
 export function SeededGitHubGistDistributionToJSON(value?: SeededGitHubGistDistribution | null): any {
     if (value === undefined) {
         return undefined;
@@ -100,7 +125,7 @@ export function SeededGitHubGistDistributionToJSON(value?: SeededGitHubGistDistr
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'recipients': RecipientsToJSON(value.recipients),
         'public': value._public,

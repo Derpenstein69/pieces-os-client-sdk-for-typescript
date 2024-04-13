@@ -39,19 +39,19 @@ import {
  */
 export interface OSDeviceHardwareInformation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OSDeviceHardwareInformation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {OSDeviceCPUHardwareInformation}
      * @memberof OSDeviceHardwareInformation
      */
     cpu?: OSDeviceCPUHardwareInformation;
     /**
-     * 
+     *
      * @type {OSDeviceGPUHardwareInformation}
      * @memberof OSDeviceHardwareInformation
      */
@@ -67,22 +67,47 @@ export function instanceOfOSDeviceHardwareInformation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OSDeviceHardwareInformation}
+ */
 export function OSDeviceHardwareInformationFromJSON(json: any): OSDeviceHardwareInformation {
     return OSDeviceHardwareInformationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OSDeviceHardwareInformation}
+ */
 export function OSDeviceHardwareInformationFromJSONTyped(json: any, ignoreDiscriminator: boolean): OSDeviceHardwareInformation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'cpu': !exists(json, 'cpu') ? undefined : OSDeviceCPUHardwareInformationFromJSON(json['cpu']),
         'gpu': !exists(json, 'gpu') ? undefined : OSDeviceGPUHardwareInformationFromJSON(json['gpu']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OSDeviceHardwareInformation | null)} [value]
+ * @returns {*}
+ */
 export function OSDeviceHardwareInformationToJSON(value?: OSDeviceHardwareInformation | null): any {
     if (value === undefined) {
         return undefined;
@@ -91,7 +116,7 @@ export function OSDeviceHardwareInformationToJSON(value?: OSDeviceHardwareInform
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'cpu': OSDeviceCPUHardwareInformationToJSON(value.cpu),
         'gpu': OSDeviceGPUHardwareInformationToJSON(value.gpu),

@@ -27,7 +27,7 @@ import {
  */
 export interface OAuthToken {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OAuthToken
      */
@@ -39,31 +39,31 @@ export interface OAuthToken {
      */
     accessToken: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof OAuthToken
      */
     tokenType: OAuthTokenTokenTypeEnum;
     /**
-     * 
+     *
      * @type {number}
      * @memberof OAuthToken
      */
     expiresIn: number;
     /**
-     * 
+     *
      * @type {string}
      * @memberof OAuthToken
      */
     scope: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof OAuthToken
      */
     refreshToken?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof OAuthToken
      */
@@ -77,6 +77,13 @@ export interface OAuthToken {
 export const OAuthTokenTokenTypeEnum = {
     Bearer: 'Bearer'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @typedef {OAuthTokenTokenTypeEnum}
+ */
 export type OAuthTokenTokenTypeEnum = typeof OAuthTokenTokenTypeEnum[keyof typeof OAuthTokenTokenTypeEnum];
 
 
@@ -93,16 +100,33 @@ export function instanceOfOAuthToken(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OAuthToken}
+ */
 export function OAuthTokenFromJSON(json: any): OAuthToken {
     return OAuthTokenFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OAuthToken}
+ */
 export function OAuthTokenFromJSONTyped(json: any, ignoreDiscriminator: boolean): OAuthToken {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'accessToken': json['access_token'],
         'tokenType': json['token_type'],
@@ -113,6 +137,14 @@ export function OAuthTokenFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OAuthToken | null)} [value]
+ * @returns {*}
+ */
 export function OAuthTokenToJSON(value?: OAuthToken | null): any {
     if (value === undefined) {
         return undefined;
@@ -121,7 +153,7 @@ export function OAuthTokenToJSON(value?: OAuthToken | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'access_token': value.accessToken,
         'token_type': value.tokenType,

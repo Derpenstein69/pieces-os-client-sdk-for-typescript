@@ -21,19 +21,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface SeededRangeConversationGroundingTemporalAssociation
  */
 export interface SeededRangeConversationGroundingTemporalAssociation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededRangeConversationGroundingTemporalAssociation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof SeededRangeConversationGroundingTemporalAssociation
      */
@@ -49,21 +49,46 @@ export function instanceOfSeededRangeConversationGroundingTemporalAssociation(va
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededRangeConversationGroundingTemporalAssociation}
+ */
 export function SeededRangeConversationGroundingTemporalAssociationFromJSON(json: any): SeededRangeConversationGroundingTemporalAssociation {
     return SeededRangeConversationGroundingTemporalAssociationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededRangeConversationGroundingTemporalAssociation}
+ */
 export function SeededRangeConversationGroundingTemporalAssociationFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededRangeConversationGroundingTemporalAssociation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'workstream': !exists(json, 'workstream') ? undefined : json['workstream'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededRangeConversationGroundingTemporalAssociation | null)} [value]
+ * @returns {*}
+ */
 export function SeededRangeConversationGroundingTemporalAssociationToJSON(value?: SeededRangeConversationGroundingTemporalAssociation | null): any {
     if (value === undefined) {
         return undefined;
@@ -72,7 +97,7 @@ export function SeededRangeConversationGroundingTemporalAssociationToJSON(value?
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'workstream': value.workstream,
     };

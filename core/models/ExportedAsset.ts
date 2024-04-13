@@ -34,7 +34,7 @@ import {
 export interface ExportedAsset {
     /**
      * this is the title of the asset
-     * 
+     *
      * @type {string}
      * @memberof ExportedAsset
      */
@@ -46,13 +46,13 @@ export interface ExportedAsset {
      */
     description: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof ExportedAsset
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {FileFormat}
      * @memberof ExportedAsset
      */
@@ -72,16 +72,33 @@ export function instanceOfExportedAsset(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExportedAsset}
+ */
 export function ExportedAssetFromJSON(json: any): ExportedAsset {
     return ExportedAssetFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExportedAsset}
+ */
 export function ExportedAssetFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExportedAsset {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'name': json['name'],
         'description': json['description'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -89,6 +106,14 @@ export function ExportedAssetFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExportedAsset | null)} [value]
+ * @returns {*}
+ */
 export function ExportedAssetToJSON(value?: ExportedAsset | null): any {
     if (value === undefined) {
         return undefined;
@@ -97,7 +122,7 @@ export function ExportedAssetToJSON(value?: ExportedAsset | null): any {
         return null;
     }
     return {
-        
+
         'name': value.name,
         'description': value.description,
         'created': GroupedTimestampToJSON(value.created),

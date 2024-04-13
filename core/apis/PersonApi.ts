@@ -25,33 +25,133 @@ import {
     SeededScoreIncrementToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface PersonAssociateWorkstreamSummaryRequest
+ * @typedef {PersonAssociateWorkstreamSummaryRequest}
+ */
 export interface PersonAssociateWorkstreamSummaryRequest {
-    person: string;
-    workstreamSummary: string;
-}
-
-export interface PersonDisassociateWorkstreamSummaryRequest {
-    person: string;
-    workstreamSummary: string;
-}
-
-export interface PersonScoresIncrementRequest {
-    person: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface PersonSnapshotRequest {
-    person: string;
-    transferables?: boolean;
-}
-
-export interface UpdatePersonRequest {
-    transferables?: boolean;
-    person?: Person;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+person: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface PersonDisassociateWorkstreamSummaryRequest
+ * @typedef {PersonDisassociateWorkstreamSummaryRequest}
+ */
+export interface PersonDisassociateWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+person: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface PersonScoresIncrementRequest
+ * @typedef {PersonScoresIncrementRequest}
+ */
+export interface PersonScoresIncrementRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+person: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface PersonSnapshotRequest
+ * @typedef {PersonSnapshotRequest}
+ */
+export interface PersonSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+person: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface UpdatePersonRequest
+ * @typedef {UpdatePersonRequest}
+ */
+export interface UpdatePersonRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?Person}
+ */
+person?: Person;
+}
+
+/**
+ *
  */
 export class PersonApi extends runtime.BaseAPI {
 

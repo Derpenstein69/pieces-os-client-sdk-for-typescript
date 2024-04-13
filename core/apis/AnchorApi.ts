@@ -25,38 +25,158 @@ import {
     SeededScoreIncrementToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorAssociateWorkstreamSummaryRequest
+ * @typedef {AnchorAssociateWorkstreamSummaryRequest}
+ */
 export interface AnchorAssociateWorkstreamSummaryRequest {
-    anchor: string;
-    workstreamSummary: string;
-}
-
-export interface AnchorDisassociateWorkstreamSummaryRequest {
-    anchor: string;
-    workstreamSummary: string;
-}
-
-export interface AnchorRenameRequest {
-    anchor: string;
-    transferables?: boolean;
-}
-
-export interface AnchorScoresIncrementRequest {
-    anchor: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface AnchorSpecificAnchorSnapshotRequest {
-    anchor: string;
-    transferables?: boolean;
-}
-
-export interface AnchorUpdateRequest {
-    transferables?: boolean;
-    anchor?: Anchor;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+anchor: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorDisassociateWorkstreamSummaryRequest
+ * @typedef {AnchorDisassociateWorkstreamSummaryRequest}
+ */
+export interface AnchorDisassociateWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+anchor: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorRenameRequest
+ * @typedef {AnchorRenameRequest}
+ */
+export interface AnchorRenameRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+anchor: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorScoresIncrementRequest
+ * @typedef {AnchorScoresIncrementRequest}
+ */
+export interface AnchorScoresIncrementRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+anchor: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorSpecificAnchorSnapshotRequest
+ * @typedef {AnchorSpecificAnchorSnapshotRequest}
+ */
+export interface AnchorSpecificAnchorSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+anchor: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface AnchorUpdateRequest
+ * @typedef {AnchorUpdateRequest}
+ */
+export interface AnchorUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?Anchor}
+ */
+anchor?: Anchor;
+}
+
+/**
+ *
  */
 export class AnchorApi extends runtime.BaseAPI {
 

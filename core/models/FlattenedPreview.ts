@@ -27,7 +27,7 @@ import {
  */
 export interface FlattenedPreview {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedPreview
      */
@@ -56,22 +56,47 @@ export function instanceOfFlattenedPreview(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedPreview}
+ */
 export function FlattenedPreviewFromJSON(json: any): FlattenedPreview {
     return FlattenedPreviewFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedPreview}
+ */
 export function FlattenedPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedPreview {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'base': json['base'],
         'overlay': !exists(json, 'overlay') ? undefined : json['overlay'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedPreview | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedPreviewToJSON(value?: FlattenedPreview | null): any {
     if (value === undefined) {
         return undefined;
@@ -80,7 +105,7 @@ export function FlattenedPreviewToJSON(value?: FlattenedPreview | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'base': value.base,
         'overlay': value.overlay,

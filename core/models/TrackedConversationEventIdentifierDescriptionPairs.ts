@@ -27,7 +27,7 @@ import {
  */
 export interface TrackedConversationEventIdentifierDescriptionPairs {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedConversationEventIdentifierDescriptionPairs
      */
@@ -83,6 +83,13 @@ export interface TrackedConversationEventIdentifierDescriptionPairs {
 export const TrackedConversationEventIdentifierDescriptionPairsConversationCreatedEnum = {
     AConversationWasCreated: 'a_conversation_was_created'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedConversationEventIdentifierDescriptionPairsConversationCreatedEnum}
+ */
 export type TrackedConversationEventIdentifierDescriptionPairsConversationCreatedEnum = typeof TrackedConversationEventIdentifierDescriptionPairsConversationCreatedEnum[keyof typeof TrackedConversationEventIdentifierDescriptionPairsConversationCreatedEnum];
 
 /**
@@ -91,6 +98,13 @@ export type TrackedConversationEventIdentifierDescriptionPairsConversationCreate
 export const TrackedConversationEventIdentifierDescriptionPairsConversationReferencedEnum = {
     AConversationWasReferencedByTheUser: 'a_conversation_was_referenced_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedConversationEventIdentifierDescriptionPairsConversationReferencedEnum}
+ */
 export type TrackedConversationEventIdentifierDescriptionPairsConversationReferencedEnum = typeof TrackedConversationEventIdentifierDescriptionPairsConversationReferencedEnum[keyof typeof TrackedConversationEventIdentifierDescriptionPairsConversationReferencedEnum];
 
 /**
@@ -99,6 +113,13 @@ export type TrackedConversationEventIdentifierDescriptionPairsConversationRefere
 export const TrackedConversationEventIdentifierDescriptionPairsConversationDeletedEnum = {
     AConversationWasDeleted: 'a_conversation_was_deleted'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedConversationEventIdentifierDescriptionPairsConversationDeletedEnum}
+ */
 export type TrackedConversationEventIdentifierDescriptionPairsConversationDeletedEnum = typeof TrackedConversationEventIdentifierDescriptionPairsConversationDeletedEnum[keyof typeof TrackedConversationEventIdentifierDescriptionPairsConversationDeletedEnum];
 
 /**
@@ -107,6 +128,13 @@ export type TrackedConversationEventIdentifierDescriptionPairsConversationDelete
 export const TrackedConversationEventIdentifierDescriptionPairsConversationSummaryAnnotationGeneratedByTheUserEnum = {
     AConversationSummaryAnnotationWasGeneratedByTheUser: 'a_conversation_summary_annotation_was_generated_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedConversationEventIdentifierDescriptionPairsConversationSummaryAnnotationGeneratedByTheUserEnum}
+ */
 export type TrackedConversationEventIdentifierDescriptionPairsConversationSummaryAnnotationGeneratedByTheUserEnum = typeof TrackedConversationEventIdentifierDescriptionPairsConversationSummaryAnnotationGeneratedByTheUserEnum[keyof typeof TrackedConversationEventIdentifierDescriptionPairsConversationSummaryAnnotationGeneratedByTheUserEnum];
 
 /**
@@ -115,6 +143,13 @@ export type TrackedConversationEventIdentifierDescriptionPairsConversationSummar
 export const TrackedConversationEventIdentifierDescriptionPairsConversationNameUpdatedByTheSystemEnum = {
     AConversationWasRenamedByTheSystem: 'a_conversation_was_renamed_by_the_system'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedConversationEventIdentifierDescriptionPairsConversationNameUpdatedByTheSystemEnum}
+ */
 export type TrackedConversationEventIdentifierDescriptionPairsConversationNameUpdatedByTheSystemEnum = typeof TrackedConversationEventIdentifierDescriptionPairsConversationNameUpdatedByTheSystemEnum[keyof typeof TrackedConversationEventIdentifierDescriptionPairsConversationNameUpdatedByTheSystemEnum];
 
 /**
@@ -123,6 +158,13 @@ export type TrackedConversationEventIdentifierDescriptionPairsConversationNameUp
 export const TrackedConversationEventIdentifierDescriptionPairsConversationNameUpdatedByTheUserEnum = {
     AConversationWasRenamedByTheUser: 'a_conversation_was_renamed_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedConversationEventIdentifierDescriptionPairsConversationNameUpdatedByTheUserEnum}
+ */
 export type TrackedConversationEventIdentifierDescriptionPairsConversationNameUpdatedByTheUserEnum = typeof TrackedConversationEventIdentifierDescriptionPairsConversationNameUpdatedByTheUserEnum[keyof typeof TrackedConversationEventIdentifierDescriptionPairsConversationNameUpdatedByTheUserEnum];
 
 /**
@@ -131,6 +173,13 @@ export type TrackedConversationEventIdentifierDescriptionPairsConversationNameUp
 export const TrackedConversationEventIdentifierDescriptionPairsConversationSummaryAnnotationGeneratedByTheSystemEnum = {
     AConversationSummaryAnnotationWasGeneratedByTheSystem: 'a_conversation_summary_annotation_was_generated_by_the_system'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedConversationEventIdentifierDescriptionPairsConversationSummaryAnnotationGeneratedByTheSystemEnum}
+ */
 export type TrackedConversationEventIdentifierDescriptionPairsConversationSummaryAnnotationGeneratedByTheSystemEnum = typeof TrackedConversationEventIdentifierDescriptionPairsConversationSummaryAnnotationGeneratedByTheSystemEnum[keyof typeof TrackedConversationEventIdentifierDescriptionPairsConversationSummaryAnnotationGeneratedByTheSystemEnum];
 
 
@@ -143,16 +192,33 @@ export function instanceOfTrackedConversationEventIdentifierDescriptionPairs(val
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedConversationEventIdentifierDescriptionPairs}
+ */
 export function TrackedConversationEventIdentifierDescriptionPairsFromJSON(json: any): TrackedConversationEventIdentifierDescriptionPairs {
     return TrackedConversationEventIdentifierDescriptionPairsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedConversationEventIdentifierDescriptionPairs}
+ */
 export function TrackedConversationEventIdentifierDescriptionPairsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedConversationEventIdentifierDescriptionPairs {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'conversationCreated': !exists(json, 'conversation_created') ? undefined : json['conversation_created'],
         'conversationReferenced': !exists(json, 'conversation_referenced') ? undefined : json['conversation_referenced'],
@@ -164,6 +230,14 @@ export function TrackedConversationEventIdentifierDescriptionPairsFromJSONTyped(
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedConversationEventIdentifierDescriptionPairs | null)} [value]
+ * @returns {*}
+ */
 export function TrackedConversationEventIdentifierDescriptionPairsToJSON(value?: TrackedConversationEventIdentifierDescriptionPairs | null): any {
     if (value === undefined) {
         return undefined;
@@ -172,7 +246,7 @@ export function TrackedConversationEventIdentifierDescriptionPairsToJSON(value?:
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'conversation_created': value.conversationCreated,
         'conversation_referenced': value.conversationReferenced,

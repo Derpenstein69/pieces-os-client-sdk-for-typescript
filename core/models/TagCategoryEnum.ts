@@ -22,17 +22,49 @@ export const TagCategoryEnum = {
     Email: 'EMAIL',
     Unknown: 'UNKNOWN'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @typedef {TagCategoryEnum}
+ */
 export type TagCategoryEnum = typeof TagCategoryEnum[keyof typeof TagCategoryEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TagCategoryEnum}
+ */
 export function TagCategoryEnumFromJSON(json: any): TagCategoryEnum {
     return TagCategoryEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TagCategoryEnum}
+ */
 export function TagCategoryEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): TagCategoryEnum {
     return json as TagCategoryEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TagCategoryEnum | null)} [value]
+ * @returns {*}
+ */
 export function TagCategoryEnumToJSON(value?: TagCategoryEnum | null): any {
     return value as any;
 }

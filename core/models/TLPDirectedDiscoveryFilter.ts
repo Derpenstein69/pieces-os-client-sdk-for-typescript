@@ -27,7 +27,7 @@ import {
  */
 export interface TLPDirectedDiscoveryFilter {
     /**
-     * 
+     *
      * @type {TLPDirectedDiscoveryFilterEnum}
      * @memberof TLPDirectedDiscoveryFilter
      */
@@ -44,20 +44,45 @@ export function instanceOfTLPDirectedDiscoveryFilter(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPDirectedDiscoveryFilter}
+ */
 export function TLPDirectedDiscoveryFilterFromJSON(json: any): TLPDirectedDiscoveryFilter {
     return TLPDirectedDiscoveryFilterFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPDirectedDiscoveryFilter}
+ */
 export function TLPDirectedDiscoveryFilterFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPDirectedDiscoveryFilter {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'name': TLPDirectedDiscoveryFilterEnumFromJSON(json['name']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TLPDirectedDiscoveryFilter | null)} [value]
+ * @returns {*}
+ */
 export function TLPDirectedDiscoveryFilterToJSON(value?: TLPDirectedDiscoveryFilter | null): any {
     if (value === undefined) {
         return undefined;
@@ -66,7 +91,7 @@ export function TLPDirectedDiscoveryFilterToJSON(value?: TLPDirectedDiscoveryFil
         return null;
     }
     return {
-        
+
         'name': TLPDirectedDiscoveryFilterEnumToJSON(value.name),
     };
 }

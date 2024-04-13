@@ -27,7 +27,7 @@ import {
  */
 export interface ChallengedPKCE {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ChallengedPKCE
      */
@@ -71,6 +71,13 @@ export interface ChallengedPKCE {
 export const ChallengedPKCEMethodEnum = {
     S256: 'S256'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @typedef {ChallengedPKCEMethodEnum}
+ */
 export type ChallengedPKCEMethodEnum = typeof ChallengedPKCEMethodEnum[keyof typeof ChallengedPKCEMethodEnum];
 
 
@@ -88,16 +95,33 @@ export function instanceOfChallengedPKCE(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ChallengedPKCE}
+ */
 export function ChallengedPKCEFromJSON(json: any): ChallengedPKCE {
     return ChallengedPKCEFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ChallengedPKCE}
+ */
 export function ChallengedPKCEFromJSONTyped(json: any, ignoreDiscriminator: boolean): ChallengedPKCE {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'state': json['state'],
         'nonce': json['nonce'],
@@ -107,6 +131,14 @@ export function ChallengedPKCEFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(ChallengedPKCE | null)} [value]
+ * @returns {*}
+ */
 export function ChallengedPKCEToJSON(value?: ChallengedPKCE | null): any {
     if (value === undefined) {
         return undefined;
@@ -115,7 +147,7 @@ export function ChallengedPKCEToJSON(value?: ChallengedPKCE | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'state': value.state,
         'nonce': value.nonce,

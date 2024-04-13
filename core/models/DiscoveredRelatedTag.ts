@@ -27,19 +27,19 @@ import {
 } from './SeededTag';
 
 /**
- * 
+ *
  * @export
  * @interface DiscoveredRelatedTag
  */
 export interface DiscoveredRelatedTag {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof DiscoveredRelatedTag
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededTag}
      * @memberof DiscoveredRelatedTag
      */
@@ -56,21 +56,46 @@ export function instanceOfDiscoveredRelatedTag(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {DiscoveredRelatedTag}
+ */
 export function DiscoveredRelatedTagFromJSON(json: any): DiscoveredRelatedTag {
     return DiscoveredRelatedTagFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {DiscoveredRelatedTag}
+ */
 export function DiscoveredRelatedTagFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveredRelatedTag {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'seed': SeededTagFromJSON(json['seed']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(DiscoveredRelatedTag | null)} [value]
+ * @returns {*}
+ */
 export function DiscoveredRelatedTagToJSON(value?: DiscoveredRelatedTag | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function DiscoveredRelatedTagToJSON(value?: DiscoveredRelatedTag | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'seed': SeededTagToJSON(value.seed),
     };

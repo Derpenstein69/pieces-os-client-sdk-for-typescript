@@ -31,17 +31,49 @@ export const ExternallySourcedEnum = {
     Slack: 'SLACK',
     Mailgun: 'MAILGUN'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @typedef {ExternallySourcedEnum}
+ */
 export type ExternallySourcedEnum = typeof ExternallySourcedEnum[keyof typeof ExternallySourcedEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExternallySourcedEnum}
+ */
 export function ExternallySourcedEnumFromJSON(json: any): ExternallySourcedEnum {
     return ExternallySourcedEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExternallySourcedEnum}
+ */
 export function ExternallySourcedEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExternallySourcedEnum {
     return json as ExternallySourcedEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExternallySourcedEnum | null)} [value]
+ * @returns {*}
+ */
 export function ExternallySourcedEnumToJSON(value?: ExternallySourcedEnum | null): any {
     return value as any;
 }

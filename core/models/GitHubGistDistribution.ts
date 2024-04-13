@@ -39,13 +39,13 @@ import {
  */
 export interface GitHubGistDistribution {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof GitHubGistDistribution
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Recipients}
      * @memberof GitHubGistDistribution
      */
@@ -69,19 +69,19 @@ export interface GitHubGistDistribution {
      */
     name: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof GitHubGistDistribution
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof GitHubGistDistribution
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof GitHubGistDistribution
      */
@@ -116,16 +116,33 @@ export function instanceOfGitHubGistDistribution(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {GitHubGistDistribution}
+ */
 export function GitHubGistDistributionFromJSON(json: any): GitHubGistDistribution {
     return GitHubGistDistributionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {GitHubGistDistribution}
+ */
 export function GitHubGistDistributionFromJSONTyped(json: any, ignoreDiscriminator: boolean): GitHubGistDistribution {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'recipients': RecipientsFromJSON(json['recipients']),
         '_public': json['public'],
@@ -139,6 +156,14 @@ export function GitHubGistDistributionFromJSONTyped(json: any, ignoreDiscriminat
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(GitHubGistDistribution | null)} [value]
+ * @returns {*}
+ */
 export function GitHubGistDistributionToJSON(value?: GitHubGistDistribution | null): any {
     if (value === undefined) {
         return undefined;
@@ -147,7 +172,7 @@ export function GitHubGistDistributionToJSON(value?: GitHubGistDistribution | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'recipients': RecipientsToJSON(value.recipients),
         'public': value._public,

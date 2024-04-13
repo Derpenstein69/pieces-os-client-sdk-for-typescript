@@ -25,20 +25,62 @@ import {
     WorkstreamPatternEngineStatusToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamPatternEngineProcessorsVisionActivateRequest
+ * @typedef {WorkstreamPatternEngineProcessorsVisionActivateRequest}
+ */
 export interface WorkstreamPatternEngineProcessorsVisionActivateRequest {
-    workstreamPatternEngineStatus?: WorkstreamPatternEngineStatus;
-}
-
-export interface WorkstreamPatternEngineProcessorsVisionDataClearRequest {
-    workstreamPatternEngineDataCleanupRequest?: WorkstreamPatternEngineDataCleanupRequest;
-}
-
-export interface WorkstreamPatternEngineProcessorsVisionDeactivateRequest {
-    workstreamPatternEngineStatus?: WorkstreamPatternEngineStatus;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?WorkstreamPatternEngineStatus}
+ */
+workstreamPatternEngineStatus?: WorkstreamPatternEngineStatus;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamPatternEngineProcessorsVisionDataClearRequest
+ * @typedef {WorkstreamPatternEngineProcessorsVisionDataClearRequest}
+ */
+export interface WorkstreamPatternEngineProcessorsVisionDataClearRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?WorkstreamPatternEngineDataCleanupRequest}
+ */
+workstreamPatternEngineDataCleanupRequest?: WorkstreamPatternEngineDataCleanupRequest;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamPatternEngineProcessorsVisionDeactivateRequest
+ * @typedef {WorkstreamPatternEngineProcessorsVisionDeactivateRequest}
+ */
+export interface WorkstreamPatternEngineProcessorsVisionDeactivateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?WorkstreamPatternEngineStatus}
+ */
+workstreamPatternEngineStatus?: WorkstreamPatternEngineStatus;
+}
+
+/**
+ *
  */
 export class WorkstreamPatternEngineApi extends runtime.BaseAPI {
 

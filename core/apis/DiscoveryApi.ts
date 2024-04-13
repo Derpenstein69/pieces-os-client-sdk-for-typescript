@@ -43,28 +43,108 @@ import {
     SeededDiscoverableSensitivesToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface DiscoveryDiscoverAssetsRequest
+ * @typedef {DiscoveryDiscoverAssetsRequest}
+ */
 export interface DiscoveryDiscoverAssetsRequest {
-    automatic?: boolean;
-    seededDiscoverableAssets?: SeededDiscoverableAssets;
-}
-
-export interface DiscoveryDiscoverAssetsHtmlRequest {
-    automatic?: boolean;
-    seededDiscoverableHtmlWebpages?: SeededDiscoverableHtmlWebpages;
-}
-
-export interface DiscoveryDiscoverSensitivesRequest {
-    automatic?: boolean;
-    seededDiscoverableSensitives?: SeededDiscoverableSensitives;
-}
-
-export interface DiscoveryDiscoverTagsRelatedRequest {
-    automatic?: boolean;
-    seededDiscoverableRelatedTags?: SeededDiscoverableRelatedTags;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+automatic?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededDiscoverableAssets}
+ */
+seededDiscoverableAssets?: SeededDiscoverableAssets;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface DiscoveryDiscoverAssetsHtmlRequest
+ * @typedef {DiscoveryDiscoverAssetsHtmlRequest}
+ */
+export interface DiscoveryDiscoverAssetsHtmlRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+automatic?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededDiscoverableHtmlWebpages}
+ */
+seededDiscoverableHtmlWebpages?: SeededDiscoverableHtmlWebpages;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface DiscoveryDiscoverSensitivesRequest
+ * @typedef {DiscoveryDiscoverSensitivesRequest}
+ */
+export interface DiscoveryDiscoverSensitivesRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+automatic?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededDiscoverableSensitives}
+ */
+seededDiscoverableSensitives?: SeededDiscoverableSensitives;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface DiscoveryDiscoverTagsRelatedRequest
+ * @typedef {DiscoveryDiscoverTagsRelatedRequest}
+ */
+export interface DiscoveryDiscoverTagsRelatedRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+automatic?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededDiscoverableRelatedTags}
+ */
+seededDiscoverableRelatedTags?: SeededDiscoverableRelatedTags;
+}
+
+/**
+ *
  */
 export class DiscoveryApi extends runtime.BaseAPI {
 

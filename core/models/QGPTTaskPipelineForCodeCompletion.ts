@@ -22,24 +22,24 @@ import {
 
 /**
  * This task is for code_completion ie auto-complete.
- * 
+ *
  * This is a class so that we can add optional properties in the future.
- * 
+ *
  * context: This is additional snippet context within the file that will be useful for the autocompletion.(PLEASE ONLY pass in Seed.asset.format.fragment.string.raw for the context snippet values, and for the classificaiton pass in Seed.asset.format.classification)
- * 
+ *
  * Note: the snippet && language that needs to be Actually AutoCompleted should be within the QGPTQuestionInput.relevant.
  * @export
  * @interface QGPTTaskPipelineForCodeCompletion
  */
 export interface QGPTTaskPipelineForCodeCompletion {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTTaskPipelineForCodeCompletion
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof QGPTTaskPipelineForCodeCompletion
      */
@@ -55,21 +55,46 @@ export function instanceOfQGPTTaskPipelineForCodeCompletion(value: object): bool
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTTaskPipelineForCodeCompletion}
+ */
 export function QGPTTaskPipelineForCodeCompletionFromJSON(json: any): QGPTTaskPipelineForCodeCompletion {
     return QGPTTaskPipelineForCodeCompletionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTTaskPipelineForCodeCompletion}
+ */
 export function QGPTTaskPipelineForCodeCompletionFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTTaskPipelineForCodeCompletion {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'context': !exists(json, 'context') ? undefined : json['context'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTTaskPipelineForCodeCompletion | null)} [value]
+ * @returns {*}
+ */
 export function QGPTTaskPipelineForCodeCompletionToJSON(value?: QGPTTaskPipelineForCodeCompletion | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function QGPTTaskPipelineForCodeCompletionToJSON(value?: QGPTTaskPipeline
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'context': value.context,
     };

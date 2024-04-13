@@ -33,19 +33,19 @@ import {
  */
 export interface ReferencedConversation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedConversation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedConversation
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedConversation}
      * @memberof ReferencedConversation
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedConversation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedConversation}
+ */
 export function ReferencedConversationFromJSON(json: any): ReferencedConversation {
     return ReferencedConversationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedConversation}
+ */
 export function ReferencedConversationFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedConversation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedConversationFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedConversation | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedConversationToJSON(value?: ReferencedConversation | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedConversationToJSON(value?: ReferencedConversation | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedConversationToJSON(value.reference),

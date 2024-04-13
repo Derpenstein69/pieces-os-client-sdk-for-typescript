@@ -26,17 +26,49 @@ export const ClassificationGenericEnum = {
     Unknown: 'UNKNOWN',
     File: 'FILE'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @typedef {ClassificationGenericEnum}
+ */
 export type ClassificationGenericEnum = typeof ClassificationGenericEnum[keyof typeof ClassificationGenericEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ClassificationGenericEnum}
+ */
 export function ClassificationGenericEnumFromJSON(json: any): ClassificationGenericEnum {
     return ClassificationGenericEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ClassificationGenericEnum}
+ */
 export function ClassificationGenericEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ClassificationGenericEnum {
     return json as ClassificationGenericEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(ClassificationGenericEnum | null)} [value]
+ * @returns {*}
+ */
 export function ClassificationGenericEnumToJSON(value?: ClassificationGenericEnum | null): any {
     return value as any;
 }

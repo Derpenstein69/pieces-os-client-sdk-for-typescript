@@ -28,20 +28,20 @@ import {
 
 /**
  * This is the output/returned value from the /qgpt/question endpoint. && /qgpt/followup
- * 
+ *
  * This will just have a single required property. the possible answers to the question, with a score.
  * @export
  * @interface QGPTQuestionOutput
  */
 export interface QGPTQuestionOutput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTQuestionOutput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {QGPTQuestionAnswers}
      * @memberof QGPTQuestionOutput
      */
@@ -58,21 +58,46 @@ export function instanceOfQGPTQuestionOutput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTQuestionOutput}
+ */
 export function QGPTQuestionOutputFromJSON(json: any): QGPTQuestionOutput {
     return QGPTQuestionOutputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTQuestionOutput}
+ */
 export function QGPTQuestionOutputFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTQuestionOutput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'answers': QGPTQuestionAnswersFromJSON(json['answers']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTQuestionOutput | null)} [value]
+ * @returns {*}
+ */
 export function QGPTQuestionOutputToJSON(value?: QGPTQuestionOutput | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function QGPTQuestionOutputToJSON(value?: QGPTQuestionOutput | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'answers': QGPTQuestionAnswersToJSON(value.answers),
     };

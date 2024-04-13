@@ -27,25 +27,25 @@ import {
  */
 export interface SystemExecutionInformation {
     /**
-     * 
+     *
      * @type {number}
      * @memberof SystemExecutionInformation
      */
     memory: number;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SystemExecutionInformation
      */
     os: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SystemExecutionInformation
      */
     kernel: string;
     /**
-     * 
+     *
      * @type {SystemExecutionCpuInformation}
      * @memberof SystemExecutionInformation
      */
@@ -65,16 +65,33 @@ export function instanceOfSystemExecutionInformation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SystemExecutionInformation}
+ */
 export function SystemExecutionInformationFromJSON(json: any): SystemExecutionInformation {
     return SystemExecutionInformationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SystemExecutionInformation}
+ */
 export function SystemExecutionInformationFromJSONTyped(json: any, ignoreDiscriminator: boolean): SystemExecutionInformation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'memory': json['memory'],
         'os': json['os'],
         'kernel': json['kernel'],
@@ -82,6 +99,14 @@ export function SystemExecutionInformationFromJSONTyped(json: any, ignoreDiscrim
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(SystemExecutionInformation | null)} [value]
+ * @returns {*}
+ */
 export function SystemExecutionInformationToJSON(value?: SystemExecutionInformation | null): any {
     if (value === undefined) {
         return undefined;
@@ -90,7 +115,7 @@ export function SystemExecutionInformationToJSON(value?: SystemExecutionInformat
         return null;
     }
     return {
-        
+
         'memory': value.memory,
         'os': value.os,
         'kernel': value.kernel,

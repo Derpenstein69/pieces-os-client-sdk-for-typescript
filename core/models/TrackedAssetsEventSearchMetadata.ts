@@ -33,7 +33,7 @@ import {
  */
 export interface TrackedAssetsEventSearchMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedAssetsEventSearchMetadata
      */
@@ -45,7 +45,7 @@ export interface TrackedAssetsEventSearchMetadata {
      */
     query?: string;
     /**
-     * 
+     *
      * @type {TrackedAssetsEventSearchMetadataResults}
      * @memberof TrackedAssetsEventSearchMetadata
      */
@@ -61,22 +61,47 @@ export function instanceOfTrackedAssetsEventSearchMetadata(value: object): boole
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedAssetsEventSearchMetadata}
+ */
 export function TrackedAssetsEventSearchMetadataFromJSON(json: any): TrackedAssetsEventSearchMetadata {
     return TrackedAssetsEventSearchMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedAssetsEventSearchMetadata}
+ */
 export function TrackedAssetsEventSearchMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedAssetsEventSearchMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'query': !exists(json, 'query') ? undefined : json['query'],
         'results': !exists(json, 'results') ? undefined : TrackedAssetsEventSearchMetadataResultsFromJSON(json['results']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedAssetsEventSearchMetadata | null)} [value]
+ * @returns {*}
+ */
 export function TrackedAssetsEventSearchMetadataToJSON(value?: TrackedAssetsEventSearchMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -85,7 +110,7 @@ export function TrackedAssetsEventSearchMetadataToJSON(value?: TrackedAssetsEven
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'query': value.query,
         'results': TrackedAssetsEventSearchMetadataResultsToJSON(value.results),

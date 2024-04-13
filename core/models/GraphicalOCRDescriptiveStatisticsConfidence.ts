@@ -14,13 +14,13 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface GraphicalOCRDescriptiveStatisticsConfidence
  */
 export interface GraphicalOCRDescriptiveStatisticsConfidence {
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalOCRDescriptiveStatisticsConfidence
      */
@@ -37,20 +37,45 @@ export function instanceOfGraphicalOCRDescriptiveStatisticsConfidence(value: obj
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {GraphicalOCRDescriptiveStatisticsConfidence}
+ */
 export function GraphicalOCRDescriptiveStatisticsConfidenceFromJSON(json: any): GraphicalOCRDescriptiveStatisticsConfidence {
     return GraphicalOCRDescriptiveStatisticsConfidenceFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {GraphicalOCRDescriptiveStatisticsConfidence}
+ */
 export function GraphicalOCRDescriptiveStatisticsConfidenceFromJSONTyped(json: any, ignoreDiscriminator: boolean): GraphicalOCRDescriptiveStatisticsConfidence {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'mean': json['mean'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(GraphicalOCRDescriptiveStatisticsConfidence | null)} [value]
+ * @returns {*}
+ */
 export function GraphicalOCRDescriptiveStatisticsConfidenceToJSON(value?: GraphicalOCRDescriptiveStatisticsConfidence | null): any {
     if (value === undefined) {
         return undefined;
@@ -59,7 +84,7 @@ export function GraphicalOCRDescriptiveStatisticsConfidenceToJSON(value?: Graphi
         return null;
     }
     return {
-        
+
         'mean': value.mean,
     };
 }

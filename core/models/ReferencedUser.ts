@@ -27,25 +27,25 @@ import {
 } from './FlattenedUserProfile';
 
 /**
- * A object to reference a user's ID and optionally a FlattenedUserProfile Instance 
+ * A object to reference a user's ID and optionally a FlattenedUserProfile Instance
  * @export
  * @interface ReferencedUser
  */
 export interface ReferencedUser {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedUser
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedUser
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedUserProfile}
      * @memberof ReferencedUser
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedUser(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedUser}
+ */
 export function ReferencedUserFromJSON(json: any): ReferencedUser {
     return ReferencedUserFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedUser}
+ */
 export function ReferencedUserFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedUser {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedUserProfileFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(ReferencedUser | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedUserToJSON(value?: ReferencedUser | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedUserToJSON(value?: ReferencedUser | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedUserProfileToJSON(value.reference),

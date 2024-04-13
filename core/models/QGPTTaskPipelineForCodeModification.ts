@@ -22,16 +22,16 @@ import {
 
 /**
  * This task is for modifying a bit of code, IE modify this code to do xyz.
- * 
+ *
  * This is a class so that we can add optional properties in the future.
- * 
+ *
  * Note: the snippet && language that needs to be modified should be within the QGPTQuestionInput.relevant
  * @export
  * @interface QGPTTaskPipelineForCodeModification
  */
 export interface QGPTTaskPipelineForCodeModification {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTTaskPipelineForCodeModification
      */
@@ -53,21 +53,46 @@ export function instanceOfQGPTTaskPipelineForCodeModification(value: object): bo
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTTaskPipelineForCodeModification}
+ */
 export function QGPTTaskPipelineForCodeModificationFromJSON(json: any): QGPTTaskPipelineForCodeModification {
     return QGPTTaskPipelineForCodeModificationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTTaskPipelineForCodeModification}
+ */
 export function QGPTTaskPipelineForCodeModificationFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTTaskPipelineForCodeModification {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'instruction': !exists(json, 'instruction') ? undefined : json['instruction'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTTaskPipelineForCodeModification | null)} [value]
+ * @returns {*}
+ */
 export function QGPTTaskPipelineForCodeModificationToJSON(value?: QGPTTaskPipelineForCodeModification | null): any {
     if (value === undefined) {
         return undefined;
@@ -76,7 +101,7 @@ export function QGPTTaskPipelineForCodeModificationToJSON(value?: QGPTTaskPipeli
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'instruction': value.instruction,
     };

@@ -27,19 +27,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface CodeAnalyses
  */
 export interface CodeAnalyses {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof CodeAnalyses
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<CodeAnalysis>}
      * @memberof CodeAnalyses
      */
@@ -56,21 +56,46 @@ export function instanceOfCodeAnalyses(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {CodeAnalyses}
+ */
 export function CodeAnalysesFromJSON(json: any): CodeAnalyses {
     return CodeAnalysesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {CodeAnalyses}
+ */
 export function CodeAnalysesFromJSONTyped(json: any, ignoreDiscriminator: boolean): CodeAnalyses {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(CodeAnalysisFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(CodeAnalyses | null)} [value]
+ * @returns {*}
+ */
 export function CodeAnalysesToJSON(value?: CodeAnalyses | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function CodeAnalysesToJSON(value?: CodeAnalyses | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(CodeAnalysisToJSON)),
     };

@@ -27,25 +27,25 @@ import {
 } from './FlattenedOCRAnalysis';
 
 /**
- * 
+ *
  * @export
  * @interface FlattenedImageAnalysis
  */
 export interface FlattenedImageAnalysis {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedImageAnalysis
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedImageAnalysis
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedOCRAnalysis}
      * @memberof FlattenedImageAnalysis
      */
@@ -69,16 +69,33 @@ export function instanceOfFlattenedImageAnalysis(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedImageAnalysis}
+ */
 export function FlattenedImageAnalysisFromJSON(json: any): FlattenedImageAnalysis {
     return FlattenedImageAnalysisFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedImageAnalysis}
+ */
 export function FlattenedImageAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedImageAnalysis {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'ocr': !exists(json, 'ocr') ? undefined : FlattenedOCRAnalysisFromJSON(json['ocr']),
@@ -86,6 +103,14 @@ export function FlattenedImageAnalysisFromJSONTyped(json: any, ignoreDiscriminat
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedImageAnalysis | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedImageAnalysisToJSON(value?: FlattenedImageAnalysis | null): any {
     if (value === undefined) {
         return undefined;
@@ -94,7 +119,7 @@ export function FlattenedImageAnalysisToJSON(value?: FlattenedImageAnalysis | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'ocr': FlattenedOCRAnalysisToJSON(value.ocr),

@@ -28,16 +28,16 @@ import {
 
 /**
  * This is the minimum information required to create a website for a specific asset.
- * 
+ *
  * you can optionally add an asset, or person id to attach this website directly to it
- * 
+ *
  * TODO consider updating these asset,format to referenced Models
  * @export
  * @interface SeededWebsite
  */
 export interface SeededWebsite {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededWebsite
      */
@@ -67,7 +67,7 @@ export interface SeededWebsite {
      */
     name: string;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededWebsite
      */
@@ -91,16 +91,33 @@ export function instanceOfSeededWebsite(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededWebsite}
+ */
 export function SeededWebsiteFromJSON(json: any): SeededWebsite {
     return SeededWebsiteFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededWebsite}
+ */
 export function SeededWebsiteFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededWebsite {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': !exists(json, 'asset') ? undefined : json['asset'],
         'conversation': !exists(json, 'conversation') ? undefined : json['conversation'],
@@ -111,6 +128,14 @@ export function SeededWebsiteFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededWebsite | null)} [value]
+ * @returns {*}
+ */
 export function SeededWebsiteToJSON(value?: SeededWebsite | null): any {
     if (value === undefined) {
         return undefined;
@@ -119,7 +144,7 @@ export function SeededWebsiteToJSON(value?: SeededWebsite | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': value.asset,
         'conversation': value.conversation,

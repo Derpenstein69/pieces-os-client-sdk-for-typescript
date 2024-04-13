@@ -39,13 +39,13 @@ import {
  */
 export interface BackupStreamedProgress {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof BackupStreamedProgress
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ModelDownloadProgressStatusEnum}
      * @memberof BackupStreamedProgress
      */
@@ -57,7 +57,7 @@ export interface BackupStreamedProgress {
      */
     percentage?: number | null;
     /**
-     * 
+     *
      * @type {Backup}
      * @memberof BackupStreamedProgress
      */
@@ -73,16 +73,33 @@ export function instanceOfBackupStreamedProgress(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {BackupStreamedProgress}
+ */
 export function BackupStreamedProgressFromJSON(json: any): BackupStreamedProgress {
     return BackupStreamedProgressFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {BackupStreamedProgress}
+ */
 export function BackupStreamedProgressFromJSONTyped(json: any, ignoreDiscriminator: boolean): BackupStreamedProgress {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'status': !exists(json, 'status') ? undefined : ModelDownloadProgressStatusEnumFromJSON(json['status']),
         'percentage': !exists(json, 'percentage') ? undefined : json['percentage'],
@@ -90,6 +107,14 @@ export function BackupStreamedProgressFromJSONTyped(json: any, ignoreDiscriminat
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(BackupStreamedProgress | null)} [value]
+ * @returns {*}
+ */
 export function BackupStreamedProgressToJSON(value?: BackupStreamedProgress | null): any {
     if (value === undefined) {
         return undefined;
@@ -98,7 +123,7 @@ export function BackupStreamedProgressToJSON(value?: BackupStreamedProgress | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'status': ModelDownloadProgressStatusEnumToJSON(value.status),
         'percentage': value.percentage,

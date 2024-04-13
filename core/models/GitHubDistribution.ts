@@ -27,19 +27,19 @@ import {
 } from './GitHubGistDistribution';
 
 /**
- * 
+ *
  * @export
  * @interface GitHubDistribution
  */
 export interface GitHubDistribution {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof GitHubDistribution
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {GitHubGistDistribution}
      * @memberof GitHubDistribution
      */
@@ -55,21 +55,46 @@ export function instanceOfGitHubDistribution(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {GitHubDistribution}
+ */
 export function GitHubDistributionFromJSON(json: any): GitHubDistribution {
     return GitHubDistributionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {GitHubDistribution}
+ */
 export function GitHubDistributionFromJSONTyped(json: any, ignoreDiscriminator: boolean): GitHubDistribution {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'gist': !exists(json, 'gist') ? undefined : GitHubGistDistributionFromJSON(json['gist']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(GitHubDistribution | null)} [value]
+ * @returns {*}
+ */
 export function GitHubDistributionToJSON(value?: GitHubDistribution | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function GitHubDistributionToJSON(value?: GitHubDistribution | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'gist': GitHubGistDistributionToJSON(value.gist),
     };

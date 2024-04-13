@@ -27,19 +27,19 @@ import {
 } from './ExternalProvider';
 
 /**
- * 
+ *
  * @export
  * @interface ExternalProviders
  */
 export interface ExternalProviders {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ExternalProviders
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ExternalProvider>}
      * @memberof ExternalProviders
      */
@@ -56,21 +56,46 @@ export function instanceOfExternalProviders(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExternalProviders}
+ */
 export function ExternalProvidersFromJSON(json: any): ExternalProviders {
     return ExternalProvidersFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExternalProviders}
+ */
 export function ExternalProvidersFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExternalProviders {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ExternalProviderFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExternalProviders | null)} [value]
+ * @returns {*}
+ */
 export function ExternalProvidersToJSON(value?: ExternalProviders | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function ExternalProvidersToJSON(value?: ExternalProviders | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ExternalProviderToJSON)),
     };

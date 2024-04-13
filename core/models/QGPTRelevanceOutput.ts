@@ -34,11 +34,11 @@ import {
 
 /**
  * This is the returned value from /code_gpt/relevance.
- * 
+ *
  * This will return the snippets that we found are relevant to the query you provided.
- * 
+ *
  * (optional) answer: in the case you provided question: true, then we will also return to you the answer to your question.
- * 
+ *
  * Note:
  * - relevant: this is required property and will represent the relevant snippets, to your specific query.(NOTE: these snippet will all have respective id's and seed defined. even though id and seed are optional)
  * @export
@@ -46,19 +46,19 @@ import {
  */
 export interface QGPTRelevanceOutput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTRelevanceOutput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {QGPTQuestionOutput}
      * @memberof QGPTRelevanceOutput
      */
     answer?: QGPTQuestionOutput;
     /**
-     * 
+     *
      * @type {RelevantQGPTSeeds}
      * @memberof QGPTRelevanceOutput
      */
@@ -75,22 +75,47 @@ export function instanceOfQGPTRelevanceOutput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTRelevanceOutput}
+ */
 export function QGPTRelevanceOutputFromJSON(json: any): QGPTRelevanceOutput {
     return QGPTRelevanceOutputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTRelevanceOutput}
+ */
 export function QGPTRelevanceOutputFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTRelevanceOutput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'answer': !exists(json, 'answer') ? undefined : QGPTQuestionOutputFromJSON(json['answer']),
         'relevant': RelevantQGPTSeedsFromJSON(json['relevant']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTRelevanceOutput | null)} [value]
+ * @returns {*}
+ */
 export function QGPTRelevanceOutputToJSON(value?: QGPTRelevanceOutput | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function QGPTRelevanceOutputToJSON(value?: QGPTRelevanceOutput | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'answer': QGPTQuestionOutputToJSON(value.answer),
         'relevant': RelevantQGPTSeedsToJSON(value.relevant),

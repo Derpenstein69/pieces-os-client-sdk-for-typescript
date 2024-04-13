@@ -22,17 +22,49 @@ export const CapabilitiesEnum = {
     Cloud: 'CLOUD',
     Blended: 'BLENDED'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @typedef {CapabilitiesEnum}
+ */
 export type CapabilitiesEnum = typeof CapabilitiesEnum[keyof typeof CapabilitiesEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {CapabilitiesEnum}
+ */
 export function CapabilitiesEnumFromJSON(json: any): CapabilitiesEnum {
     return CapabilitiesEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {CapabilitiesEnum}
+ */
 export function CapabilitiesEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): CapabilitiesEnum {
     return json as CapabilitiesEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(CapabilitiesEnum | null)} [value]
+ * @returns {*}
+ */
 export function CapabilitiesEnumToJSON(value?: CapabilitiesEnum | null): any {
     return value as any;
 }

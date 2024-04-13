@@ -63,43 +63,43 @@ import {
  */
 export interface PKCE {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof PKCE
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ResultedPKCE}
      * @memberof PKCE
      */
     result?: ResultedPKCE;
     /**
-     * 
+     *
      * @type {ChallengedPKCE}
      * @memberof PKCE
      */
     challenge?: ChallengedPKCE;
     /**
-     * 
+     *
      * @type {RevokedPKCE}
      * @memberof PKCE
      */
     revocation?: RevokedPKCE;
     /**
-     * 
+     *
      * @type {SeededPKCE}
      * @memberof PKCE
      */
     seed?: SeededPKCE;
     /**
-     * 
+     *
      * @type {TokenizedPKCE}
      * @memberof PKCE
      */
     token?: TokenizedPKCE;
     /**
-     * 
+     *
      * @type {Auth0}
      * @memberof PKCE
      */
@@ -115,16 +115,33 @@ export function instanceOfPKCE(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PKCE}
+ */
 export function PKCEFromJSON(json: any): PKCE {
     return PKCEFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PKCE}
+ */
 export function PKCEFromJSONTyped(json: any, ignoreDiscriminator: boolean): PKCE {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'result': !exists(json, 'result') ? undefined : ResultedPKCEFromJSON(json['result']),
         'challenge': !exists(json, 'challenge') ? undefined : ChallengedPKCEFromJSON(json['challenge']),
@@ -135,6 +152,14 @@ export function PKCEFromJSONTyped(json: any, ignoreDiscriminator: boolean): PKCE
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(PKCE | null)} [value]
+ * @returns {*}
+ */
 export function PKCEToJSON(value?: PKCE | null): any {
     if (value === undefined) {
         return undefined;
@@ -143,7 +168,7 @@ export function PKCEToJSON(value?: PKCE | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'result': ResultedPKCEToJSON(value.result),
         'challenge': ChallengedPKCEToJSON(value.challenge),

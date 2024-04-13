@@ -76,68 +76,68 @@ import {
 
 /**
  * This model is designed to be light weight and low friction while most of the heavy lifting will be happening inside of the context servers.
- * 
+ *
  * This Model is important because this has references to our materials, instead of fully referenced materials.(very similar to our SeededTrackedEvent, consider consolidating and converting these to Referenced models instead of ID's)
  * @export
  * @interface SeededConnectorTracking
  */
 export interface SeededConnectorTracking {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededConnectorTracking
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededTrackedFormatEvent}
      * @memberof SeededConnectorTracking
      */
     format?: SeededTrackedFormatEvent;
     /**
-     * 
+     *
      * @type {SeededTrackedAssetEvent}
      * @memberof SeededConnectorTracking
      */
     asset?: SeededTrackedAssetEvent;
     /**
-     * 
+     *
      * @type {SeededTrackedInteractionEvent}
      * @memberof SeededConnectorTracking
      */
     interaction?: SeededTrackedInteractionEvent;
     /**
-     * 
+     *
      * @type {SeededTrackedKeyboardEvent}
      * @memberof SeededConnectorTracking
      */
     keyboard?: SeededTrackedKeyboardEvent;
     /**
-     * 
+     *
      * @type {SeededTrackedSessionEvent}
      * @memberof SeededConnectorTracking
      */
     session?: SeededTrackedSessionEvent;
     /**
-     * 
+     *
      * @type {SeededTrackedAssetsEvent}
      * @memberof SeededConnectorTracking
      */
     assets?: SeededTrackedAssetsEvent;
     /**
-     * 
+     *
      * @type {SeededTrackedMachineLearningEvent}
      * @memberof SeededConnectorTracking
      */
     ml?: SeededTrackedMachineLearningEvent;
     /**
-     * 
+     *
      * @type {SeededTrackedAdoptionEvent}
      * @memberof SeededConnectorTracking
      */
     adoption?: SeededTrackedAdoptionEvent;
     /**
-     * 
+     *
      * @type {SeededTrackedConversationEvent}
      * @memberof SeededConnectorTracking
      */
@@ -153,16 +153,33 @@ export function instanceOfSeededConnectorTracking(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededConnectorTracking}
+ */
 export function SeededConnectorTrackingFromJSON(json: any): SeededConnectorTracking {
     return SeededConnectorTrackingFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededConnectorTracking}
+ */
 export function SeededConnectorTrackingFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededConnectorTracking {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'format': !exists(json, 'format') ? undefined : SeededTrackedFormatEventFromJSON(json['format']),
         'asset': !exists(json, 'asset') ? undefined : SeededTrackedAssetEventFromJSON(json['asset']),
@@ -176,6 +193,14 @@ export function SeededConnectorTrackingFromJSONTyped(json: any, ignoreDiscrimina
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededConnectorTracking | null)} [value]
+ * @returns {*}
+ */
 export function SeededConnectorTrackingToJSON(value?: SeededConnectorTracking | null): any {
     if (value === undefined) {
         return undefined;
@@ -184,7 +209,7 @@ export function SeededConnectorTrackingToJSON(value?: SeededConnectorTracking | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'format': SeededTrackedFormatEventToJSON(value.format),
         'asset': SeededTrackedAssetEventToJSON(value.asset),

@@ -39,31 +39,31 @@ import {
  */
 export interface FlattenedOCRAnalysis {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedOCRAnalysis
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedOCRAnalysis
      */
     id: string;
     /**
-     * 
+     *
      * @type {ReferencedFormat}
      * @memberof FlattenedOCRAnalysis
      */
     raw: ReferencedFormat;
     /**
-     * 
+     *
      * @type {ReferencedFormat}
      * @memberof FlattenedOCRAnalysis
      */
     hocr: ReferencedFormat;
     /**
-     * 
+     *
      * @type {Model}
      * @memberof FlattenedOCRAnalysis
      */
@@ -90,16 +90,33 @@ export function instanceOfFlattenedOCRAnalysis(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedOCRAnalysis}
+ */
 export function FlattenedOCRAnalysisFromJSON(json: any): FlattenedOCRAnalysis {
     return FlattenedOCRAnalysisFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedOCRAnalysis}
+ */
 export function FlattenedOCRAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedOCRAnalysis {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'raw': ReferencedFormatFromJSON(json['raw']),
@@ -109,6 +126,14 @@ export function FlattenedOCRAnalysisFromJSONTyped(json: any, ignoreDiscriminator
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedOCRAnalysis | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedOCRAnalysisToJSON(value?: FlattenedOCRAnalysis | null): any {
     if (value === undefined) {
         return undefined;
@@ -117,7 +142,7 @@ export function FlattenedOCRAnalysisToJSON(value?: FlattenedOCRAnalysis | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'raw': ReferencedFormatToJSON(value.raw),

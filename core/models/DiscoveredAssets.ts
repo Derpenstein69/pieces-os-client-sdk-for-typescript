@@ -33,7 +33,7 @@ import {
  */
 export interface DiscoveredAssets {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof DiscoveredAssets
      */
@@ -63,22 +63,47 @@ export function instanceOfDiscoveredAssets(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {DiscoveredAssets}
+ */
 export function DiscoveredAssetsFromJSON(json: any): DiscoveredAssets {
     return DiscoveredAssetsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {DiscoveredAssets}
+ */
 export function DiscoveredAssetsFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveredAssets {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'application': json['application'],
         'iterable': ((json['iterable'] as Array<any>).map(DiscoveredAssetFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(DiscoveredAssets | null)} [value]
+ * @returns {*}
+ */
 export function DiscoveredAssetsToJSON(value?: DiscoveredAssets | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function DiscoveredAssetsToJSON(value?: DiscoveredAssets | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'application': value.application,
         'iterable': ((value.iterable as Array<any>).map(DiscoveredAssetToJSON)),

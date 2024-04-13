@@ -39,19 +39,19 @@ import {
  */
 export interface FlattenedShares {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedShares
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<FlattenedShare>}
      * @memberof FlattenedShares
      */
     iterable: Array<FlattenedShare>;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedShares
      */
@@ -68,22 +68,47 @@ export function instanceOfFlattenedShares(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedShares}
+ */
 export function FlattenedSharesFromJSON(json: any): FlattenedShares {
     return FlattenedSharesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedShares}
+ */
 export function FlattenedSharesFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedShares {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(FlattenedShareFromJSON)),
         'score': !exists(json, 'score') ? undefined : ScoreFromJSON(json['score']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedShares | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedSharesToJSON(value?: FlattenedShares | null): any {
     if (value === undefined) {
         return undefined;
@@ -92,7 +117,7 @@ export function FlattenedSharesToJSON(value?: FlattenedShares | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(FlattenedShareToJSON)),
         'score': ScoreToJSON(value.score),

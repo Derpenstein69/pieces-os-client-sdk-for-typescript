@@ -21,25 +21,25 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs
  */
 export interface AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs
      */
     adoptionInstall?: AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionInstallEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs
      */
@@ -53,6 +53,13 @@ export interface AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs {
 export const AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionInstallEnum = {
     TheUserHasInstalledAPiecesApplication: 'the_user_has_installed_a_pieces_application'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @typedef {AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionInstallEnum}
+ */
 export type AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionInstallEnum = typeof AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionInstallEnum[keyof typeof AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionInstallEnum];
 
 /**
@@ -61,6 +68,13 @@ export type AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionInsta
 export const AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionUninstallEnum = {
     TheUserHasUninstalledAPiecesApplication: 'the_user_has_uninstalled_a_pieces_application'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @typedef {AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionUninstallEnum}
+ */
 export type AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionUninstallEnum = typeof AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionUninstallEnum[keyof typeof AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsAdoptionUninstallEnum];
 
 
@@ -73,22 +87,47 @@ export function instanceOfAnalyticsTrackedAdoptionEventIdentifierDescriptionPair
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs}
+ */
 export function AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsFromJSON(json: any): AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs {
     return AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs}
+ */
 export function AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsFromJSONTyped(json: any, ignoreDiscriminator: boolean): AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'adoptionInstall': !exists(json, 'adoption_install') ? undefined : json['adoption_install'],
         'adoptionUninstall': !exists(json, 'adoption_uninstall') ? undefined : json['adoption_uninstall'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs | null)} [value]
+ * @returns {*}
+ */
 export function AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsToJSON(value?: AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs | null): any {
     if (value === undefined) {
         return undefined;
@@ -97,7 +136,7 @@ export function AnalyticsTrackedAdoptionEventIdentifierDescriptionPairsToJSON(va
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'adoption_install': value.adoptionInstall,
         'adoption_uninstall': value.adoptionUninstall,

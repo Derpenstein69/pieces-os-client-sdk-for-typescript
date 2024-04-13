@@ -28,22 +28,22 @@ import {
 
 /**
  * Note: continuous: this means that from this moment in time, the user is continuously opted into beta
- * 
+ *
  * otherwise we will use the from/to values provided.
- * 
+ *
  * Note: in order to opt out of vision, you will just end their beta w/ the updated with a to property that is effectively right now in time.
  * @export
  * @interface Auth0UserBetaStatus
  */
 export interface Auth0UserBetaStatus {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Auth0UserBetaStatus
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {AnonymousTemporalRange}
      * @memberof Auth0UserBetaStatus
      */
@@ -59,21 +59,46 @@ export function instanceOfAuth0UserBetaStatus(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Auth0UserBetaStatus}
+ */
 export function Auth0UserBetaStatusFromJSON(json: any): Auth0UserBetaStatus {
     return Auth0UserBetaStatusFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Auth0UserBetaStatus}
+ */
 export function Auth0UserBetaStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): Auth0UserBetaStatus {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'vision': !exists(json, 'vision') ? undefined : AnonymousTemporalRangeFromJSON(json['vision']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Auth0UserBetaStatus | null)} [value]
+ * @returns {*}
+ */
 export function Auth0UserBetaStatusToJSON(value?: Auth0UserBetaStatus | null): any {
     if (value === undefined) {
         return undefined;
@@ -82,7 +107,7 @@ export function Auth0UserBetaStatusToJSON(value?: Auth0UserBetaStatus | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'vision': AnonymousTemporalRangeToJSON(value.vision),
     };

@@ -20,13 +20,13 @@ import { exists, mapValues } from '../runtime';
  */
 export interface Auth0UserAllocationMetadata {
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0UserAllocationMetadata
      */
     project: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0UserAllocationMetadata
      */
@@ -44,21 +44,46 @@ export function instanceOfAuth0UserAllocationMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Auth0UserAllocationMetadata}
+ */
 export function Auth0UserAllocationMetadataFromJSON(json: any): Auth0UserAllocationMetadata {
     return Auth0UserAllocationMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Auth0UserAllocationMetadata}
+ */
 export function Auth0UserAllocationMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): Auth0UserAllocationMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'project': json['project'],
         'region': json['region'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Auth0UserAllocationMetadata | null)} [value]
+ * @returns {*}
+ */
 export function Auth0UserAllocationMetadataToJSON(value?: Auth0UserAllocationMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -67,7 +92,7 @@ export function Auth0UserAllocationMetadataToJSON(value?: Auth0UserAllocationMet
         return null;
     }
     return {
-        
+
         'project': value.project,
         'region': value.region,
     };

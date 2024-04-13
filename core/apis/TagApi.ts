@@ -25,43 +25,183 @@ import {
     TagToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface TagAssociateAssetRequest
+ * @typedef {TagAssociateAssetRequest}
+ */
 export interface TagAssociateAssetRequest {
-    asset: string;
-    tag: string;
-}
-
-export interface TagAssociatePersonRequest {
-    tag: string;
-    person: string;
-}
-
-export interface TagDisassociateAssetRequest {
-    tag: string;
-    asset: string;
-}
-
-export interface TagDisassociatePersonRequest {
-    tag: string;
-    person: string;
-}
-
-export interface TagScoresIncrementRequest {
-    tag: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface TagUpdateRequest {
-    transferables?: boolean;
-    tag?: Tag;
-}
-
-export interface TagsSpecificTagSnapshotRequest {
-    tag: string;
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+tag: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface TagAssociatePersonRequest
+ * @typedef {TagAssociatePersonRequest}
+ */
+export interface TagAssociatePersonRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+tag: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+person: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface TagDisassociateAssetRequest
+ * @typedef {TagDisassociateAssetRequest}
+ */
+export interface TagDisassociateAssetRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+tag: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+asset: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface TagDisassociatePersonRequest
+ * @typedef {TagDisassociatePersonRequest}
+ */
+export interface TagDisassociatePersonRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+tag: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+person: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface TagScoresIncrementRequest
+ * @typedef {TagScoresIncrementRequest}
+ */
+export interface TagScoresIncrementRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+tag: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface TagUpdateRequest
+ * @typedef {TagUpdateRequest}
+ */
+export interface TagUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?Tag}
+ */
+tag?: Tag;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface TagsSpecificTagSnapshotRequest
+ * @typedef {TagsSpecificTagSnapshotRequest}
+ */
+export interface TagsSpecificTagSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+tag: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class TagApi extends runtime.BaseAPI {
 

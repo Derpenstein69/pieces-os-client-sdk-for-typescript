@@ -39,50 +39,50 @@ import {
 } from './GroupedTimestamp';
 
 /**
- * A relationship expresses a graph of like types, to build a relationship graph. 
+ * A relationship expresses a graph of like types, to build a relationship graph.
  *  To get the type of relationship, this is for ie Asset, tag, website, format ...etc, you will need to iterate through the edges and get the root or you can just get the first edge's type as a relationship can only be expressed through same type
  * @export
  * @interface Relationship
  */
 export interface Relationship {
     /**
-     * 
+     *
      * @type {string}
      * @memberof Relationship
      */
     id: string;
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Relationship
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Embeddings}
      * @memberof Relationship
      */
     embeddings: Embeddings;
     /**
-     * 
+     *
      * @type {Edges}
      * @memberof Relationship
      */
     edges: Edges;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Relationship
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Relationship
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Relationship
      */
@@ -103,16 +103,33 @@ export function instanceOfRelationship(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Relationship}
+ */
 export function RelationshipFromJSON(json: any): Relationship {
     return RelationshipFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Relationship}
+ */
 export function RelationshipFromJSONTyped(json: any, ignoreDiscriminator: boolean): Relationship {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'id': json['id'],
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'embeddings': EmbeddingsFromJSON(json['embeddings']),
@@ -123,6 +140,14 @@ export function RelationshipFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(Relationship | null)} [value]
+ * @returns {*}
+ */
 export function RelationshipToJSON(value?: Relationship | null): any {
     if (value === undefined) {
         return undefined;
@@ -131,7 +156,7 @@ export function RelationshipToJSON(value?: Relationship | null): any {
         return null;
     }
     return {
-        
+
         'id': value.id,
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'embeddings': EmbeddingsToJSON(value.embeddings),

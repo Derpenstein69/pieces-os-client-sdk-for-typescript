@@ -39,19 +39,19 @@ import {
 } from './MailgunDistribution';
 
 /**
- * 
+ *
  * @export
  * @interface FlattenedDistribution
  */
 export interface FlattenedDistribution {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedDistribution
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedDistribution
      */
@@ -63,31 +63,31 @@ export interface FlattenedDistribution {
      */
     share: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedDistribution
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedDistribution
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedDistribution
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {MailgunDistribution}
      * @memberof FlattenedDistribution
      */
     mailgun?: MailgunDistribution;
     /**
-     * 
+     *
      * @type {GitHubDistribution}
      * @memberof FlattenedDistribution
      */
@@ -107,16 +107,33 @@ export function instanceOfFlattenedDistribution(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedDistribution}
+ */
 export function FlattenedDistributionFromJSON(json: any): FlattenedDistribution {
     return FlattenedDistributionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedDistribution}
+ */
 export function FlattenedDistributionFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedDistribution {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'share': json['share'],
@@ -128,6 +145,14 @@ export function FlattenedDistributionFromJSONTyped(json: any, ignoreDiscriminato
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(FlattenedDistribution | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedDistributionToJSON(value?: FlattenedDistribution | null): any {
     if (value === undefined) {
         return undefined;
@@ -136,7 +161,7 @@ export function FlattenedDistributionToJSON(value?: FlattenedDistribution | null
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'share': value.share,

@@ -39,13 +39,13 @@ import {
  */
 export interface Backups {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Backups
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Backup>}
      * @memberof Backups
      */
@@ -57,7 +57,7 @@ export interface Backups {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Backups
      */
@@ -74,16 +74,33 @@ export function instanceOfBackups(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Backups}
+ */
 export function BackupsFromJSON(json: any): Backups {
     return BackupsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Backups}
+ */
 export function BackupsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Backups {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(BackupFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function BackupsFromJSONTyped(json: any, ignoreDiscriminator: boolean): B
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Backups | null)} [value]
+ * @returns {*}
+ */
 export function BackupsToJSON(value?: Backups | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function BackupsToJSON(value?: Backups | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(BackupToJSON)),
         'indices': value.indices,

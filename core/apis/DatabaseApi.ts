@@ -22,12 +22,26 @@ import {
     ExportedDatabaseToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface DatabaseImportRequest
+ * @typedef {DatabaseImportRequest}
+ */
 export interface DatabaseImportRequest {
-    exportedDatabase?: ExportedDatabase;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?ExportedDatabase}
+ */
+exportedDatabase?: ExportedDatabase;
 }
 
 /**
- * 
+ *
  */
 export class DatabaseApi extends runtime.BaseAPI {
 

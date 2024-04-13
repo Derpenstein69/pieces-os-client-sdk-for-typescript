@@ -46,7 +46,7 @@ import {
 
 /**
  * This is the body input for the /code_gpt/question.
- * 
+ *
  * Note:
  * - each relevant seed, must require at minimum a Seed or an id used from the /code_gpt/relevance endpoint or we will throw an error.
  * @export
@@ -54,13 +54,13 @@ import {
  */
 export interface QGPTQuestionInput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTQuestionInput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {RelevantQGPTSeeds}
      * @memberof QGPTQuestionInput
      */
@@ -84,19 +84,19 @@ export interface QGPTQuestionInput {
      */
     model?: string;
     /**
-     * 
+     *
      * @type {FlattenedConversationMessages}
      * @memberof QGPTQuestionInput
      */
     messages?: FlattenedConversationMessages;
     /**
-     * 
+     *
      * @type {QGPTPromptPipeline}
      * @memberof QGPTQuestionInput
      */
     pipeline?: QGPTPromptPipeline;
     /**
-     * 
+     *
      * @type {TemporalRangeGrounding}
      * @memberof QGPTQuestionInput
      */
@@ -114,16 +114,33 @@ export function instanceOfQGPTQuestionInput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTQuestionInput}
+ */
 export function QGPTQuestionInputFromJSON(json: any): QGPTQuestionInput {
     return QGPTQuestionInputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTQuestionInput}
+ */
 export function QGPTQuestionInputFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTQuestionInput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'relevant': RelevantQGPTSeedsFromJSON(json['relevant']),
         'query': json['query'],
@@ -135,6 +152,14 @@ export function QGPTQuestionInputFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTQuestionInput | null)} [value]
+ * @returns {*}
+ */
 export function QGPTQuestionInputToJSON(value?: QGPTQuestionInput | null): any {
     if (value === undefined) {
         return undefined;
@@ -143,7 +168,7 @@ export function QGPTQuestionInputToJSON(value?: QGPTQuestionInput | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'relevant': RelevantQGPTSeedsToJSON(value.relevant),
         'query': value.query,

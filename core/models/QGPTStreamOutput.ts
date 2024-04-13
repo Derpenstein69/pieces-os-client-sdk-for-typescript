@@ -40,7 +40,7 @@ import {
 
 /**
  * This is the out for the /qgpt/stream endpoint.
- * 
+ *
  * 200: success
  * 401: invalid authentication/api key
  * 429: Rate limit/Quota exceeded
@@ -57,19 +57,19 @@ export interface QGPTStreamOutput {
      */
     request?: string;
     /**
-     * 
+     *
      * @type {QGPTRelevanceOutput}
      * @memberof QGPTStreamOutput
      */
     relevance?: QGPTRelevanceOutput;
     /**
-     * 
+     *
      * @type {QGPTQuestionOutput}
      * @memberof QGPTStreamOutput
      */
     question?: QGPTQuestionOutput;
     /**
-     * 
+     *
      * @type {QGPTStreamEnum}
      * @memberof QGPTStreamOutput
      */
@@ -93,7 +93,7 @@ export interface QGPTStreamOutput {
      */
     errorMessage?: string;
     /**
-     * 
+     *
      * @type {QGPTAgentRoutes}
      * @memberof QGPTStreamOutput
      */
@@ -110,16 +110,33 @@ export function instanceOfQGPTStreamOutput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTStreamOutput}
+ */
 export function QGPTStreamOutputFromJSON(json: any): QGPTStreamOutput {
     return QGPTStreamOutputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTStreamOutput}
+ */
 export function QGPTStreamOutputFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTStreamOutput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'request': !exists(json, 'request') ? undefined : json['request'],
         'relevance': !exists(json, 'relevance') ? undefined : QGPTRelevanceOutputFromJSON(json['relevance']),
         'question': !exists(json, 'question') ? undefined : QGPTQuestionOutputFromJSON(json['question']),
@@ -131,6 +148,14 @@ export function QGPTStreamOutputFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTStreamOutput | null)} [value]
+ * @returns {*}
+ */
 export function QGPTStreamOutputToJSON(value?: QGPTStreamOutput | null): any {
     if (value === undefined) {
         return undefined;
@@ -139,7 +164,7 @@ export function QGPTStreamOutputToJSON(value?: QGPTStreamOutput | null): any {
         return null;
     }
     return {
-        
+
         'request': value.request,
         'relevance': QGPTRelevanceOutputToJSON(value.relevance),
         'question': QGPTQuestionOutputToJSON(value.question),

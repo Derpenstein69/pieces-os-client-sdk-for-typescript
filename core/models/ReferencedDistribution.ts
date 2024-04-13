@@ -27,25 +27,25 @@ import {
 } from './FlattenedDistribution';
 
 /**
- * 
+ *
  * @export
  * @interface ReferencedDistribution
  */
 export interface ReferencedDistribution {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedDistribution
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedDistribution
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedDistribution}
      * @memberof ReferencedDistribution
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedDistribution(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedDistribution}
+ */
 export function ReferencedDistributionFromJSON(json: any): ReferencedDistribution {
     return ReferencedDistributionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedDistribution}
+ */
 export function ReferencedDistributionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedDistribution {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedDistributionFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedDistribution | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedDistributionToJSON(value?: ReferencedDistribution | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedDistributionToJSON(value?: ReferencedDistribution | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedDistributionToJSON(value.reference),

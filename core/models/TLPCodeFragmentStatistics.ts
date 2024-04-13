@@ -27,19 +27,19 @@ import {
 } from './TLPCodeFragmentDescriptiveStatistics';
 
 /**
- * 
+ *
  * @export
  * @interface TLPCodeFragmentStatistics
  */
 export interface TLPCodeFragmentStatistics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeFragmentStatistics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TLPCodeFragmentDescriptiveStatistics}
      * @memberof TLPCodeFragmentStatistics
      */
@@ -55,21 +55,46 @@ export function instanceOfTLPCodeFragmentStatistics(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeFragmentStatistics}
+ */
 export function TLPCodeFragmentStatisticsFromJSON(json: any): TLPCodeFragmentStatistics {
     return TLPCodeFragmentStatisticsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeFragmentStatistics}
+ */
 export function TLPCodeFragmentStatisticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeFragmentStatistics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'descriptive': !exists(json, 'descriptive') ? undefined : TLPCodeFragmentDescriptiveStatisticsFromJSON(json['descriptive']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TLPCodeFragmentStatistics | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeFragmentStatisticsToJSON(value?: TLPCodeFragmentStatistics | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function TLPCodeFragmentStatisticsToJSON(value?: TLPCodeFragmentStatistic
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'descriptive': TLPCodeFragmentDescriptiveStatisticsToJSON(value.descriptive),
     };

@@ -27,19 +27,19 @@ import {
 } from './ReferencedDistribution';
 
 /**
- * 
+ *
  * @export
  * @interface FlattenedDistributions
  */
 export interface FlattenedDistributions {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedDistributions
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedDistribution>}
      * @memberof FlattenedDistributions
      */
@@ -56,21 +56,46 @@ export function instanceOfFlattenedDistributions(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedDistributions}
+ */
 export function FlattenedDistributionsFromJSON(json: any): FlattenedDistributions {
     return FlattenedDistributionsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedDistributions}
+ */
 export function FlattenedDistributionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedDistributions {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedDistributionFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(FlattenedDistributions | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedDistributionsToJSON(value?: FlattenedDistributions | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function FlattenedDistributionsToJSON(value?: FlattenedDistributions | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedDistributionToJSON)),
     };

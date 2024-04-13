@@ -27,7 +27,7 @@ import {
  */
 export interface OSDeviceDependenciesInformation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OSDeviceDependenciesInformation
      */
@@ -50,21 +50,46 @@ export function instanceOfOSDeviceDependenciesInformation(value: object): boolea
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OSDeviceDependenciesInformation}
+ */
 export function OSDeviceDependenciesInformationFromJSON(json: any): OSDeviceDependenciesInformation {
     return OSDeviceDependenciesInformationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OSDeviceDependenciesInformation}
+ */
 export function OSDeviceDependenciesInformationFromJSONTyped(json: any, ignoreDiscriminator: boolean): OSDeviceDependenciesInformation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'vulkan': json['vulkan'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OSDeviceDependenciesInformation | null)} [value]
+ * @returns {*}
+ */
 export function OSDeviceDependenciesInformationToJSON(value?: OSDeviceDependenciesInformation | null): any {
     if (value === undefined) {
         return undefined;
@@ -73,7 +98,7 @@ export function OSDeviceDependenciesInformationToJSON(value?: OSDeviceDependenci
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'vulkan': value.vulkan,
     };

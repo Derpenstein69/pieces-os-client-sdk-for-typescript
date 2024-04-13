@@ -39,13 +39,13 @@ import {
  */
 export interface Assets {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Assets
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Asset>}
      * @memberof Assets
      */
@@ -57,7 +57,7 @@ export interface Assets {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Assets
      */
@@ -74,16 +74,33 @@ export function instanceOfAssets(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Assets}
+ */
 export function AssetsFromJSON(json: any): Assets {
     return AssetsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Assets}
+ */
 export function AssetsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Assets {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(AssetFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function AssetsFromJSONTyped(json: any, ignoreDiscriminator: boolean): As
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Assets | null)} [value]
+ * @returns {*}
+ */
 export function AssetsToJSON(value?: Assets | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function AssetsToJSON(value?: Assets | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(AssetToJSON)),
         'indices': value.indices,

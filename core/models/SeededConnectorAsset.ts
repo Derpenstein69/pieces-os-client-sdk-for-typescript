@@ -39,19 +39,19 @@ import {
  */
 export interface SeededConnectorAsset {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededConnectorAsset
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededAssetMetadata}
      * @memberof SeededConnectorAsset
      */
     metadata?: SeededAssetMetadata;
     /**
-     * 
+     *
      * @type {SeededFormat}
      * @memberof SeededConnectorAsset
      */
@@ -68,22 +68,47 @@ export function instanceOfSeededConnectorAsset(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededConnectorAsset}
+ */
 export function SeededConnectorAssetFromJSON(json: any): SeededConnectorAsset {
     return SeededConnectorAssetFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededConnectorAsset}
+ */
 export function SeededConnectorAssetFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededConnectorAsset {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'metadata': !exists(json, 'metadata') ? undefined : SeededAssetMetadataFromJSON(json['metadata']),
         'format': SeededFormatFromJSON(json['format']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededConnectorAsset | null)} [value]
+ * @returns {*}
+ */
 export function SeededConnectorAssetToJSON(value?: SeededConnectorAsset | null): any {
     if (value === undefined) {
         return undefined;
@@ -92,7 +117,7 @@ export function SeededConnectorAssetToJSON(value?: SeededConnectorAsset | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'metadata': SeededAssetMetadataToJSON(value.metadata),
         'format': SeededFormatToJSON(value.format),

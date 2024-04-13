@@ -33,13 +33,13 @@ import {
  */
 export interface SeededConnectorConnection {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededConnectorConnection
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededTrackedApplication}
      * @memberof SeededConnectorConnection
      */
@@ -56,21 +56,46 @@ export function instanceOfSeededConnectorConnection(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededConnectorConnection}
+ */
 export function SeededConnectorConnectionFromJSON(json: any): SeededConnectorConnection {
     return SeededConnectorConnectionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededConnectorConnection}
+ */
 export function SeededConnectorConnectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededConnectorConnection {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'application': SeededTrackedApplicationFromJSON(json['application']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededConnectorConnection | null)} [value]
+ * @returns {*}
+ */
 export function SeededConnectorConnectionToJSON(value?: SeededConnectorConnection | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function SeededConnectorConnectionToJSON(value?: SeededConnectorConnectio
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'application': SeededTrackedApplicationToJSON(value.application),
     };

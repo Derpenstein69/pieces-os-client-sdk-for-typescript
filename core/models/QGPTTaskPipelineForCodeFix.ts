@@ -22,16 +22,16 @@ import {
 
 /**
  * This task is for fixing a bit of code.
- * 
+ *
  * This is a class so that we can add optional properties in the future.
- * 
+ *
  * Note: the snippet && language that needs to be fixed should be within the QGPTQuestionInput.relevant.
  * @export
  * @interface QGPTTaskPipelineForCodeFix
  */
 export interface QGPTTaskPipelineForCodeFix {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTTaskPipelineForCodeFix
      */
@@ -53,21 +53,46 @@ export function instanceOfQGPTTaskPipelineForCodeFix(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTTaskPipelineForCodeFix}
+ */
 export function QGPTTaskPipelineForCodeFixFromJSON(json: any): QGPTTaskPipelineForCodeFix {
     return QGPTTaskPipelineForCodeFixFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTTaskPipelineForCodeFix}
+ */
 export function QGPTTaskPipelineForCodeFixFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTTaskPipelineForCodeFix {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'error': !exists(json, 'error') ? undefined : json['error'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTTaskPipelineForCodeFix | null)} [value]
+ * @returns {*}
+ */
 export function QGPTTaskPipelineForCodeFixToJSON(value?: QGPTTaskPipelineForCodeFix | null): any {
     if (value === undefined) {
         return undefined;
@@ -76,7 +101,7 @@ export function QGPTTaskPipelineForCodeFixToJSON(value?: QGPTTaskPipelineForCode
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'error': value.error,
     };

@@ -34,21 +34,69 @@ import {
     SeededModelToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ModelsCreateNewModelRequest
+ * @typedef {ModelsCreateNewModelRequest}
+ */
 export interface ModelsCreateNewModelRequest {
-    seededModel?: SeededModel;
-}
-
-export interface ModelsDeleteSpecificModelRequest {
-    model: string;
-}
-
-export interface ModelsDeleteSpecificModelCacheRequest {
-    model: string;
-    modelDeleteCacheInput?: ModelDeleteCacheInput;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededModel}
+ */
+seededModel?: SeededModel;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ModelsDeleteSpecificModelRequest
+ * @typedef {ModelsDeleteSpecificModelRequest}
+ */
+export interface ModelsDeleteSpecificModelRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+model: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ModelsDeleteSpecificModelCacheRequest
+ * @typedef {ModelsDeleteSpecificModelCacheRequest}
+ */
+export interface ModelsDeleteSpecificModelCacheRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+model: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?ModelDeleteCacheInput}
+ */
+modelDeleteCacheInput?: ModelDeleteCacheInput;
+}
+
+/**
+ *
  */
 export class ModelsApi extends runtime.BaseAPI {
 

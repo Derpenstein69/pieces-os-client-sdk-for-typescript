@@ -24,17 +24,49 @@ export const PrivacyEnum = {
     Closed: 'CLOSED',
     Anonymous: 'ANONYMOUS'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @typedef {PrivacyEnum}
+ */
 export type PrivacyEnum = typeof PrivacyEnum[keyof typeof PrivacyEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PrivacyEnum}
+ */
 export function PrivacyEnumFromJSON(json: any): PrivacyEnum {
     return PrivacyEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PrivacyEnum}
+ */
 export function PrivacyEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PrivacyEnum {
     return json as PrivacyEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(PrivacyEnum | null)} [value]
+ * @returns {*}
+ */
 export function PrivacyEnumToJSON(value?: PrivacyEnum | null): any {
     return value as any;
 }

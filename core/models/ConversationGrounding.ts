@@ -39,19 +39,19 @@ import {
  */
 export interface ConversationGrounding {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ConversationGrounding
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {FlattenedConversationMessages}
      * @memberof ConversationGrounding
      */
     messages?: FlattenedConversationMessages;
     /**
-     * 
+     *
      * @type {TemporalRangeGrounding}
      * @memberof ConversationGrounding
      */
@@ -67,22 +67,47 @@ export function instanceOfConversationGrounding(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ConversationGrounding}
+ */
 export function ConversationGroundingFromJSON(json: any): ConversationGrounding {
     return ConversationGroundingFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ConversationGrounding}
+ */
 export function ConversationGroundingFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConversationGrounding {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'messages': !exists(json, 'messages') ? undefined : FlattenedConversationMessagesFromJSON(json['messages']),
         'temporal': !exists(json, 'temporal') ? undefined : TemporalRangeGroundingFromJSON(json['temporal']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(ConversationGrounding | null)} [value]
+ * @returns {*}
+ */
 export function ConversationGroundingToJSON(value?: ConversationGrounding | null): any {
     if (value === undefined) {
         return undefined;
@@ -91,7 +116,7 @@ export function ConversationGroundingToJSON(value?: ConversationGrounding | null
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'messages': FlattenedConversationMessagesToJSON(value.messages),
         'temporal': TemporalRangeGroundingToJSON(value.temporal),

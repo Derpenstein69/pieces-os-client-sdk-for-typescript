@@ -22,17 +22,31 @@ import {
     SeededFormatToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConvertGenericClassificationRequest
+ * @typedef {ConvertGenericClassificationRequest}
+ */
 export interface ConvertGenericClassificationRequest {
-    seededFormat?: SeededFormat;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededFormat}
+ */
+seededFormat?: SeededFormat;
 }
 
 /**
- * 
+ *
  */
 export class ClassificationApi extends runtime.BaseAPI {
 
     /**
-     * This endpoint converts on a best effort basis from one generic format to another, i.e. from Code to HLJS 
+     * This endpoint converts on a best effort basis from one generic format to another, i.e. from Code to HLJS
      * Convert Generic Classification
      */
     async convertGenericClassificationRaw(requestParameters: ConvertGenericClassificationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SeededFormat>> {
@@ -54,7 +68,7 @@ export class ClassificationApi extends runtime.BaseAPI {
     }
 
     /**
-     * This endpoint converts on a best effort basis from one generic format to another, i.e. from Code to HLJS 
+     * This endpoint converts on a best effort basis from one generic format to another, i.e. from Code to HLJS
      * Convert Generic Classification
      */
     async convertGenericClassification(requestParameters: ConvertGenericClassificationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SeededFormat> {

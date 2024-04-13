@@ -33,7 +33,7 @@ import {
  */
 export interface ReferencedFormat {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedFormat
      */
@@ -45,7 +45,7 @@ export interface ReferencedFormat {
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedFormat}
      * @memberof ReferencedFormat
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedFormat(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedFormat}
+ */
 export function ReferencedFormatFromJSON(json: any): ReferencedFormat {
     return ReferencedFormatFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedFormat}
+ */
 export function ReferencedFormatFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedFormat {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedFormatFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedFormat | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedFormatToJSON(value?: ReferencedFormat | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedFormatToJSON(value?: ReferencedFormat | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedFormatToJSON(value.reference),

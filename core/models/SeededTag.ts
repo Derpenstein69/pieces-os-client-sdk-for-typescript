@@ -34,18 +34,18 @@ import {
 
 /**
  * This is the minimum information needed when creating a Tag.
- * 
+ *
  * Default we will attach manual to a tag unless otherwise specified for mechanism.
- * 
+ *
  * you can optionally add an asset, format, or person uuid to attach this tag directly to it
- * 
+ *
  * TODO consider updating these asset,format to referenced Models
  * @export
  * @interface SeededTag
  */
 export interface SeededTag {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededTag
      */
@@ -63,13 +63,13 @@ export interface SeededTag {
      */
     asset?: string;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededTag
      */
     mechanism?: MechanismEnum;
     /**
-     * 
+     *
      * @type {TagCategoryEnum}
      * @memberof SeededTag
      */
@@ -92,16 +92,33 @@ export function instanceOfSeededTag(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTag}
+ */
 export function SeededTagFromJSON(json: any): SeededTag {
     return SeededTagFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTag}
+ */
 export function SeededTagFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTag {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'text': json['text'],
         'asset': !exists(json, 'asset') ? undefined : json['asset'],
@@ -111,6 +128,14 @@ export function SeededTagFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededTag | null)} [value]
+ * @returns {*}
+ */
 export function SeededTagToJSON(value?: SeededTag | null): any {
     if (value === undefined) {
         return undefined;
@@ -119,7 +144,7 @@ export function SeededTagToJSON(value?: SeededTag | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'text': value.text,
         'asset': value.asset,

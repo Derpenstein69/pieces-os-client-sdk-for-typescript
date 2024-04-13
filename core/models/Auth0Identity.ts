@@ -16,7 +16,7 @@ import { exists, mapValues } from '../runtime';
 /**
  * Contains info retrieved from the identity provider with which the user originally authenticates. Users may also link their profile to multiple identity providers; those identities will then also appear in this array. The contents of an individual identity provider object varies by provider, but it will typically include the following.
  * Link: [https://auth0.com/docs/rules/user-object-in-rules]
- * 
+ *
  * Currently left out:
  * - profile_data: (Object) User information associated with the connection. When profiles are linked, it is populated with the associated user info for secondary accounts.
  * @export
@@ -25,14 +25,14 @@ import { exists, mapValues } from '../runtime';
 export interface Auth0Identity {
     /**
      * Name of the Auth0 connection used to authenticate the user.
-     * 
+     *
      * @type {string}
      * @memberof Auth0Identity
      */
     connection?: string;
     /**
      * Indicates whether the connection is a social one.
-     * 
+     *
      * @type {boolean}
      * @memberof Auth0Identity
      */
@@ -50,13 +50,13 @@ export interface Auth0Identity {
      */
     userId?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0Identity
      */
     accessToken?: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof Auth0Identity
      */
@@ -72,16 +72,33 @@ export function instanceOfAuth0Identity(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Auth0Identity}
+ */
 export function Auth0IdentityFromJSON(json: any): Auth0Identity {
     return Auth0IdentityFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Auth0Identity}
+ */
 export function Auth0IdentityFromJSONTyped(json: any, ignoreDiscriminator: boolean): Auth0Identity {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'connection': !exists(json, 'connection') ? undefined : json['connection'],
         'isSocial': !exists(json, 'isSocial') ? undefined : json['isSocial'],
         'provider': !exists(json, 'provider') ? undefined : json['provider'],
@@ -91,6 +108,14 @@ export function Auth0IdentityFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Auth0Identity | null)} [value]
+ * @returns {*}
+ */
 export function Auth0IdentityToJSON(value?: Auth0Identity | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function Auth0IdentityToJSON(value?: Auth0Identity | null): any {
         return null;
     }
     return {
-        
+
         'connection': value.connection,
         'isSocial': value.isSocial,
         'provider': value.provider,

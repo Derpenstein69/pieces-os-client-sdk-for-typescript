@@ -51,13 +51,13 @@ import {
  */
 export interface SeededTrackedApplication {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededTrackedApplication
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ApplicationNameEnum}
      * @memberof SeededTrackedApplication
      */
@@ -69,19 +69,19 @@ export interface SeededTrackedApplication {
      */
     version: string;
     /**
-     * 
+     *
      * @type {PlatformEnum}
      * @memberof SeededTrackedApplication
      */
     platform: PlatformEnum;
     /**
-     * 
+     *
      * @type {CapabilitiesEnum}
      * @memberof SeededTrackedApplication
      */
     capabilities?: CapabilitiesEnum;
     /**
-     * 
+     *
      * @type {PrivacyEnum}
      * @memberof SeededTrackedApplication
      */
@@ -106,16 +106,33 @@ export function instanceOfSeededTrackedApplication(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTrackedApplication}
+ */
 export function SeededTrackedApplicationFromJSON(json: any): SeededTrackedApplication {
     return SeededTrackedApplicationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTrackedApplication}
+ */
 export function SeededTrackedApplicationFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTrackedApplication {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'name': ApplicationNameEnumFromJSON(json['name']),
         'version': json['version'],
@@ -126,6 +143,14 @@ export function SeededTrackedApplicationFromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededTrackedApplication | null)} [value]
+ * @returns {*}
+ */
 export function SeededTrackedApplicationToJSON(value?: SeededTrackedApplication | null): any {
     if (value === undefined) {
         return undefined;
@@ -134,7 +159,7 @@ export function SeededTrackedApplicationToJSON(value?: SeededTrackedApplication 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'name': ApplicationNameEnumToJSON(value.name),
         'version': value.version,

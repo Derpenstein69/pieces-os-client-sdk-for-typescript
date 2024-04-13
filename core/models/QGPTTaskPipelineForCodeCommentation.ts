@@ -22,16 +22,16 @@ import {
 
 /**
  * This task is for commenting a bit of code.
- * 
+ *
  * This is a class so that we can add optional properties in the future.
- * 
+ *
  * Note: the snippet && language that needs to be commented should be within the QGPTQuestionInput.relevant
  * @export
  * @interface QGPTTaskPipelineForCodeCommentation
  */
 export interface QGPTTaskPipelineForCodeCommentation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTTaskPipelineForCodeCommentation
      */
@@ -47,20 +47,45 @@ export function instanceOfQGPTTaskPipelineForCodeCommentation(value: object): bo
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTTaskPipelineForCodeCommentation}
+ */
 export function QGPTTaskPipelineForCodeCommentationFromJSON(json: any): QGPTTaskPipelineForCodeCommentation {
     return QGPTTaskPipelineForCodeCommentationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTTaskPipelineForCodeCommentation}
+ */
 export function QGPTTaskPipelineForCodeCommentationFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTTaskPipelineForCodeCommentation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTTaskPipelineForCodeCommentation | null)} [value]
+ * @returns {*}
+ */
 export function QGPTTaskPipelineForCodeCommentationToJSON(value?: QGPTTaskPipelineForCodeCommentation | null): any {
     if (value === undefined) {
         return undefined;
@@ -69,7 +94,7 @@ export function QGPTTaskPipelineForCodeCommentationToJSON(value?: QGPTTaskPipeli
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
     };
 }

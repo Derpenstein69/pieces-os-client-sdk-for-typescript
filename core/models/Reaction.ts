@@ -34,18 +34,18 @@ import {
 
 /**
  * This will the the Request body of the Request Endpoint.
- * 
+ *
  * Reuse will not be required here because we do NOT know if the user will choose to reuse what we have suggested.
- * 
+ *
  * save will however be required because this will let us know if we should save the coppied asset that was first sent over or not.
- * 
+ *
  * seed is required, because we will want to know 100% sure what the original suggestion was made against.
  * @export
  * @interface Reaction
  */
 export interface Reaction {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Reaction
      */
@@ -57,13 +57,13 @@ export interface Reaction {
      */
     save: boolean;
     /**
-     * 
+     *
      * @type {ReuseReaction}
      * @memberof Reaction
      */
     reuse?: ReuseReaction;
     /**
-     * 
+     *
      * @type {SeededConnectorCreation}
      * @memberof Reaction
      */
@@ -81,16 +81,33 @@ export function instanceOfReaction(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Reaction}
+ */
 export function ReactionFromJSON(json: any): Reaction {
     return ReactionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Reaction}
+ */
 export function ReactionFromJSONTyped(json: any, ignoreDiscriminator: boolean): Reaction {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'save': json['save'],
         'reuse': !exists(json, 'reuse') ? undefined : ReuseReactionFromJSON(json['reuse']),
@@ -98,6 +115,14 @@ export function ReactionFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(Reaction | null)} [value]
+ * @returns {*}
+ */
 export function ReactionToJSON(value?: Reaction | null): any {
     if (value === undefined) {
         return undefined;
@@ -106,7 +131,7 @@ export function ReactionToJSON(value?: Reaction | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'save': value.save,
         'reuse': ReuseReactionToJSON(value.reuse),

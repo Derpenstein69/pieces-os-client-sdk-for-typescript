@@ -39,13 +39,13 @@ import {
  */
 export interface Tags {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Tags
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Tag>}
      * @memberof Tags
      */
@@ -57,7 +57,7 @@ export interface Tags {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Tags
      */
@@ -74,16 +74,33 @@ export function instanceOfTags(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Tags}
+ */
 export function TagsFromJSON(json: any): Tags {
     return TagsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Tags}
+ */
 export function TagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Tags {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(TagFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function TagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Tags
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(Tags | null)} [value]
+ * @returns {*}
+ */
 export function TagsToJSON(value?: Tags | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function TagsToJSON(value?: Tags | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(TagToJSON)),
         'indices': value.indices,

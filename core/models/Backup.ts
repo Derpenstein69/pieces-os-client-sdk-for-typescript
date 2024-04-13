@@ -39,49 +39,49 @@ import {
  */
 export interface Backup {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Backup
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Backup
      */
     id: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Backup
      */
     version: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Backup
      */
     timestamp: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof Backup
      */
     bytes: number;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Backup
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Backup
      */
     deviceName: string;
     /**
-     * 
+     *
      * @type {PlatformEnum}
      * @memberof Backup
      */
@@ -104,16 +104,33 @@ export function instanceOfBackup(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Backup}
+ */
 export function BackupFromJSON(json: any): Backup {
     return BackupFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Backup}
+ */
 export function BackupFromJSONTyped(json: any, ignoreDiscriminator: boolean): Backup {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'version': json['version'],
@@ -125,6 +142,14 @@ export function BackupFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ba
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Backup | null)} [value]
+ * @returns {*}
+ */
 export function BackupToJSON(value?: Backup | null): any {
     if (value === undefined) {
         return undefined;
@@ -133,7 +158,7 @@ export function BackupToJSON(value?: Backup | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'version': value.version,

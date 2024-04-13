@@ -23,17 +23,49 @@ export const NodeTypeEnum = {
     Format: 'FORMAT',
     Asset: 'ASSET'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @typedef {NodeTypeEnum}
+ */
 export type NodeTypeEnum = typeof NodeTypeEnum[keyof typeof NodeTypeEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {NodeTypeEnum}
+ */
 export function NodeTypeEnumFromJSON(json: any): NodeTypeEnum {
     return NodeTypeEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {NodeTypeEnum}
+ */
 export function NodeTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): NodeTypeEnum {
     return json as NodeTypeEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(NodeTypeEnum | null)} [value]
+ * @returns {*}
+ */
 export function NodeTypeEnumToJSON(value?: NodeTypeEnum | null): any {
     return value as any;
 }

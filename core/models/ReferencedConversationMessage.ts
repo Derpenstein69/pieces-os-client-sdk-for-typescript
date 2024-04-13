@@ -33,19 +33,19 @@ import {
  */
 export interface ReferencedConversationMessage {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedConversationMessage
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedConversationMessage
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedConversationMessage}
      * @memberof ReferencedConversationMessage
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedConversationMessage(value: object): boolean 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedConversationMessage}
+ */
 export function ReferencedConversationMessageFromJSON(json: any): ReferencedConversationMessage {
     return ReferencedConversationMessageFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedConversationMessage}
+ */
 export function ReferencedConversationMessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedConversationMessage {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedConversationMessageFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedConversationMessage | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedConversationMessageToJSON(value?: ReferencedConversationMessage | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedConversationMessageToJSON(value?: ReferencedConversati
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedConversationMessageToJSON(value.reference),

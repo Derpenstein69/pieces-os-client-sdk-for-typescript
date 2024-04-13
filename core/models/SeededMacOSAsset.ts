@@ -33,13 +33,13 @@ import {
  */
 export interface SeededMacOSAsset {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededMacOSAsset
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof SeededMacOSAsset
      */
@@ -62,22 +62,47 @@ export function instanceOfSeededMacOSAsset(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededMacOSAsset}
+ */
 export function SeededMacOSAssetFromJSON(json: any): SeededMacOSAsset {
     return SeededMacOSAssetFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededMacOSAsset}
+ */
 export function SeededMacOSAssetFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededMacOSAsset {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'application': !exists(json, 'application') ? undefined : ApplicationFromJSON(json['application']),
         'value': json['value'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededMacOSAsset | null)} [value]
+ * @returns {*}
+ */
 export function SeededMacOSAssetToJSON(value?: SeededMacOSAsset | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function SeededMacOSAssetToJSON(value?: SeededMacOSAsset | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'application': ApplicationToJSON(value.application),
         'value': value.value,

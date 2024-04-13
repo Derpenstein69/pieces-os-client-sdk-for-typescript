@@ -45,31 +45,31 @@ import {
  */
 export interface SeededDiscoverableAsset {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededDiscoverableAsset
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededFile}
      * @memberof SeededDiscoverableAsset
      */
     file?: SeededFile;
     /**
-     * 
+     *
      * @type {SeededFragment}
      * @memberof SeededDiscoverableAsset
      */
     fragment?: SeededFragment;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededDiscoverableAsset
      */
     directory?: string;
     /**
-     * 
+     *
      * @type {TLPDirectedDiscoveryFilters}
      * @memberof SeededDiscoverableAsset
      */
@@ -85,16 +85,33 @@ export function instanceOfSeededDiscoverableAsset(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededDiscoverableAsset}
+ */
 export function SeededDiscoverableAssetFromJSON(json: any): SeededDiscoverableAsset {
     return SeededDiscoverableAssetFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededDiscoverableAsset}
+ */
 export function SeededDiscoverableAssetFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededDiscoverableAsset {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'file': !exists(json, 'file') ? undefined : SeededFileFromJSON(json['file']),
         'fragment': !exists(json, 'fragment') ? undefined : SeededFragmentFromJSON(json['fragment']),
@@ -103,6 +120,14 @@ export function SeededDiscoverableAssetFromJSONTyped(json: any, ignoreDiscrimina
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededDiscoverableAsset | null)} [value]
+ * @returns {*}
+ */
 export function SeededDiscoverableAssetToJSON(value?: SeededDiscoverableAsset | null): any {
     if (value === undefined) {
         return undefined;
@@ -111,7 +136,7 @@ export function SeededDiscoverableAssetToJSON(value?: SeededDiscoverableAsset | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'file': SeededFileToJSON(value.file),
         'fragment': SeededFragmentToJSON(value.fragment),

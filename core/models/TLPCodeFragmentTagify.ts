@@ -27,19 +27,19 @@ import {
 } from './TLPCodeSnippetTagifyCode';
 
 /**
- * 
+ *
  * @export
  * @interface TLPCodeFragmentTagify
  */
 export interface TLPCodeFragmentTagify {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeFragmentTagify
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TLPCodeSnippetTagifyCode}
      * @memberof TLPCodeFragmentTagify
      */
@@ -55,21 +55,46 @@ export function instanceOfTLPCodeFragmentTagify(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeFragmentTagify}
+ */
 export function TLPCodeFragmentTagifyFromJSON(json: any): TLPCodeFragmentTagify {
     return TLPCodeFragmentTagifyFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeFragmentTagify}
+ */
 export function TLPCodeFragmentTagifyFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeFragmentTagify {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'code': !exists(json, 'code') ? undefined : TLPCodeSnippetTagifyCodeFromJSON(json['code']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TLPCodeFragmentTagify | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeFragmentTagifyToJSON(value?: TLPCodeFragmentTagify | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function TLPCodeFragmentTagifyToJSON(value?: TLPCodeFragmentTagify | null
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'code': TLPCodeSnippetTagifyCodeToJSON(value.code),
     };

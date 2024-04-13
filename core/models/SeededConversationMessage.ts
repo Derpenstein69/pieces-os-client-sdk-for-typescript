@@ -58,50 +58,50 @@ import {
 
 /**
  * This is a seeded version of a ConversationMessage.
- * 
+ *
  * conversation is optional, this is because it can be used within the SeededConversation, however if this is passed into the /messages/create w/o a conversation uuid then we will throw an error.
  * @export
  * @interface SeededConversationMessage
  */
 export interface SeededConversationMessage {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededConversationMessage
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof SeededConversationMessage
      */
     created?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {Model}
      * @memberof SeededConversationMessage
      */
     model?: Model;
     /**
-     * 
+     *
      * @type {FragmentFormat}
      * @memberof SeededConversationMessage
      */
     fragment: FragmentFormat;
     /**
-     * 
+     *
      * @type {ReferencedConversation}
      * @memberof SeededConversationMessage
      */
     conversation?: ReferencedConversation;
     /**
-     * 
+     *
      * @type {ConversationMessageSentimentEnum}
      * @memberof SeededConversationMessage
      */
     sentiment?: ConversationMessageSentimentEnum;
     /**
-     * 
+     *
      * @type {QGPTConversationMessageRoleEnum}
      * @memberof SeededConversationMessage
      */
@@ -119,16 +119,33 @@ export function instanceOfSeededConversationMessage(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededConversationMessage}
+ */
 export function SeededConversationMessageFromJSON(json: any): SeededConversationMessage {
     return SeededConversationMessageFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededConversationMessage}
+ */
 export function SeededConversationMessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededConversationMessage {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'created': !exists(json, 'created') ? undefined : GroupedTimestampFromJSON(json['created']),
         'model': !exists(json, 'model') ? undefined : ModelFromJSON(json['model']),
@@ -139,6 +156,14 @@ export function SeededConversationMessageFromJSONTyped(json: any, ignoreDiscrimi
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededConversationMessage | null)} [value]
+ * @returns {*}
+ */
 export function SeededConversationMessageToJSON(value?: SeededConversationMessage | null): any {
     if (value === undefined) {
         return undefined;
@@ -147,7 +172,7 @@ export function SeededConversationMessageToJSON(value?: SeededConversationMessag
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'created': GroupedTimestampToJSON(value.created),
         'model': ModelToJSON(value.model),

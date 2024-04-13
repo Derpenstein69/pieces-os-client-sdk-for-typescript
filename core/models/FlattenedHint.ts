@@ -63,49 +63,49 @@ import {
  */
 export interface FlattenedHint {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedHint
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedHint
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedHint
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedHint
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedHint
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof FlattenedHint
      */
     mechanism?: MechanismEnum;
     /**
-     * 
+     *
      * @type {ReferencedAsset}
      * @memberof FlattenedHint
      */
     asset?: ReferencedAsset;
     /**
-     * 
+     *
      * @type {HintTypeEnum}
      * @memberof FlattenedHint
      */
@@ -117,13 +117,13 @@ export interface FlattenedHint {
      */
     text: string;
     /**
-     * 
+     *
      * @type {ReferencedModel}
      * @memberof FlattenedHint
      */
     model?: ReferencedModel;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedHint
      */
@@ -144,16 +144,33 @@ export function instanceOfFlattenedHint(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedHint}
+ */
 export function FlattenedHintFromJSON(json: any): FlattenedHint {
     return FlattenedHintFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedHint}
+ */
 export function FlattenedHintFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedHint {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -168,6 +185,14 @@ export function FlattenedHintFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedHint | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedHintToJSON(value?: FlattenedHint | null): any {
     if (value === undefined) {
         return undefined;
@@ -176,7 +201,7 @@ export function FlattenedHintToJSON(value?: FlattenedHint | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'created': GroupedTimestampToJSON(value.created),

@@ -25,28 +25,88 @@ import {
     SeededAssetTagsToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface FullTextSearchRequest
+ * @typedef {FullTextSearchRequest}
+ */
 export interface FullTextSearchRequest {
-    query?: string;
-    pseudo?: boolean;
-}
-
-export interface NeuralCodeSearchRequest {
-    query?: string;
-    pseudo?: boolean;
-}
-
-export interface TagBasedSearchRequest {
-    pseudo?: boolean;
-    seededAssetTags?: SeededAssetTags;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?string}
+ */
+query?: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+pseudo?: boolean;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface NeuralCodeSearchRequest
+ * @typedef {NeuralCodeSearchRequest}
+ */
+export interface NeuralCodeSearchRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?string}
+ */
+query?: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+pseudo?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface TagBasedSearchRequest
+ * @typedef {TagBasedSearchRequest}
+ */
+export interface TagBasedSearchRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+pseudo?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededAssetTags}
+ */
+seededAssetTags?: SeededAssetTags;
+}
+
+/**
+ *
  */
 export class SearchApi extends runtime.BaseAPI {
 
     /**
-     * This will run FTS for exact search, and will NOT run fuzzy matching. This will only search the content within the 
+     * This will run FTS for exact search, and will NOT run fuzzy matching. This will only search the content within the
      * /search/full_text [GET]
      */
     async fullTextSearchRaw(requestParameters: FullTextSearchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SearchedAssets>> {
@@ -73,7 +133,7 @@ export class SearchApi extends runtime.BaseAPI {
     }
 
     /**
-     * This will run FTS for exact search, and will NOT run fuzzy matching. This will only search the content within the 
+     * This will run FTS for exact search, and will NOT run fuzzy matching. This will only search the content within the
      * /search/full_text [GET]
      */
     async fullTextSearch(requestParameters: FullTextSearchRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SearchedAssets> {

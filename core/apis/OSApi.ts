@@ -46,20 +46,62 @@ import {
     UsersToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface LinkProviderRequest
+ * @typedef {LinkProviderRequest}
+ */
 export interface LinkProviderRequest {
-    seededExternalProvider?: SeededExternalProvider;
-}
-
-export interface OsUpdateCheckRequest {
-    uncheckedOSUpdate?: UncheckedOSUpdate;
-}
-
-export interface PickFilesRequest {
-    filePickerInput?: FilePickerInput;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededExternalProvider}
+ */
+seededExternalProvider?: SeededExternalProvider;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface OsUpdateCheckRequest
+ * @typedef {OsUpdateCheckRequest}
+ */
+export interface OsUpdateCheckRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?UncheckedOSUpdate}
+ */
+uncheckedOSUpdate?: UncheckedOSUpdate;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface PickFilesRequest
+ * @typedef {PickFilesRequest}
+ */
+export interface PickFilesRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?FilePickerInput}
+ */
+filePickerInput?: FilePickerInput;
+}
+
+/**
+ *
  */
 export class OSApi extends runtime.BaseAPI {
 
@@ -269,7 +311,7 @@ export class OSApi extends runtime.BaseAPI {
 
     /**
      * A trigger that launches a Sign into OS Server
-     * 
+     *
      */
     async signIntoOSRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UserProfile>> {
         const queryParameters: any = {};
@@ -288,7 +330,7 @@ export class OSApi extends runtime.BaseAPI {
 
     /**
      * A trigger that launches a Sign into OS Server
-     * 
+     *
      */
     async signIntoOS(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UserProfile> {
         const response = await this.signIntoOSRaw(initOverrides);

@@ -33,13 +33,13 @@ import {
  */
 export interface SeededModels {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededModels
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<SeededModel>}
      * @memberof SeededModels
      */
@@ -56,21 +56,46 @@ export function instanceOfSeededModels(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededModels}
+ */
 export function SeededModelsFromJSON(json: any): SeededModels {
     return SeededModelsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededModels}
+ */
 export function SeededModelsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededModels {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(SeededModelFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededModels | null)} [value]
+ * @returns {*}
+ */
 export function SeededModelsToJSON(value?: SeededModels | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function SeededModelsToJSON(value?: SeededModels | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(SeededModelToJSON)),
     };

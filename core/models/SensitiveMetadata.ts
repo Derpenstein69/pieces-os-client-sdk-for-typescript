@@ -33,13 +33,13 @@ import {
  */
 export interface SensitiveMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SensitiveMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TextMatch}
      * @memberof SensitiveMetadata
      */
@@ -61,22 +61,47 @@ export function instanceOfSensitiveMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SensitiveMetadata}
+ */
 export function SensitiveMetadataFromJSON(json: any): SensitiveMetadata {
     return SensitiveMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SensitiveMetadata}
+ */
 export function SensitiveMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): SensitiveMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'match': !exists(json, 'match') ? undefined : TextMatchFromJSON(json['match']),
         'entropy': !exists(json, 'entropy') ? undefined : json['entropy'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(SensitiveMetadata | null)} [value]
+ * @returns {*}
+ */
 export function SensitiveMetadataToJSON(value?: SensitiveMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -85,7 +110,7 @@ export function SensitiveMetadataToJSON(value?: SensitiveMetadata | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'match': TextMatchToJSON(value.match),
         'entropy': value.entropy,

@@ -33,13 +33,13 @@ import {
  */
 export interface WorkstreamPatternEngineStatus {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof WorkstreamPatternEngineStatus
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {WorkstreamPatternEngineVisionStatus}
      * @memberof WorkstreamPatternEngineStatus
      */
@@ -55,21 +55,46 @@ export function instanceOfWorkstreamPatternEngineStatus(value: object): boolean 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {WorkstreamPatternEngineStatus}
+ */
 export function WorkstreamPatternEngineStatusFromJSON(json: any): WorkstreamPatternEngineStatus {
     return WorkstreamPatternEngineStatusFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {WorkstreamPatternEngineStatus}
+ */
 export function WorkstreamPatternEngineStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): WorkstreamPatternEngineStatus {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'vision': !exists(json, 'vision') ? undefined : WorkstreamPatternEngineVisionStatusFromJSON(json['vision']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(WorkstreamPatternEngineStatus | null)} [value]
+ * @returns {*}
+ */
 export function WorkstreamPatternEngineStatusToJSON(value?: WorkstreamPatternEngineStatus | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function WorkstreamPatternEngineStatusToJSON(value?: WorkstreamPatternEng
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'vision': WorkstreamPatternEngineVisionStatusToJSON(value.vision),
     };

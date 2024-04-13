@@ -46,49 +46,49 @@ import {
 
 /**
  * This is the model return by the connector's suggest endpoint.
- * 
+ *
  * Note:
  * assets are the assets that this target was ran against.
- * 
+ *
  * distribution is the distribution that we generated from comparing the target to the asset's vectors.(currently uuid(assetid) : value that is the difference between the asset and the target) **could potentially make an additional model here that is an array from most to least relevent.
- * 
+ *
  * *** distribution is required but we are currently unable to reflect that with our current dart generation.
  * @export
  * @interface Suggestion
  */
 export interface Suggestion {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Suggestion
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ReuseSuggestion}
      * @memberof Suggestion
      */
     reuse: ReuseSuggestion;
     /**
-     * 
+     *
      * @type {SaveSuggestion}
      * @memberof Suggestion
      */
     save: SaveSuggestion;
     /**
-     * 
+     *
      * @type {SuggestionTarget}
      * @memberof Suggestion
      */
     target: SuggestionTarget;
     /**
-     * 
+     *
      * @type {Assets}
      * @memberof Suggestion
      */
     assets: Assets;
     /**
-     * 
+     *
      * @type {{ [key: string]: number; }}
      * @memberof Suggestion
      */
@@ -108,16 +108,33 @@ export function instanceOfSuggestion(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Suggestion}
+ */
 export function SuggestionFromJSON(json: any): Suggestion {
     return SuggestionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Suggestion}
+ */
 export function SuggestionFromJSONTyped(json: any, ignoreDiscriminator: boolean): Suggestion {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'reuse': ReuseSuggestionFromJSON(json['reuse']),
         'save': SaveSuggestionFromJSON(json['save']),
@@ -127,6 +144,14 @@ export function SuggestionFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(Suggestion | null)} [value]
+ * @returns {*}
+ */
 export function SuggestionToJSON(value?: Suggestion | null): any {
     if (value === undefined) {
         return undefined;
@@ -135,7 +160,7 @@ export function SuggestionToJSON(value?: Suggestion | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'reuse': ReuseSuggestionToJSON(value.reuse),
         'save': SaveSuggestionToJSON(value.save),

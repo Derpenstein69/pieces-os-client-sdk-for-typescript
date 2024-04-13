@@ -82,16 +82,33 @@ export function instanceOfTLPCodeFragmentDescription(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeFragmentDescription}
+ */
 export function TLPCodeFragmentDescriptionFromJSON(json: any): TLPCodeFragmentDescription {
     return TLPCodeFragmentDescriptionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeFragmentDescription}
+ */
 export function TLPCodeFragmentDescriptionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeFragmentDescription {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'description': !exists(json, 'description') ? undefined : json['description'],
         'asset': json['asset'],
         'created': json['created'],
@@ -103,6 +120,14 @@ export function TLPCodeFragmentDescriptionFromJSONTyped(json: any, ignoreDiscrim
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TLPCodeFragmentDescription | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeFragmentDescriptionToJSON(value?: TLPCodeFragmentDescription | null): any {
     if (value === undefined) {
         return undefined;
@@ -111,7 +136,7 @@ export function TLPCodeFragmentDescriptionToJSON(value?: TLPCodeFragmentDescript
         return null;
     }
     return {
-        
+
         'description': value.description,
         'asset': value.asset,
         'created': value.created,

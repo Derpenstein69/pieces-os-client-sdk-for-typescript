@@ -22,26 +22,26 @@ import {
 
 /**
  * This is a predeleted version relating to the /external_provider/api_key/delete endpoint.
- * 
+ *
  * This will ensure we remove this specific provider.(anything that is set to true we will reset to null within the database.)
  * @export
  * @interface PredeletedExternalProviderApiKey
  */
 export interface PredeletedExternalProviderApiKey {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof PredeletedExternalProviderApiKey
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof PredeletedExternalProviderApiKey
      */
     user: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof PredeletedExternalProviderApiKey
      */
@@ -58,22 +58,47 @@ export function instanceOfPredeletedExternalProviderApiKey(value: object): boole
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PredeletedExternalProviderApiKey}
+ */
 export function PredeletedExternalProviderApiKeyFromJSON(json: any): PredeletedExternalProviderApiKey {
     return PredeletedExternalProviderApiKeyFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PredeletedExternalProviderApiKey}
+ */
 export function PredeletedExternalProviderApiKeyFromJSONTyped(json: any, ignoreDiscriminator: boolean): PredeletedExternalProviderApiKey {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'user': json['user'],
         'openAI': !exists(json, 'open_AI') ? undefined : json['open_AI'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(PredeletedExternalProviderApiKey | null)} [value]
+ * @returns {*}
+ */
 export function PredeletedExternalProviderApiKeyToJSON(value?: PredeletedExternalProviderApiKey | null): any {
     if (value === undefined) {
         return undefined;
@@ -82,7 +107,7 @@ export function PredeletedExternalProviderApiKeyToJSON(value?: PredeletedExterna
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'user': value.user,
         'open_AI': value.openAI,

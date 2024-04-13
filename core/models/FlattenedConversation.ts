@@ -100,26 +100,26 @@ import {
 
 /**
  * This is a flattend version of the Convsersation for DAG-Safety.
- * 
+ *
  * This will hold together a conversation. Ie allthe message within a conversation.
- * 
+ *
  * All the additional properties on here used on here like(anchors/assets) are used for context that will seed the conversation.
- * 
+ *
  * model is a calculated property, and will be the model of the last message sent if applicable.
- * 
+ *
  * summaries: on the top level here will simply be used to associate a conversation and a summary(this is not used for grounding), grounding.summaries will be used for this.(TODO)
  * @export
  * @interface FlattenedConversation
  */
 export interface FlattenedConversation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedConversation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedConversation
      */
@@ -131,91 +131,91 @@ export interface FlattenedConversation {
      */
     name?: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedConversation
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedConversation
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedConversation
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof FlattenedConversation
      */
     favorited?: boolean;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof FlattenedConversation
      */
     application?: Application;
     /**
-     * 
+     *
      * @type {FlattenedAnnotations}
      * @memberof FlattenedConversation
      */
     annotations?: FlattenedAnnotations;
     /**
-     * 
+     *
      * @type {FlattenedConversationMessages}
      * @memberof FlattenedConversation
      */
     messages: FlattenedConversationMessages;
     /**
-     * 
+     *
      * @type {ReferencedModel}
      * @memberof FlattenedConversation
      */
     model?: ReferencedModel;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof FlattenedConversation
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {FlattenedWebsites}
      * @memberof FlattenedConversation
      */
     websites?: FlattenedWebsites;
     /**
-     * 
+     *
      * @type {FlattenedAnchors}
      * @memberof FlattenedConversation
      */
     anchors?: FlattenedAnchors;
     /**
-     * 
+     *
      * @type {ConversationTypeEnum}
      * @memberof FlattenedConversation
      */
     type: ConversationTypeEnum;
     /**
-     * 
+     *
      * @type {ConversationGrounding}
      * @memberof FlattenedConversation
      */
     grounding?: ConversationGrounding;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedConversation
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {QGPTPromptPipeline}
      * @memberof FlattenedConversation
      */
@@ -227,7 +227,7 @@ export interface FlattenedConversation {
      */
     demo?: boolean;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof FlattenedConversation
      */
@@ -248,16 +248,33 @@ export function instanceOfFlattenedConversation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedConversation}
+ */
 export function FlattenedConversationFromJSON(json: any): FlattenedConversation {
     return FlattenedConversationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedConversation}
+ */
 export function FlattenedConversationFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedConversation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'name': !exists(json, 'name') ? undefined : json['name'],
@@ -281,6 +298,14 @@ export function FlattenedConversationFromJSONTyped(json: any, ignoreDiscriminato
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(FlattenedConversation | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedConversationToJSON(value?: FlattenedConversation | null): any {
     if (value === undefined) {
         return undefined;
@@ -289,7 +314,7 @@ export function FlattenedConversationToJSON(value?: FlattenedConversation | null
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'name': value.name,

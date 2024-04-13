@@ -33,13 +33,13 @@ export interface Session {
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Session
      */
     opened: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Session
      */
@@ -57,22 +57,47 @@ export function instanceOfSession(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Session}
+ */
 export function SessionFromJSON(json: any): Session {
     return SessionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Session}
+ */
 export function SessionFromJSONTyped(json: any, ignoreDiscriminator: boolean): Session {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'id': json['id'],
         'opened': GroupedTimestampFromJSON(json['opened']),
         'closed': !exists(json, 'closed') ? undefined : GroupedTimestampFromJSON(json['closed']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(Session | null)} [value]
+ * @returns {*}
+ */
 export function SessionToJSON(value?: Session | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function SessionToJSON(value?: Session | null): any {
         return null;
     }
     return {
-        
+
         'id': value.id,
         'opened': GroupedTimestampToJSON(value.opened),
         'closed': GroupedTimestampToJSON(value.closed),

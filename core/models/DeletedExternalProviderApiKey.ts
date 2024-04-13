@@ -33,13 +33,13 @@ import {
  */
 export interface DeletedExternalProviderApiKey {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof DeletedExternalProviderApiKey
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Auth0UserMetadata}
      * @memberof DeletedExternalProviderApiKey
      */
@@ -56,21 +56,46 @@ export function instanceOfDeletedExternalProviderApiKey(value: object): boolean 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {DeletedExternalProviderApiKey}
+ */
 export function DeletedExternalProviderApiKeyFromJSON(json: any): DeletedExternalProviderApiKey {
     return DeletedExternalProviderApiKeyFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {DeletedExternalProviderApiKey}
+ */
 export function DeletedExternalProviderApiKeyFromJSONTyped(json: any, ignoreDiscriminator: boolean): DeletedExternalProviderApiKey {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'metadata': Auth0UserMetadataFromJSON(json['metadata']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(DeletedExternalProviderApiKey | null)} [value]
+ * @returns {*}
+ */
 export function DeletedExternalProviderApiKeyToJSON(value?: DeletedExternalProviderApiKey | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function DeletedExternalProviderApiKeyToJSON(value?: DeletedExternalProvi
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'metadata': Auth0UserMetadataToJSON(value.metadata),
     };

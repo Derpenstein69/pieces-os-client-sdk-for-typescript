@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface SystemExecutionCpuInformation
  */
@@ -32,7 +32,7 @@ export interface SystemExecutionCpuInformation {
      */
     brand: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof SystemExecutionCpuInformation
      */
@@ -51,22 +51,47 @@ export function instanceOfSystemExecutionCpuInformation(value: object): boolean 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SystemExecutionCpuInformation}
+ */
 export function SystemExecutionCpuInformationFromJSON(json: any): SystemExecutionCpuInformation {
     return SystemExecutionCpuInformationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SystemExecutionCpuInformation}
+ */
 export function SystemExecutionCpuInformationFromJSONTyped(json: any, ignoreDiscriminator: boolean): SystemExecutionCpuInformation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'count': json['count'],
         'brand': json['brand'],
         'frequency': json['frequency'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(SystemExecutionCpuInformation | null)} [value]
+ * @returns {*}
+ */
 export function SystemExecutionCpuInformationToJSON(value?: SystemExecutionCpuInformation | null): any {
     if (value === undefined) {
         return undefined;
@@ -75,7 +100,7 @@ export function SystemExecutionCpuInformationToJSON(value?: SystemExecutionCpuIn
         return null;
     }
     return {
-        
+
         'count': value.count,
         'brand': value.brand,
         'frequency': value.frequency,

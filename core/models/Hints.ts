@@ -39,13 +39,13 @@ import {
  */
 export interface Hints {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Hints
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Hint>}
      * @memberof Hints
      */
@@ -57,7 +57,7 @@ export interface Hints {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Hints
      */
@@ -74,16 +74,33 @@ export function instanceOfHints(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Hints}
+ */
 export function HintsFromJSON(json: any): Hints {
     return HintsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Hints}
+ */
 export function HintsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Hints {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(HintFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function HintsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Hin
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(Hints | null)} [value]
+ * @returns {*}
+ */
 export function HintsToJSON(value?: Hints | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function HintsToJSON(value?: Hints | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(HintToJSON)),
         'indices': value.indices,

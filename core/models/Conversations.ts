@@ -39,13 +39,13 @@ import {
  */
 export interface Conversations {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Conversations
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Conversation>}
      * @memberof Conversations
      */
@@ -57,7 +57,7 @@ export interface Conversations {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Conversations
      */
@@ -74,16 +74,33 @@ export function instanceOfConversations(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Conversations}
+ */
 export function ConversationsFromJSON(json: any): Conversations {
     return ConversationsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Conversations}
+ */
 export function ConversationsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Conversations {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ConversationFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function ConversationsFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(Conversations | null)} [value]
+ * @returns {*}
+ */
 export function ConversationsToJSON(value?: Conversations | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function ConversationsToJSON(value?: Conversations | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ConversationToJSON)),
         'indices': value.indices,

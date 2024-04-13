@@ -45,25 +45,25 @@ import {
  */
 export interface FragmentFormat {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FragmentFormat
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TransferableString}
      * @memberof FragmentFormat
      */
     string?: TransferableString;
     /**
-     * 
+     *
      * @type {TransferableBytes}
      * @memberof FragmentFormat
      */
     bytes?: TransferableBytes;
     /**
-     * 
+     *
      * @type {FragmentMetadata}
      * @memberof FragmentFormat
      */
@@ -79,16 +79,33 @@ export function instanceOfFragmentFormat(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FragmentFormat}
+ */
 export function FragmentFormatFromJSON(json: any): FragmentFormat {
     return FragmentFormatFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FragmentFormat}
+ */
 export function FragmentFormatFromJSONTyped(json: any, ignoreDiscriminator: boolean): FragmentFormat {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'string': !exists(json, 'string') ? undefined : TransferableStringFromJSON(json['string']),
         'bytes': !exists(json, 'bytes') ? undefined : TransferableBytesFromJSON(json['bytes']),
@@ -96,6 +113,14 @@ export function FragmentFormatFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FragmentFormat | null)} [value]
+ * @returns {*}
+ */
 export function FragmentFormatToJSON(value?: FragmentFormat | null): any {
     if (value === undefined) {
         return undefined;
@@ -104,7 +129,7 @@ export function FragmentFormatToJSON(value?: FragmentFormat | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'string': TransferableStringToJSON(value.string),
         'bytes': TransferableBytesToJSON(value.bytes),

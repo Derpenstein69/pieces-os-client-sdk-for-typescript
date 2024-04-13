@@ -39,13 +39,13 @@ import {
  */
 export interface FlattenedAnnotations {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedAnnotations
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedAnnotation>}
      * @memberof FlattenedAnnotations
      */
@@ -57,7 +57,7 @@ export interface FlattenedAnnotations {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedAnnotations
      */
@@ -74,16 +74,33 @@ export function instanceOfFlattenedAnnotations(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedAnnotations}
+ */
 export function FlattenedAnnotationsFromJSON(json: any): FlattenedAnnotations {
     return FlattenedAnnotationsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedAnnotations}
+ */
 export function FlattenedAnnotationsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedAnnotations {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedAnnotationFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function FlattenedAnnotationsFromJSONTyped(json: any, ignoreDiscriminator
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(FlattenedAnnotations | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedAnnotationsToJSON(value?: FlattenedAnnotations | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function FlattenedAnnotationsToJSON(value?: FlattenedAnnotations | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedAnnotationToJSON)),
         'indices': value.indices,

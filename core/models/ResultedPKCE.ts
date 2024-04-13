@@ -27,7 +27,7 @@ import {
  */
 export interface ResultedPKCE {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ResultedPKCE
      */
@@ -57,22 +57,47 @@ export function instanceOfResultedPKCE(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ResultedPKCE}
+ */
 export function ResultedPKCEFromJSON(json: any): ResultedPKCE {
     return ResultedPKCEFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ResultedPKCE}
+ */
 export function ResultedPKCEFromJSONTyped(json: any, ignoreDiscriminator: boolean): ResultedPKCE {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'code': json['code'],
         'state': json['state'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(ResultedPKCE | null)} [value]
+ * @returns {*}
+ */
 export function ResultedPKCEToJSON(value?: ResultedPKCE | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function ResultedPKCEToJSON(value?: ResultedPKCE | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'code': value.code,
         'state': value.state,

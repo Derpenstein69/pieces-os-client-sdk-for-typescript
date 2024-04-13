@@ -21,17 +21,49 @@ export const HintTypeEnum = {
     SuggestedQuery: 'SUGGESTED_QUERY',
     QgptHint: 'QGPT_HINT'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @typedef {HintTypeEnum}
+ */
 export type HintTypeEnum = typeof HintTypeEnum[keyof typeof HintTypeEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {HintTypeEnum}
+ */
 export function HintTypeEnumFromJSON(json: any): HintTypeEnum {
     return HintTypeEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {HintTypeEnum}
+ */
 export function HintTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): HintTypeEnum {
     return json as HintTypeEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(HintTypeEnum | null)} [value]
+ * @returns {*}
+ */
 export function HintTypeEnumToJSON(value?: HintTypeEnum | null): any {
     return value as any;
 }

@@ -34,14 +34,14 @@ import {
 
 /**
  * A SeededUEAsset is the minimum data sent from UE required to create an asset within Pieces.
- * 
+ *
  * Fragment & file are both optional properties however we will throw an internal error if both fragment and file are passed through or if both are undefined.
  * @export
  * @interface SeededUltraSuiteAsset
  */
 export interface SeededUltraSuiteAsset {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededUltraSuiteAsset
      */
@@ -53,19 +53,19 @@ export interface SeededUltraSuiteAsset {
      */
     name?: string;
     /**
-     * 
+     *
      * @type {ClassificationSpecificEnum}
      * @memberof SeededUltraSuiteAsset
      */
     ext?: ClassificationSpecificEnum;
     /**
-     * 
+     *
      * @type {SeededFormat}
      * @memberof SeededUltraSuiteAsset
      */
     format: SeededFormat;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededUltraSuiteAsset
      */
@@ -82,16 +82,33 @@ export function instanceOfSeededUltraSuiteAsset(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededUltraSuiteAsset}
+ */
 export function SeededUltraSuiteAssetFromJSON(json: any): SeededUltraSuiteAsset {
     return SeededUltraSuiteAssetFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededUltraSuiteAsset}
+ */
 export function SeededUltraSuiteAssetFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededUltraSuiteAsset {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'name': !exists(json, 'name') ? undefined : json['name'],
         'ext': !exists(json, 'ext') ? undefined : ClassificationSpecificEnumFromJSON(json['ext']),
@@ -100,6 +117,14 @@ export function SeededUltraSuiteAssetFromJSONTyped(json: any, ignoreDiscriminato
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededUltraSuiteAsset | null)} [value]
+ * @returns {*}
+ */
 export function SeededUltraSuiteAssetToJSON(value?: SeededUltraSuiteAsset | null): any {
     if (value === undefined) {
         return undefined;
@@ -108,7 +133,7 @@ export function SeededUltraSuiteAssetToJSON(value?: SeededUltraSuiteAsset | null
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'name': value.name,
         'ext': ClassificationSpecificEnumToJSON(value.ext),

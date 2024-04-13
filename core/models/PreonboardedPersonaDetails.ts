@@ -22,26 +22,26 @@ import {
 
 /**
  * This is an input body for the /machine_learning/text/technical_processing/generators/personification endpoint.
- * 
+ *
  * This will accept some of the personal details ie languages/personas && will transform this in to onbaording snippets
  * @export
  * @interface PreonboardedPersonaDetails
  */
 export interface PreonboardedPersonaDetails {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof PreonboardedPersonaDetails
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof PreonboardedPersonaDetails
      */
     languages?: Array<string>;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof PreonboardedPersonaDetails
      */
@@ -57,22 +57,47 @@ export function instanceOfPreonboardedPersonaDetails(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PreonboardedPersonaDetails}
+ */
 export function PreonboardedPersonaDetailsFromJSON(json: any): PreonboardedPersonaDetails {
     return PreonboardedPersonaDetailsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PreonboardedPersonaDetails}
+ */
 export function PreonboardedPersonaDetailsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PreonboardedPersonaDetails {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'languages': !exists(json, 'languages') ? undefined : json['languages'],
         'personas': !exists(json, 'personas') ? undefined : json['personas'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(PreonboardedPersonaDetails | null)} [value]
+ * @returns {*}
+ */
 export function PreonboardedPersonaDetailsToJSON(value?: PreonboardedPersonaDetails | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function PreonboardedPersonaDetailsToJSON(value?: PreonboardedPersonaDeta
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'languages': value.languages,
         'personas': value.personas,

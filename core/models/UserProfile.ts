@@ -57,44 +57,44 @@ import {
  */
 export interface UserProfile {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof UserProfile
      */
     schema?: EmbeddedModelSchema;
     /**
-     * mapped from picture.URL pointing to the user's profile picture. 
+     * mapped from picture.URL pointing to the user's profile picture.
      * @type {string}
      * @memberof UserProfile
      */
     picture?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof UserProfile
      */
     email?: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof UserProfile
      */
     created?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof UserProfile
      */
     updated?: GroupedTimestamp;
     /**
      * 	(unique) User's username.
-     * 	
+     *
      * @type {string}
      * @memberof UserProfile
      */
     username?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof UserProfile
      */
@@ -106,31 +106,31 @@ export interface UserProfile {
      */
     name?: string;
     /**
-     * 
+     *
      * @type {Aesthetics}
      * @memberof UserProfile
      */
     aesthetics: Aesthetics;
     /**
-     * 
+     *
      * @type {string}
      * @memberof UserProfile
      */
     vanityname?: string;
     /**
-     * 
+     *
      * @type {AllocationCloud}
      * @memberof UserProfile
      */
     allocation?: AllocationCloud;
     /**
-     * 
+     *
      * @type {ExternalProviders}
      * @memberof UserProfile
      */
     providers?: ExternalProviders;
     /**
-     * 
+     *
      * @type {Auth0UserMetadata}
      * @memberof UserProfile
      */
@@ -148,16 +148,33 @@ export function instanceOfUserProfile(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {UserProfile}
+ */
 export function UserProfileFromJSON(json: any): UserProfile {
     return UserProfileFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {UserProfile}
+ */
 export function UserProfileFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserProfile {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'picture': !exists(json, 'picture') ? undefined : json['picture'],
         'email': !exists(json, 'email') ? undefined : json['email'],
@@ -174,6 +191,14 @@ export function UserProfileFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(UserProfile | null)} [value]
+ * @returns {*}
+ */
 export function UserProfileToJSON(value?: UserProfile | null): any {
     if (value === undefined) {
         return undefined;
@@ -182,7 +207,7 @@ export function UserProfileToJSON(value?: UserProfile | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'picture': value.picture,
         'email': value.email,

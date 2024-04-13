@@ -39,13 +39,13 @@ import {
  */
 export interface Ranges {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Ranges
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Range>}
      * @memberof Ranges
      */
@@ -57,13 +57,13 @@ export interface Ranges {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Ranges
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof Ranges
      */
@@ -80,16 +80,33 @@ export function instanceOfRanges(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Ranges}
+ */
 export function RangesFromJSON(json: any): Ranges {
     return RangesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Ranges}
+ */
 export function RangesFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ranges {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(RangeFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -98,6 +115,14 @@ export function RangesFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ra
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(Ranges | null)} [value]
+ * @returns {*}
+ */
 export function RangesToJSON(value?: Ranges | null): any {
     if (value === undefined) {
         return undefined;
@@ -106,7 +131,7 @@ export function RangesToJSON(value?: Ranges | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(RangeToJSON)),
         'indices': value.indices,

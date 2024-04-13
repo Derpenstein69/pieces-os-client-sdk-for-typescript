@@ -34,25 +34,87 @@ import {
     WebsitesToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsitesCreateNewWebsiteRequest
+ * @typedef {WebsitesCreateNewWebsiteRequest}
+ */
 export interface WebsitesCreateNewWebsiteRequest {
-    transferables?: boolean;
-    seededWebsite?: SeededWebsite;
-}
-
-export interface WebsitesDeleteSpecificWebsiteRequest {
-    website: string;
-}
-
-export interface WebsitesExistsRequest {
-    existentMetadata?: ExistentMetadata;
-}
-
-export interface WebsitesSnapshotRequest {
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?SeededWebsite}
+ */
+seededWebsite?: SeededWebsite;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsitesDeleteSpecificWebsiteRequest
+ * @typedef {WebsitesDeleteSpecificWebsiteRequest}
+ */
+export interface WebsitesDeleteSpecificWebsiteRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsitesExistsRequest
+ * @typedef {WebsitesExistsRequest}
+ */
+export interface WebsitesExistsRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?ExistentMetadata}
+ */
+existentMetadata?: ExistentMetadata;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsitesSnapshotRequest
+ * @typedef {WebsitesSnapshotRequest}
+ */
+export interface WebsitesSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class WebsitesApi extends runtime.BaseAPI {
 

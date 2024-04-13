@@ -33,13 +33,13 @@ import {
  */
 export interface Distributions {
     /**
-     * 
+     *
      * @type {Array<Distribution>}
      * @memberof Distributions
      */
     iterable: Array<Distribution>;
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Distributions
      */
@@ -56,21 +56,46 @@ export function instanceOfDistributions(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Distributions}
+ */
 export function DistributionsFromJSON(json: any): Distributions {
     return DistributionsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Distributions}
+ */
 export function DistributionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Distributions {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'iterable': ((json['iterable'] as Array<any>).map(DistributionFromJSON)),
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(Distributions | null)} [value]
+ * @returns {*}
+ */
 export function DistributionsToJSON(value?: Distributions | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function DistributionsToJSON(value?: Distributions | null): any {
         return null;
     }
     return {
-        
+
         'iterable': ((value.iterable as Array<any>).map(DistributionToJSON)),
         'schema': EmbeddedModelSchemaToJSON(value.schema),
     };

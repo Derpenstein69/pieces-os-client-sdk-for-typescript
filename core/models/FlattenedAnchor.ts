@@ -69,91 +69,91 @@ import {
 } from './Score';
 
 /**
- * 
+ *
  * @export
  * @interface FlattenedAnchor
  */
 export interface FlattenedAnchor {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedAnchor
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedAnchor
      */
     id: string;
     /**
-     * 
+     *
      * @type {AnchorTypeEnum}
      * @memberof FlattenedAnchor
      */
     type: AnchorTypeEnum;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof FlattenedAnchor
      */
     watch?: boolean;
     /**
-     * 
+     *
      * @type {FlattenedAnchorPoints}
      * @memberof FlattenedAnchor
      */
     points: FlattenedAnchorPoints;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedAnchor
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedAnchor
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedAnchor
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof FlattenedAnchor
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedAnchor
      */
     name?: string;
     /**
-     * 
+     *
      * @type {FlattenedAnnotations}
      * @memberof FlattenedAnchor
      */
     annotations?: FlattenedAnnotations;
     /**
-     * 
+     *
      * @type {FlattenedConversations}
      * @memberof FlattenedAnchor
      */
     conversations?: FlattenedConversations;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedAnchor
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof FlattenedAnchor
      */
@@ -174,16 +174,33 @@ export function instanceOfFlattenedAnchor(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedAnchor}
+ */
 export function FlattenedAnchorFromJSON(json: any): FlattenedAnchor {
     return FlattenedAnchorFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedAnchor}
+ */
 export function FlattenedAnchorFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedAnchor {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'type': AnchorTypeEnumFromJSON(json['type']),
@@ -201,6 +218,14 @@ export function FlattenedAnchorFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(FlattenedAnchor | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedAnchorToJSON(value?: FlattenedAnchor | null): any {
     if (value === undefined) {
         return undefined;
@@ -209,7 +234,7 @@ export function FlattenedAnchorToJSON(value?: FlattenedAnchor | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'type': AnchorTypeEnumToJSON(value.type),

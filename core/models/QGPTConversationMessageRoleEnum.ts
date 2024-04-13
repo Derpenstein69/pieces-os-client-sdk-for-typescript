@@ -22,17 +22,49 @@ export const QGPTConversationMessageRoleEnum = {
     System: 'SYSTEM',
     Assistant: 'ASSISTANT'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @typedef {QGPTConversationMessageRoleEnum}
+ */
 export type QGPTConversationMessageRoleEnum = typeof QGPTConversationMessageRoleEnum[keyof typeof QGPTConversationMessageRoleEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTConversationMessageRoleEnum}
+ */
 export function QGPTConversationMessageRoleEnumFromJSON(json: any): QGPTConversationMessageRoleEnum {
     return QGPTConversationMessageRoleEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTConversationMessageRoleEnum}
+ */
 export function QGPTConversationMessageRoleEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTConversationMessageRoleEnum {
     return json as QGPTConversationMessageRoleEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTConversationMessageRoleEnum | null)} [value]
+ * @returns {*}
+ */
 export function QGPTConversationMessageRoleEnumToJSON(value?: QGPTConversationMessageRoleEnum | null): any {
     return value as any;
 }

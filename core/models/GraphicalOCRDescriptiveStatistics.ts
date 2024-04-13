@@ -33,49 +33,49 @@ import {
  */
 export interface GraphicalOCRDescriptiveStatistics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof GraphicalOCRDescriptiveStatistics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalOCRDescriptiveStatistics
      */
     asset: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalOCRDescriptiveStatistics
      */
     user: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalOCRDescriptiveStatistics
      */
     model: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalOCRDescriptiveStatistics
      */
     created: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalOCRDescriptiveStatistics
      */
     os: string;
     /**
-     * 
+     *
      * @type {GraphicalOCRDescriptiveStatisticsConfidence}
      * @memberof GraphicalOCRDescriptiveStatistics
      */
     confidence: GraphicalOCRDescriptiveStatisticsConfidence;
     /**
-     * 
+     *
      * @type {string}
      * @memberof GraphicalOCRDescriptiveStatistics
      */
@@ -98,16 +98,33 @@ export function instanceOfGraphicalOCRDescriptiveStatistics(value: object): bool
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {GraphicalOCRDescriptiveStatistics}
+ */
 export function GraphicalOCRDescriptiveStatisticsFromJSON(json: any): GraphicalOCRDescriptiveStatistics {
     return GraphicalOCRDescriptiveStatisticsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {GraphicalOCRDescriptiveStatistics}
+ */
 export function GraphicalOCRDescriptiveStatisticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GraphicalOCRDescriptiveStatistics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': json['asset'],
         'user': json['user'],
@@ -119,6 +136,14 @@ export function GraphicalOCRDescriptiveStatisticsFromJSONTyped(json: any, ignore
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(GraphicalOCRDescriptiveStatistics | null)} [value]
+ * @returns {*}
+ */
 export function GraphicalOCRDescriptiveStatisticsToJSON(value?: GraphicalOCRDescriptiveStatistics | null): any {
     if (value === undefined) {
         return undefined;
@@ -127,7 +152,7 @@ export function GraphicalOCRDescriptiveStatisticsToJSON(value?: GraphicalOCRDesc
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': value.asset,
         'user': value.user,

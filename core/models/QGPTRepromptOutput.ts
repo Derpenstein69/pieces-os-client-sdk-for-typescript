@@ -21,19 +21,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface QGPTRepromptOutput
  */
 export interface QGPTRepromptOutput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTRepromptOutput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof QGPTRepromptOutput
      */
@@ -50,21 +50,46 @@ export function instanceOfQGPTRepromptOutput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTRepromptOutput}
+ */
 export function QGPTRepromptOutputFromJSON(json: any): QGPTRepromptOutput {
     return QGPTRepromptOutputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTRepromptOutput}
+ */
 export function QGPTRepromptOutputFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTRepromptOutput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'query': json['query'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTRepromptOutput | null)} [value]
+ * @returns {*}
+ */
 export function QGPTRepromptOutputToJSON(value?: QGPTRepromptOutput | null): any {
     if (value === undefined) {
         return undefined;
@@ -73,7 +98,7 @@ export function QGPTRepromptOutputToJSON(value?: QGPTRepromptOutput | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'query': value.query,
     };

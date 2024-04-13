@@ -27,19 +27,19 @@ import {
 } from './ExportedDatabaseFormat';
 
 /**
- * 
+ *
  * @export
  * @interface ExportedDatabaseFormats
  */
 export interface ExportedDatabaseFormats {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ExportedDatabaseFormats
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ExportedDatabaseFormat>}
      * @memberof ExportedDatabaseFormats
      */
@@ -56,21 +56,46 @@ export function instanceOfExportedDatabaseFormats(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExportedDatabaseFormats}
+ */
 export function ExportedDatabaseFormatsFromJSON(json: any): ExportedDatabaseFormats {
     return ExportedDatabaseFormatsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExportedDatabaseFormats}
+ */
 export function ExportedDatabaseFormatsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExportedDatabaseFormats {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ExportedDatabaseFormatFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExportedDatabaseFormats | null)} [value]
+ * @returns {*}
+ */
 export function ExportedDatabaseFormatsToJSON(value?: ExportedDatabaseFormats | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function ExportedDatabaseFormatsToJSON(value?: ExportedDatabaseFormats | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ExportedDatabaseFormatToJSON)),
     };

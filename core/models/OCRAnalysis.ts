@@ -39,25 +39,25 @@ import {
  */
 export interface OCRAnalysis {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OCRAnalysis
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof OCRAnalysis
      */
     id: string;
     /**
-     * 
+     *
      * @type {Format}
      * @memberof OCRAnalysis
      */
     raw: Format;
     /**
-     * 
+     *
      * @type {Format}
      * @memberof OCRAnalysis
      */
@@ -69,7 +69,7 @@ export interface OCRAnalysis {
      */
     image: string;
     /**
-     * 
+     *
      * @type {Model}
      * @memberof OCRAnalysis
      */
@@ -90,16 +90,33 @@ export function instanceOfOCRAnalysis(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OCRAnalysis}
+ */
 export function OCRAnalysisFromJSON(json: any): OCRAnalysis {
     return OCRAnalysisFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OCRAnalysis}
+ */
 export function OCRAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): OCRAnalysis {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'raw': FormatFromJSON(json['raw']),
@@ -109,6 +126,14 @@ export function OCRAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OCRAnalysis | null)} [value]
+ * @returns {*}
+ */
 export function OCRAnalysisToJSON(value?: OCRAnalysis | null): any {
     if (value === undefined) {
         return undefined;
@@ -117,7 +142,7 @@ export function OCRAnalysisToJSON(value?: OCRAnalysis | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'raw': FormatToJSON(value.raw),

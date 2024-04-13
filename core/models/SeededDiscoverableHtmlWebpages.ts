@@ -27,19 +27,19 @@ import {
 } from './SeededDiscoverableHtmlWebpage';
 
 /**
- * 
+ *
  * @export
  * @interface SeededDiscoverableHtmlWebpages
  */
 export interface SeededDiscoverableHtmlWebpages {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededDiscoverableHtmlWebpages
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<SeededDiscoverableHtmlWebpage>}
      * @memberof SeededDiscoverableHtmlWebpages
      */
@@ -63,22 +63,47 @@ export function instanceOfSeededDiscoverableHtmlWebpages(value: object): boolean
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededDiscoverableHtmlWebpages}
+ */
 export function SeededDiscoverableHtmlWebpagesFromJSON(json: any): SeededDiscoverableHtmlWebpages {
     return SeededDiscoverableHtmlWebpagesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededDiscoverableHtmlWebpages}
+ */
 export function SeededDiscoverableHtmlWebpagesFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededDiscoverableHtmlWebpages {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(SeededDiscoverableHtmlWebpageFromJSON)),
         'application': json['application'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededDiscoverableHtmlWebpages | null)} [value]
+ * @returns {*}
+ */
 export function SeededDiscoverableHtmlWebpagesToJSON(value?: SeededDiscoverableHtmlWebpages | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function SeededDiscoverableHtmlWebpagesToJSON(value?: SeededDiscoverableH
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(SeededDiscoverableHtmlWebpageToJSON)),
         'application': value.application,

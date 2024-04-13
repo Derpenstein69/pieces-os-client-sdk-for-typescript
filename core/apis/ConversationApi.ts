@@ -34,98 +34,458 @@ import {
     SeededScoreIncrementToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationAssociateAnchorRequest
+ * @typedef {ConversationAssociateAnchorRequest}
+ */
 export interface ConversationAssociateAnchorRequest {
-    conversation: string;
-    anchor: string;
-}
-
-export interface ConversationAssociateAssetRequest {
-    conversation: string;
-    asset: string;
-}
-
-export interface ConversationAssociateGroundingTemporalRangeWorkstreamRequest {
-    conversation: string;
-    range: string;
-}
-
-export interface ConversationAssociateWebsiteRequest {
-    conversation: string;
-    website: string;
-}
-
-export interface ConversationAssociateWorkstreamSummaryRequest {
-    conversation: string;
-    workstreamSummary: string;
-}
-
-export interface ConversationDisassociateAnchorRequest {
-    conversation: string;
-    anchor: string;
-}
-
-export interface ConversationDisassociateAssetRequest {
-    conversation: string;
-    asset: string;
-}
-
-export interface ConversationDisassociateGroundingTemporalRangeWorkstreamRequest {
-    conversation: string;
-    range: string;
-}
-
-export interface ConversationDisassociateWebsiteRequest {
-    conversation: string;
-    website: string;
-}
-
-export interface ConversationDisassociateWorkstreamSummaryRequest {
-    conversation: string;
-    workstreamSummary: string;
-}
-
-export interface ConversationGetSpecificConversationRequest {
-    conversation: string;
-    transferables?: boolean;
-}
-
-export interface ConversationGroundingMessagesAssociateMessageRequest {
-    conversation: string;
-    message: string;
-}
-
-export interface ConversationGroundingMessagesDisassociateMessageRequest {
-    conversation: string;
-    message: string;
-}
-
-export interface ConversationScoresIncrementRequest {
-    conversation: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface ConversationSpecificConversationMessagesRequest {
-    conversation: string;
-    transferables?: boolean;
-}
-
-export interface ConversationSpecificConversationRenameRequest {
-    conversation: string;
-    transferables?: boolean;
-}
-
-export interface ConversationSummarizeRequest {
-    conversation: string;
-    conversationSummarizeInput?: ConversationSummarizeInput;
-}
-
-export interface ConversationUpdateRequest {
-    transferables?: boolean;
-    conversation?: Conversation;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+anchor: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationAssociateAssetRequest
+ * @typedef {ConversationAssociateAssetRequest}
+ */
+export interface ConversationAssociateAssetRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationAssociateGroundingTemporalRangeWorkstreamRequest
+ * @typedef {ConversationAssociateGroundingTemporalRangeWorkstreamRequest}
+ */
+export interface ConversationAssociateGroundingTemporalRangeWorkstreamRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+range: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationAssociateWebsiteRequest
+ * @typedef {ConversationAssociateWebsiteRequest}
+ */
+export interface ConversationAssociateWebsiteRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+website: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationAssociateWorkstreamSummaryRequest
+ * @typedef {ConversationAssociateWorkstreamSummaryRequest}
+ */
+export interface ConversationAssociateWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationDisassociateAnchorRequest
+ * @typedef {ConversationDisassociateAnchorRequest}
+ */
+export interface ConversationDisassociateAnchorRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+anchor: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationDisassociateAssetRequest
+ * @typedef {ConversationDisassociateAssetRequest}
+ */
+export interface ConversationDisassociateAssetRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+asset: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationDisassociateGroundingTemporalRangeWorkstreamRequest
+ * @typedef {ConversationDisassociateGroundingTemporalRangeWorkstreamRequest}
+ */
+export interface ConversationDisassociateGroundingTemporalRangeWorkstreamRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+range: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationDisassociateWebsiteRequest
+ * @typedef {ConversationDisassociateWebsiteRequest}
+ */
+export interface ConversationDisassociateWebsiteRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+website: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationDisassociateWorkstreamSummaryRequest
+ * @typedef {ConversationDisassociateWorkstreamSummaryRequest}
+ */
+export interface ConversationDisassociateWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationGetSpecificConversationRequest
+ * @typedef {ConversationGetSpecificConversationRequest}
+ */
+export interface ConversationGetSpecificConversationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationGroundingMessagesAssociateMessageRequest
+ * @typedef {ConversationGroundingMessagesAssociateMessageRequest}
+ */
+export interface ConversationGroundingMessagesAssociateMessageRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+message: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationGroundingMessagesDisassociateMessageRequest
+ * @typedef {ConversationGroundingMessagesDisassociateMessageRequest}
+ */
+export interface ConversationGroundingMessagesDisassociateMessageRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+message: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationScoresIncrementRequest
+ * @typedef {ConversationScoresIncrementRequest}
+ */
+export interface ConversationScoresIncrementRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationSpecificConversationMessagesRequest
+ * @typedef {ConversationSpecificConversationMessagesRequest}
+ */
+export interface ConversationSpecificConversationMessagesRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationSpecificConversationRenameRequest
+ * @typedef {ConversationSpecificConversationRenameRequest}
+ */
+export interface ConversationSpecificConversationRenameRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationSummarizeRequest
+ * @typedef {ConversationSummarizeRequest}
+ */
+export interface ConversationSummarizeRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?ConversationSummarizeInput}
+ */
+conversationSummarizeInput?: ConversationSummarizeInput;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ConversationUpdateRequest
+ * @typedef {ConversationUpdateRequest}
+ */
+export interface ConversationUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?Conversation}
+ */
+conversation?: Conversation;
+}
+
+/**
+ *
  */
 export class ConversationApi extends runtime.BaseAPI {
 

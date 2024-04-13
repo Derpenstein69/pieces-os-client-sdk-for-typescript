@@ -33,7 +33,7 @@ import {
  */
 export interface SeededAccessor {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededAccessor
      */
@@ -45,7 +45,7 @@ export interface SeededAccessor {
      */
     os: string;
     /**
-     * 
+     *
      * @type {FlattenedUserProfile}
      * @memberof SeededAccessor
      */
@@ -69,16 +69,33 @@ export function instanceOfSeededAccessor(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededAccessor}
+ */
 export function SeededAccessorFromJSON(json: any): SeededAccessor {
     return SeededAccessorFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededAccessor}
+ */
 export function SeededAccessorFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededAccessor {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'os': json['os'],
         'user': !exists(json, 'user') ? undefined : FlattenedUserProfileFromJSON(json['user']),
@@ -86,6 +103,14 @@ export function SeededAccessorFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededAccessor | null)} [value]
+ * @returns {*}
+ */
 export function SeededAccessorToJSON(value?: SeededAccessor | null): any {
     if (value === undefined) {
         return undefined;
@@ -94,7 +119,7 @@ export function SeededAccessorToJSON(value?: SeededAccessor | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'os': value.os,
         'user': FlattenedUserProfileToJSON(value.user),

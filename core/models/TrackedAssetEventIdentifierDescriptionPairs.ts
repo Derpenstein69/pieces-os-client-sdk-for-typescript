@@ -27,7 +27,7 @@ import {
  */
 export interface TrackedAssetEventIdentifierDescriptionPairs {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
@@ -87,19 +87,19 @@ export interface TrackedAssetEventIdentifierDescriptionPairs {
      */
     assetFormatSpecificClassificationUpdated?: TrackedAssetEventIdentifierDescriptionPairsAssetFormatSpecificClassificationUpdatedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
     assetCreationFailed?: TrackedAssetEventIdentifierDescriptionPairsAssetCreationFailedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
     assetTagAdded?: TrackedAssetEventIdentifierDescriptionPairsAssetTagAddedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
@@ -111,13 +111,13 @@ export interface TrackedAssetEventIdentifierDescriptionPairs {
      */
     assetLinkGenerated?: TrackedAssetEventIdentifierDescriptionPairsAssetLinkGeneratedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
     assetLinkDeleted?: TrackedAssetEventIdentifierDescriptionPairsAssetLinkDeletedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
@@ -195,55 +195,55 @@ export interface TrackedAssetEventIdentifierDescriptionPairs {
      */
     activityAssetReferenced?: TrackedAssetEventIdentifierDescriptionPairsActivityAssetReferencedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
     assetAnnotationAdded?: TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationAddedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
     assetAnnotationDeleted?: TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationDeletedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
     assetAnnotationUpdated?: TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationUpdatedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
     assetHintAdded?: TrackedAssetEventIdentifierDescriptionPairsAssetHintAddedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
     assetHintDeleted?: TrackedAssetEventIdentifierDescriptionPairsAssetHintDeletedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
     assetHintUpdated?: TrackedAssetEventIdentifierDescriptionPairsAssetHintUpdatedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
     assetAnchorAdded?: TrackedAssetEventIdentifierDescriptionPairsAssetAnchorAddedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
     assetAnchorDeleted?: TrackedAssetEventIdentifierDescriptionPairsAssetAnchorDeletedEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TrackedAssetEventIdentifierDescriptionPairs
      */
@@ -257,6 +257,13 @@ export interface TrackedAssetEventIdentifierDescriptionPairs {
 export const TrackedAssetEventIdentifierDescriptionPairsAssetCreatedEnum = {
     AnAssetWasCreated: 'an_asset_was_created'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetCreatedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetCreatedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetCreatedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetCreatedEnum];
 
 /**
@@ -265,6 +272,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetCreatedEnum = typeof
 export const TrackedAssetEventIdentifierDescriptionPairsAssetViewedEnum = {
     AnAssetWasViewed: 'an_asset_was_viewed'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetViewedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetViewedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetViewedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetViewedEnum];
 
 /**
@@ -273,6 +287,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetViewedEnum = typeof 
 export const TrackedAssetEventIdentifierDescriptionPairsAssetFormatCopiedEnum = {
     AnAssetPreviewFormatWasCopied: 'an_asset_preview_format_was_copied'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetFormatCopiedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatCopiedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatCopiedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatCopiedEnum];
 
 /**
@@ -281,6 +302,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatCopiedEnum = t
 export const TrackedAssetEventIdentifierDescriptionPairsAssetFormatDownloadedEnum = {
     AnAssetFormatWasDownloaded: 'an_asset_format_was_downloaded'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetFormatDownloadedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatDownloadedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatDownloadedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatDownloadedEnum];
 
 /**
@@ -289,6 +317,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatDownloadedEnum
 export const TrackedAssetEventIdentifierDescriptionPairsAssetDeletedEnum = {
     AnAssetWasDeleted: 'an_asset_was_deleted'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetDeletedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetDeletedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetDeletedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetDeletedEnum];
 
 /**
@@ -297,6 +332,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetDeletedEnum = typeof
 export const TrackedAssetEventIdentifierDescriptionPairsAssetDescriptionUpdatedEnum = {
     AnAssetWasRedescribedByTheUser: 'an_asset_was_redescribed_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetDescriptionUpdatedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetDescriptionUpdatedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetDescriptionUpdatedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetDescriptionUpdatedEnum];
 
 /**
@@ -305,6 +347,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetDescriptionUpdatedEn
 export const TrackedAssetEventIdentifierDescriptionPairsAssetNameUpdatedEnum = {
     AnAssetWasRenamedByTheUser: 'an_asset_was_renamed_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetNameUpdatedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetNameUpdatedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetNameUpdatedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetNameUpdatedEnum];
 
 /**
@@ -313,6 +362,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetNameUpdatedEnum = ty
 export const TrackedAssetEventIdentifierDescriptionPairsAssetFormatGenericClassificationUpdatedEnum = {
     AGenericClassificationWasChangedOnAFormatWithinAnAsset: 'a_generic_classification_was_changed_on_a_format_within_an_asset'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetFormatGenericClassificationUpdatedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatGenericClassificationUpdatedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatGenericClassificationUpdatedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatGenericClassificationUpdatedEnum];
 
 /**
@@ -321,6 +377,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatGenericClassif
 export const TrackedAssetEventIdentifierDescriptionPairsAssetFormatSpecificClassificationUpdatedEnum = {
     ASpecificClassificationWasChangedOnAFormatWithinAnAsset: 'a_specific_classification_was_changed_on_a_format_within_an_asset'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetFormatSpecificClassificationUpdatedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatSpecificClassificationUpdatedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatSpecificClassificationUpdatedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatSpecificClassificationUpdatedEnum];
 
 /**
@@ -329,6 +392,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatSpecificClassi
 export const TrackedAssetEventIdentifierDescriptionPairsAssetCreationFailedEnum = {
     AnAssetFailedToBeCreated: 'an_asset_failed_to_be_created'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetCreationFailedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetCreationFailedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetCreationFailedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetCreationFailedEnum];
 
 /**
@@ -337,6 +407,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetCreationFailedEnum =
 export const TrackedAssetEventIdentifierDescriptionPairsAssetTagAddedEnum = {
     ATagWasAddedByTheUser: 'a_tag_was_added_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetTagAddedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetTagAddedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetTagAddedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetTagAddedEnum];
 
 /**
@@ -345,6 +422,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetTagAddedEnum = typeo
 export const TrackedAssetEventIdentifierDescriptionPairsAssetLinkAddedEnum = {
     ALinkWasAddedByTheUser: 'a_link_was_added_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetLinkAddedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetLinkAddedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetLinkAddedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetLinkAddedEnum];
 
 /**
@@ -353,6 +437,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetLinkAddedEnum = type
 export const TrackedAssetEventIdentifierDescriptionPairsAssetLinkGeneratedEnum = {
     AnAssetLinkWasGenerated: 'an_asset_link_was_generated'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetLinkGeneratedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetLinkGeneratedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetLinkGeneratedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetLinkGeneratedEnum];
 
 /**
@@ -361,6 +452,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetLinkGeneratedEnum = 
 export const TrackedAssetEventIdentifierDescriptionPairsAssetLinkDeletedEnum = {
     ALinkWasDeletedByTheUser: 'a_link_was_deleted_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetLinkDeletedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetLinkDeletedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetLinkDeletedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetLinkDeletedEnum];
 
 /**
@@ -369,6 +467,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetLinkDeletedEnum = ty
 export const TrackedAssetEventIdentifierDescriptionPairsAssetTagDeletedEnum = {
     ATagWasDeletedByTheUser: 'a_tag_was_deleted_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetTagDeletedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetTagDeletedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetTagDeletedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetTagDeletedEnum];
 
 /**
@@ -377,6 +482,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetTagDeletedEnum = typ
 export const TrackedAssetEventIdentifierDescriptionPairsAssetUpdatedEnum = {
     AnAssetWasUpdated: 'an_asset_was_updated'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetUpdatedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetUpdatedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetUpdatedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetUpdatedEnum];
 
 /**
@@ -385,6 +497,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetUpdatedEnum = typeof
 export const TrackedAssetEventIdentifierDescriptionPairsAssetFormatValueEditedEnum = {
     ASpecificFormatValueWasEditedOnAnAsset: 'a_specific_format_value_was_edited_on_an_asset'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetFormatValueEditedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatValueEditedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatValueEditedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatValueEditedEnum];
 
 /**
@@ -393,6 +512,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatValueEditedEnu
 export const TrackedAssetEventIdentifierDescriptionPairsAssetFormatUpdatedEnum = {
     ASpecificFormatWasUpdatedOnAnAsset: 'a_specific_format_was_updated_on_an_asset'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetFormatUpdatedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatUpdatedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatUpdatedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetFormatUpdatedEnum];
 
 /**
@@ -401,6 +527,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetFormatUpdatedEnum = 
 export const TrackedAssetEventIdentifierDescriptionPairsAssetLinkRevokedEnum = {
     AnAssetLinkWasRevoked: 'an_asset_link_was_revoked'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetLinkRevokedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetLinkRevokedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetLinkRevokedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetLinkRevokedEnum];
 
 /**
@@ -409,6 +542,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetLinkRevokedEnum = ty
 export const TrackedAssetEventIdentifierDescriptionPairsAssetPersonAddedEnum = {
     APersonWasAddedByTheUser: 'a_person_was_added_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetPersonAddedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetPersonAddedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetPersonAddedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetPersonAddedEnum];
 
 /**
@@ -417,6 +557,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetPersonAddedEnum = ty
 export const TrackedAssetEventIdentifierDescriptionPairsAssetPersonDeletedEnum = {
     APersonWasDeletedByTheUser: 'a_person_was_deleted_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetPersonDeletedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetPersonDeletedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetPersonDeletedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetPersonDeletedEnum];
 
 /**
@@ -425,6 +572,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetPersonDeletedEnum = 
 export const TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveAddedEnum = {
     ASensitiveWasAddedByTheUser: 'a_sensitive_was_added_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveAddedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveAddedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveAddedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveAddedEnum];
 
 /**
@@ -433,6 +587,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveAddedEnum =
 export const TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveDeletedEnum = {
     ASensitiveWasDeletedByTheUser: 'a_sensitive_was_deleted_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveDeletedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveDeletedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveDeletedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveDeletedEnum];
 
 /**
@@ -441,6 +602,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetSensitiveDeletedEnum
 export const TrackedAssetEventIdentifierDescriptionPairsSuggestedAssetReferencedEnum = {
     ASuggestedAssetWasReferencedByTheUser: 'a_suggested_asset_was_referenced_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsSuggestedAssetReferencedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsSuggestedAssetReferencedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsSuggestedAssetReferencedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsSuggestedAssetReferencedEnum];
 
 /**
@@ -449,6 +617,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsSuggestedAssetReferencedE
 export const TrackedAssetEventIdentifierDescriptionPairsSearchedAssetReferencedEnum = {
     ASearchedAssetWasReferencedByTheUser: 'a_searched_asset_was_referenced_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsSearchedAssetReferencedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsSearchedAssetReferencedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsSearchedAssetReferencedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsSearchedAssetReferencedEnum];
 
 /**
@@ -457,6 +632,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsSearchedAssetReferencedEn
 export const TrackedAssetEventIdentifierDescriptionPairsAssetReferencedEnum = {
     AnAssetWasReferencedByTheUser: 'an_asset_was_referenced_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetReferencedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetReferencedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetReferencedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetReferencedEnum];
 
 /**
@@ -465,6 +647,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetReferencedEnum = typ
 export const TrackedAssetEventIdentifierDescriptionPairsActivityAssetReferencedEnum = {
     AnActivityAssetWasReferencedByTheUser: 'an_activity_asset_was_referenced_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsActivityAssetReferencedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsActivityAssetReferencedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsActivityAssetReferencedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsActivityAssetReferencedEnum];
 
 /**
@@ -473,6 +662,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsActivityAssetReferencedEn
 export const TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationAddedEnum = {
     AnAnnotationWasAddedByTheUser: 'an_annotation_was_added_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationAddedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationAddedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationAddedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationAddedEnum];
 
 /**
@@ -481,6 +677,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationAddedEnum 
 export const TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationDeletedEnum = {
     AnAnnotationWasDeletedByTheUser: 'an_annotation_was_deleted_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationDeletedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationDeletedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationDeletedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationDeletedEnum];
 
 /**
@@ -489,6 +692,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationDeletedEnu
 export const TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationUpdatedEnum = {
     AnAnnotationWasUpdatedByTheUser: 'an_annotation_was_updated_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationUpdatedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationUpdatedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationUpdatedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationUpdatedEnum];
 
 /**
@@ -497,6 +707,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetAnnotationUpdatedEnu
 export const TrackedAssetEventIdentifierDescriptionPairsAssetHintAddedEnum = {
     AHintWasAddedByTheUser: 'a_hint_was_added_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetHintAddedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetHintAddedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetHintAddedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetHintAddedEnum];
 
 /**
@@ -505,6 +722,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetHintAddedEnum = type
 export const TrackedAssetEventIdentifierDescriptionPairsAssetHintDeletedEnum = {
     AHintWasDeletedByTheUser: 'a_hint_was_deleted_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetHintDeletedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetHintDeletedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetHintDeletedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetHintDeletedEnum];
 
 /**
@@ -513,6 +737,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetHintDeletedEnum = ty
 export const TrackedAssetEventIdentifierDescriptionPairsAssetHintUpdatedEnum = {
     AHintWasUpdatedByTheUser: 'a_hint_was_updated_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetHintUpdatedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetHintUpdatedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetHintUpdatedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetHintUpdatedEnum];
 
 /**
@@ -521,6 +752,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetHintUpdatedEnum = ty
 export const TrackedAssetEventIdentifierDescriptionPairsAssetAnchorAddedEnum = {
     AAnchorWasAddedByTheUser: 'a_anchor_was_added_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetAnchorAddedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetAnchorAddedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnchorAddedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnchorAddedEnum];
 
 /**
@@ -529,6 +767,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetAnchorAddedEnum = ty
 export const TrackedAssetEventIdentifierDescriptionPairsAssetAnchorDeletedEnum = {
     AAnchorWasDeletedByTheUser: 'a_anchor_was_deleted_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetAnchorDeletedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetAnchorDeletedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnchorDeletedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnchorDeletedEnum];
 
 /**
@@ -537,6 +782,13 @@ export type TrackedAssetEventIdentifierDescriptionPairsAssetAnchorDeletedEnum = 
 export const TrackedAssetEventIdentifierDescriptionPairsAssetAnchorUpdatedEnum = {
     AAnchorWasUpdatedByTheUser: 'a_anchor_was_updated_by_the_user'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TrackedAssetEventIdentifierDescriptionPairsAssetAnchorUpdatedEnum}
+ */
 export type TrackedAssetEventIdentifierDescriptionPairsAssetAnchorUpdatedEnum = typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnchorUpdatedEnum[keyof typeof TrackedAssetEventIdentifierDescriptionPairsAssetAnchorUpdatedEnum];
 
 
@@ -549,16 +801,33 @@ export function instanceOfTrackedAssetEventIdentifierDescriptionPairs(value: obj
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedAssetEventIdentifierDescriptionPairs}
+ */
 export function TrackedAssetEventIdentifierDescriptionPairsFromJSON(json: any): TrackedAssetEventIdentifierDescriptionPairs {
     return TrackedAssetEventIdentifierDescriptionPairsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedAssetEventIdentifierDescriptionPairs}
+ */
 export function TrackedAssetEventIdentifierDescriptionPairsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedAssetEventIdentifierDescriptionPairs {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'assetCreated': !exists(json, 'asset_created') ? undefined : json['asset_created'],
         'assetViewed': !exists(json, 'asset_viewed') ? undefined : json['asset_viewed'],
@@ -599,6 +868,14 @@ export function TrackedAssetEventIdentifierDescriptionPairsFromJSONTyped(json: a
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TrackedAssetEventIdentifierDescriptionPairs | null)} [value]
+ * @returns {*}
+ */
 export function TrackedAssetEventIdentifierDescriptionPairsToJSON(value?: TrackedAssetEventIdentifierDescriptionPairs | null): any {
     if (value === undefined) {
         return undefined;
@@ -607,7 +884,7 @@ export function TrackedAssetEventIdentifierDescriptionPairsToJSON(value?: Tracke
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset_created': value.assetCreated,
         'asset_viewed': value.assetViewed,

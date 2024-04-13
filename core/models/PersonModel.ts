@@ -40,32 +40,32 @@ import {
 
 /**
  * This is a PersonSpecific Model. and will let us know for all the assets that get attached to the person if, this person was attached via a model or just attached automatically.
- * 
+ *
  * explanation here are the reason why a Person was attached to an asset.
  * @export
  * @interface PersonModel
  */
 export interface PersonModel {
     /**
-     * 
+     *
      * @type {ReferencedAsset}
      * @memberof PersonModel
      */
     asset?: ReferencedAsset;
     /**
-     * 
+     *
      * @type {ReferencedModel}
      * @memberof PersonModel
      */
     model?: ReferencedModel;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof PersonModel
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {ReferencedAnnotation}
      * @memberof PersonModel
      */
@@ -81,16 +81,33 @@ export function instanceOfPersonModel(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PersonModel}
+ */
 export function PersonModelFromJSON(json: any): PersonModel {
     return PersonModelFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PersonModel}
+ */
 export function PersonModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): PersonModel {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'asset': !exists(json, 'asset') ? undefined : ReferencedAssetFromJSON(json['asset']),
         'model': !exists(json, 'model') ? undefined : ReferencedModelFromJSON(json['model']),
         'deleted': !exists(json, 'deleted') ? undefined : GroupedTimestampFromJSON(json['deleted']),
@@ -98,6 +115,14 @@ export function PersonModelFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(PersonModel | null)} [value]
+ * @returns {*}
+ */
 export function PersonModelToJSON(value?: PersonModel | null): any {
     if (value === undefined) {
         return undefined;
@@ -106,7 +131,7 @@ export function PersonModelToJSON(value?: PersonModel | null): any {
         return null;
     }
     return {
-        
+
         'asset': ReferencedAssetToJSON(value.asset),
         'model': ReferencedModelToJSON(value.model),
         'deleted': GroupedTimestampToJSON(value.deleted),

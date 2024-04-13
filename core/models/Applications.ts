@@ -33,13 +33,13 @@ import {
  */
 export interface Applications {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Applications
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Application>}
      * @memberof Applications
      */
@@ -56,21 +56,46 @@ export function instanceOfApplications(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Applications}
+ */
 export function ApplicationsFromJSON(json: any): Applications {
     return ApplicationsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Applications}
+ */
 export function ApplicationsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Applications {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ApplicationFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(Applications | null)} [value]
+ * @returns {*}
+ */
 export function ApplicationsToJSON(value?: Applications | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function ApplicationsToJSON(value?: Applications | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ApplicationToJSON)),
     };

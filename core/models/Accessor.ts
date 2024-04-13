@@ -28,20 +28,20 @@ import {
 
 /**
  * This is used to determine who has accessed a share. and how many times.
- * 
+ *
  * The user here is the user that accessed this Piece.(optional) if undefined then this user was not logged in yet.
  * @export
  * @interface Accessor
  */
 export interface Accessor {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Accessor
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Accessor
      */
@@ -53,7 +53,7 @@ export interface Accessor {
      */
     os: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Accessor
      */
@@ -65,7 +65,7 @@ export interface Accessor {
      */
     count: number;
     /**
-     * 
+     *
      * @type {FlattenedUserProfile}
      * @memberof Accessor
      */
@@ -85,16 +85,33 @@ export function instanceOfAccessor(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Accessor}
+ */
 export function AccessorFromJSON(json: any): Accessor {
     return AccessorFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Accessor}
+ */
 export function AccessorFromJSONTyped(json: any, ignoreDiscriminator: boolean): Accessor {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'os': json['os'],
@@ -104,6 +121,14 @@ export function AccessorFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(Accessor | null)} [value]
+ * @returns {*}
+ */
 export function AccessorToJSON(value?: Accessor | null): any {
     if (value === undefined) {
         return undefined;
@@ -112,7 +137,7 @@ export function AccessorToJSON(value?: Accessor | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'os': value.os,

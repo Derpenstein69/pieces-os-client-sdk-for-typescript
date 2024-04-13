@@ -27,7 +27,7 @@ import {
  */
 export interface SeededExternalProvider {
     /**
-     * 
+     *
      * @type {ExternalProviderTypeEnum}
      * @memberof SeededExternalProvider
      */
@@ -44,20 +44,45 @@ export function instanceOfSeededExternalProvider(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededExternalProvider}
+ */
 export function SeededExternalProviderFromJSON(json: any): SeededExternalProvider {
     return SeededExternalProviderFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededExternalProvider}
+ */
 export function SeededExternalProviderFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededExternalProvider {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'type': ExternalProviderTypeEnumFromJSON(json['type']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededExternalProvider | null)} [value]
+ * @returns {*}
+ */
 export function SeededExternalProviderToJSON(value?: SeededExternalProvider | null): any {
     if (value === undefined) {
         return undefined;
@@ -66,7 +91,7 @@ export function SeededExternalProviderToJSON(value?: SeededExternalProvider | nu
         return null;
     }
     return {
-        
+
         'type': ExternalProviderTypeEnumToJSON(value.type),
     };
 }

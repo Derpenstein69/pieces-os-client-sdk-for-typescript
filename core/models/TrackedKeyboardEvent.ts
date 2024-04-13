@@ -27,7 +27,7 @@ import {
  */
 export interface TrackedKeyboardEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedKeyboardEvent
      */
@@ -57,22 +57,47 @@ export function instanceOfTrackedKeyboardEvent(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedKeyboardEvent}
+ */
 export function TrackedKeyboardEventFromJSON(json: any): TrackedKeyboardEvent {
     return TrackedKeyboardEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedKeyboardEvent}
+ */
 export function TrackedKeyboardEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedKeyboardEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'description': json['description'],
         'shortcut': json['shortcut'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedKeyboardEvent | null)} [value]
+ * @returns {*}
+ */
 export function TrackedKeyboardEventToJSON(value?: TrackedKeyboardEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function TrackedKeyboardEventToJSON(value?: TrackedKeyboardEvent | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'description': value.description,
         'shortcut': value.shortcut,

@@ -22,12 +22,26 @@ import {
     OCRAnalysesToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface OcrAnalysesSnapshotRequest
+ * @typedef {OcrAnalysesSnapshotRequest}
+ */
 export interface OcrAnalysesSnapshotRequest {
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
 }
 
 /**
- * 
+ *
  */
 export class OCRAnalysesApi extends runtime.BaseAPI {
 

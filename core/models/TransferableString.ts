@@ -22,7 +22,7 @@ import {
 
 /**
  * This is a String representaion of any of these changes.
- * 
+ *
  * [NOT IMPLEMENTED] base64, base64_url, data_url
  * [IMPLEMENTED] raw
  * @export
@@ -30,7 +30,7 @@ import {
  */
 export interface TransferableString {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TransferableString
      */
@@ -70,16 +70,33 @@ export function instanceOfTransferableString(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TransferableString}
+ */
 export function TransferableStringFromJSON(json: any): TransferableString {
     return TransferableStringFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TransferableString}
+ */
 export function TransferableStringFromJSONTyped(json: any, ignoreDiscriminator: boolean): TransferableString {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'raw': !exists(json, 'raw') ? undefined : json['raw'],
         'base64': !exists(json, 'base64') ? undefined : json['base64'],
@@ -88,6 +105,14 @@ export function TransferableStringFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TransferableString | null)} [value]
+ * @returns {*}
+ */
 export function TransferableStringToJSON(value?: TransferableString | null): any {
     if (value === undefined) {
         return undefined;
@@ -96,7 +121,7 @@ export function TransferableStringToJSON(value?: TransferableString | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'raw': value.raw,
         'base64': value.base64,

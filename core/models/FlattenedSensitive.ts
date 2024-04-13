@@ -69,79 +69,79 @@ import {
  */
 export interface FlattenedSensitive {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedSensitive
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedSensitive
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedSensitive
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedSensitive
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedSensitive
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {ReferencedAsset}
      * @memberof FlattenedSensitive
      */
     asset: ReferencedAsset;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedSensitive
      */
     text: string;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof FlattenedSensitive
      */
     mechanism: MechanismEnum;
     /**
-     * 
+     *
      * @type {SensitiveCategoryEnum}
      * @memberof FlattenedSensitive
      */
     category: SensitiveCategoryEnum;
     /**
-     * 
+     *
      * @type {SensitiveSeverityEnum}
      * @memberof FlattenedSensitive
      */
     severity: SensitiveSeverityEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedSensitive
      */
     name: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedSensitive
      */
     description: string;
     /**
-     * 
+     *
      * @type {SensitiveMetadata}
      * @memberof FlattenedSensitive
      */
@@ -153,7 +153,7 @@ export interface FlattenedSensitive {
      */
     interactions?: number;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedSensitive
      */
@@ -179,16 +179,33 @@ export function instanceOfFlattenedSensitive(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedSensitive}
+ */
 export function FlattenedSensitiveFromJSON(json: any): FlattenedSensitive {
     return FlattenedSensitiveFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedSensitive}
+ */
 export function FlattenedSensitiveFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedSensitive {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -207,6 +224,14 @@ export function FlattenedSensitiveFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedSensitive | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedSensitiveToJSON(value?: FlattenedSensitive | null): any {
     if (value === undefined) {
         return undefined;
@@ -215,7 +240,7 @@ export function FlattenedSensitiveToJSON(value?: FlattenedSensitive | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'created': GroupedTimestampToJSON(value.created),

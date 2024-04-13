@@ -40,17 +40,49 @@ export const ModelUsageEnum = {
     TextVsCodeSegmentation: 'TEXT_VS_CODE_SEGMENTATION',
     TextEmbedding: 'TEXT_EMBEDDING'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @typedef {ModelUsageEnum}
+ */
 export type ModelUsageEnum = typeof ModelUsageEnum[keyof typeof ModelUsageEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ModelUsageEnum}
+ */
 export function ModelUsageEnumFromJSON(json: any): ModelUsageEnum {
     return ModelUsageEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ModelUsageEnum}
+ */
 export function ModelUsageEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ModelUsageEnum {
     return json as ModelUsageEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(ModelUsageEnum | null)} [value]
+ * @returns {*}
+ */
 export function ModelUsageEnumToJSON(value?: ModelUsageEnum | null): any {
     return value as any;
 }

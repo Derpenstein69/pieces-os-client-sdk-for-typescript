@@ -64,14 +64,14 @@ import {
 
 /**
  * This represents what information that is relavent to anything and every sharing related. v1 will look very bare and will add more and more data as we go!
- * 
+ *
  * if user is undefined && access is public then we have an asset that is publicly available.
  * @export
  * @interface Share
  */
 export interface Share {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Share
      */
@@ -89,13 +89,13 @@ export interface Share {
      */
     user?: string;
     /**
-     * 
+     *
      * @type {FlattenedAsset}
      * @memberof Share
      */
     asset?: FlattenedAsset;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof Share
      */
@@ -107,19 +107,19 @@ export interface Share {
      */
     link: string;
     /**
-     * 
+     *
      * @type {AccessEnum}
      * @memberof Share
      */
     access: AccessEnum;
     /**
-     * 
+     *
      * @type {Accessors}
      * @memberof Share
      */
     accessors: Accessors;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Share
      */
@@ -137,13 +137,13 @@ export interface Share {
      */
     name?: string;
     /**
-     * 
+     *
      * @type {Distributions}
      * @memberof Share
      */
     distributions?: Distributions;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Share
      */
@@ -165,16 +165,33 @@ export function instanceOfShare(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Share}
+ */
 export function ShareFromJSON(json: any): Share {
     return ShareFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Share}
+ */
 export function ShareFromJSONTyped(json: any, ignoreDiscriminator: boolean): Share {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'user': !exists(json, 'user') ? undefined : json['user'],
@@ -191,6 +208,14 @@ export function ShareFromJSONTyped(json: any, ignoreDiscriminator: boolean): Sha
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(Share | null)} [value]
+ * @returns {*}
+ */
 export function ShareToJSON(value?: Share | null): any {
     if (value === undefined) {
         return undefined;
@@ -199,7 +224,7 @@ export function ShareToJSON(value?: Share | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'user': value.user,

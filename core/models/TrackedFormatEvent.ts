@@ -45,25 +45,25 @@ import {
  */
 export interface TrackedFormatEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedFormatEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TrackedFormat}
      * @memberof TrackedFormatEvent
      */
     format: TrackedFormat;
     /**
-     * 
+     *
      * @type {TrackedFormatEventIdentifierDescriptionPairs}
      * @memberof TrackedFormatEvent
      */
     identifierDescriptionPair: TrackedFormatEventIdentifierDescriptionPairs;
     /**
-     * 
+     *
      * @type {TrackedFormatEventMetadata}
      * @memberof TrackedFormatEvent
      */
@@ -81,16 +81,33 @@ export function instanceOfTrackedFormatEvent(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedFormatEvent}
+ */
 export function TrackedFormatEventFromJSON(json: any): TrackedFormatEvent {
     return TrackedFormatEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedFormatEvent}
+ */
 export function TrackedFormatEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedFormatEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'format': TrackedFormatFromJSON(json[' format']),
         'identifierDescriptionPair': TrackedFormatEventIdentifierDescriptionPairsFromJSON(json['identifier_description_pair']),
@@ -98,6 +115,14 @@ export function TrackedFormatEventFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedFormatEvent | null)} [value]
+ * @returns {*}
+ */
 export function TrackedFormatEventToJSON(value?: TrackedFormatEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -106,7 +131,7 @@ export function TrackedFormatEventToJSON(value?: TrackedFormatEvent | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         ' format': TrackedFormatToJSON(value.format),
         'identifier_description_pair': TrackedFormatEventIdentifierDescriptionPairsToJSON(value.identifierDescriptionPair),

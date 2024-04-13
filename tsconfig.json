@@ -9,7 +9,7 @@
     "declaration": true,
     "outDir": "./dist",
     "noEmit": false,
-    "strict": false,
+    "strict": true,
     "allowJs": true,
     "noImplicitAny": true,
     "strictNullChecks": true,

@@ -39,13 +39,13 @@ import {
  */
 export interface Persons {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Persons
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Person>}
      * @memberof Persons
      */
@@ -57,7 +57,7 @@ export interface Persons {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Persons
      */
@@ -74,16 +74,33 @@ export function instanceOfPersons(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Persons}
+ */
 export function PersonsFromJSON(json: any): Persons {
     return PersonsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Persons}
+ */
 export function PersonsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Persons {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(PersonFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function PersonsFromJSONTyped(json: any, ignoreDiscriminator: boolean): P
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(Persons | null)} [value]
+ * @returns {*}
+ */
 export function PersonsToJSON(value?: Persons | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function PersonsToJSON(value?: Persons | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(PersonToJSON)),
         'indices': value.indices,

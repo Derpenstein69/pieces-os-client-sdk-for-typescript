@@ -27,19 +27,19 @@ import {
 } from './GraphicalOCRDescriptiveStatistics';
 
 /**
- * 
+ *
  * @export
  * @interface GraphicalOCRStatistics
  */
 export interface GraphicalOCRStatistics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof GraphicalOCRStatistics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {GraphicalOCRDescriptiveStatistics}
      * @memberof GraphicalOCRStatistics
      */
@@ -55,21 +55,46 @@ export function instanceOfGraphicalOCRStatistics(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {GraphicalOCRStatistics}
+ */
 export function GraphicalOCRStatisticsFromJSON(json: any): GraphicalOCRStatistics {
     return GraphicalOCRStatisticsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {GraphicalOCRStatistics}
+ */
 export function GraphicalOCRStatisticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GraphicalOCRStatistics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'descriptive': !exists(json, 'descriptive') ? undefined : GraphicalOCRDescriptiveStatisticsFromJSON(json['descriptive']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(GraphicalOCRStatistics | null)} [value]
+ * @returns {*}
+ */
 export function GraphicalOCRStatisticsToJSON(value?: GraphicalOCRStatistics | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function GraphicalOCRStatisticsToJSON(value?: GraphicalOCRStatistics | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'descriptive': GraphicalOCRDescriptiveStatisticsToJSON(value.descriptive),
     };

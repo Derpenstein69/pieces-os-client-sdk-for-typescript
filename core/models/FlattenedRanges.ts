@@ -39,13 +39,13 @@ import {
  */
 export interface FlattenedRanges {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedRanges
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedRange>}
      * @memberof FlattenedRanges
      */
@@ -57,13 +57,13 @@ export interface FlattenedRanges {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedRanges
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof FlattenedRanges
      */
@@ -80,16 +80,33 @@ export function instanceOfFlattenedRanges(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedRanges}
+ */
 export function FlattenedRangesFromJSON(json: any): FlattenedRanges {
     return FlattenedRangesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedRanges}
+ */
 export function FlattenedRangesFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedRanges {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedRangeFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -98,6 +115,14 @@ export function FlattenedRangesFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedRanges | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedRangesToJSON(value?: FlattenedRanges | null): any {
     if (value === undefined) {
         return undefined;
@@ -106,7 +131,7 @@ export function FlattenedRangesToJSON(value?: FlattenedRanges | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedRangeToJSON)),
         'indices': value.indices,

@@ -28,13 +28,13 @@ import {
 
 /**
  * This is a model that will hold relavent information in relation to an interaction(ONLY CLICK/TAP) analytics event(usage). If you want to register an event that relates to an interaction with the key then register a Keyboard Event.
- * 
+ *
  * @export
  * @interface SeededTrackedInteractionEvent
  */
 export interface SeededTrackedInteractionEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededTrackedInteractionEvent
      */
@@ -46,13 +46,13 @@ export interface SeededTrackedInteractionEvent {
      */
     description: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededTrackedInteractionEvent
      */
     element?: string;
     /**
-     * 
+     *
      * @type {SeededTrackedInteractionEventIdentifierDescriptionPairs}
      * @memberof SeededTrackedInteractionEvent
      */
@@ -69,16 +69,33 @@ export function instanceOfSeededTrackedInteractionEvent(value: object): boolean 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededTrackedInteractionEvent}
+ */
 export function SeededTrackedInteractionEventFromJSON(json: any): SeededTrackedInteractionEvent {
     return SeededTrackedInteractionEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededTrackedInteractionEvent}
+ */
 export function SeededTrackedInteractionEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededTrackedInteractionEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'description': json['description'],
         'element': !exists(json, 'element') ? undefined : json['element'],
@@ -86,6 +103,14 @@ export function SeededTrackedInteractionEventFromJSONTyped(json: any, ignoreDisc
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededTrackedInteractionEvent | null)} [value]
+ * @returns {*}
+ */
 export function SeededTrackedInteractionEventToJSON(value?: SeededTrackedInteractionEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -94,7 +119,7 @@ export function SeededTrackedInteractionEventToJSON(value?: SeededTrackedInterac
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'description': value.description,
         'element': value.element,

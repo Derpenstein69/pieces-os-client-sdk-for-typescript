@@ -69,19 +69,19 @@ import {
  */
 export interface FlattenedTag {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedTag
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedTag
      */
     id: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedTag
      */
@@ -93,37 +93,37 @@ export interface FlattenedTag {
      */
     mechanisms?: { [key: string]: MechanismEnum; };
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof FlattenedTag
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedTag
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedTag
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedTag
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {TagCategoryEnum}
      * @memberof FlattenedTag
      */
     category: TagCategoryEnum;
     /**
-     * 
+     *
      * @type {Relationship}
      * @memberof FlattenedTag
      */
@@ -135,13 +135,13 @@ export interface FlattenedTag {
      */
     interactions?: number;
     /**
-     * 
+     *
      * @type {FlattenedPersons}
      * @memberof FlattenedTag
      */
     persons?: FlattenedPersons;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedTag
      */
@@ -162,16 +162,33 @@ export function instanceOfFlattenedTag(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedTag}
+ */
 export function FlattenedTagFromJSON(json: any): FlattenedTag {
     return FlattenedTagFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedTag}
+ */
 export function FlattenedTagFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedTag {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'text': json['text'],
@@ -188,6 +205,14 @@ export function FlattenedTagFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FlattenedTag | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedTagToJSON(value?: FlattenedTag | null): any {
     if (value === undefined) {
         return undefined;
@@ -196,7 +221,7 @@ export function FlattenedTagToJSON(value?: FlattenedTag | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'text': value.text,

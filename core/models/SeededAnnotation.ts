@@ -45,31 +45,31 @@ import {
  */
 export interface SeededAnnotation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededAnnotation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededAnnotation
      */
     mechanism?: MechanismEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAnnotation
      */
     asset?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAnnotation
      */
     person?: string;
     /**
-     * 
+     *
      * @type {AnnotationTypeEnum}
      * @memberof SeededAnnotation
      */
@@ -81,37 +81,37 @@ export interface SeededAnnotation {
      */
     text: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAnnotation
      */
     model?: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof SeededAnnotation
      */
     pseudo?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof SeededAnnotation
      */
     favorited?: boolean;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAnnotation
      */
     anchor?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededAnnotation
      */
     conversation?: string;
     /**
-     * 
+     *
      * @type {FlattenedConversationMessages}
      * @memberof SeededAnnotation
      */
@@ -129,16 +129,33 @@ export function instanceOfSeededAnnotation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededAnnotation}
+ */
 export function SeededAnnotationFromJSON(json: any): SeededAnnotation {
     return SeededAnnotationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededAnnotation}
+ */
 export function SeededAnnotationFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededAnnotation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'mechanism': !exists(json, 'mechanism') ? undefined : MechanismEnumFromJSON(json['mechanism']),
         'asset': !exists(json, 'asset') ? undefined : json['asset'],
@@ -154,6 +171,14 @@ export function SeededAnnotationFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededAnnotation | null)} [value]
+ * @returns {*}
+ */
 export function SeededAnnotationToJSON(value?: SeededAnnotation | null): any {
     if (value === undefined) {
         return undefined;
@@ -162,7 +187,7 @@ export function SeededAnnotationToJSON(value?: SeededAnnotation | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'mechanism': MechanismEnumToJSON(value.mechanism),
         'asset': value.asset,

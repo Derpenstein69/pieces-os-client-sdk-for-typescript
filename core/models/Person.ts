@@ -88,52 +88,52 @@ import {
 
 /**
  * if expiration is add then, after the alloted expiration date the user will only have view && comment only permissions. Only present in the case there is a scope such as a defined collection/asset...
- * 
+ *
  * if asset is passed then that means this person belongs to a scoped asset.
- * 
+ *
  * NOTE****: annotations here are annotations to describe the person!!! if in the future we want to add who wrote an annotation on and asset or soemthing like that, we will want to add a new field on here called authorships.
  * @export
  * @interface Person
  */
 export interface Person {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Person
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Person
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Person
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Person
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Person
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {PersonType}
      * @memberof Person
      */
     type: PersonType;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof Person
      */
@@ -157,13 +157,13 @@ export interface Person {
      */
     access?: { [key: string]: PersonAccess; };
     /**
-     * 
+     *
      * @type {FlattenedTags}
      * @memberof Person
      */
     tags?: FlattenedTags;
     /**
-     * 
+     *
      * @type {FlattenedWebsites}
      * @memberof Person
      */
@@ -175,19 +175,19 @@ export interface Person {
      */
     models?: { [key: string]: PersonModel; };
     /**
-     * 
+     *
      * @type {FlattenedAnnotations}
      * @memberof Person
      */
     annotations?: FlattenedAnnotations;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Person
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof Person
      */
@@ -207,16 +207,33 @@ export function instanceOfPerson(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Person}
+ */
 export function PersonFromJSON(json: any): Person {
     return PersonFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Person}
+ */
 export function PersonFromJSONTyped(json: any, ignoreDiscriminator: boolean): Person {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -236,6 +253,14 @@ export function PersonFromJSONTyped(json: any, ignoreDiscriminator: boolean): Pe
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(Person | null)} [value]
+ * @returns {*}
+ */
 export function PersonToJSON(value?: Person | null): any {
     if (value === undefined) {
         return undefined;
@@ -244,7 +269,7 @@ export function PersonToJSON(value?: Person | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'created': GroupedTimestampToJSON(value.created),

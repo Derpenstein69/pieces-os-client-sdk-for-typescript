@@ -33,13 +33,13 @@ import {
  */
 export interface SeededDistributions {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededDistributions
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<SeededDistribution>}
      * @memberof SeededDistributions
      */
@@ -56,21 +56,46 @@ export function instanceOfSeededDistributions(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededDistributions}
+ */
 export function SeededDistributionsFromJSON(json: any): SeededDistributions {
     return SeededDistributionsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededDistributions}
+ */
 export function SeededDistributionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededDistributions {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(SeededDistributionFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededDistributions | null)} [value]
+ * @returns {*}
+ */
 export function SeededDistributionsToJSON(value?: SeededDistributions | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function SeededDistributionsToJSON(value?: SeededDistributions | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(SeededDistributionToJSON)),
     };

@@ -25,41 +25,169 @@ import {
     SeededScoreIncrementToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RangeAssociateConversationGroundingTemporalRangeWorkstreamsRequest
+ * @typedef {RangeAssociateConversationGroundingTemporalRangeWorkstreamsRequest}
+ */
 export interface RangeAssociateConversationGroundingTemporalRangeWorkstreamsRequest {
-    range: string;
-    conversation: string;
-}
-
-export interface RangeAssociateWorkstreamSummaryRequest {
-    range: string;
-    workstreamSummary: string;
-}
-
-export interface RangeDisassociateConversationGroundingTemporalRangeWorkstreamsRequest {
-    range: string;
-    conversation: string;
-}
-
-export interface RangeDisassociateWorkstreamSummaryRequest {
-    range: string;
-    workstreamSummary: string;
-}
-
-export interface RangeScoresIncrementRequest {
-    range: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface RangeUpdateRequest {
-    range?: Range;
-}
-
-export interface RangesSpecificRangeSnapshotRequest {
-    range: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+range: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+conversation: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RangeAssociateWorkstreamSummaryRequest
+ * @typedef {RangeAssociateWorkstreamSummaryRequest}
+ */
+export interface RangeAssociateWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+range: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RangeDisassociateConversationGroundingTemporalRangeWorkstreamsRequest
+ * @typedef {RangeDisassociateConversationGroundingTemporalRangeWorkstreamsRequest}
+ */
+export interface RangeDisassociateConversationGroundingTemporalRangeWorkstreamsRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+range: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RangeDisassociateWorkstreamSummaryRequest
+ * @typedef {RangeDisassociateWorkstreamSummaryRequest}
+ */
+export interface RangeDisassociateWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+range: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RangeScoresIncrementRequest
+ * @typedef {RangeScoresIncrementRequest}
+ */
+export interface RangeScoresIncrementRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+range: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RangeUpdateRequest
+ * @typedef {RangeUpdateRequest}
+ */
+export interface RangeUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?Range}
+ */
+range?: Range;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RangesSpecificRangeSnapshotRequest
+ * @typedef {RangesSpecificRangeSnapshotRequest}
+ */
+export interface RangesSpecificRangeSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+range: string;
+}
+
+/**
+ *
  */
 export class RangeApi extends runtime.BaseAPI {
 

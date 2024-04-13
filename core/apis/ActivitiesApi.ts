@@ -28,22 +28,76 @@ import {
     SeededActivityToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface ActivitiesCreateNewActivityRequest
+ * @typedef {ActivitiesCreateNewActivityRequest}
+ */
 export interface ActivitiesCreateNewActivityRequest {
-    transferables?: boolean;
-    seededActivity?: SeededActivity;
-}
-
-export interface ActivitiesDeleteSpecificActivityRequest {
-    activity: string;
-}
-
-export interface ActivitiesSnapshotRequest {
-    transferables?: boolean;
-    pseudo?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?SeededActivity}
+ */
+seededActivity?: SeededActivity;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface ActivitiesDeleteSpecificActivityRequest
+ * @typedef {ActivitiesDeleteSpecificActivityRequest}
+ */
+export interface ActivitiesDeleteSpecificActivityRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {string}
+ */
+activity: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @interface ActivitiesSnapshotRequest
+ * @typedef {ActivitiesSnapshotRequest}
+ */
+export interface ActivitiesSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @type {?boolean}
+ */
+pseudo?: boolean;
+}
+
+/**
+ *
  */
 export class ActivitiesApi extends runtime.BaseAPI {
 

@@ -27,17 +27,49 @@ export const PlatformEnum = {
     Android: 'ANDROID',
     Unknown: 'UNKNOWN'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @typedef {PlatformEnum}
+ */
 export type PlatformEnum = typeof PlatformEnum[keyof typeof PlatformEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PlatformEnum}
+ */
 export function PlatformEnumFromJSON(json: any): PlatformEnum {
     return PlatformEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PlatformEnum}
+ */
 export function PlatformEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PlatformEnum {
     return json as PlatformEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(PlatformEnum | null)} [value]
+ * @returns {*}
+ */
 export function PlatformEnumToJSON(value?: PlatformEnum | null): any {
     return value as any;
 }

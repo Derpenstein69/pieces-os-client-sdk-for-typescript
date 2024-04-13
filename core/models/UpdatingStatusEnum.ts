@@ -15,11 +15,11 @@
 
 /**
  * This is a simple enum used to determine the status of the Updating process.(of PiecesOS)
- * 
+ *
  * UpdatingStatusEnum(READY_TO_RESTART, AVAILABLE(but not downloaded), DOWNLOADING, UNKNOWN, UP_TO_DATE)
- * 
+ *
  * UNKNOWN: should never be the case
- * 
+ *
  * These are some enums that are currently not implemented but are for future support( REINSTALL_REQUIRED, CONTACT_SUPPORT)
  * @export
  */
@@ -32,17 +32,49 @@ export const UpdatingStatusEnum = {
     ReinstallRequired: 'REINSTALL_REQUIRED',
     ContactSupport: 'CONTACT_SUPPORT'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @typedef {UpdatingStatusEnum}
+ */
 export type UpdatingStatusEnum = typeof UpdatingStatusEnum[keyof typeof UpdatingStatusEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {UpdatingStatusEnum}
+ */
 export function UpdatingStatusEnumFromJSON(json: any): UpdatingStatusEnum {
     return UpdatingStatusEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {UpdatingStatusEnum}
+ */
 export function UpdatingStatusEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdatingStatusEnum {
     return json as UpdatingStatusEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(UpdatingStatusEnum | null)} [value]
+ * @returns {*}
+ */
 export function UpdatingStatusEnumToJSON(value?: UpdatingStatusEnum | null): any {
     return value as any;
 }

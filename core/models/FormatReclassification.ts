@@ -39,19 +39,19 @@ import {
  */
 export interface FormatReclassification {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FormatReclassification
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ClassificationSpecificEnum}
      * @memberof FormatReclassification
      */
     ext: ClassificationSpecificEnum;
     /**
-     * 
+     *
      * @type {Format}
      * @memberof FormatReclassification
      */
@@ -69,22 +69,47 @@ export function instanceOfFormatReclassification(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FormatReclassification}
+ */
 export function FormatReclassificationFromJSON(json: any): FormatReclassification {
     return FormatReclassificationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FormatReclassification}
+ */
 export function FormatReclassificationFromJSONTyped(json: any, ignoreDiscriminator: boolean): FormatReclassification {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'ext': ClassificationSpecificEnumFromJSON(json['ext']),
         'format': FormatFromJSON(json['format']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FormatReclassification | null)} [value]
+ * @returns {*}
+ */
 export function FormatReclassificationToJSON(value?: FormatReclassification | null): any {
     if (value === undefined) {
         return undefined;
@@ -93,7 +118,7 @@ export function FormatReclassificationToJSON(value?: FormatReclassification | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'ext': ClassificationSpecificEnumToJSON(value.ext),
         'format': FormatToJSON(value.format),

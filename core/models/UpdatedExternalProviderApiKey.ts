@@ -33,13 +33,13 @@ import {
  */
 export interface UpdatedExternalProviderApiKey {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof UpdatedExternalProviderApiKey
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Auth0UserMetadata}
      * @memberof UpdatedExternalProviderApiKey
      */
@@ -56,21 +56,46 @@ export function instanceOfUpdatedExternalProviderApiKey(value: object): boolean 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {UpdatedExternalProviderApiKey}
+ */
 export function UpdatedExternalProviderApiKeyFromJSON(json: any): UpdatedExternalProviderApiKey {
     return UpdatedExternalProviderApiKeyFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {UpdatedExternalProviderApiKey}
+ */
 export function UpdatedExternalProviderApiKeyFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdatedExternalProviderApiKey {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'metadata': Auth0UserMetadataFromJSON(json['metadata']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(UpdatedExternalProviderApiKey | null)} [value]
+ * @returns {*}
+ */
 export function UpdatedExternalProviderApiKeyToJSON(value?: UpdatedExternalProviderApiKey | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function UpdatedExternalProviderApiKeyToJSON(value?: UpdatedExternalProvi
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'metadata': Auth0UserMetadataToJSON(value.metadata),
     };

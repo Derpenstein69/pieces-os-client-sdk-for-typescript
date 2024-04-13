@@ -21,13 +21,13 @@ import {
 } from './SeededAssetTag';
 
 /**
- * 
+ *
  * @export
  * @interface SeededAssetTags
  */
 export interface SeededAssetTags {
     /**
-     * 
+     *
      * @type {Array<SeededAssetTag>}
      * @memberof SeededAssetTags
      */
@@ -44,20 +44,45 @@ export function instanceOfSeededAssetTags(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededAssetTags}
+ */
 export function SeededAssetTagsFromJSON(json: any): SeededAssetTags {
     return SeededAssetTagsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededAssetTags}
+ */
 export function SeededAssetTagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededAssetTags {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'iterable': ((json['iterable'] as Array<any>).map(SeededAssetTagFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededAssetTags | null)} [value]
+ * @returns {*}
+ */
 export function SeededAssetTagsToJSON(value?: SeededAssetTags | null): any {
     if (value === undefined) {
         return undefined;
@@ -66,7 +91,7 @@ export function SeededAssetTagsToJSON(value?: SeededAssetTags | null): any {
         return null;
     }
     return {
-        
+
         'iterable': ((value.iterable as Array<any>).map(SeededAssetTagToJSON)),
     };
 }

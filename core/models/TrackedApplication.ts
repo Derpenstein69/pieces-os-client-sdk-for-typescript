@@ -39,7 +39,7 @@ import {
  */
 export interface TrackedApplication {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedApplication
      */
@@ -51,7 +51,7 @@ export interface TrackedApplication {
      */
     id: string;
     /**
-     * 
+     *
      * @type {ApplicationNameEnum}
      * @memberof TrackedApplication
      */
@@ -63,7 +63,7 @@ export interface TrackedApplication {
      */
     version: string;
     /**
-     * 
+     *
      * @type {PlatformEnum}
      * @memberof TrackedApplication
      */
@@ -89,16 +89,33 @@ export function instanceOfTrackedApplication(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedApplication}
+ */
 export function TrackedApplicationFromJSON(json: any): TrackedApplication {
     return TrackedApplicationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedApplication}
+ */
 export function TrackedApplicationFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedApplication {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'name': ApplicationNameEnumFromJSON(json['name']),
@@ -108,6 +125,14 @@ export function TrackedApplicationFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TrackedApplication | null)} [value]
+ * @returns {*}
+ */
 export function TrackedApplicationToJSON(value?: TrackedApplication | null): any {
     if (value === undefined) {
         return undefined;
@@ -116,7 +141,7 @@ export function TrackedApplicationToJSON(value?: TrackedApplication | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'name': ApplicationNameEnumToJSON(value.name),

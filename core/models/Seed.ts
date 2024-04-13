@@ -33,19 +33,19 @@ import {
  */
 export interface Seed {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Seed
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededAsset}
      * @memberof Seed
      */
     asset?: SeededAsset;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Seed
      */
@@ -60,6 +60,13 @@ export const SeedTypeEnum = {
     Format: 'SEEDED_FORMAT',
     Asset: 'SEEDED_ASSET'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @typedef {SeedTypeEnum}
+ */
 export type SeedTypeEnum = typeof SeedTypeEnum[keyof typeof SeedTypeEnum];
 
 
@@ -73,22 +80,47 @@ export function instanceOfSeed(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Seed}
+ */
 export function SeedFromJSON(json: any): Seed {
     return SeedFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Seed}
+ */
 export function SeedFromJSONTyped(json: any, ignoreDiscriminator: boolean): Seed {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': !exists(json, 'asset') ? undefined : SeededAssetFromJSON(json['asset']),
         'type': json['type'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(Seed | null)} [value]
+ * @returns {*}
+ */
 export function SeedToJSON(value?: Seed | null): any {
     if (value === undefined) {
         return undefined;
@@ -97,7 +129,7 @@ export function SeedToJSON(value?: Seed | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': SeededAssetToJSON(value.asset),
         'type': value.type,

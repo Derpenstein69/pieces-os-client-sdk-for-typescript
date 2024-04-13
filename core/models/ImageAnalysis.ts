@@ -33,7 +33,7 @@ import {
  */
 export interface ImageAnalysis {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ImageAnalysis
      */
@@ -51,7 +51,7 @@ export interface ImageAnalysis {
      */
     analysis: string;
     /**
-     * 
+     *
      * @type {OCRAnalysis}
      * @memberof ImageAnalysis
      */
@@ -69,16 +69,33 @@ export function instanceOfImageAnalysis(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ImageAnalysis}
+ */
 export function ImageAnalysisFromJSON(json: any): ImageAnalysis {
     return ImageAnalysisFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ImageAnalysis}
+ */
 export function ImageAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImageAnalysis {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'analysis': json['analysis'],
@@ -86,6 +103,14 @@ export function ImageAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ImageAnalysis | null)} [value]
+ * @returns {*}
+ */
 export function ImageAnalysisToJSON(value?: ImageAnalysis | null): any {
     if (value === undefined) {
         return undefined;
@@ -94,7 +119,7 @@ export function ImageAnalysisToJSON(value?: ImageAnalysis | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'analysis': value.analysis,

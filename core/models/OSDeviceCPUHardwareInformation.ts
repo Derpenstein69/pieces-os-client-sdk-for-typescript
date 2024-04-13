@@ -27,19 +27,19 @@ import {
  */
 export interface OSDeviceCPUHardwareInformation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OSDeviceCPUHardwareInformation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof OSDeviceCPUHardwareInformation
      */
     name?: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof OSDeviceCPUHardwareInformation
      */
@@ -55,22 +55,47 @@ export function instanceOfOSDeviceCPUHardwareInformation(value: object): boolean
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OSDeviceCPUHardwareInformation}
+ */
 export function OSDeviceCPUHardwareInformationFromJSON(json: any): OSDeviceCPUHardwareInformation {
     return OSDeviceCPUHardwareInformationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OSDeviceCPUHardwareInformation}
+ */
 export function OSDeviceCPUHardwareInformationFromJSONTyped(json: any, ignoreDiscriminator: boolean): OSDeviceCPUHardwareInformation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'name': !exists(json, 'name') ? undefined : json['name'],
         'memory': !exists(json, 'memory') ? undefined : json['memory'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OSDeviceCPUHardwareInformation | null)} [value]
+ * @returns {*}
+ */
 export function OSDeviceCPUHardwareInformationToJSON(value?: OSDeviceCPUHardwareInformation | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function OSDeviceCPUHardwareInformationToJSON(value?: OSDeviceCPUHardware
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'name': value.name,
         'memory': value.memory,

@@ -27,7 +27,7 @@ import {
  */
 export interface OSProcessingPermissions {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OSProcessingPermissions
      */
@@ -55,22 +55,47 @@ export function instanceOfOSProcessingPermissions(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OSProcessingPermissions}
+ */
 export function OSProcessingPermissionsFromJSON(json: any): OSProcessingPermissions {
     return OSProcessingPermissionsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OSProcessingPermissions}
+ */
 export function OSProcessingPermissionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): OSProcessingPermissions {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'vision': !exists(json, 'vision') ? undefined : json['vision'],
         'accessibility': !exists(json, 'accessibility') ? undefined : json['accessibility'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(OSProcessingPermissions | null)} [value]
+ * @returns {*}
+ */
 export function OSProcessingPermissionsToJSON(value?: OSProcessingPermissions | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function OSProcessingPermissionsToJSON(value?: OSProcessingPermissions | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'vision': value.vision,
         'accessibility': value.accessibility,

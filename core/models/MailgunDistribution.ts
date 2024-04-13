@@ -33,13 +33,13 @@ import {
  */
 export interface MailgunDistribution {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof MailgunDistribution
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Recipients}
      * @memberof MailgunDistribution
      */
@@ -56,21 +56,46 @@ export function instanceOfMailgunDistribution(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {MailgunDistribution}
+ */
 export function MailgunDistributionFromJSON(json: any): MailgunDistribution {
     return MailgunDistributionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {MailgunDistribution}
+ */
 export function MailgunDistributionFromJSONTyped(json: any, ignoreDiscriminator: boolean): MailgunDistribution {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'recipients': RecipientsFromJSON(json['recipients']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(MailgunDistribution | null)} [value]
+ * @returns {*}
+ */
 export function MailgunDistributionToJSON(value?: MailgunDistribution | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function MailgunDistributionToJSON(value?: MailgunDistribution | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'recipients': RecipientsToJSON(value.recipients),
     };

@@ -22,16 +22,16 @@ import {
 
 /**
  * This is used in the QGPT flow as well as within the conversation.
- * 
+ *
  * This will let us know grounding's that you want us to use within a given time range(s).
- * 
+ *
  * workstreams: is used to describe workstreams context. (specific to the "workstream mapper" - name subject to change)
  * @export
  * @interface TemporalRangeGrounding
  */
 export interface TemporalRangeGrounding {
     /**
-     * 
+     *
      * @type {FlattenedRanges}
      * @memberof TemporalRangeGrounding
      */
@@ -47,20 +47,45 @@ export function instanceOfTemporalRangeGrounding(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TemporalRangeGrounding}
+ */
 export function TemporalRangeGroundingFromJSON(json: any): TemporalRangeGrounding {
     return TemporalRangeGroundingFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TemporalRangeGrounding}
+ */
 export function TemporalRangeGroundingFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemporalRangeGrounding {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'workstreams': !exists(json, 'workstreams') ? undefined : FlattenedRangesFromJSON(json['workstreams']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TemporalRangeGrounding | null)} [value]
+ * @returns {*}
+ */
 export function TemporalRangeGroundingToJSON(value?: TemporalRangeGrounding | null): any {
     if (value === undefined) {
         return undefined;
@@ -69,7 +94,7 @@ export function TemporalRangeGroundingToJSON(value?: TemporalRangeGrounding | nu
         return null;
     }
     return {
-        
+
         'workstreams': FlattenedRangesToJSON(value.workstreams),
     };
 }

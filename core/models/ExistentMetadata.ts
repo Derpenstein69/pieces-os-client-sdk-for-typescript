@@ -29,13 +29,13 @@ import {
  */
 export interface ExistentMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ExistentMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ExistentMetadata
      */
@@ -52,21 +52,46 @@ export function instanceOfExistentMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExistentMetadata}
+ */
 export function ExistentMetadataFromJSON(json: any): ExistentMetadata {
     return ExistentMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExistentMetadata}
+ */
 export function ExistentMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExistentMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'value': json['value'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExistentMetadata | null)} [value]
+ * @returns {*}
+ */
 export function ExistentMetadataToJSON(value?: ExistentMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -75,7 +100,7 @@ export function ExistentMetadataToJSON(value?: ExistentMetadata | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'value': value.value,
     };

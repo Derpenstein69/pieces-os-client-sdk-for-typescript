@@ -87,79 +87,79 @@ import {
 } from './TrackedAssetsEventSearchMetadata';
 
 /**
- * 
+ *
  * @export
  * @interface TrackedAssetEventMetadata
  */
 export interface TrackedAssetEventMetadata {
     /**
-     * 
+     *
      * @type {TrackedAssetEventFormatReclassificationMetadata}
      * @memberof TrackedAssetEventMetadata
      */
     reclassification?: TrackedAssetEventFormatReclassificationMetadata;
     /**
-     * 
+     *
      * @type {TrackedAssetEventCreationMetadata}
      * @memberof TrackedAssetEventMetadata
      */
     creation?: TrackedAssetEventCreationMetadata;
     /**
-     * 
+     *
      * @type {TrackedAssetEventRenameMetadata}
      * @memberof TrackedAssetEventMetadata
      */
     rename?: TrackedAssetEventRenameMetadata;
     /**
-     * 
+     *
      * @type {ReferencedTag}
      * @memberof TrackedAssetEventMetadata
      */
     tag?: ReferencedTag;
     /**
-     * 
+     *
      * @type {ReferencedWebsite}
      * @memberof TrackedAssetEventMetadata
      */
     website?: ReferencedWebsite;
     /**
-     * 
+     *
      * @type {ReferencedPerson}
      * @memberof TrackedAssetEventMetadata
      */
     person?: ReferencedPerson;
     /**
-     * 
+     *
      * @type {ReferencedSensitive}
      * @memberof TrackedAssetEventMetadata
      */
     sensitive?: ReferencedSensitive;
     /**
-     * 
+     *
      * @type {ReferencedShare}
      * @memberof TrackedAssetEventMetadata
      */
     share?: ReferencedShare;
     /**
-     * 
+     *
      * @type {TrackedAssetsEventSearchMetadata}
      * @memberof TrackedAssetEventMetadata
      */
     search?: TrackedAssetsEventSearchMetadata;
     /**
-     * 
+     *
      * @type {ReferencedAnnotation}
      * @memberof TrackedAssetEventMetadata
      */
     annotation?: ReferencedAnnotation;
     /**
-     * 
+     *
      * @type {ReferencedHint}
      * @memberof TrackedAssetEventMetadata
      */
     hint?: ReferencedHint;
     /**
-     * 
+     *
      * @type {ReferencedAnchor}
      * @memberof TrackedAssetEventMetadata
      */
@@ -175,16 +175,33 @@ export function instanceOfTrackedAssetEventMetadata(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedAssetEventMetadata}
+ */
 export function TrackedAssetEventMetadataFromJSON(json: any): TrackedAssetEventMetadata {
     return TrackedAssetEventMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedAssetEventMetadata}
+ */
 export function TrackedAssetEventMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedAssetEventMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'reclassification': !exists(json, 'reclassification') ? undefined : TrackedAssetEventFormatReclassificationMetadataFromJSON(json['reclassification']),
         'creation': !exists(json, 'creation') ? undefined : TrackedAssetEventCreationMetadataFromJSON(json['creation']),
         'rename': !exists(json, 'rename') ? undefined : TrackedAssetEventRenameMetadataFromJSON(json['rename']),
@@ -200,6 +217,14 @@ export function TrackedAssetEventMetadataFromJSONTyped(json: any, ignoreDiscrimi
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TrackedAssetEventMetadata | null)} [value]
+ * @returns {*}
+ */
 export function TrackedAssetEventMetadataToJSON(value?: TrackedAssetEventMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -208,7 +233,7 @@ export function TrackedAssetEventMetadataToJSON(value?: TrackedAssetEventMetadat
         return null;
     }
     return {
-        
+
         'reclassification': TrackedAssetEventFormatReclassificationMetadataToJSON(value.reclassification),
         'creation': TrackedAssetEventCreationMetadataToJSON(value.creation),
         'rename': TrackedAssetEventRenameMetadataToJSON(value.rename),

@@ -46,7 +46,7 @@ import {
 
 /**
  * This model is specifically for QGPT Conversation pipelines, the model is used to group conversational prompts for instance a conversation around generating code.
- * 
+ *
  * here are some use cases-
  * 1. contextualized_code_generation- This is for users that want to have conversations around generating code, when there is provided context.
  * 2. generalized_code- This is for users that want to have conversations without context around code.
@@ -57,31 +57,31 @@ import {
  */
 export interface QGPTConversationPipeline {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTConversationPipeline
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {QGPTConversationPipelineForContextualizedCodeGeneration}
      * @memberof QGPTConversationPipeline
      */
     contextualizedCodeGeneration?: QGPTConversationPipelineForContextualizedCodeGeneration;
     /**
-     * 
+     *
      * @type {QGPTConversationPipelineForGeneralizedCodeDialog}
      * @memberof QGPTConversationPipeline
      */
     generalizedCodeDialog?: QGPTConversationPipelineForGeneralizedCodeDialog;
     /**
-     * 
+     *
      * @type {QGPTConversationPipelineForContextualizedCodeDialog}
      * @memberof QGPTConversationPipeline
      */
     contextualizedCodeDialog?: QGPTConversationPipelineForContextualizedCodeDialog;
     /**
-     * 
+     *
      * @type {QGPTConversationPipelineForContextualizedCodeWorkstreamDialog}
      * @memberof QGPTConversationPipeline
      */
@@ -97,16 +97,33 @@ export function instanceOfQGPTConversationPipeline(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTConversationPipeline}
+ */
 export function QGPTConversationPipelineFromJSON(json: any): QGPTConversationPipeline {
     return QGPTConversationPipelineFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTConversationPipeline}
+ */
 export function QGPTConversationPipelineFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTConversationPipeline {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'contextualizedCodeGeneration': !exists(json, 'contextualized_code_generation') ? undefined : QGPTConversationPipelineForContextualizedCodeGenerationFromJSON(json['contextualized_code_generation']),
         'generalizedCodeDialog': !exists(json, 'generalized_code_dialog') ? undefined : QGPTConversationPipelineForGeneralizedCodeDialogFromJSON(json['generalized_code_dialog']),
@@ -115,6 +132,14 @@ export function QGPTConversationPipelineFromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTConversationPipeline | null)} [value]
+ * @returns {*}
+ */
 export function QGPTConversationPipelineToJSON(value?: QGPTConversationPipeline | null): any {
     if (value === undefined) {
         return undefined;
@@ -123,7 +148,7 @@ export function QGPTConversationPipelineToJSON(value?: QGPTConversationPipeline 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'contextualized_code_generation': QGPTConversationPipelineForContextualizedCodeGenerationToJSON(value.contextualizedCodeGeneration),
         'generalized_code_dialog': QGPTConversationPipelineForGeneralizedCodeDialogToJSON(value.generalizedCodeDialog),

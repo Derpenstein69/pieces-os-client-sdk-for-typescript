@@ -25,63 +25,283 @@ import {
     WebsiteToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsiteAssociateAssetRequest
+ * @typedef {WebsiteAssociateAssetRequest}
+ */
 export interface WebsiteAssociateAssetRequest {
-    asset: string;
-    website: string;
-}
-
-export interface WebsiteAssociateConversationRequest {
-    website: string;
-    conversation: string;
-}
-
-export interface WebsiteAssociatePersonRequest {
-    website: string;
-    person: string;
-}
-
-export interface WebsiteAssociateWorkstreamSummaryRequest {
-    website: string;
-    workstreamSummary: string;
-}
-
-export interface WebsiteDisassociateAssetRequest {
-    website: string;
-    asset: string;
-}
-
-export interface WebsiteDisassociateConversationRequest {
-    website: string;
-    conversation: string;
-}
-
-export interface WebsiteDisassociatePersonRequest {
-    website: string;
-    person: string;
-}
-
-export interface WebsiteDisassociateWorkstreamSummaryRequest {
-    website: string;
-    workstreamSummary: string;
-}
-
-export interface WebsiteScoresIncrementRequest {
-    website: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface WebsiteUpdateRequest {
-    transferables?: boolean;
-    website?: Website;
-}
-
-export interface WebsitesSpecificWebsiteSnapshotRequest {
-    website: string;
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+asset: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsiteAssociateConversationRequest
+ * @typedef {WebsiteAssociateConversationRequest}
+ */
+export interface WebsiteAssociateConversationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsiteAssociatePersonRequest
+ * @typedef {WebsiteAssociatePersonRequest}
+ */
+export interface WebsiteAssociatePersonRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+person: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsiteAssociateWorkstreamSummaryRequest
+ * @typedef {WebsiteAssociateWorkstreamSummaryRequest}
+ */
+export interface WebsiteAssociateWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsiteDisassociateAssetRequest
+ * @typedef {WebsiteDisassociateAssetRequest}
+ */
+export interface WebsiteDisassociateAssetRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+asset: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsiteDisassociateConversationRequest
+ * @typedef {WebsiteDisassociateConversationRequest}
+ */
+export interface WebsiteDisassociateConversationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+conversation: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsiteDisassociatePersonRequest
+ * @typedef {WebsiteDisassociatePersonRequest}
+ */
+export interface WebsiteDisassociatePersonRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+person: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsiteDisassociateWorkstreamSummaryRequest
+ * @typedef {WebsiteDisassociateWorkstreamSummaryRequest}
+ */
+export interface WebsiteDisassociateWorkstreamSummaryRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamSummary: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsiteScoresIncrementRequest
+ * @typedef {WebsiteScoresIncrementRequest}
+ */
+export interface WebsiteScoresIncrementRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsiteUpdateRequest
+ * @typedef {WebsiteUpdateRequest}
+ */
+export interface WebsiteUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?Website}
+ */
+website?: Website;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WebsitesSpecificWebsiteSnapshotRequest
+ * @typedef {WebsitesSpecificWebsiteSnapshotRequest}
+ */
+export interface WebsitesSpecificWebsiteSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+website: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class WebsiteApi extends runtime.BaseAPI {
 

@@ -20,17 +20,49 @@
 export const EmbeddedModelSchemaSemanticVersionEnum = {
     Major0Minor0Patch1: 'MAJOR_0_MINOR_0_PATCH_1'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @typedef {EmbeddedModelSchemaSemanticVersionEnum}
+ */
 export type EmbeddedModelSchemaSemanticVersionEnum = typeof EmbeddedModelSchemaSemanticVersionEnum[keyof typeof EmbeddedModelSchemaSemanticVersionEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {EmbeddedModelSchemaSemanticVersionEnum}
+ */
 export function EmbeddedModelSchemaSemanticVersionEnumFromJSON(json: any): EmbeddedModelSchemaSemanticVersionEnum {
     return EmbeddedModelSchemaSemanticVersionEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {EmbeddedModelSchemaSemanticVersionEnum}
+ */
 export function EmbeddedModelSchemaSemanticVersionEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmbeddedModelSchemaSemanticVersionEnum {
     return json as EmbeddedModelSchemaSemanticVersionEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(EmbeddedModelSchemaSemanticVersionEnum | null)} [value]
+ * @returns {*}
+ */
 export function EmbeddedModelSchemaSemanticVersionEnumToJSON(value?: EmbeddedModelSchemaSemanticVersionEnum | null): any {
     return value as any;
 }

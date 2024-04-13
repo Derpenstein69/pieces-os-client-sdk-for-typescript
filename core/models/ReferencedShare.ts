@@ -33,19 +33,19 @@ import {
  */
 export interface ReferencedShare {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedShare
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedShare
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedShare}
      * @memberof ReferencedShare
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedShare(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedShare}
+ */
 export function ReferencedShareFromJSON(json: any): ReferencedShare {
     return ReferencedShareFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedShare}
+ */
 export function ReferencedShareFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedShare {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedShareFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedShare | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedShareToJSON(value?: ReferencedShare | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedShareToJSON(value?: ReferencedShare | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedShareToJSON(value.reference),

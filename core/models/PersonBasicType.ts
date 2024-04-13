@@ -34,14 +34,14 @@ import {
 
 /**
  * This is all optional properties around the most basic information around a non-pieces user.
- * 
+ *
  * A Basic type will NOT have a scope as it is not an actual pieces user.
  * @export
  * @interface PersonBasicType
  */
 export interface PersonBasicType {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof PersonBasicType
      */
@@ -71,7 +71,7 @@ export interface PersonBasicType {
      */
     email?: string;
     /**
-     * 
+     *
      * @type {ExternallySourcedEnum}
      * @memberof PersonBasicType
      */
@@ -83,7 +83,7 @@ export interface PersonBasicType {
      */
     url?: string;
     /**
-     * 
+     *
      * @type {MailgunMetadata}
      * @memberof PersonBasicType
      */
@@ -99,16 +99,33 @@ export function instanceOfPersonBasicType(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PersonBasicType}
+ */
 export function PersonBasicTypeFromJSON(json: any): PersonBasicType {
     return PersonBasicTypeFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PersonBasicType}
+ */
 export function PersonBasicTypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): PersonBasicType {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'username': !exists(json, 'username') ? undefined : json['username'],
         'name': !exists(json, 'name') ? undefined : json['name'],
@@ -120,6 +137,14 @@ export function PersonBasicTypeFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(PersonBasicType | null)} [value]
+ * @returns {*}
+ */
 export function PersonBasicTypeToJSON(value?: PersonBasicType | null): any {
     if (value === undefined) {
         return undefined;
@@ -128,7 +153,7 @@ export function PersonBasicTypeToJSON(value?: PersonBasicType | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'username': value.username,
         'name': value.name,

@@ -69,79 +69,79 @@ import {
  */
 export interface Sensitive {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Sensitive
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Sensitive
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Sensitive
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Sensitive
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Sensitive
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {FlattenedAsset}
      * @memberof Sensitive
      */
     asset: FlattenedAsset;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Sensitive
      */
     text: string;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof Sensitive
      */
     mechanism: MechanismEnum;
     /**
-     * 
+     *
      * @type {SensitiveCategoryEnum}
      * @memberof Sensitive
      */
     category: SensitiveCategoryEnum;
     /**
-     * 
+     *
      * @type {SensitiveSeverityEnum}
      * @memberof Sensitive
      */
     severity: SensitiveSeverityEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Sensitive
      */
     name: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Sensitive
      */
     description: string;
     /**
-     * 
+     *
      * @type {SensitiveMetadata}
      * @memberof Sensitive
      */
@@ -153,7 +153,7 @@ export interface Sensitive {
      */
     interactions?: number;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Sensitive
      */
@@ -179,16 +179,33 @@ export function instanceOfSensitive(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Sensitive}
+ */
 export function SensitiveFromJSON(json: any): Sensitive {
     return SensitiveFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Sensitive}
+ */
 export function SensitiveFromJSONTyped(json: any, ignoreDiscriminator: boolean): Sensitive {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -207,6 +224,14 @@ export function SensitiveFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(Sensitive | null)} [value]
+ * @returns {*}
+ */
 export function SensitiveToJSON(value?: Sensitive | null): any {
     if (value === undefined) {
         return undefined;
@@ -215,7 +240,7 @@ export function SensitiveToJSON(value?: Sensitive | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'created': GroupedTimestampToJSON(value.created),

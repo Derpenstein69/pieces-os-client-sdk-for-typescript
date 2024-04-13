@@ -52,16 +52,16 @@ import {
 
 /**
  * This is the input body for the /code_gpt/relevance endpoint.
- * 
+ *
  * There are a couple different options that you may take with this Model.
- * 
+ *
  * First we will talk about the space in which you will compare your query too.
  * These are the following cases for the space.
  * 1. provide an absolute path on the users machine that we can use locally.
  * 2. provide Seeds that you want to compare to, which will be ONLY fragment/string values(all other values will be ignored)
  * 3. provide assets, here you can provide an iterable of the asset id, and we will do the rest
  * 4. you can set your database boolean to true which will tell us to use your entire DB as the query space.
- * 
+ *
  * Note:
  * - for ease of use, we have an additional boolean called 'question', which will also ask your question to gpt3.5, and compare to the relevant snippets that we found. That way you dont need to call /code_gpt/question. Otherwise the next step would be is to take the results and feed them into /code_gpt/question. to get your question answered.
  * @export
@@ -69,7 +69,7 @@ import {
  */
 export interface QGPTRelevanceInput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTRelevanceInput
      */
@@ -87,25 +87,25 @@ export interface QGPTRelevanceInput {
      */
     paths?: Array<string>;
     /**
-     * 
+     *
      * @type {Seeds}
      * @memberof QGPTRelevanceInput
      */
     seeds?: Seeds;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof QGPTRelevanceInput
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {FlattenedConversationMessages}
      * @memberof QGPTRelevanceInput
      */
     messages?: FlattenedConversationMessages;
     /**
-     * 
+     *
      * @type {QGPTRelevanceInputOptions}
      * @memberof QGPTRelevanceInput
      */
@@ -123,7 +123,7 @@ export interface QGPTRelevanceInput {
      */
     model?: string;
     /**
-     * 
+     *
      * @type {TemporalRangeGrounding}
      * @memberof QGPTRelevanceInput
      */
@@ -140,16 +140,33 @@ export function instanceOfQGPTRelevanceInput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTRelevanceInput}
+ */
 export function QGPTRelevanceInputFromJSON(json: any): QGPTRelevanceInput {
     return QGPTRelevanceInputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTRelevanceInput}
+ */
 export function QGPTRelevanceInputFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTRelevanceInput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'query': json['query'],
         'paths': !exists(json, 'paths') ? undefined : json['paths'],
@@ -163,6 +180,14 @@ export function QGPTRelevanceInputFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTRelevanceInput | null)} [value]
+ * @returns {*}
+ */
 export function QGPTRelevanceInputToJSON(value?: QGPTRelevanceInput | null): any {
     if (value === undefined) {
         return undefined;
@@ -171,7 +196,7 @@ export function QGPTRelevanceInputToJSON(value?: QGPTRelevanceInput | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'query': value.query,
         'paths': value.paths,

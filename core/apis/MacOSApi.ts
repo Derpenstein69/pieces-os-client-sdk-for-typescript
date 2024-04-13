@@ -25,12 +25,26 @@ import {
     SeededMacOSAssetToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface AssetsCreateNewAssetFromMacosRequest
+ * @typedef {AssetsCreateNewAssetFromMacosRequest}
+ */
 export interface AssetsCreateNewAssetFromMacosRequest {
-    seededMacOSAsset?: SeededMacOSAsset;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededMacOSAsset}
+ */
+seededMacOSAsset?: SeededMacOSAsset;
 }
 
 /**
- * 
+ *
  */
 export class MacOSApi extends runtime.BaseAPI {
 

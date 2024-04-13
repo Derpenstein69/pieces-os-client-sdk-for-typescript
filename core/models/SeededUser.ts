@@ -21,19 +21,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface SeededUser
  */
 export interface SeededUser {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededUser
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof SeededUser
      */
@@ -50,21 +50,46 @@ export function instanceOfSeededUser(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededUser}
+ */
 export function SeededUserFromJSON(json: any): SeededUser {
     return SeededUserFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededUser}
+ */
 export function SeededUserFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededUser {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'emails': json['emails'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:24 AM
+ *
+ * @export
+ * @param {?(SeededUser | null)} [value]
+ * @returns {*}
+ */
 export function SeededUserToJSON(value?: SeededUser | null): any {
     if (value === undefined) {
         return undefined;
@@ -73,7 +98,7 @@ export function SeededUserToJSON(value?: SeededUser | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'emails': value.emails,
     };

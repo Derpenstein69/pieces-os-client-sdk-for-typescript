@@ -39,13 +39,13 @@ import {
  */
 export interface Annotations {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Annotations
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Annotation>}
      * @memberof Annotations
      */
@@ -57,7 +57,7 @@ export interface Annotations {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Annotations
      */
@@ -74,16 +74,33 @@ export function instanceOfAnnotations(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Annotations}
+ */
 export function AnnotationsFromJSON(json: any): Annotations {
     return AnnotationsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Annotations}
+ */
 export function AnnotationsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Annotations {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(AnnotationFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function AnnotationsFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(Annotations | null)} [value]
+ * @returns {*}
+ */
 export function AnnotationsToJSON(value?: Annotations | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function AnnotationsToJSON(value?: Annotations | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(AnnotationToJSON)),
         'indices': value.indices,

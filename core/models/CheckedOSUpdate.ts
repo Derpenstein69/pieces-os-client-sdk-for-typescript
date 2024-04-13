@@ -33,13 +33,13 @@ import {
  */
 export interface CheckedOSUpdate {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof CheckedOSUpdate
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {UpdatingStatusEnum}
      * @memberof CheckedOSUpdate
      */
@@ -56,21 +56,46 @@ export function instanceOfCheckedOSUpdate(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {CheckedOSUpdate}
+ */
 export function CheckedOSUpdateFromJSON(json: any): CheckedOSUpdate {
     return CheckedOSUpdateFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {CheckedOSUpdate}
+ */
 export function CheckedOSUpdateFromJSONTyped(json: any, ignoreDiscriminator: boolean): CheckedOSUpdate {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'status': UpdatingStatusEnumFromJSON(json['status']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(CheckedOSUpdate | null)} [value]
+ * @returns {*}
+ */
 export function CheckedOSUpdateToJSON(value?: CheckedOSUpdate | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function CheckedOSUpdateToJSON(value?: CheckedOSUpdate | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'status': UpdatingStatusEnumToJSON(value.status),
     };

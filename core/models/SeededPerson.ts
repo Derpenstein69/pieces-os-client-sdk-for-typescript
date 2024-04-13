@@ -52,56 +52,56 @@ import {
 
 /**
  * This is a per-cursor to a full person.
- * 
+ *
  * Will throw an error, if asset is passed in but acces.scope is undefined.
- * 
+ *
  * can optionally pass in our mechanism here, as the default will be manual unless specified.
- * 
+ *
  * TODO consider updating these asset, format to referenced Models
- * 
+ *
  * Note: model, access, mechanism will only be added if the asset is passed in.
  * @export
  * @interface SeededPerson
  */
 export interface SeededPerson {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededPerson
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededPerson
      */
     asset?: string;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededPerson
      */
     mechanism?: MechanismEnum;
     /**
-     * 
+     *
      * @type {PersonAccess}
      * @memberof SeededPerson
      */
     access?: PersonAccess;
     /**
-     * 
+     *
      * @type {PersonType}
      * @memberof SeededPerson
      */
     type: PersonType;
     /**
-     * 
+     *
      * @type {PersonModel}
      * @memberof SeededPerson
      */
     model?: PersonModel;
     /**
-     * 
+     *
      * @type {Array<SeededAnnotation>}
      * @memberof SeededPerson
      */
@@ -118,16 +118,33 @@ export function instanceOfSeededPerson(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededPerson}
+ */
 export function SeededPersonFromJSON(json: any): SeededPerson {
     return SeededPersonFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededPerson}
+ */
 export function SeededPersonFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededPerson {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'asset': !exists(json, 'asset') ? undefined : json['asset'],
         'mechanism': !exists(json, 'mechanism') ? undefined : MechanismEnumFromJSON(json['mechanism']),
@@ -138,6 +155,14 @@ export function SeededPersonFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededPerson | null)} [value]
+ * @returns {*}
+ */
 export function SeededPersonToJSON(value?: SeededPerson | null): any {
     if (value === undefined) {
         return undefined;
@@ -146,7 +171,7 @@ export function SeededPersonToJSON(value?: SeededPerson | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'asset': value.asset,
         'mechanism': MechanismEnumToJSON(value.mechanism),

@@ -28,16 +28,44 @@ import {
     SeededRangeToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RangesCreateNewRangeRequest
+ * @typedef {RangesCreateNewRangeRequest}
+ */
 export interface RangesCreateNewRangeRequest {
-    seededRange?: SeededRange;
-}
-
-export interface RangesDeleteSpecificRangeRequest {
-    range: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededRange}
+ */
+seededRange?: SeededRange;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RangesDeleteSpecificRangeRequest
+ * @typedef {RangesDeleteSpecificRangeRequest}
+ */
+export interface RangesDeleteSpecificRangeRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+range: string;
+}
+
+/**
+ *
  */
 export class RangesApi extends runtime.BaseAPI {
 

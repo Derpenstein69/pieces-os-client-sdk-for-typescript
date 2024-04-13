@@ -22,12 +22,26 @@ import {
     RelationshipToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RelationshipsSpecificRelationshipSnapshotRequest
+ * @typedef {RelationshipsSpecificRelationshipSnapshotRequest}
+ */
 export interface RelationshipsSpecificRelationshipSnapshotRequest {
-    relationship: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+relationship: string;
 }
 
 /**
- * 
+ *
  */
 export class RelationshipApi extends runtime.BaseAPI {
 

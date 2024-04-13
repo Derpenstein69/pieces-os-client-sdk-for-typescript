@@ -21,13 +21,13 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface ExportedDatabaseFormat
  */
 export interface ExportedDatabaseFormat {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ExportedDatabaseFormat
      */
@@ -57,22 +57,47 @@ export function instanceOfExportedDatabaseFormat(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExportedDatabaseFormat}
+ */
 export function ExportedDatabaseFormatFromJSON(json: any): ExportedDatabaseFormat {
     return ExportedDatabaseFormatFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExportedDatabaseFormat}
+ */
 export function ExportedDatabaseFormatFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExportedDatabaseFormat {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'raw': json['raw'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExportedDatabaseFormat | null)} [value]
+ * @returns {*}
+ */
 export function ExportedDatabaseFormatToJSON(value?: ExportedDatabaseFormat | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function ExportedDatabaseFormatToJSON(value?: ExportedDatabaseFormat | nu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'raw': value.raw,

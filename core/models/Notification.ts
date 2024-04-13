@@ -27,31 +27,31 @@ import {
  */
 export interface Notification {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Notification
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {number}
      * @memberof Notification
      */
     id: number;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Notification
      */
     title?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Notification
      */
     message?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Notification
      */
@@ -68,16 +68,33 @@ export function instanceOfNotification(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Notification}
+ */
 export function NotificationFromJSON(json: any): Notification {
     return NotificationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Notification}
+ */
 export function NotificationFromJSONTyped(json: any, ignoreDiscriminator: boolean): Notification {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'title': !exists(json, 'title') ? undefined : json['title'],
@@ -86,6 +103,14 @@ export function NotificationFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(Notification | null)} [value]
+ * @returns {*}
+ */
 export function NotificationToJSON(value?: Notification | null): any {
     if (value === undefined) {
         return undefined;
@@ -94,7 +119,7 @@ export function NotificationToJSON(value?: Notification | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'title': value.title,

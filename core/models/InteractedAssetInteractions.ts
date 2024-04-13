@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface InteractedAssetInteractions
  */
@@ -49,22 +49,47 @@ export function instanceOfInteractedAssetInteractions(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {InteractedAssetInteractions}
+ */
 export function InteractedAssetInteractionsFromJSON(json: any): InteractedAssetInteractions {
     return InteractedAssetInteractionsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {InteractedAssetInteractions}
+ */
 export function InteractedAssetInteractionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): InteractedAssetInteractions {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'viewed': json['viewed'],
         'touched': !exists(json, 'touched') ? undefined : json['touched'],
         'scrolled': !exists(json, 'scrolled') ? undefined : json['scrolled'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(InteractedAssetInteractions | null)} [value]
+ * @returns {*}
+ */
 export function InteractedAssetInteractionsToJSON(value?: InteractedAssetInteractions | null): any {
     if (value === undefined) {
         return undefined;
@@ -73,7 +98,7 @@ export function InteractedAssetInteractionsToJSON(value?: InteractedAssetInterac
         return null;
     }
     return {
-        
+
         'viewed': value.viewed,
         'touched': value.touched,
         'scrolled': value.scrolled,

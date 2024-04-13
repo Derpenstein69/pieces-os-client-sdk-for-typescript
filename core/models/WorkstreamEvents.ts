@@ -39,13 +39,13 @@ import {
  */
 export interface WorkstreamEvents {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof WorkstreamEvents
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<WorkstreamEvent>}
      * @memberof WorkstreamEvents
      */
@@ -57,7 +57,7 @@ export interface WorkstreamEvents {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof WorkstreamEvents
      */
@@ -74,16 +74,33 @@ export function instanceOfWorkstreamEvents(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {WorkstreamEvents}
+ */
 export function WorkstreamEventsFromJSON(json: any): WorkstreamEvents {
     return WorkstreamEventsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {WorkstreamEvents}
+ */
 export function WorkstreamEventsFromJSONTyped(json: any, ignoreDiscriminator: boolean): WorkstreamEvents {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(WorkstreamEventFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function WorkstreamEventsFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:19 AM
+ *
+ * @export
+ * @param {?(WorkstreamEvents | null)} [value]
+ * @returns {*}
+ */
 export function WorkstreamEventsToJSON(value?: WorkstreamEvents | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function WorkstreamEventsToJSON(value?: WorkstreamEvents | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(WorkstreamEventToJSON)),
         'indices': value.indices,

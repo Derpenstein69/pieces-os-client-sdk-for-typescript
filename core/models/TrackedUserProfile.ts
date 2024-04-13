@@ -27,7 +27,7 @@ import {
  */
 export interface TrackedUserProfile {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedUserProfile
      */
@@ -67,6 +67,13 @@ export const TrackedUserProfileGranularityEnum = {
     Account: 'ACCOUNT',
     Anonymous: 'ANONYMOUS'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedUserProfileGranularityEnum}
+ */
 export type TrackedUserProfileGranularityEnum = typeof TrackedUserProfileGranularityEnum[keyof typeof TrackedUserProfileGranularityEnum];
 
 
@@ -82,16 +89,33 @@ export function instanceOfTrackedUserProfile(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedUserProfile}
+ */
 export function TrackedUserProfileFromJSON(json: any): TrackedUserProfile {
     return TrackedUserProfileFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedUserProfile}
+ */
 export function TrackedUserProfileFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedUserProfile {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'username': json['username'],
@@ -100,6 +124,14 @@ export function TrackedUserProfileFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedUserProfile | null)} [value]
+ * @returns {*}
+ */
 export function TrackedUserProfileToJSON(value?: TrackedUserProfile | null): any {
     if (value === undefined) {
         return undefined;
@@ -108,7 +140,7 @@ export function TrackedUserProfileToJSON(value?: TrackedUserProfile | null): any
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'username': value.username,

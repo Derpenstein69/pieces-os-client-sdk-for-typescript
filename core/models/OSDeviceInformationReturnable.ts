@@ -39,13 +39,13 @@ import {
  */
 export interface OSDeviceInformationReturnable {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OSDeviceInformationReturnable
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {OSDeviceDependenciesInformation}
      * @memberof OSDeviceInformationReturnable
      */
@@ -63,7 +63,7 @@ export interface OSDeviceInformationReturnable {
      */
     version?: string;
     /**
-     * 
+     *
      * @type {OSDeviceHardwareInformation}
      * @memberof OSDeviceInformationReturnable
      */
@@ -79,16 +79,33 @@ export function instanceOfOSDeviceInformationReturnable(value: object): boolean 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OSDeviceInformationReturnable}
+ */
 export function OSDeviceInformationReturnableFromJSON(json: any): OSDeviceInformationReturnable {
     return OSDeviceInformationReturnableFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OSDeviceInformationReturnable}
+ */
 export function OSDeviceInformationReturnableFromJSONTyped(json: any, ignoreDiscriminator: boolean): OSDeviceInformationReturnable {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'dependencies': !exists(json, 'dependencies') ? undefined : OSDeviceDependenciesInformationFromJSON(json['dependencies']),
         'name': !exists(json, 'name') ? undefined : json['name'],
@@ -97,6 +114,14 @@ export function OSDeviceInformationReturnableFromJSONTyped(json: any, ignoreDisc
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OSDeviceInformationReturnable | null)} [value]
+ * @returns {*}
+ */
 export function OSDeviceInformationReturnableToJSON(value?: OSDeviceInformationReturnable | null): any {
     if (value === undefined) {
         return undefined;
@@ -105,7 +130,7 @@ export function OSDeviceInformationReturnableToJSON(value?: OSDeviceInformationR
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'dependencies': OSDeviceDependenciesInformationToJSON(value.dependencies),
         'name': value.name,

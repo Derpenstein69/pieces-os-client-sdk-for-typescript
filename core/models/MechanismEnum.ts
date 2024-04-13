@@ -15,13 +15,13 @@
 
 /**
  * This will let us know how an asset was uploaded.
- * 
+ *
  * MANUAL: this is an event such as a user driven send to pieces, or a paste to pieces.
- * 
+ *
  * RECOMMENDED: This is an event that was initiall recommended via the suggestion flow, and a user decided totake the recommendation.
- * 
+ *
  * AUTOMATIC: This is not user driven at all and the asset was automatically uploaded via the suggestion flow. or other methods.
- * 
+ *
  * INTERNAL: This is an undelete able enum used for internal use only.
  * @export
  */
@@ -32,17 +32,49 @@ export const MechanismEnum = {
     Internal: 'INTERNAL',
     Deleted: 'DELETED'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @typedef {MechanismEnum}
+ */
 export type MechanismEnum = typeof MechanismEnum[keyof typeof MechanismEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {MechanismEnum}
+ */
 export function MechanismEnumFromJSON(json: any): MechanismEnum {
     return MechanismEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {MechanismEnum}
+ */
 export function MechanismEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): MechanismEnum {
     return json as MechanismEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(MechanismEnum | null)} [value]
+ * @returns {*}
+ */
 export function MechanismEnumToJSON(value?: MechanismEnum | null): any {
     return value as any;
 }

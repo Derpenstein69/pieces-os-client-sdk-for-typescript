@@ -33,13 +33,13 @@ import {
  */
 export interface AvailableFormats {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AvailableFormats
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<Classification>}
      * @memberof AvailableFormats
      */
@@ -56,21 +56,46 @@ export function instanceOfAvailableFormats(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AvailableFormats}
+ */
 export function AvailableFormatsFromJSON(json: any): AvailableFormats {
     return AvailableFormatsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AvailableFormats}
+ */
 export function AvailableFormatsFromJSONTyped(json: any, ignoreDiscriminator: boolean): AvailableFormats {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ClassificationFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(AvailableFormats | null)} [value]
+ * @returns {*}
+ */
 export function AvailableFormatsToJSON(value?: AvailableFormats | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function AvailableFormatsToJSON(value?: AvailableFormats | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ClassificationToJSON)),
     };

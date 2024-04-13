@@ -14,24 +14,56 @@
 
 
 /**
- * 
+ *
  * @export
  */
 export const FilterOperationTypeEnum = {
     And: 'AND',
     Or: 'OR'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @typedef {FilterOperationTypeEnum}
+ */
 export type FilterOperationTypeEnum = typeof FilterOperationTypeEnum[keyof typeof FilterOperationTypeEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FilterOperationTypeEnum}
+ */
 export function FilterOperationTypeEnumFromJSON(json: any): FilterOperationTypeEnum {
     return FilterOperationTypeEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FilterOperationTypeEnum}
+ */
 export function FilterOperationTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): FilterOperationTypeEnum {
     return json as FilterOperationTypeEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(FilterOperationTypeEnum | null)} [value]
+ * @returns {*}
+ */
 export function FilterOperationTypeEnumToJSON(value?: FilterOperationTypeEnum | null): any {
     return value as any;
 }

@@ -33,13 +33,13 @@ import {
  */
 export interface StreamedIdentifiers {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof StreamedIdentifiers
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<StreamedIdentifier>}
      * @memberof StreamedIdentifiers
      */
@@ -56,21 +56,46 @@ export function instanceOfStreamedIdentifiers(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {StreamedIdentifiers}
+ */
 export function StreamedIdentifiersFromJSON(json: any): StreamedIdentifiers {
     return StreamedIdentifiersFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {StreamedIdentifiers}
+ */
 export function StreamedIdentifiersFromJSONTyped(json: any, ignoreDiscriminator: boolean): StreamedIdentifiers {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(StreamedIdentifierFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(StreamedIdentifiers | null)} [value]
+ * @returns {*}
+ */
 export function StreamedIdentifiersToJSON(value?: StreamedIdentifiers | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function StreamedIdentifiersToJSON(value?: StreamedIdentifiers | null): a
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(StreamedIdentifierToJSON)),
     };

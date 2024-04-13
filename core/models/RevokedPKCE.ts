@@ -22,18 +22,18 @@ import {
 
 /**
  * A model to support revoking a Token Generated Through PKCE
- * 
+ *
  * The behaviour of this endpoint depends on the state of the Refresh Token Revocation Deletes Grant toggle.
- * 
+ *
  * If this toggle is enabled, then each revocation request invalidates not only the specific token, but all other tokens based on the same authorization grant.
- * 
+ *
  * This means that all Refresh Tokens that have been issued for the same user, application, and audience will be revoked. If this toggle is disabled, then only the refresh token is revoked, while the grant is left intact
  * @export
  * @interface RevokedPKCE
  */
 export interface RevokedPKCE {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof RevokedPKCE
      */
@@ -63,22 +63,47 @@ export function instanceOfRevokedPKCE(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {RevokedPKCE}
+ */
 export function RevokedPKCEFromJSON(json: any): RevokedPKCE {
     return RevokedPKCEFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {RevokedPKCE}
+ */
 export function RevokedPKCEFromJSONTyped(json: any, ignoreDiscriminator: boolean): RevokedPKCE {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'clientId': json['client_id'],
         'token': json['token'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(RevokedPKCE | null)} [value]
+ * @returns {*}
+ */
 export function RevokedPKCEToJSON(value?: RevokedPKCE | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function RevokedPKCEToJSON(value?: RevokedPKCE | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'client_id': value.clientId,
         'token': value.token,

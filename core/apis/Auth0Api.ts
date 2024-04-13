@@ -31,37 +31,181 @@ import {
     ResultedPKCEToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface Auth0LogoutRequest
+ * @typedef {Auth0LogoutRequest}
+ */
 export interface Auth0LogoutRequest {
-    clientId?: string;
-    returnTo?: string;
-}
-
-export interface AuthorizeAuth0Request {
-    audience: string;
-    scope: Array<AuthorizeAuth0ScopeEnum>;
-    responseType: AuthorizeAuth0ResponseTypeEnum;
-    clientId: string;
-    codeChallengeMethod: AuthorizeAuth0CodeChallengeMethodEnum;
-    codeChallenge: string;
-    responseMode: AuthorizeAuth0ResponseModeEnum;
-    state?: string;
-    redirectUri?: string;
-    connection?: string;
-    prompt?: string;
-}
-
-export interface ExchangeForAuth0TokenRequest {
-    grantType: ExchangeForAuth0TokenGrantTypeEnum;
-    clientId: string;
-    code: string;
-    redirectUri: string;
-    codeVerifier: string;
-    schema?: EmbeddedModelSchema;
-    audience?: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?string}
+ */
+clientId?: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?string}
+ */
+returnTo?: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface AuthorizeAuth0Request
+ * @typedef {AuthorizeAuth0Request}
+ */
+export interface AuthorizeAuth0Request {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+audience: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {Array<AuthorizeAuth0ScopeEnum>}
+ */
+scope: Array<AuthorizeAuth0ScopeEnum>;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {AuthorizeAuth0ResponseTypeEnum}
+ */
+responseType: AuthorizeAuth0ResponseTypeEnum;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+clientId: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {AuthorizeAuth0CodeChallengeMethodEnum}
+ */
+codeChallengeMethod: AuthorizeAuth0CodeChallengeMethodEnum;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+codeChallenge: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {AuthorizeAuth0ResponseModeEnum}
+ */
+responseMode: AuthorizeAuth0ResponseModeEnum;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?string}
+ */
+state?: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?string}
+ */
+redirectUri?: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?string}
+ */
+connection?: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?string}
+ */
+prompt?: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface ExchangeForAuth0TokenRequest
+ * @typedef {ExchangeForAuth0TokenRequest}
+ */
+export interface ExchangeForAuth0TokenRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {ExchangeForAuth0TokenGrantTypeEnum}
+ */
+grantType: ExchangeForAuth0TokenGrantTypeEnum;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+clientId: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+code: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+redirectUri: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+codeVerifier: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?EmbeddedModelSchema}
+ */
+schema?: EmbeddedModelSchema;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?string}
+ */
+audience?: string;
+}
+
+/**
+ *
  */
 export class Auth0Api extends runtime.BaseAPI {
 
@@ -206,7 +350,7 @@ export class Auth0Api extends runtime.BaseAPI {
     }
 
     /**
-     * An endpoint to generate a OAuth Token for an authentication flow. 
+     * An endpoint to generate a OAuth Token for an authentication flow.
      * https://auth.pieces.services/oauth/token [POST]
      */
     async exchangeForAuth0TokenRaw(requestParameters: ExchangeForAuth0TokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OAuthToken>> {
@@ -288,7 +432,7 @@ export class Auth0Api extends runtime.BaseAPI {
     }
 
     /**
-     * An endpoint to generate a OAuth Token for an authentication flow. 
+     * An endpoint to generate a OAuth Token for an authentication flow.
      * https://auth.pieces.services/oauth/token [POST]
      */
     async exchangeForAuth0Token(requestParameters: ExchangeForAuth0TokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OAuthToken> {
@@ -350,6 +494,13 @@ export const AuthorizeAuth0ScopeEnum = {
     Profile: 'profile',
     OfflineAccess: 'offline_access'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @typedef {AuthorizeAuth0ScopeEnum}
+ */
 export type AuthorizeAuth0ScopeEnum = typeof AuthorizeAuth0ScopeEnum[keyof typeof AuthorizeAuth0ScopeEnum];
 /**
  * @export
@@ -357,6 +508,13 @@ export type AuthorizeAuth0ScopeEnum = typeof AuthorizeAuth0ScopeEnum[keyof typeo
 export const AuthorizeAuth0ResponseTypeEnum = {
     Code: 'code'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @typedef {AuthorizeAuth0ResponseTypeEnum}
+ */
 export type AuthorizeAuth0ResponseTypeEnum = typeof AuthorizeAuth0ResponseTypeEnum[keyof typeof AuthorizeAuth0ResponseTypeEnum];
 /**
  * @export
@@ -364,6 +522,13 @@ export type AuthorizeAuth0ResponseTypeEnum = typeof AuthorizeAuth0ResponseTypeEn
 export const AuthorizeAuth0CodeChallengeMethodEnum = {
     S256: 'S256'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @typedef {AuthorizeAuth0CodeChallengeMethodEnum}
+ */
 export type AuthorizeAuth0CodeChallengeMethodEnum = typeof AuthorizeAuth0CodeChallengeMethodEnum[keyof typeof AuthorizeAuth0CodeChallengeMethodEnum];
 /**
  * @export
@@ -374,6 +539,13 @@ export const AuthorizeAuth0ResponseModeEnum = {
     Query: 'query',
     WebMessage: 'web_message'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @typedef {AuthorizeAuth0ResponseModeEnum}
+ */
 export type AuthorizeAuth0ResponseModeEnum = typeof AuthorizeAuth0ResponseModeEnum[keyof typeof AuthorizeAuth0ResponseModeEnum];
 /**
  * @export
@@ -382,4 +554,11 @@ export const ExchangeForAuth0TokenGrantTypeEnum = {
     RefreshToken: 'refresh_token',
     AuthorizationCode: 'authorization_code'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @typedef {ExchangeForAuth0TokenGrantTypeEnum}
+ */
 export type ExchangeForAuth0TokenGrantTypeEnum = typeof ExchangeForAuth0TokenGrantTypeEnum[keyof typeof ExchangeForAuth0TokenGrantTypeEnum];

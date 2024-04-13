@@ -33,19 +33,19 @@ import {
  */
 export interface ReferencedAnnotation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedAnnotation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedAnnotation
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedAnnotation}
      * @memberof ReferencedAnnotation
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedAnnotation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedAnnotation}
+ */
 export function ReferencedAnnotationFromJSON(json: any): ReferencedAnnotation {
     return ReferencedAnnotationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedAnnotation}
+ */
 export function ReferencedAnnotationFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedAnnotation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedAnnotationFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedAnnotation | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedAnnotationToJSON(value?: ReferencedAnnotation | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedAnnotationToJSON(value?: ReferencedAnnotation | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedAnnotationToJSON(value.reference),

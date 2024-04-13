@@ -23,17 +23,49 @@ export const Role = {
     Both: 'BOTH',
     Preview: 'PREVIEW'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @typedef {Role}
+ */
 export type Role = typeof Role[keyof typeof Role];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Role}
+ */
 export function RoleFromJSON(json: any): Role {
     return RoleFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Role}
+ */
 export function RoleFromJSONTyped(json: any, ignoreDiscriminator: boolean): Role {
     return json as Role;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(Role | null)} [value]
+ * @returns {*}
+ */
 export function RoleToJSON(value?: Role | null): any {
     return value as any;
 }

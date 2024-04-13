@@ -25,38 +25,158 @@ import {
     SeededScoreIncrementToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface MessageAssociateAnnotationRequest
+ * @typedef {MessageAssociateAnnotationRequest}
+ */
 export interface MessageAssociateAnnotationRequest {
-    annotation: string;
-    message: string;
-}
-
-export interface MessageDisassociateAnnotationRequest {
-    annotation: string;
-    message: string;
-}
-
-export interface MessageScoresIncrementRequest {
-    message: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface MessageSpecificMessageSnapshotRequest {
-    message: string;
-    transferables?: boolean;
-}
-
-export interface MessageSpecificMessageUpdateRequest {
-    transferables?: boolean;
-    conversationMessage?: ConversationMessage;
-}
-
-export interface MessageUpdateValueRequest {
-    transferables?: boolean;
-    conversationMessage?: ConversationMessage;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+annotation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+message: string;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface MessageDisassociateAnnotationRequest
+ * @typedef {MessageDisassociateAnnotationRequest}
+ */
+export interface MessageDisassociateAnnotationRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+annotation: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+message: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface MessageScoresIncrementRequest
+ * @typedef {MessageScoresIncrementRequest}
+ */
+export interface MessageScoresIncrementRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+message: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface MessageSpecificMessageSnapshotRequest
+ * @typedef {MessageSpecificMessageSnapshotRequest}
+ */
+export interface MessageSpecificMessageSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {string}
+ */
+message: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface MessageSpecificMessageUpdateRequest
+ * @typedef {MessageSpecificMessageUpdateRequest}
+ */
+export interface MessageSpecificMessageUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?ConversationMessage}
+ */
+conversationMessage?: ConversationMessage;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @interface MessageUpdateValueRequest
+ * @typedef {MessageUpdateValueRequest}
+ */
+export interface MessageUpdateValueRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @type {?ConversationMessage}
+ */
+conversationMessage?: ConversationMessage;
+}
+
+/**
+ *
  */
 export class ConversationMessageApi extends runtime.BaseAPI {
 

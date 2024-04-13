@@ -33,13 +33,13 @@ import {
  */
 export interface TrackedConversationEventMetadata {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedConversationEventMetadata
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TrackedConversationEventRenameMetadata}
      * @memberof TrackedConversationEventMetadata
      */
@@ -55,21 +55,46 @@ export function instanceOfTrackedConversationEventMetadata(value: object): boole
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedConversationEventMetadata}
+ */
 export function TrackedConversationEventMetadataFromJSON(json: any): TrackedConversationEventMetadata {
     return TrackedConversationEventMetadataFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedConversationEventMetadata}
+ */
 export function TrackedConversationEventMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedConversationEventMetadata {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'rename': !exists(json, 'rename') ? undefined : TrackedConversationEventRenameMetadataFromJSON(json['rename']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedConversationEventMetadata | null)} [value]
+ * @returns {*}
+ */
 export function TrackedConversationEventMetadataToJSON(value?: TrackedConversationEventMetadata | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function TrackedConversationEventMetadataToJSON(value?: TrackedConversati
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'rename': TrackedConversationEventRenameMetadataToJSON(value.rename),
     };

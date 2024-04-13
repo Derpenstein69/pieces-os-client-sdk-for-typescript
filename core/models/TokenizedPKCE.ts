@@ -27,7 +27,7 @@ import {
  */
 export interface TokenizedPKCE {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TokenizedPKCE
      */
@@ -78,6 +78,13 @@ export const TokenizedPKCEGrantTypeEnum = {
     RefreshToken: 'refresh_token',
     AuthorizationCode: 'authorization_code'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @typedef {TokenizedPKCEGrantTypeEnum}
+ */
 export type TokenizedPKCEGrantTypeEnum = typeof TokenizedPKCEGrantTypeEnum[keyof typeof TokenizedPKCEGrantTypeEnum];
 
 
@@ -95,16 +102,33 @@ export function instanceOfTokenizedPKCE(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TokenizedPKCE}
+ */
 export function TokenizedPKCEFromJSON(json: any): TokenizedPKCE {
     return TokenizedPKCEFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TokenizedPKCE}
+ */
 export function TokenizedPKCEFromJSONTyped(json: any, ignoreDiscriminator: boolean): TokenizedPKCE {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'grantType': json['grant_type'],
         'clientId': json['client_id'],
@@ -115,6 +139,14 @@ export function TokenizedPKCEFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TokenizedPKCE | null)} [value]
+ * @returns {*}
+ */
 export function TokenizedPKCEToJSON(value?: TokenizedPKCE | null): any {
     if (value === undefined) {
         return undefined;
@@ -123,7 +155,7 @@ export function TokenizedPKCEToJSON(value?: TokenizedPKCE | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'grant_type': value.grantType,
         'client_id': value.clientId,

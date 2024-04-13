@@ -33,19 +33,19 @@ import {
  */
 export interface ReferencedWorkstreamSummary {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedWorkstreamSummary
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedWorkstreamSummary
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummary}
      * @memberof ReferencedWorkstreamSummary
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedWorkstreamSummary(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedWorkstreamSummary}
+ */
 export function ReferencedWorkstreamSummaryFromJSON(json: any): ReferencedWorkstreamSummary {
     return ReferencedWorkstreamSummaryFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedWorkstreamSummary}
+ */
 export function ReferencedWorkstreamSummaryFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedWorkstreamSummary {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedWorkstreamSummaryFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(ReferencedWorkstreamSummary | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedWorkstreamSummaryToJSON(value?: ReferencedWorkstreamSummary | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedWorkstreamSummaryToJSON(value?: ReferencedWorkstreamSu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedWorkstreamSummaryToJSON(value.reference),

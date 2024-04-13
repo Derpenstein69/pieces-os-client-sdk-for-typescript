@@ -34,17 +34,17 @@ import {
 
 /**
  * This is the incoming linkify model.
- * 
+ *
  * if access is PRIVATE then please provide and array of users to enable the link for.
- * 
+ *
  * Assumption, all assets are already backed up to the cloud.
- * 
+ *
  * @export
  * @interface LinkifyMultiple
  */
 export interface LinkifyMultiple {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof LinkifyMultiple
      */
@@ -62,7 +62,7 @@ export interface LinkifyMultiple {
      */
     users?: Array<SeededUser>;
     /**
-     * 
+     *
      * @type {AccessEnum}
      * @memberof LinkifyMultiple
      */
@@ -86,16 +86,33 @@ export function instanceOfLinkifyMultiple(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {LinkifyMultiple}
+ */
 export function LinkifyMultipleFromJSON(json: any): LinkifyMultiple {
     return LinkifyMultipleFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {LinkifyMultiple}
+ */
 export function LinkifyMultipleFromJSONTyped(json: any, ignoreDiscriminator: boolean): LinkifyMultiple {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'assets': json['assets'],
         'users': !exists(json, 'users') ? undefined : ((json['users'] as Array<any>).map(SeededUserFromJSON)),
@@ -104,6 +121,14 @@ export function LinkifyMultipleFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:34 AM
+ *
+ * @export
+ * @param {?(LinkifyMultiple | null)} [value]
+ * @returns {*}
+ */
 export function LinkifyMultipleToJSON(value?: LinkifyMultiple | null): any {
     if (value === undefined) {
         return undefined;
@@ -112,7 +137,7 @@ export function LinkifyMultipleToJSON(value?: LinkifyMultiple | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'assets': value.assets,
         'users': value.users === undefined ? undefined : ((value.users as Array<any>).map(SeededUserToJSON)),

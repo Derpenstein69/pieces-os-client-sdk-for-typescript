@@ -45,25 +45,25 @@ import {
  */
 export interface SeededClassification {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededClassification
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {ClassificationGenericEnum}
      * @memberof SeededClassification
      */
     generic?: ClassificationGenericEnum;
     /**
-     * 
+     *
      * @type {ClassificationSpecificEnum}
      * @memberof SeededClassification
      */
     specific?: ClassificationSpecificEnum;
     /**
-     * 
+     *
      * @type {ClassificationRenderingEnum}
      * @memberof SeededClassification
      */
@@ -79,16 +79,33 @@ export function instanceOfSeededClassification(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededClassification}
+ */
 export function SeededClassificationFromJSON(json: any): SeededClassification {
     return SeededClassificationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededClassification}
+ */
 export function SeededClassificationFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededClassification {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'generic': !exists(json, 'generic') ? undefined : ClassificationGenericEnumFromJSON(json['generic']),
         'specific': !exists(json, 'specific') ? undefined : ClassificationSpecificEnumFromJSON(json['specific']),
@@ -96,6 +113,14 @@ export function SeededClassificationFromJSONTyped(json: any, ignoreDiscriminator
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededClassification | null)} [value]
+ * @returns {*}
+ */
 export function SeededClassificationToJSON(value?: SeededClassification | null): any {
     if (value === undefined) {
         return undefined;
@@ -104,7 +129,7 @@ export function SeededClassificationToJSON(value?: SeededClassification | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'generic': ClassificationGenericEnumToJSON(value.generic),
         'specific': ClassificationSpecificEnumToJSON(value.specific),

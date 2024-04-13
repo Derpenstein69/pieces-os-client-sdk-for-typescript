@@ -39,13 +39,13 @@ import {
  */
 export interface FlattenedWorkstreamSummaries {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedWorkstreamSummaries
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedWorkstreamSummary>}
      * @memberof FlattenedWorkstreamSummaries
      */
@@ -57,7 +57,7 @@ export interface FlattenedWorkstreamSummaries {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedWorkstreamSummaries
      */
@@ -74,16 +74,33 @@ export function instanceOfFlattenedWorkstreamSummaries(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedWorkstreamSummaries}
+ */
 export function FlattenedWorkstreamSummariesFromJSON(json: any): FlattenedWorkstreamSummaries {
     return FlattenedWorkstreamSummariesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedWorkstreamSummaries}
+ */
 export function FlattenedWorkstreamSummariesFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedWorkstreamSummaries {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedWorkstreamSummaryFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function FlattenedWorkstreamSummariesFromJSONTyped(json: any, ignoreDiscr
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FlattenedWorkstreamSummaries | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedWorkstreamSummariesToJSON(value?: FlattenedWorkstreamSummaries | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function FlattenedWorkstreamSummariesToJSON(value?: FlattenedWorkstreamSu
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedWorkstreamSummaryToJSON)),
         'indices': value.indices,

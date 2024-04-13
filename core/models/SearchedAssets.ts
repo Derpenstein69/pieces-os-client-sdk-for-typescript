@@ -33,13 +33,13 @@ import {
  */
 export interface SearchedAssets {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SearchedAssets
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<SearchedAsset>}
      * @memberof SearchedAssets
      */
@@ -70,16 +70,33 @@ export function instanceOfSearchedAssets(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SearchedAssets}
+ */
 export function SearchedAssetsFromJSON(json: any): SearchedAssets {
     return SearchedAssetsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SearchedAssets}
+ */
 export function SearchedAssetsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SearchedAssets {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(SearchedAssetFromJSON)),
         'suggested': json['suggested'],
@@ -87,6 +104,14 @@ export function SearchedAssetsFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(SearchedAssets | null)} [value]
+ * @returns {*}
+ */
 export function SearchedAssetsToJSON(value?: SearchedAssets | null): any {
     if (value === undefined) {
         return undefined;
@@ -95,7 +120,7 @@ export function SearchedAssetsToJSON(value?: SearchedAssets | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(SearchedAssetToJSON)),
         'suggested': value.suggested,

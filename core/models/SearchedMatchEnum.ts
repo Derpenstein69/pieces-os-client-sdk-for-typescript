@@ -14,7 +14,7 @@
 
 
 /**
- * 
+ *
  * @export
  */
 export const SearchedMatchEnum = {
@@ -28,17 +28,49 @@ export const SearchedMatchEnum = {
     Websites: 'WEBSITES',
     Persons: 'PERSONS'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @typedef {SearchedMatchEnum}
+ */
 export type SearchedMatchEnum = typeof SearchedMatchEnum[keyof typeof SearchedMatchEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SearchedMatchEnum}
+ */
 export function SearchedMatchEnumFromJSON(json: any): SearchedMatchEnum {
     return SearchedMatchEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SearchedMatchEnum}
+ */
 export function SearchedMatchEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): SearchedMatchEnum {
     return json as SearchedMatchEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SearchedMatchEnum | null)} [value]
+ * @returns {*}
+ */
 export function SearchedMatchEnumToJSON(value?: SearchedMatchEnum | null): any {
     return value as any;
 }

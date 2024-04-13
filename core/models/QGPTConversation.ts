@@ -27,19 +27,19 @@ import {
 } from './QGPTConversationMessage';
 
 /**
- * 
+ *
  * @export
  * @interface QGPTConversation
  */
 export interface QGPTConversation {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof QGPTConversation
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<QGPTConversationMessage>}
      * @memberof QGPTConversation
      */
@@ -55,21 +55,46 @@ export function instanceOfQGPTConversation(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTConversation}
+ */
 export function QGPTConversationFromJSON(json: any): QGPTConversation {
     return QGPTConversationFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTConversation}
+ */
 export function QGPTConversationFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTConversation {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': !exists(json, 'iterable') ? undefined : ((json['iterable'] as Array<any>).map(QGPTConversationMessageFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:31 AM
+ *
+ * @export
+ * @param {?(QGPTConversation | null)} [value]
+ * @returns {*}
+ */
 export function QGPTConversationToJSON(value?: QGPTConversation | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function QGPTConversationToJSON(value?: QGPTConversation | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': value.iterable === undefined ? undefined : ((value.iterable as Array<any>).map(QGPTConversationMessageToJSON)),
     };

@@ -33,7 +33,7 @@ import {
  */
 export interface PrecreatedExternalProviderApiKey {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof PrecreatedExternalProviderApiKey
      */
@@ -45,7 +45,7 @@ export interface PrecreatedExternalProviderApiKey {
      */
     user: string;
     /**
-     * 
+     *
      * @type {Auth0OpenAIUserMetadata}
      * @memberof PrecreatedExternalProviderApiKey
      */
@@ -62,22 +62,47 @@ export function instanceOfPrecreatedExternalProviderApiKey(value: object): boole
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {PrecreatedExternalProviderApiKey}
+ */
 export function PrecreatedExternalProviderApiKeyFromJSON(json: any): PrecreatedExternalProviderApiKey {
     return PrecreatedExternalProviderApiKeyFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {PrecreatedExternalProviderApiKey}
+ */
 export function PrecreatedExternalProviderApiKeyFromJSONTyped(json: any, ignoreDiscriminator: boolean): PrecreatedExternalProviderApiKey {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'user': json['user'],
         'openAI': !exists(json, 'open_AI') ? undefined : Auth0OpenAIUserMetadataFromJSON(json['open_AI']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:32 AM
+ *
+ * @export
+ * @param {?(PrecreatedExternalProviderApiKey | null)} [value]
+ * @returns {*}
+ */
 export function PrecreatedExternalProviderApiKeyToJSON(value?: PrecreatedExternalProviderApiKey | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function PrecreatedExternalProviderApiKeyToJSON(value?: PrecreatedExterna
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'user': value.user,
         'open_AI': Auth0OpenAIUserMetadataToJSON(value.openAI),

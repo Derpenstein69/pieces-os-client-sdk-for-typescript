@@ -39,13 +39,13 @@ import {
  */
 export interface AnchorPoints {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AnchorPoints
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<AnchorPoint>}
      * @memberof AnchorPoints
      */
@@ -57,7 +57,7 @@ export interface AnchorPoints {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof AnchorPoints
      */
@@ -74,16 +74,33 @@ export function instanceOfAnchorPoints(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AnchorPoints}
+ */
 export function AnchorPointsFromJSON(json: any): AnchorPoints {
     return AnchorPointsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AnchorPoints}
+ */
 export function AnchorPointsFromJSONTyped(json: any, ignoreDiscriminator: boolean): AnchorPoints {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(AnchorPointFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function AnchorPointsFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(AnchorPoints | null)} [value]
+ * @returns {*}
+ */
 export function AnchorPointsToJSON(value?: AnchorPoints | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function AnchorPointsToJSON(value?: AnchorPoints | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(AnchorPointToJSON)),
         'indices': value.indices,

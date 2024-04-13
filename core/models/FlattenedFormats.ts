@@ -28,21 +28,21 @@ import {
 
 /**
  * A collection of Formats specific to the authenticated user. [DAG Compatible - Directed Acyclic Graph Data Structure]
- * 
+ *
  * FlattenedFormats prevent Cycles in Reference because all outbound references are strings as opposed to crosspollinated objects.
- * 
+ *
  * @export
  * @interface FlattenedFormats
  */
 export interface FlattenedFormats {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedFormats
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ReferencedFormat>}
      * @memberof FlattenedFormats
      */
@@ -59,21 +59,46 @@ export function instanceOfFlattenedFormats(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedFormats}
+ */
 export function FlattenedFormatsFromJSON(json: any): FlattenedFormats {
     return FlattenedFormatsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedFormats}
+ */
 export function FlattenedFormatsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedFormats {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ReferencedFormatFromJSON)),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(FlattenedFormats | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedFormatsToJSON(value?: FlattenedFormats | null): any {
     if (value === undefined) {
         return undefined;
@@ -82,7 +107,7 @@ export function FlattenedFormatsToJSON(value?: FlattenedFormats | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ReferencedFormatToJSON)),
     };

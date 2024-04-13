@@ -99,97 +99,97 @@ import {
  */
 export interface FlattenedWorkstreamSummary {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedWorkstreamSummary
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedWorkstreamSummary
      */
     id: string;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedWorkstreamSummary
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedWorkstreamSummary
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedWorkstreamSummary
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamEvents}
      * @memberof FlattenedWorkstreamSummary
      */
     events?: FlattenedWorkstreamEvents;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedWorkstreamSummary
      */
     name: string;
     /**
-     * 
+     *
      * @type {FlattenedAnnotations}
      * @memberof FlattenedWorkstreamSummary
      */
     annotations?: FlattenedAnnotations;
     /**
-     * 
+     *
      * @type {FlattenedRanges}
      * @memberof FlattenedWorkstreamSummary
      */
     ranges?: FlattenedRanges;
     /**
-     * 
+     *
      * @type {Model}
      * @memberof FlattenedWorkstreamSummary
      */
     model: Model;
     /**
-     * 
+     *
      * @type {FlattenedWebsites}
      * @memberof FlattenedWorkstreamSummary
      */
     websites?: FlattenedWebsites;
     /**
-     * 
+     *
      * @type {FlattenedAnchors}
      * @memberof FlattenedWorkstreamSummary
      */
     anchors?: FlattenedAnchors;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof FlattenedWorkstreamSummary
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {FlattenedConversations}
      * @memberof FlattenedWorkstreamSummary
      */
     conversations?: FlattenedConversations;
     /**
-     * 
+     *
      * @type {FlattenedPersons}
      * @memberof FlattenedWorkstreamSummary
      */
     persons?: FlattenedPersons;
     /**
-     * 
+     *
      * @type {Applications}
      * @memberof FlattenedWorkstreamSummary
      */
@@ -210,16 +210,33 @@ export function instanceOfFlattenedWorkstreamSummary(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedWorkstreamSummary}
+ */
 export function FlattenedWorkstreamSummaryFromJSON(json: any): FlattenedWorkstreamSummary {
     return FlattenedWorkstreamSummaryFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedWorkstreamSummary}
+ */
 export function FlattenedWorkstreamSummaryFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedWorkstreamSummary {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'score': !exists(json, 'score') ? undefined : ScoreFromJSON(json['score']),
@@ -239,6 +256,14 @@ export function FlattenedWorkstreamSummaryFromJSONTyped(json: any, ignoreDiscrim
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(FlattenedWorkstreamSummary | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedWorkstreamSummaryToJSON(value?: FlattenedWorkstreamSummary | null): any {
     if (value === undefined) {
         return undefined;
@@ -247,7 +272,7 @@ export function FlattenedWorkstreamSummaryToJSON(value?: FlattenedWorkstreamSumm
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'score': ScoreToJSON(value.score),

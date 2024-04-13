@@ -25,23 +25,83 @@ import {
     ShareToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ShareScoresIncrementRequest
+ * @typedef {ShareScoresIncrementRequest}
+ */
 export interface ShareScoresIncrementRequest {
-    share: string;
-    seededScoreIncrement?: SeededScoreIncrement;
-}
-
-export interface ShareSnapshotRequest {
-    share: string;
-    transferables?: boolean;
-}
-
-export interface ShareUpdateRequest {
-    transferables?: boolean;
-    share?: Share;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+share: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?SeededScoreIncrement}
+ */
+seededScoreIncrement?: SeededScoreIncrement;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ShareSnapshotRequest
+ * @typedef {ShareSnapshotRequest}
+ */
+export interface ShareSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {string}
+ */
+share: string;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface ShareUpdateRequest
+ * @typedef {ShareUpdateRequest}
+ */
+export interface ShareUpdateRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?Share}
+ */
+share?: Share;
+}
+
+/**
+ *
  */
 export class ShareApi extends runtime.BaseAPI {
 

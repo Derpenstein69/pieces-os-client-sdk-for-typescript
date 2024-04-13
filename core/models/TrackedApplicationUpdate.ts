@@ -39,25 +39,25 @@ import {
  */
 export interface TrackedApplicationUpdate {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedApplicationUpdate
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TrackedApplication}
      * @memberof TrackedApplicationUpdate
      */
     current: TrackedApplication;
     /**
-     * 
+     *
      * @type {TrackedApplication}
      * @memberof TrackedApplicationUpdate
      */
     previous?: TrackedApplication;
     /**
-     * 
+     *
      * @type {TrackedUserProfile}
      * @memberof TrackedApplicationUpdate
      */
@@ -74,16 +74,33 @@ export function instanceOfTrackedApplicationUpdate(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedApplicationUpdate}
+ */
 export function TrackedApplicationUpdateFromJSON(json: any): TrackedApplicationUpdate {
     return TrackedApplicationUpdateFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedApplicationUpdate}
+ */
 export function TrackedApplicationUpdateFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedApplicationUpdate {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'current': TrackedApplicationFromJSON(json['current']),
         'previous': !exists(json, 'previous') ? undefined : TrackedApplicationFromJSON(json['previous']),
@@ -91,6 +108,14 @@ export function TrackedApplicationUpdateFromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TrackedApplicationUpdate | null)} [value]
+ * @returns {*}
+ */
 export function TrackedApplicationUpdateToJSON(value?: TrackedApplicationUpdate | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function TrackedApplicationUpdateToJSON(value?: TrackedApplicationUpdate 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'current': TrackedApplicationToJSON(value.current),
         'previous': TrackedApplicationToJSON(value.previous),

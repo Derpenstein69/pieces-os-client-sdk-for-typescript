@@ -69,7 +69,7 @@ import {
  */
 export interface Tag {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Tag
      */
@@ -93,37 +93,37 @@ export interface Tag {
      */
     mechanisms?: { [key: string]: MechanismEnum; };
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof Tag
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Tag
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Tag
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Tag
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {TagCategoryEnum}
      * @memberof Tag
      */
     category: TagCategoryEnum;
     /**
-     * 
+     *
      * @type {Relationship}
      * @memberof Tag
      */
@@ -135,13 +135,13 @@ export interface Tag {
      */
     interactions?: number;
     /**
-     * 
+     *
      * @type {FlattenedPersons}
      * @memberof Tag
      */
     persons?: FlattenedPersons;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof Tag
      */
@@ -162,16 +162,33 @@ export function instanceOfTag(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Tag}
+ */
 export function TagFromJSON(json: any): Tag {
     return TagFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Tag}
+ */
 export function TagFromJSONTyped(json: any, ignoreDiscriminator: boolean): Tag {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'text': json['text'],
@@ -188,6 +205,14 @@ export function TagFromJSONTyped(json: any, ignoreDiscriminator: boolean): Tag {
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:23 AM
+ *
+ * @export
+ * @param {?(Tag | null)} [value]
+ * @returns {*}
+ */
 export function TagToJSON(value?: Tag | null): any {
     if (value === undefined) {
         return undefined;
@@ -196,7 +221,7 @@ export function TagToJSON(value?: Tag | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'text': value.text,

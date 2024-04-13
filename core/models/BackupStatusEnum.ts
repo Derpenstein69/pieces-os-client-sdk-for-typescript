@@ -26,17 +26,49 @@ export const BackupStatusEnum = {
     Canceled: 'CANCELED',
     Reset: 'RESET'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @typedef {BackupStatusEnum}
+ */
 export type BackupStatusEnum = typeof BackupStatusEnum[keyof typeof BackupStatusEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {BackupStatusEnum}
+ */
 export function BackupStatusEnumFromJSON(json: any): BackupStatusEnum {
     return BackupStatusEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {BackupStatusEnum}
+ */
 export function BackupStatusEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): BackupStatusEnum {
     return json as BackupStatusEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(BackupStatusEnum | null)} [value]
+ * @returns {*}
+ */
 export function BackupStatusEnumToJSON(value?: BackupStatusEnum | null): any {
     return value as any;
 }

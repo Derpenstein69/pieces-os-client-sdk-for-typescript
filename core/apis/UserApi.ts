@@ -31,29 +31,85 @@ import {
     UserProfileToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface SelectUserRequest
+ * @typedef {SelectUserRequest}
+ */
 export interface SelectUserRequest {
-    auth0User?: Auth0User;
-}
-
-export interface UpdateUserRequest {
-    userProfile?: UserProfile;
-}
-
-export interface UserBetaStatusRequest {
-    userBetaStatus?: UserBetaStatus;
-}
-
-export interface UserUpdateVanityRequest {
-    userProfile?: UserProfile;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?Auth0User}
+ */
+auth0User?: Auth0User;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface UpdateUserRequest
+ * @typedef {UpdateUserRequest}
+ */
+export interface UpdateUserRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?UserProfile}
+ */
+userProfile?: UserProfile;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface UserBetaStatusRequest
+ * @typedef {UserBetaStatusRequest}
+ */
+export interface UserBetaStatusRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?UserBetaStatus}
+ */
+userBetaStatus?: UserBetaStatus;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface UserUpdateVanityRequest
+ * @typedef {UserUpdateVanityRequest}
+ */
+export interface UserUpdateVanityRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?UserProfile}
+ */
+userProfile?: UserProfile;
+}
+
+/**
+ *
  */
 export class UserApi extends runtime.BaseAPI {
 
     /**
-     * An endpoint to clear the current user. 
+     * An endpoint to clear the current user.
      * /user/clear
      */
     async clearUserRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
@@ -72,7 +128,7 @@ export class UserApi extends runtime.BaseAPI {
     }
 
     /**
-     * An endpoint to clear the current user. 
+     * An endpoint to clear the current user.
      * /user/clear
      */
     async clearUser(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {

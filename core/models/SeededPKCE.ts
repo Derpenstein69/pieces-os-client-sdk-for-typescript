@@ -33,7 +33,7 @@ import {
  */
 export interface SeededPKCE {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededPKCE
      */
@@ -100,13 +100,13 @@ export interface SeededPKCE {
      */
     prompt?: SeededPKCEPromptEnum;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededPKCE
      */
     organization?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededPKCE
      */
@@ -124,13 +124,13 @@ export interface SeededPKCE {
      */
     clientId: string;
     /**
-     * 
+     *
      * @type {SeededPKCEADDITIONALPARAMETERS}
      * @memberof SeededPKCE
      */
     aDDITIONALPARAMETERS?: SeededPKCEADDITIONALPARAMETERS;
     /**
-     * 
+     *
      * @type {string}
      * @memberof SeededPKCE
      */
@@ -146,6 +146,13 @@ export const SeededPKCEResponseTypeEnum = {
     Token: 'token',
     IdToken: 'id_token'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @typedef {SeededPKCEResponseTypeEnum}
+ */
 export type SeededPKCEResponseTypeEnum = typeof SeededPKCEResponseTypeEnum[keyof typeof SeededPKCEResponseTypeEnum];
 
 /**
@@ -154,6 +161,13 @@ export type SeededPKCEResponseTypeEnum = typeof SeededPKCEResponseTypeEnum[keyof
 export const SeededPKCECodeChallengeMethodEnum = {
     S256: 'S256'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @typedef {SeededPKCECodeChallengeMethodEnum}
+ */
 export type SeededPKCECodeChallengeMethodEnum = typeof SeededPKCECodeChallengeMethodEnum[keyof typeof SeededPKCECodeChallengeMethodEnum];
 
 /**
@@ -162,6 +176,13 @@ export type SeededPKCECodeChallengeMethodEnum = typeof SeededPKCECodeChallengeMe
 export const SeededPKCEScreenHintEnum = {
     Signup: 'signup'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @typedef {SeededPKCEScreenHintEnum}
+ */
 export type SeededPKCEScreenHintEnum = typeof SeededPKCEScreenHintEnum[keyof typeof SeededPKCEScreenHintEnum];
 
 /**
@@ -171,6 +192,13 @@ export const SeededPKCEPromptEnum = {
     Login: 'login',
     None: 'none'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @typedef {SeededPKCEPromptEnum}
+ */
 export type SeededPKCEPromptEnum = typeof SeededPKCEPromptEnum[keyof typeof SeededPKCEPromptEnum];
 
 /**
@@ -182,6 +210,13 @@ export const SeededPKCEScopeEnum = {
     Profile: 'profile',
     Openid: 'openid'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @typedef {SeededPKCEScopeEnum}
+ */
 export type SeededPKCEScopeEnum = typeof SeededPKCEScopeEnum[keyof typeof SeededPKCEScopeEnum];
 
 /**
@@ -193,6 +228,13 @@ export const SeededPKCEResponseModeEnum = {
     Fragment: 'fragment',
     Query: 'query'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @typedef {SeededPKCEResponseModeEnum}
+ */
 export type SeededPKCEResponseModeEnum = typeof SeededPKCEResponseModeEnum[keyof typeof SeededPKCEResponseModeEnum];
 
 
@@ -212,16 +254,33 @@ export function instanceOfSeededPKCE(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededPKCE}
+ */
 export function SeededPKCEFromJSON(json: any): SeededPKCE {
     return SeededPKCEFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededPKCE}
+ */
 export function SeededPKCEFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededPKCE {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'responseType': json['response_type'],
         'state': json['state'],
@@ -242,6 +301,14 @@ export function SeededPKCEFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededPKCE | null)} [value]
+ * @returns {*}
+ */
 export function SeededPKCEToJSON(value?: SeededPKCE | null): any {
     if (value === undefined) {
         return undefined;
@@ -250,7 +317,7 @@ export function SeededPKCEToJSON(value?: SeededPKCE | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'response_type': value.responseType,
         'state': value.state,

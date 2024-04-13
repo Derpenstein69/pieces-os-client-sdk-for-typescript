@@ -27,19 +27,19 @@ import {
 } from './SearchedAssets';
 
 /**
- * output for the /assets/search [POST] 
+ * output for the /assets/search [POST]
  * @export
  * @interface AssetsSearchWithFiltersOutput
  */
 export interface AssetsSearchWithFiltersOutput {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof AssetsSearchWithFiltersOutput
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SearchedAssets}
      * @memberof AssetsSearchWithFiltersOutput
      */
@@ -56,21 +56,46 @@ export function instanceOfAssetsSearchWithFiltersOutput(value: object): boolean 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {AssetsSearchWithFiltersOutput}
+ */
 export function AssetsSearchWithFiltersOutputFromJSON(json: any): AssetsSearchWithFiltersOutput {
     return AssetsSearchWithFiltersOutputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {AssetsSearchWithFiltersOutput}
+ */
 export function AssetsSearchWithFiltersOutputFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssetsSearchWithFiltersOutput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'results': SearchedAssetsFromJSON(json['results']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(AssetsSearchWithFiltersOutput | null)} [value]
+ * @returns {*}
+ */
 export function AssetsSearchWithFiltersOutputToJSON(value?: AssetsSearchWithFiltersOutput | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function AssetsSearchWithFiltersOutputToJSON(value?: AssetsSearchWithFilt
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'results': SearchedAssetsToJSON(value.results),
     };

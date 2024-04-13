@@ -28,7 +28,7 @@ import {
 
 /**
  * Thext Match currently used for sensitive for scales for people, and anything related to text matching.
- * 
+ *
  * group: is the entire match
  * subgroup is the inner match within the group.(optional)
  * @export
@@ -36,19 +36,19 @@ import {
  */
 export interface TextMatch {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TextMatch
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TextLocation}
      * @memberof TextMatch
      */
     group: TextLocation;
     /**
-     * 
+     *
      * @type {TextLocation}
      * @memberof TextMatch
      */
@@ -65,22 +65,47 @@ export function instanceOfTextMatch(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TextMatch}
+ */
 export function TextMatchFromJSON(json: any): TextMatch {
     return TextMatchFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TextMatch}
+ */
 export function TextMatchFromJSONTyped(json: any, ignoreDiscriminator: boolean): TextMatch {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'group': TextLocationFromJSON(json['group']),
         'subgroup': !exists(json, 'subgroup') ? undefined : TextLocationFromJSON(json['subgroup']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TextMatch | null)} [value]
+ * @returns {*}
+ */
 export function TextMatchToJSON(value?: TextMatch | null): any {
     if (value === undefined) {
         return undefined;
@@ -89,7 +114,7 @@ export function TextMatchToJSON(value?: TextMatch | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'group': TextLocationToJSON(value.group),
         'subgroup': TextLocationToJSON(value.subgroup),

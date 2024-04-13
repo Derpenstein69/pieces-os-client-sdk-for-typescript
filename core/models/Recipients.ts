@@ -33,13 +33,13 @@ import {
  */
 export interface Recipients {
     /**
-     * 
+     *
      * @type {Array<PersonBasicType>}
      * @memberof Recipients
      */
     iterable: Array<PersonBasicType>;
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Recipients
      */
@@ -56,21 +56,46 @@ export function instanceOfRecipients(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Recipients}
+ */
 export function RecipientsFromJSON(json: any): Recipients {
     return RecipientsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Recipients}
+ */
 export function RecipientsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Recipients {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'iterable': ((json['iterable'] as Array<any>).map(PersonBasicTypeFromJSON)),
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(Recipients | null)} [value]
+ * @returns {*}
+ */
 export function RecipientsToJSON(value?: Recipients | null): any {
     if (value === undefined) {
         return undefined;
@@ -79,7 +104,7 @@ export function RecipientsToJSON(value?: Recipients | null): any {
         return null;
     }
     return {
-        
+
         'iterable': ((value.iterable as Array<any>).map(PersonBasicTypeToJSON)),
         'schema': EmbeddedModelSchemaToJSON(value.schema),
     };

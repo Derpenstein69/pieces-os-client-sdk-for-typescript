@@ -33,19 +33,19 @@ import {
  */
 export interface ReferencedAnchor {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReferencedAnchor
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof ReferencedAnchor
      */
     id: string;
     /**
-     * 
+     *
      * @type {FlattenedAnchor}
      * @memberof ReferencedAnchor
      */
@@ -62,22 +62,47 @@ export function instanceOfReferencedAnchor(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReferencedAnchor}
+ */
 export function ReferencedAnchorFromJSON(json: any): ReferencedAnchor {
     return ReferencedAnchorFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReferencedAnchor}
+ */
 export function ReferencedAnchorFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReferencedAnchor {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'reference': !exists(json, 'reference') ? undefined : FlattenedAnchorFromJSON(json['reference']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:29 AM
+ *
+ * @export
+ * @param {?(ReferencedAnchor | null)} [value]
+ * @returns {*}
+ */
 export function ReferencedAnchorToJSON(value?: ReferencedAnchor | null): any {
     if (value === undefined) {
         return undefined;
@@ -86,7 +111,7 @@ export function ReferencedAnchorToJSON(value?: ReferencedAnchor | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'reference': FlattenedAnchorToJSON(value.reference),

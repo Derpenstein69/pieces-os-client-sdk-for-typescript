@@ -39,31 +39,31 @@ import {
 } from './GraphicalSVGStatistics';
 
 /**
- * 
+ *
  * @export
  * @interface GraphicalMachineLearningProcessingEvent
  */
 export interface GraphicalMachineLearningProcessingEvent {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof GraphicalMachineLearningProcessingEvent
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {GraphicalOCRProcessing}
      * @memberof GraphicalMachineLearningProcessingEvent
      */
     ocr?: GraphicalOCRProcessing;
     /**
-     * 
+     *
      * @type {GraphicalImageProcessing}
      * @memberof GraphicalMachineLearningProcessingEvent
      */
     image?: GraphicalImageProcessing;
     /**
-     * 
+     *
      * @type {GraphicalSVGStatistics}
      * @memberof GraphicalMachineLearningProcessingEvent
      */
@@ -79,16 +79,33 @@ export function instanceOfGraphicalMachineLearningProcessingEvent(value: object)
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {GraphicalMachineLearningProcessingEvent}
+ */
 export function GraphicalMachineLearningProcessingEventFromJSON(json: any): GraphicalMachineLearningProcessingEvent {
     return GraphicalMachineLearningProcessingEventFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {GraphicalMachineLearningProcessingEvent}
+ */
 export function GraphicalMachineLearningProcessingEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): GraphicalMachineLearningProcessingEvent {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'ocr': !exists(json, 'ocr') ? undefined : GraphicalOCRProcessingFromJSON(json['ocr']),
         'image': !exists(json, 'image') ? undefined : GraphicalImageProcessingFromJSON(json['image']),
@@ -96,6 +113,14 @@ export function GraphicalMachineLearningProcessingEventFromJSONTyped(json: any, 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:16 AM
+ *
+ * @export
+ * @param {?(GraphicalMachineLearningProcessingEvent | null)} [value]
+ * @returns {*}
+ */
 export function GraphicalMachineLearningProcessingEventToJSON(value?: GraphicalMachineLearningProcessingEvent | null): any {
     if (value === undefined) {
         return undefined;
@@ -104,7 +129,7 @@ export function GraphicalMachineLearningProcessingEventToJSON(value?: GraphicalM
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'ocr': GraphicalOCRProcessingToJSON(value.ocr),
         'image': GraphicalImageProcessingToJSON(value.image),

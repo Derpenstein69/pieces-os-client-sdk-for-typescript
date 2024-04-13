@@ -45,7 +45,7 @@ import {
  */
 export interface Context {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Context
      */
@@ -57,19 +57,19 @@ export interface Context {
      */
     os: string;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof Context
      */
     application: Application;
     /**
-     * 
+     *
      * @type {Health}
      * @memberof Context
      */
     health: Health;
     /**
-     * 
+     *
      * @type {UserProfile}
      * @memberof Context
      */
@@ -88,16 +88,33 @@ export function instanceOfContext(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Context}
+ */
 export function ContextFromJSON(json: any): Context {
     return ContextFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Context}
+ */
 export function ContextFromJSONTyped(json: any, ignoreDiscriminator: boolean): Context {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'os': json['os'],
         'application': ApplicationFromJSON(json['application']),
@@ -106,6 +123,14 @@ export function ContextFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(Context | null)} [value]
+ * @returns {*}
+ */
 export function ContextToJSON(value?: Context | null): any {
     if (value === undefined) {
         return undefined;
@@ -114,7 +139,7 @@ export function ContextToJSON(value?: Context | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'os': value.os,
         'application': ApplicationToJSON(value.application),

@@ -45,37 +45,37 @@ import {
 } from './TLPCodeSnippetAnalytics';
 
 /**
- * 
+ *
  * @export
  * @interface TLPCodeProcessing
  */
 export interface TLPCodeProcessing {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeProcessing
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {TLPCodeSnippetAnalytics}
      * @memberof TLPCodeProcessing
      */
     fragment?: TLPCodeSnippetAnalytics;
     /**
-     * 
+     *
      * @type {TLPCodeFileAnalytics}
      * @memberof TLPCodeProcessing
      */
     file?: TLPCodeFileAnalytics;
     /**
-     * 
+     *
      * @type {TLPCodeDirectoryAnalytics}
      * @memberof TLPCodeProcessing
      */
     directory?: TLPCodeDirectoryAnalytics;
     /**
-     * 
+     *
      * @type {TLPCodeRepositoryAnalytics}
      * @memberof TLPCodeProcessing
      */
@@ -91,16 +91,33 @@ export function instanceOfTLPCodeProcessing(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeProcessing}
+ */
 export function TLPCodeProcessingFromJSON(json: any): TLPCodeProcessing {
     return TLPCodeProcessingFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeProcessing}
+ */
 export function TLPCodeProcessingFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeProcessing {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'fragment': !exists(json, 'fragment') ? undefined : TLPCodeSnippetAnalyticsFromJSON(json['fragment']),
         'file': !exists(json, 'file') ? undefined : TLPCodeFileAnalyticsFromJSON(json['file']),
@@ -109,6 +126,14 @@ export function TLPCodeProcessingFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:21 AM
+ *
+ * @export
+ * @param {?(TLPCodeProcessing | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeProcessingToJSON(value?: TLPCodeProcessing | null): any {
     if (value === undefined) {
         return undefined;
@@ -117,7 +142,7 @@ export function TLPCodeProcessingToJSON(value?: TLPCodeProcessing | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'fragment': TLPCodeSnippetAnalyticsToJSON(value.fragment),
         'file': TLPCodeFileAnalyticsToJSON(value.file),

@@ -27,7 +27,7 @@ import {
  */
 export interface TrackedAssetsEventIdentifierDescriptionPairs {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedAssetsEventIdentifierDescriptionPairs
      */
@@ -47,6 +47,13 @@ export interface TrackedAssetsEventIdentifierDescriptionPairs {
 export const TrackedAssetsEventIdentifierDescriptionPairsAssetsSearchedEnum = {
     AssetsWereSearched: 'assets_were_searched'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @typedef {TrackedAssetsEventIdentifierDescriptionPairsAssetsSearchedEnum}
+ */
 export type TrackedAssetsEventIdentifierDescriptionPairsAssetsSearchedEnum = typeof TrackedAssetsEventIdentifierDescriptionPairsAssetsSearchedEnum[keyof typeof TrackedAssetsEventIdentifierDescriptionPairsAssetsSearchedEnum];
 
 
@@ -59,21 +66,46 @@ export function instanceOfTrackedAssetsEventIdentifierDescriptionPairs(value: ob
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedAssetsEventIdentifierDescriptionPairs}
+ */
 export function TrackedAssetsEventIdentifierDescriptionPairsFromJSON(json: any): TrackedAssetsEventIdentifierDescriptionPairs {
     return TrackedAssetsEventIdentifierDescriptionPairsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedAssetsEventIdentifierDescriptionPairs}
+ */
 export function TrackedAssetsEventIdentifierDescriptionPairsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedAssetsEventIdentifierDescriptionPairs {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'assetsSearched': !exists(json, 'assets_searched') ? undefined : json['assets_searched'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedAssetsEventIdentifierDescriptionPairs | null)} [value]
+ * @returns {*}
+ */
 export function TrackedAssetsEventIdentifierDescriptionPairsToJSON(value?: TrackedAssetsEventIdentifierDescriptionPairs | null): any {
     if (value === undefined) {
         return undefined;
@@ -82,7 +114,7 @@ export function TrackedAssetsEventIdentifierDescriptionPairsToJSON(value?: Track
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'assets_searched': value.assetsSearched,
     };

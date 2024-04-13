@@ -28,21 +28,69 @@ import {
     WorkstreamEventsToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamEventsCreateNewWorkstreamEventRequest
+ * @typedef {WorkstreamEventsCreateNewWorkstreamEventRequest}
+ */
 export interface WorkstreamEventsCreateNewWorkstreamEventRequest {
-    transferables?: boolean;
-    seededWorkstreamEvent?: SeededWorkstreamEvent;
-}
-
-export interface WorkstreamEventsDeleteSpecificWorkstreamEventRequest {
-    workstreamEvent: string;
-}
-
-export interface WorkstreamEventsSnapshotRequest {
-    transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?SeededWorkstreamEvent}
+ */
+seededWorkstreamEvent?: SeededWorkstreamEvent;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamEventsDeleteSpecificWorkstreamEventRequest
+ * @typedef {WorkstreamEventsDeleteSpecificWorkstreamEventRequest}
+ */
+export interface WorkstreamEventsDeleteSpecificWorkstreamEventRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {string}
+ */
+workstreamEvent: string;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @interface WorkstreamEventsSnapshotRequest
+ * @typedef {WorkstreamEventsSnapshotRequest}
+ */
+export interface WorkstreamEventsSnapshotRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+}
+
+/**
+ *
  */
 export class WorkstreamEventsApi extends runtime.BaseAPI {
 

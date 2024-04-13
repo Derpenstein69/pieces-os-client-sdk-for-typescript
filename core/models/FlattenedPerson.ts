@@ -88,50 +88,50 @@ import {
 
 /**
  * if expiration is add then, after the alloted expiration date the user will only have view && comment only permissions. Only present in the case there is a scope such as a defined collection/asset...
- * 
+ *
  * if asset is passed then that means this person belongs to a scoped asset.
  * @export
  * @interface FlattenedPerson
  */
 export interface FlattenedPerson {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedPerson
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedPerson
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedPerson
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedPerson
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedPerson
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {PersonType}
      * @memberof FlattenedPerson
      */
     type: PersonType;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof FlattenedPerson
      */
@@ -155,13 +155,13 @@ export interface FlattenedPerson {
      */
     access?: { [key: string]: PersonAccess; };
     /**
-     * 
+     *
      * @type {FlattenedTags}
      * @memberof FlattenedPerson
      */
     tags?: FlattenedTags;
     /**
-     * 
+     *
      * @type {FlattenedWebsites}
      * @memberof FlattenedPerson
      */
@@ -173,19 +173,19 @@ export interface FlattenedPerson {
      */
     models?: { [key: string]: PersonModel; };
     /**
-     * 
+     *
      * @type {FlattenedAnnotations}
      * @memberof FlattenedPerson
      */
     annotations?: FlattenedAnnotations;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedPerson
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {FlattenedWorkstreamSummaries}
      * @memberof FlattenedPerson
      */
@@ -205,16 +205,33 @@ export function instanceOfFlattenedPerson(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedPerson}
+ */
 export function FlattenedPersonFromJSON(json: any): FlattenedPerson {
     return FlattenedPersonFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedPerson}
+ */
 export function FlattenedPersonFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedPerson {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -234,6 +251,14 @@ export function FlattenedPersonFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:18 AM
+ *
+ * @export
+ * @param {?(FlattenedPerson | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedPersonToJSON(value?: FlattenedPerson | null): any {
     if (value === undefined) {
         return undefined;
@@ -242,7 +267,7 @@ export function FlattenedPersonToJSON(value?: FlattenedPerson | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'created': GroupedTimestampToJSON(value.created),

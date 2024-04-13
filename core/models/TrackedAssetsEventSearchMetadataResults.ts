@@ -45,13 +45,13 @@ export interface TrackedAssetsEventSearchMetadataResults {
      */
     exact?: number;
     /**
-     * 
+     *
      * @type {FlattenedAssets}
      * @memberof TrackedAssetsEventSearchMetadataResults
      */
     assets?: FlattenedAssets;
     /**
-     * 
+     *
      * @type {Space}
      * @memberof TrackedAssetsEventSearchMetadataResults
      */
@@ -67,16 +67,33 @@ export function instanceOfTrackedAssetsEventSearchMetadataResults(value: object)
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedAssetsEventSearchMetadataResults}
+ */
 export function TrackedAssetsEventSearchMetadataResultsFromJSON(json: any): TrackedAssetsEventSearchMetadataResults {
     return TrackedAssetsEventSearchMetadataResultsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedAssetsEventSearchMetadataResults}
+ */
 export function TrackedAssetsEventSearchMetadataResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedAssetsEventSearchMetadataResults {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'fuzzy': !exists(json, 'fuzzy') ? undefined : json['fuzzy'],
         'exact': !exists(json, 'exact') ? undefined : json['exact'],
         'assets': !exists(json, 'assets') ? undefined : FlattenedAssetsFromJSON(json['assets']),
@@ -84,6 +101,14 @@ export function TrackedAssetsEventSearchMetadataResultsFromJSONTyped(json: any, 
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedAssetsEventSearchMetadataResults | null)} [value]
+ * @returns {*}
+ */
 export function TrackedAssetsEventSearchMetadataResultsToJSON(value?: TrackedAssetsEventSearchMetadataResults | null): any {
     if (value === undefined) {
         return undefined;
@@ -92,7 +117,7 @@ export function TrackedAssetsEventSearchMetadataResultsToJSON(value?: TrackedAss
         return null;
     }
     return {
-        
+
         'fuzzy': value.fuzzy,
         'exact': value.exact,
         'assets': FlattenedAssetsToJSON(value.assets),

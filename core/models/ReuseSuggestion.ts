@@ -28,16 +28,16 @@ import {
 
 /**
  * This is the ReuseSuggestion. Mainly creating an additional model here because I imagine that we will want to add some additional data to this in the future (potentially with more numerical data that is emitted from the ML Models)
- * 
+ *
  * **Note: suggested is required here because we will want to say if we suggested to take this action of reuse or not.
- * 
+ *
  * ** Thoughts here. We could potentially return Assets: which would be an iterable of assets in most relavent order for the user to reuse if they want.
  * @export
  * @interface ReuseSuggestion
  */
 export interface ReuseSuggestion {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ReuseSuggestion
      */
@@ -49,7 +49,7 @@ export interface ReuseSuggestion {
      */
     suggested: boolean;
     /**
-     * 
+     *
      * @type {Assets}
      * @memberof ReuseSuggestion
      */
@@ -67,22 +67,47 @@ export function instanceOfReuseSuggestion(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ReuseSuggestion}
+ */
 export function ReuseSuggestionFromJSON(json: any): ReuseSuggestion {
     return ReuseSuggestionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ReuseSuggestion}
+ */
 export function ReuseSuggestionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReuseSuggestion {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'suggested': json['suggested'],
         'assets': AssetsFromJSON(json['assets']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:28 AM
+ *
+ * @export
+ * @param {?(ReuseSuggestion | null)} [value]
+ * @returns {*}
+ */
 export function ReuseSuggestionToJSON(value?: ReuseSuggestion | null): any {
     if (value === undefined) {
         return undefined;
@@ -91,7 +116,7 @@ export function ReuseSuggestionToJSON(value?: ReuseSuggestion | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'suggested': value.suggested,
         'assets': AssetsToJSON(value.assets),

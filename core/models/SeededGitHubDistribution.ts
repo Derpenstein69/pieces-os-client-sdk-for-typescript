@@ -27,19 +27,19 @@ import {
 } from './SeededGitHubGistDistribution';
 
 /**
- * 
+ *
  * @export
  * @interface SeededGitHubDistribution
  */
 export interface SeededGitHubDistribution {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededGitHubDistribution
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {SeededGitHubGistDistribution}
      * @memberof SeededGitHubDistribution
      */
@@ -55,21 +55,46 @@ export function instanceOfSeededGitHubDistribution(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededGitHubDistribution}
+ */
 export function SeededGitHubDistributionFromJSON(json: any): SeededGitHubDistribution {
     return SeededGitHubDistributionFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededGitHubDistribution}
+ */
 export function SeededGitHubDistributionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededGitHubDistribution {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'gist': !exists(json, 'gist') ? undefined : SeededGitHubGistDistributionFromJSON(json['gist']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:25 AM
+ *
+ * @export
+ * @param {?(SeededGitHubDistribution | null)} [value]
+ * @returns {*}
+ */
 export function SeededGitHubDistributionToJSON(value?: SeededGitHubDistribution | null): any {
     if (value === undefined) {
         return undefined;
@@ -78,7 +103,7 @@ export function SeededGitHubDistributionToJSON(value?: SeededGitHubDistribution 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'gist': SeededGitHubGistDistributionToJSON(value.gist),
     };

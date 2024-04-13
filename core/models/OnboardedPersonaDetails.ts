@@ -28,20 +28,20 @@ import {
 
 /**
  * This is an out body for the /machine_learning/text/technical_processing/generators/personification endpoint.
- * 
+ *
  * This will have accepted some of the personal details (in the input body) ie languages/personas && will transform this in to onbaording snippets that we will return with this model
  * @export
  * @interface OnboardedPersonaDetails
  */
 export interface OnboardedPersonaDetails {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof OnboardedPersonaDetails
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Seeds}
      * @memberof OnboardedPersonaDetails
      */
@@ -58,21 +58,46 @@ export function instanceOfOnboardedPersonaDetails(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {OnboardedPersonaDetails}
+ */
 export function OnboardedPersonaDetailsFromJSON(json: any): OnboardedPersonaDetails {
     return OnboardedPersonaDetailsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {OnboardedPersonaDetails}
+ */
 export function OnboardedPersonaDetailsFromJSONTyped(json: any, ignoreDiscriminator: boolean): OnboardedPersonaDetails {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'seeds': SeedsFromJSON(json['seeds']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:33 AM
+ *
+ * @export
+ * @param {?(OnboardedPersonaDetails | null)} [value]
+ * @returns {*}
+ */
 export function OnboardedPersonaDetailsToJSON(value?: OnboardedPersonaDetails | null): any {
     if (value === undefined) {
         return undefined;
@@ -81,7 +106,7 @@ export function OnboardedPersonaDetailsToJSON(value?: OnboardedPersonaDetails | 
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'seeds': SeedsToJSON(value.seeds),
     };

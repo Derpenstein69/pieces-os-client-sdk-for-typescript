@@ -52,33 +52,123 @@ import {
     QGPTStreamOutputToJSON,
 } from '../models/index';
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface HintsRequest
+ * @typedef {HintsRequest}
+ */
 export interface HintsRequest {
-    qGPTHintsInput?: QGPTHintsInput;
-}
-
-export interface PersonsRelatedRequest {
-    transferables?: boolean;
-    qGPTPersonsRelatedInput?: QGPTPersonsRelatedInput;
-}
-
-export interface QgptStreamRequest {
-    qGPTStreamInput?: QGPTStreamInput;
-}
-
-export interface QuestionRequest {
-    qGPTQuestionInput?: QGPTQuestionInput;
-}
-
-export interface RelevanceRequest {
-    qGPTRelevanceInput?: QGPTRelevanceInput;
-}
-
-export interface RepromptRequest {
-    qGPTRepromptInput?: QGPTRepromptInput;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?QGPTHintsInput}
+ */
+qGPTHintsInput?: QGPTHintsInput;
 }
 
 /**
- * 
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface PersonsRelatedRequest
+ * @typedef {PersonsRelatedRequest}
+ */
+export interface PersonsRelatedRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?boolean}
+ */
+transferables?: boolean;
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?QGPTPersonsRelatedInput}
+ */
+qGPTPersonsRelatedInput?: QGPTPersonsRelatedInput;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface QgptStreamRequest
+ * @typedef {QgptStreamRequest}
+ */
+export interface QgptStreamRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?QGPTStreamInput}
+ */
+qGPTStreamInput?: QGPTStreamInput;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface QuestionRequest
+ * @typedef {QuestionRequest}
+ */
+export interface QuestionRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?QGPTQuestionInput}
+ */
+qGPTQuestionInput?: QGPTQuestionInput;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RelevanceRequest
+ * @typedef {RelevanceRequest}
+ */
+export interface RelevanceRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?QGPTRelevanceInput}
+ */
+qGPTRelevanceInput?: QGPTRelevanceInput;
+}
+
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @interface RepromptRequest
+ * @typedef {RepromptRequest}
+ */
+export interface RepromptRequest {
+    /**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @type {?QGPTRepromptInput}
+ */
+qGPTRepromptInput?: QGPTRepromptInput;
+}
+
+/**
+ *
  */
 export class QGPTApi extends runtime.BaseAPI {
 

@@ -27,19 +27,19 @@ import {
 } from './SeededDiscoverableRelatedTag';
 
 /**
- * 
+ *
  * @export
  * @interface SeededDiscoverableRelatedTags
  */
 export interface SeededDiscoverableRelatedTags {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof SeededDiscoverableRelatedTags
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<SeededDiscoverableRelatedTag>}
      * @memberof SeededDiscoverableRelatedTags
      */
@@ -63,22 +63,47 @@ export function instanceOfSeededDiscoverableRelatedTags(value: object): boolean 
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededDiscoverableRelatedTags}
+ */
 export function SeededDiscoverableRelatedTagsFromJSON(json: any): SeededDiscoverableRelatedTags {
     return SeededDiscoverableRelatedTagsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededDiscoverableRelatedTags}
+ */
 export function SeededDiscoverableRelatedTagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededDiscoverableRelatedTags {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(SeededDiscoverableRelatedTagFromJSON)),
         'application': json['application'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:26 AM
+ *
+ * @export
+ * @param {?(SeededDiscoverableRelatedTags | null)} [value]
+ * @returns {*}
+ */
 export function SeededDiscoverableRelatedTagsToJSON(value?: SeededDiscoverableRelatedTags | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function SeededDiscoverableRelatedTagsToJSON(value?: SeededDiscoverableRe
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(SeededDiscoverableRelatedTagToJSON)),
         'application': value.application,

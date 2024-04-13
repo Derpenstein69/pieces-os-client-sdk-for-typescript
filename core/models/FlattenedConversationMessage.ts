@@ -75,73 +75,73 @@ import {
  */
 export interface FlattenedConversationMessage {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof FlattenedConversationMessage
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof FlattenedConversationMessage
      */
     id: string;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedConversationMessage
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedConversationMessage
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof FlattenedConversationMessage
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {Model}
      * @memberof FlattenedConversationMessage
      */
     model?: Model;
     /**
-     * 
+     *
      * @type {FragmentFormat}
      * @memberof FlattenedConversationMessage
      */
     fragment?: FragmentFormat;
     /**
-     * 
+     *
      * @type {ReferencedConversation}
      * @memberof FlattenedConversationMessage
      */
     conversation: ReferencedConversation;
     /**
-     * 
+     *
      * @type {ConversationMessageSentimentEnum}
      * @memberof FlattenedConversationMessage
      */
     sentiment?: ConversationMessageSentimentEnum;
     /**
-     * 
+     *
      * @type {QGPTConversationMessageRoleEnum}
      * @memberof FlattenedConversationMessage
      */
     role: QGPTConversationMessageRoleEnum;
     /**
-     * 
+     *
      * @type {Score}
      * @memberof FlattenedConversationMessage
      */
     score?: Score;
     /**
-     * 
+     *
      * @type {FlattenedAnnotations}
      * @memberof FlattenedConversationMessage
      */
@@ -162,16 +162,33 @@ export function instanceOfFlattenedConversationMessage(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {FlattenedConversationMessage}
+ */
 export function FlattenedConversationMessageFromJSON(json: any): FlattenedConversationMessage {
     return FlattenedConversationMessageFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {FlattenedConversationMessage}
+ */
 export function FlattenedConversationMessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlattenedConversationMessage {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'created': GroupedTimestampFromJSON(json['created']),
@@ -187,6 +204,14 @@ export function FlattenedConversationMessageFromJSONTyped(json: any, ignoreDiscr
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(FlattenedConversationMessage | null)} [value]
+ * @returns {*}
+ */
 export function FlattenedConversationMessageToJSON(value?: FlattenedConversationMessage | null): any {
     if (value === undefined) {
         return undefined;
@@ -195,7 +220,7 @@ export function FlattenedConversationMessageToJSON(value?: FlattenedConversation
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'created': GroupedTimestampToJSON(value.created),

@@ -27,103 +27,103 @@ import {
 } from './ExportedDatabaseFormats';
 
 /**
- * 
+ *
  * @export
  * @interface ExportedDatabase
  */
 export interface ExportedDatabase {
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     analyses: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     applications: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     assets: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     codeAnalyses: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     files: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     formatMetrics: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     formats: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     fragments: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     imageAnalyses: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     models: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     ocrAnalyses: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     persons: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     sensitives: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     tags: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     websites: Array<number>;
     /**
-     * 
+     *
      * @type {ExportedDatabaseFormats}
      * @memberof ExportedDatabase
      */
@@ -135,85 +135,85 @@ export interface ExportedDatabase {
      */
     version: string;
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ExportedDatabase
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     relationships?: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     activities?: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     annotations?: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     hints?: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     anchors?: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     anchorPoints?: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     conversations?: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     conversationMessages?: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     workstreamEvents?: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     ranges?: Array<number>;
     /**
-     * 
+     *
      * @type {Array<number>}
      * @memberof ExportedDatabase
      */
     workstreamSummaries?: Array<number>;
     /**
-     * 
+     *
      * @type {ExportedDatabaseFormats}
      * @memberof ExportedDatabase
      */
     messageValues?: ExportedDatabaseFormats;
     /**
-     * 
+     *
      * @type {ExportedDatabaseFormats}
      * @memberof ExportedDatabase
      */
@@ -246,16 +246,33 @@ export function instanceOfExportedDatabase(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ExportedDatabase}
+ */
 export function ExportedDatabaseFromJSON(json: any): ExportedDatabase {
     return ExportedDatabaseFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ExportedDatabase}
+ */
 export function ExportedDatabaseFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExportedDatabase {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'analyses': json['analyses'],
         'applications': json['applications'],
         'assets': json['assets'],
@@ -290,6 +307,14 @@ export function ExportedDatabaseFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:15 AM
+ *
+ * @export
+ * @param {?(ExportedDatabase | null)} [value]
+ * @returns {*}
+ */
 export function ExportedDatabaseToJSON(value?: ExportedDatabase | null): any {
     if (value === undefined) {
         return undefined;
@@ -298,7 +323,7 @@ export function ExportedDatabaseToJSON(value?: ExportedDatabase | null): any {
         return null;
     }
     return {
-        
+
         'analyses': value.analyses,
         'applications': value.applications,
         'assets': value.assets,

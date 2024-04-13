@@ -39,13 +39,13 @@ import {
  */
 export interface ConversationMessages {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof ConversationMessages
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<ConversationMessage>}
      * @memberof ConversationMessages
      */
@@ -57,7 +57,7 @@ export interface ConversationMessages {
      */
     indices?: { [key: string]: number; };
     /**
-     * 
+     *
      * @type {Score}
      * @memberof ConversationMessages
      */
@@ -74,16 +74,33 @@ export function instanceOfConversationMessages(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ConversationMessages}
+ */
 export function ConversationMessagesFromJSON(json: any): ConversationMessages {
     return ConversationMessagesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ConversationMessages}
+ */
 export function ConversationMessagesFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConversationMessages {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(ConversationMessageFromJSON)),
         'indices': !exists(json, 'indices') ? undefined : json['indices'],
@@ -91,6 +108,14 @@ export function ConversationMessagesFromJSONTyped(json: any, ignoreDiscriminator
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(ConversationMessages | null)} [value]
+ * @returns {*}
+ */
 export function ConversationMessagesToJSON(value?: ConversationMessages | null): any {
     if (value === undefined) {
         return undefined;
@@ -99,7 +124,7 @@ export function ConversationMessagesToJSON(value?: ConversationMessages | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(ConversationMessageToJSON)),
         'indices': value.indices,

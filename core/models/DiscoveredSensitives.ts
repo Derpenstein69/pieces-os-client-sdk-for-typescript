@@ -27,25 +27,25 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface DiscoveredSensitives
  */
 export interface DiscoveredSensitives {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof DiscoveredSensitives
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {Array<DiscoveredSensitive>}
      * @memberof DiscoveredSensitives
      */
     iterable: Array<DiscoveredSensitive>;
     /**
-     * 
+     *
      * @type {string}
      * @memberof DiscoveredSensitives
      */
@@ -63,22 +63,47 @@ export function instanceOfDiscoveredSensitives(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {DiscoveredSensitives}
+ */
 export function DiscoveredSensitivesFromJSON(json: any): DiscoveredSensitives {
     return DiscoveredSensitivesFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {DiscoveredSensitives}
+ */
 export function DiscoveredSensitivesFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveredSensitives {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'iterable': ((json['iterable'] as Array<any>).map(DiscoveredSensitiveFromJSON)),
         'application': json['application'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(DiscoveredSensitives | null)} [value]
+ * @returns {*}
+ */
 export function DiscoveredSensitivesToJSON(value?: DiscoveredSensitives | null): any {
     if (value === undefined) {
         return undefined;
@@ -87,7 +112,7 @@ export function DiscoveredSensitivesToJSON(value?: DiscoveredSensitives | null):
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'iterable': ((value.iterable as Array<any>).map(DiscoveredSensitiveToJSON)),
         'application': value.application,

@@ -57,17 +57,49 @@ export const ApplicationNameEnum = {
     NotepadPlusPlus: 'NOTEPAD_PLUS_PLUS',
     Unknown: 'UNKNOWN'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @typedef {ApplicationNameEnum}
+ */
 export type ApplicationNameEnum = typeof ApplicationNameEnum[keyof typeof ApplicationNameEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ApplicationNameEnum}
+ */
 export function ApplicationNameEnumFromJSON(json: any): ApplicationNameEnum {
     return ApplicationNameEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ApplicationNameEnum}
+ */
 export function ApplicationNameEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ApplicationNameEnum {
     return json as ApplicationNameEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:13 AM
+ *
+ * @export
+ * @param {?(ApplicationNameEnum | null)} [value]
+ * @returns {*}
+ */
 export function ApplicationNameEnumToJSON(value?: ApplicationNameEnum | null): any {
     return value as any;
 }

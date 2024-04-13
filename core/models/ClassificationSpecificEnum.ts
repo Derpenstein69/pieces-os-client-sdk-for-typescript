@@ -14,7 +14,7 @@
 
 
 /**
- * 
+ *
  * @export
  */
 export const ClassificationSpecificEnum = {
@@ -516,17 +516,49 @@ export const ClassificationSpecificEnum = {
     Vue: 'vue',
     Scss: 'scss'
 } as const;
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @typedef {ClassificationSpecificEnum}
+ */
 export type ClassificationSpecificEnum = typeof ClassificationSpecificEnum[keyof typeof ClassificationSpecificEnum];
 
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {ClassificationSpecificEnum}
+ */
 export function ClassificationSpecificEnumFromJSON(json: any): ClassificationSpecificEnum {
     return ClassificationSpecificEnumFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {ClassificationSpecificEnum}
+ */
 export function ClassificationSpecificEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): ClassificationSpecificEnum {
     return json as ClassificationSpecificEnum;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:11 AM
+ *
+ * @export
+ * @param {?(ClassificationSpecificEnum | null)} [value]
+ * @returns {*}
+ */
 export function ClassificationSpecificEnumToJSON(value?: ClassificationSpecificEnum | null): any {
     return value as any;
 }

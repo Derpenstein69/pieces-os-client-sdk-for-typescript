@@ -58,54 +58,54 @@ import {
 
 /**
  * This is the preseed to a full blown Activity.
- * 
+ *
  * This is the minimum information needed to create an Activity, used within our [POST] /activities/create
- * 
+ *
  * if mechenism is not passed in we will default to AUTOMATIC
- * 
+ *
  * NOT required to pass in an asset/user/format.
  * @export
  * @interface SeededActivity
  */
 export interface SeededActivity {
     /**
-     * 
+     *
      * @type {SeededConnectorTracking}
      * @memberof SeededActivity
      */
     event: SeededConnectorTracking;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof SeededActivity
      */
     application: Application;
     /**
-     * 
+     *
      * @type {ReferencedAsset}
      * @memberof SeededActivity
      */
     asset?: ReferencedAsset;
     /**
-     * 
+     *
      * @type {ReferencedUser}
      * @memberof SeededActivity
      */
     user?: ReferencedUser;
     /**
-     * 
+     *
      * @type {ReferencedFormat}
      * @memberof SeededActivity
      */
     format?: ReferencedFormat;
     /**
-     * 
+     *
      * @type {MechanismEnum}
      * @memberof SeededActivity
      */
     mechanism?: MechanismEnum;
     /**
-     * 
+     *
      * @type {ReferencedConversation}
      * @memberof SeededActivity
      */
@@ -123,16 +123,33 @@ export function instanceOfSeededActivity(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {SeededActivity}
+ */
 export function SeededActivityFromJSON(json: any): SeededActivity {
     return SeededActivityFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {SeededActivity}
+ */
 export function SeededActivityFromJSONTyped(json: any, ignoreDiscriminator: boolean): SeededActivity {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'event': SeededConnectorTrackingFromJSON(json['event']),
         'application': ApplicationFromJSON(json['application']),
         'asset': !exists(json, 'asset') ? undefined : ReferencedAssetFromJSON(json['asset']),
@@ -143,6 +160,14 @@ export function SeededActivityFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:27 AM
+ *
+ * @export
+ * @param {?(SeededActivity | null)} [value]
+ * @returns {*}
+ */
 export function SeededActivityToJSON(value?: SeededActivity | null): any {
     if (value === undefined) {
         return undefined;
@@ -151,7 +176,7 @@ export function SeededActivityToJSON(value?: SeededActivity | null): any {
         return null;
     }
     return {
-        
+
         'event': SeededConnectorTrackingToJSON(value.event),
         'application': ApplicationToJSON(value.application),
         'asset': ReferencedAssetToJSON(value.asset),

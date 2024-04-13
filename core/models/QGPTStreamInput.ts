@@ -33,13 +33,13 @@ import {
  */
 export interface QGPTStreamInput {
     /**
-     * 
+     *
      * @type {QGPTRelevanceInput}
      * @memberof QGPTStreamInput
      */
     relevance?: QGPTRelevanceInput;
     /**
-     * 
+     *
      * @type {QGPTQuestionInput}
      * @memberof QGPTStreamInput
      */
@@ -85,16 +85,33 @@ export function instanceOfQGPTStreamInput(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {QGPTStreamInput}
+ */
 export function QGPTStreamInputFromJSON(json: any): QGPTStreamInput {
     return QGPTStreamInputFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {QGPTStreamInput}
+ */
 export function QGPTStreamInputFromJSONTyped(json: any, ignoreDiscriminator: boolean): QGPTStreamInput {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'relevance': !exists(json, 'relevance') ? undefined : QGPTRelevanceInputFromJSON(json['relevance']),
         'question': !exists(json, 'question') ? undefined : QGPTQuestionInputFromJSON(json['question']),
         'request': !exists(json, 'request') ? undefined : json['request'],
@@ -105,6 +122,14 @@ export function QGPTStreamInputFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:30 AM
+ *
+ * @export
+ * @param {?(QGPTStreamInput | null)} [value]
+ * @returns {*}
+ */
 export function QGPTStreamInputToJSON(value?: QGPTStreamInput | null): any {
     if (value === undefined) {
         return undefined;
@@ -113,7 +138,7 @@ export function QGPTStreamInputToJSON(value?: QGPTStreamInput | null): any {
         return null;
     }
     return {
-        
+
         'relevance': QGPTRelevanceInputToJSON(value.relevance),
         'question': QGPTQuestionInputToJSON(value.question),
         'request': value.request,

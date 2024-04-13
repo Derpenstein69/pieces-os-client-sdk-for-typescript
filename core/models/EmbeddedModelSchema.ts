@@ -33,7 +33,7 @@ export interface EmbeddedModelSchema {
      */
     migration: number;
     /**
-     * 
+     *
      * @type {EmbeddedModelSchemaSemanticVersionEnum}
      * @memberof EmbeddedModelSchema
      */
@@ -51,21 +51,46 @@ export function instanceOfEmbeddedModelSchema(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {EmbeddedModelSchema}
+ */
 export function EmbeddedModelSchemaFromJSON(json: any): EmbeddedModelSchema {
     return EmbeddedModelSchemaFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {EmbeddedModelSchema}
+ */
 export function EmbeddedModelSchemaFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmbeddedModelSchema {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'migration': json['migration'],
         'semantic': EmbeddedModelSchemaSemanticVersionEnumFromJSON(json['semantic']),
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:14 AM
+ *
+ * @export
+ * @param {?(EmbeddedModelSchema | null)} [value]
+ * @returns {*}
+ */
 export function EmbeddedModelSchemaToJSON(value?: EmbeddedModelSchema | null): any {
     if (value === undefined) {
         return undefined;
@@ -74,7 +99,7 @@ export function EmbeddedModelSchemaToJSON(value?: EmbeddedModelSchema | null): a
         return null;
     }
     return {
-        
+
         'migration': value.migration,
         'semantic': EmbeddedModelSchemaSemanticVersionEnumToJSON(value.semantic),
     };

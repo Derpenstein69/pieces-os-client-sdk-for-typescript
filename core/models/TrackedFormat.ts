@@ -39,7 +39,7 @@ import {
  */
 export interface TrackedFormat {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TrackedFormat
      */
@@ -51,13 +51,13 @@ export interface TrackedFormat {
      */
     id: string;
     /**
-     * 
+     *
      * @type {Classification}
      * @memberof TrackedFormat
      */
     classification: Classification;
     /**
-     * 
+     *
      * @type {Role}
      * @memberof TrackedFormat
      */
@@ -69,13 +69,13 @@ export interface TrackedFormat {
      */
     asset: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof TrackedFormat
      */
     fragment: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof TrackedFormat
      */
@@ -97,16 +97,33 @@ export function instanceOfTrackedFormat(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TrackedFormat}
+ */
 export function TrackedFormatFromJSON(json: any): TrackedFormat {
     return TrackedFormatFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TrackedFormat}
+ */
 export function TrackedFormatFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackedFormat {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'classification': ClassificationFromJSON(json['classification']),
@@ -117,6 +134,14 @@ export function TrackedFormatFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:20 AM
+ *
+ * @export
+ * @param {?(TrackedFormat | null)} [value]
+ * @returns {*}
+ */
 export function TrackedFormatToJSON(value?: TrackedFormat | null): any {
     if (value === undefined) {
         return undefined;
@@ -125,7 +150,7 @@ export function TrackedFormatToJSON(value?: TrackedFormat | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'classification': ClassificationToJSON(value.classification),

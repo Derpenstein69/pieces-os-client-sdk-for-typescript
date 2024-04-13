@@ -27,7 +27,7 @@ import {
 } from './Auth0UserMetadata';
 
 /**
- * 
+ *
  * @export
  * @interface Auth0User
  */
@@ -39,19 +39,19 @@ export interface Auth0User {
      */
     name?: string;
     /**
-     * mapped from picture.URL pointing to the user's profile picture. 
+     * mapped from picture.URL pointing to the user's profile picture.
      * @type {string}
      * @memberof Auth0User
      */
     picture?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0User
      */
     email?: string;
     /**
-     * 
+     *
      * @type {Date}
      * @memberof Auth0User
      */
@@ -70,7 +70,7 @@ export interface Auth0User {
     familyName?: string;
     /**
      * User's given name.
-     * 
+     *
      * @type {string}
      * @memberof Auth0User
      */
@@ -83,68 +83,68 @@ export interface Auth0User {
     identities?: Array<Auth0Identity>;
     /**
      * User's nickname.
-     * 
+     *
      * @type {string}
      * @memberof Auth0User
      */
     nickname?: string;
     /**
-     * 
+     *
      * @type {Date}
      * @memberof Auth0User
      */
     updatedAt?: Date;
     /**
      * 	(unique) User's username.
-     * 	
+     *
      * @type {string}
      * @memberof Auth0User
      */
     username?: string;
     /**
-     * 
+     *
      * @type {Auth0UserMetadata}
      * @memberof Auth0User
      */
     userMetadata?: Auth0UserMetadata;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0User
      */
     locale?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0User
      */
     userId?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Auth0User
      */
     lastIp?: string;
     /**
-     * 
+     *
      * @type {Date}
      * @memberof Auth0User
      */
     lastLogin?: Date;
     /**
-     * 
+     *
      * @type {number}
      * @memberof Auth0User
      */
     loginsCount?: number;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof Auth0User
      */
     blockedFor?: Array<string>;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof Auth0User
      */
@@ -160,16 +160,33 @@ export function instanceOfAuth0User(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Auth0User}
+ */
 export function Auth0UserFromJSON(json: any): Auth0User {
     return Auth0UserFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Auth0User}
+ */
 export function Auth0UserFromJSONTyped(json: any, ignoreDiscriminator: boolean): Auth0User {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'name': !exists(json, 'name') ? undefined : json['name'],
         'picture': !exists(json, 'picture') ? undefined : json['picture'],
         'email': !exists(json, 'email') ? undefined : json['email'],
@@ -192,6 +209,14 @@ export function Auth0UserFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:12 AM
+ *
+ * @export
+ * @param {?(Auth0User | null)} [value]
+ * @returns {*}
+ */
 export function Auth0UserToJSON(value?: Auth0User | null): any {
     if (value === undefined) {
         return undefined;
@@ -200,7 +225,7 @@ export function Auth0UserToJSON(value?: Auth0User | null): any {
         return null;
     }
     return {
-        
+
         'name': value.name,
         'picture': value.picture,
         'email': value.email,

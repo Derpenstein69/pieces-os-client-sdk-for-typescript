@@ -21,19 +21,19 @@ import {
 } from './EmbeddedModelSchema';
 
 /**
- * 
+ *
  * @export
  * @interface TLPCodeDirectoryAnalytics
  */
 export interface TLPCodeDirectoryAnalytics {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof TLPCodeDirectoryAnalytics
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof TLPCodeDirectoryAnalytics
      */
@@ -49,21 +49,46 @@ export function instanceOfTLPCodeDirectoryAnalytics(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {TLPCodeDirectoryAnalytics}
+ */
 export function TLPCodeDirectoryAnalyticsFromJSON(json: any): TLPCodeDirectoryAnalytics {
     return TLPCodeDirectoryAnalyticsFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {TLPCodeDirectoryAnalytics}
+ */
 export function TLPCodeDirectoryAnalyticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TLPCodeDirectoryAnalytics {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': !exists(json, 'id') ? undefined : json['id'],
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:22 AM
+ *
+ * @export
+ * @param {?(TLPCodeDirectoryAnalytics | null)} [value]
+ * @returns {*}
+ */
 export function TLPCodeDirectoryAnalyticsToJSON(value?: TLPCodeDirectoryAnalytics | null): any {
     if (value === undefined) {
         return undefined;
@@ -72,7 +97,7 @@ export function TLPCodeDirectoryAnalyticsToJSON(value?: TLPCodeDirectoryAnalytic
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
     };

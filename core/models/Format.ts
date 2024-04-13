@@ -88,86 +88,86 @@ import {
 
 /**
  * A representation of Data for a particular Form Factor of an Asset.
- * 
+ *
  * Below asset HAS to be Flattened because it is a leaf node and must prevent cycles agressively.
  * @export
  * @interface Format
  */
 export interface Format {
     /**
-     * 
+     *
      * @type {EmbeddedModelSchema}
      * @memberof Format
      */
     schema?: EmbeddedModelSchema;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Format
      */
     id: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Format
      */
     creator: string;
     /**
-     * 
+     *
      * @type {Classification}
      * @memberof Format
      */
     classification: Classification;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Format
      */
     icon?: string;
     /**
-     * 
+     *
      * @type {Role}
      * @memberof Format
      */
     role: Role;
     /**
-     * 
+     *
      * @type {Application}
      * @memberof Format
      */
     application: Application;
     /**
-     * 
+     *
      * @type {FlattenedAsset}
      * @memberof Format
      */
     asset: FlattenedAsset;
     /**
-     * 
+     *
      * @type {ByteDescriptor}
      * @memberof Format
      */
     bytes: ByteDescriptor;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Format
      */
     created: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Format
      */
     updated: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Format
      */
     deleted?: GroupedTimestamp;
     /**
-     * 
+     *
      * @type {GroupedTimestamp}
      * @memberof Format
      */
@@ -179,31 +179,31 @@ export interface Format {
      */
     cloud?: string;
     /**
-     * 
+     *
      * @type {FragmentFormat}
      * @memberof Format
      */
     fragment?: FragmentFormat;
     /**
-     * 
+     *
      * @type {FileFormat}
      * @memberof Format
      */
     file?: FileFormat;
     /**
-     * 
+     *
      * @type {Analysis}
      * @memberof Format
      */
     analysis?: Analysis;
     /**
-     * 
+     *
      * @type {Relationship}
      * @memberof Format
      */
     relationship?: Relationship;
     /**
-     * 
+     *
      * @type {Activities}
      * @memberof Format
      */
@@ -228,16 +228,33 @@ export function instanceOfFormat(value: object): boolean {
     return isInstance;
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @returns {Format}
+ */
 export function FormatFromJSON(json: any): Format {
     return FormatFromJSONTyped(json, false);
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {*} json
+ * @param {boolean} ignoreDiscriminator
+ * @returns {Format}
+ */
 export function FormatFromJSONTyped(json: any, ignoreDiscriminator: boolean): Format {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        
+
         'schema': !exists(json, 'schema') ? undefined : EmbeddedModelSchemaFromJSON(json['schema']),
         'id': json['id'],
         'creator': json['creator'],
@@ -260,6 +277,14 @@ export function FormatFromJSONTyped(json: any, ignoreDiscriminator: boolean): Fo
     };
 }
 
+/**
+ * ${1:Description placeholder}
+ * @date 4/12/2024 - 4:03:17 AM
+ *
+ * @export
+ * @param {?(Format | null)} [value]
+ * @returns {*}
+ */
 export function FormatToJSON(value?: Format | null): any {
     if (value === undefined) {
         return undefined;
@@ -268,7 +293,7 @@ export function FormatToJSON(value?: Format | null): any {
         return null;
     }
     return {
-        
+
         'schema': EmbeddedModelSchemaToJSON(value.schema),
         'id': value.id,
         'creator': value.creator,
